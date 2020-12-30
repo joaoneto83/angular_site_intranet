@@ -1,0 +1,17 @@
+<ng-container *ngIf="show">
+    <div class="modalHtmlEditor">
+        <div class="container">
+            <div class="col-sm-12 bla" style="margin: 0 auto">
+                <ckeditor [(ngModel)]="htmlValue"
+                    [config]="{extraPlugins: 'divarea',toolbarGroups: toolbarGroup,autoParagraph: false}" [readonly]="false"
+                    debounce="500">
+                </ckeditor>
+            </div>
+            <div class="col-sm-12 text-center" style="margin-top: 10px;">
+                <input class="btn-adc" type="button" value="Salvar" (click)="salvar()" style="margin-right: 15px;">                
+                <input class="btn-adc" type="button" value="Cancelar" (click)="close()">                
+            </div>
+        </div>
+    </div>
+    <div class="backgroundBlack"></div>
+</ng-container>

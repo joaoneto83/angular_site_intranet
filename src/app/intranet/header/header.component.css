@@ -1,0 +1,185 @@
+.headerElgin {
+  position: relative;
+  height: 215px;
+  background-color: rgb(32, 113, 134);
+  background-image: url(~/assets/img/header.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.fotoPerfil {
+  padding-top: 35px;
+  right: 100px;
+  position: absolute;
+}
+
+.fotoPerfil i {
+  padding-left: 10px;
+  color: white;
+}
+
+.logoHeader {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* Style the navbar */
+
+
+.fontMenu {
+  font-size: 17px;
+}
+
+.divMenuUsuario {
+  position: absolute;
+  top: 80px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 0 10px 25px 10px;
+  width: 300px;
+  right: 0px;
+  z-index: 1061;
+  border: 0.7px solid #aaa
+}
+
+.divMenuUsuario a {
+  color: #000;
+}
+
+.divMenuUsuario .nomeUsuario {
+  padding: 15px 0;
+  font-family: fontPrincipal;
+}
+
+.foto {
+  height: 40px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  border: 0.5 solid #fff;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.sigla {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 0.5 solid #fff;
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: white;
+  font-family: fontPrincipal;
+  line-height: 34px;
+  padding-left: 3px;
+}
+
+
+.notificacoes{
+    background-color: red;
+    color: white;
+    width: 17px;
+    /* height: 15px; */
+    font-family: fontPrincipal;
+    font-size: 11px;
+    text-align: center;
+    border-radius: 25px;
+    margin: 0 !important;
+    position: relative;
+    top: -15px;
+    right: -25px;
+}
+
+.tituloNotificacoes{
+  font-family: fontPrincipal;
+  margin-top:10px;
+  text-align: center;
+}
+
+.limpar{
+  width: 100%;
+  font-family: fontPrincipal;
+  font-size: 13px;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.blocoNotificacao{
+  font-family: fontPrincipal;
+  padding: 10px;
+  line-height: 10px;
+  cursor: pointer;
+}
+
+.blocoNotificacao .tipo{
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  cursor: pointer;
+}
+
+.blocoNotificacao .descricao{
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 200;
+  width: 100%;
+  cursor: pointer;
+}
+
+.blocoNotificacao .data{
+  font-size: 10px;
+  font-weight: 200;
+  color: #aaa;
+}
+
+.divMenuUsuario:after{
+  position: absolute;
+  top: -18px;
+  height: 0;
+  width: 0;
+  left: 197px;
+  border: 11px solid transparent;
+  border-bottom-color: white;
+  content: "";
+}
+
+.blocoNotificacao:hover{
+  background-color: azure;
+}
+
+.divNotificacoes{
+  max-height: 250px;
+  overflow-x: auto;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #DDDCDC; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #DDDCDC; 
+}
+
+.bold{
+  color: rgb(73, 193, 214) ;
+}

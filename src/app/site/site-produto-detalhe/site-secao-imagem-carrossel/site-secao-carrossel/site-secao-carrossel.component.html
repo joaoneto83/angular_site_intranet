@@ -1,0 +1,17 @@
+<ngb-carousel #carrosselSecao *ngIf="imagens" class="text-center" [interval]="2000"
+id="carrosselSecao" 
+    [showNavigationIndicators]="true" [showNavigationArrows]="false"
+     (mouseleave)="carrosselSecao.pause()">
+     <!-- (mouseenter)="carrosselSecao.cycle()" -->
+    <ng-template ngbSlide *ngFor="let item of imagens">
+            <ngx-image-zoom (click)="proximaImagem()"
+            [thumbImage]="item.caminho"
+            [fullImage]="item.caminho"
+            enableLens="true"
+            lensWidth="200"
+            lensHeight="200"
+            magnification="2"
+        ></ngx-image-zoom>
+        <!-- <img [src]="item.caminho" class="imagemCarrosselSecao" > -->
+    </ng-template>
+</ngb-carousel> 

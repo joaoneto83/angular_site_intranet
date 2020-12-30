@@ -1,0 +1,57 @@
+<div class="text-center container p-b-60" *ngIf="secao">
+    <div>
+        <animate-box axis="Y" position="80">
+            <label *ngIf="secao.texto1" class="tituloImagemBaixo fontPrincipal fontRegular" style="font-size:40px"
+                [innerHtml]="secao.texto1">
+            </label>
+        </animate-box>
+    </div>
+    <div class="espacamentoTitulo" *ngIf="secao.texto2">
+        <animate-box axis="Y" position="80" delay="150">
+            <label class="fontPrincipal fontLight fontDif" style="font-size:30px" [innerHtml]="secao.texto2">
+
+            </label>
+        </animate-box>
+    </div>
+    <!-- <div class="espacamentoConteudo" *ngIf="secao.texto3">
+        <animate-box axis="Y" position="80" delay="300">
+            <label class="fontPrincipal fontLight" style="font-size:20px" [innerHtml]="secao.texto3"></label>
+        </animate-box>
+    </div> -->
+
+    <div class="supIconesImagem espacamentoConteudo">
+        <div class="supIcones ord-2">
+            <animate-box axis="Y" position="80" delay="200">
+
+                <ul>
+                    <li *ngFor="let icone of secao.icones | slice:0:(secao.icones.length/2) ; let i = index;">
+                      <img [src]="icone.urlIcone" class="icone" alt>
+                        <label class="fontPrincipal fontLight align-top fontDif2">{{icone.descricaoIcone}}</label>
+                    </li>
+                </ul>
+
+            </animate-box>
+        </div>
+        <div class="supImgVertical ord-1">
+            <animate-box axis="Y" position="80" delay="200">
+                <div *ngIf="!linqueImagem" ><img *ngIf="caminhoImagem" class="imgBannerBaixo" [src]="caminhoImagem"></div>
+                <a *ngIf="linqueImagem" href="{{ linqueImagem }}" target="_blank"><img *ngIf="caminhoImagem" class="imgBannerBaixo" [src]="caminhoImagem"></a>
+                <div class="text-center" style="padding-top:10px" *ngIf="descricaoImagem">
+                    <span class="fontSecundaria" style="font-size:15px">{{descricaoImagem}}</span>
+                </div>
+            </animate-box>
+        </div>
+        <div class="supIcones ord-3">
+            <animate-box axis="Y" position="80" delay="200">
+
+                <ul>
+                    <li *ngFor="let icone of secao.icones | slice:(secao.icones.length/2) ; let i = index;">
+                        <img [src]="icone.urlIcone" class="icone" alt>
+                        <label class="fontPrincipal fontLight align-top fontDif2">{{icone.descricaoIcone}}</label>
+                    </li>
+                </ul>
+
+            </animate-box>
+        </div>
+    </div>
+</div>

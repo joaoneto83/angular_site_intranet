@@ -1,0 +1,16 @@
+<div class="card">
+    <div class="text-center" style="padding-bottom: 50px;">
+        <img *ngIf="bloco.imagemUrl" [src]="bloco.imagemUrl" calt="Category" alt>
+    </div>
+    <hr>
+
+    <div class="card-body text-center">
+        <label class="bolinha" [style.backgroundColor]="bloco.cor"></label>
+        <div class="text-center">
+            <label class="fontPrincipal fontRegular" style="font-size: 22px;">{{bloco.ano}}</label>
+        </div>
+        <div class="text-center">
+            <label class="fontPrincipal fontRegular" style="font-size: 14px;">{{bloco.descricao}}</label>
+        </div>
+    </div>
+</div>

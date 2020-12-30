@@ -1,0 +1,94 @@
+<!-- <div class="text-center divTituloInscricao">
+    <label class="titulo fontPrincipal fontLight">{{'InscrevaSeJa' | translate}}</label><br>
+    <label class="subtitulo fontPrincipal fontLight">
+        {{'TreinamentosRefrigeracao' | translate}}
+    </label>
+</div>
+
+<div class="container containerCalendario">
+    <div class="row justify-content-md-center">
+        <div class="col-md-4 text-center">
+            <div class="divImgTreinamento">
+                <img class="imgTreinamento" src="/assets/img/Site/Refrigeracao/treinamento-refri-leve.png">
+            </div>
+            <label class="nomeTreinamento fontPrincipal fontLight">
+                {{'RefrigeracaoLeve' | translate}}
+            </label><br>
+            <label class="descTreinamento fontPrincipal fontLight">
+                {{'RefrigeracaoLeveTexto' | translate}}
+            </label>
+            <div class="divBtnInscrever">
+                <a [href]="links.linkRefrigeracaoLeve" target="_blank" class="btnInscrever fontRegular fontPrincipal">
+                    {{'InscreverSe' | translate}}
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="divImgTreinamento margin-mobile">
+                <img class="imgTreinamento" src="/assets/img/Site/Refrigeracao/treinamento-refri-comercial.png">
+            </div>
+            <label class="nomeTreinamento fontPrincipal fontLight">
+                {{'RefrigeracaoComercial' | translate}}
+            </label><br>
+            <label class="descTreinamento fontPrincipal fontLight">
+                {{'RefrigeracaoComercialTexto' | translate}}
+            </label>
+            <div class="divBtnInscrever">
+                <a [href]="links.linkRefrigeracaoComercial" target="_blank" class="btnInscrever fontRegular fontPrincipal">
+                    {{'InscreverSe' | translate}}
+                </a>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="divImgTreinamento margin-mobile">
+                <img class="imgTreinamento" src="/assets/img/Site/Refrigeracao/treinamento-refri-industrial.png">
+            </div>
+            <label class="nomeTreinamento fontPrincipal fontLight">
+                {{'RefrigeracaoIndustrial' | translate}}
+            </label><br>
+            <label class="descTreinamento fontPrincipal fontLight">
+                {{'RefrigeracaoIndustrialTexto' | translate}}
+            </label>
+            <div class="divBtnInscrever">
+                <a [href]="links.linkRefrigeracaoIndustrial" target="_blank" class="btnInscrever fontRegular fontPrincipal">
+                    {{'InscreverSe' | translate}}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>-->
+
+<div class="banner imgBannerCalendario">
+</div>
+
+<div class="text-center divTitulo">
+    <label class="titulo fontPrincipal fontLight">
+        {{'ProximosTreinamentos' | translate}}
+    </label><br>
+    <label class="subtitulo fontPrincipal fontLight">
+        {{'FiquePorDentroTreinamento' | translate}}
+    </label>
+</div>
+
+<div class="container containerCalendario">
+    <div class="row justify-content-md-center" style="margin-bottom: 60px;">
+        <div class="col-lg-4 col-md-5 col-12">
+            <select #tipoEvento class="select-azul" (change)="carregarEventos(tipoEvento.value, mesEvento.value)">
+                <option value="">{{'QueVoceProcura' | translate}}</option>
+                <option *ngFor="let t of tipos" [value]="t.id">{{t.codigo | translate}}</option>
+            </select>
+        </div>
+        <div class="col-lg-4 col-md-5 col-12">
+            <select #mesEvento class="select-azul espacamento-select"
+                (change)="carregarEventos(tipoEvento.value, mesEvento.value)">
+                <option value="">{{'EscolhaMes' | translate}}</option>
+                <option *ngFor="let m of meses" [value]="m.id">{{m.nome}}</option>
+            </select>
+        </div>
+    </div>
+
+    <app-site-lista-eventos-refrigeracao [temEventos]="temEventos" [eventos]="eventos">
+    </app-site-lista-eventos-refrigeracao>
+
+    <app-site-videos [videos]="videos"></app-site-videos>
+</div> 

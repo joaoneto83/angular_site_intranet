@@ -1,0 +1,41 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-arquivo-catalogo container">
+        <div>
+            <label class="tituloModal">Alterar Arquivos</label>
+            <button type="button" class="close" aria-label="Close" (click)="close()" style="border:0px;outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <ng-container>
+        <div class="modal-body container">
+            <div class="col-sm-8" style="margin: 0 auto">
+                <div>
+                    <label class="fontModalArquivoCatalogo p-l-50">Arquivo:</label>
+                </div>
+                <div class="divUpload">
+                    <app-upload-file [idPai]="idPai" [caminho]="codigoTipoArquivo" (resposta)="getRespostaArquivo($event)"></app-upload-file>
+                </div>
+                <div class="p-l-50" *ngIf="arquivo">
+                    <div>
+                        <label class="fontModalArquivoCatalogo">Arquivo Adicionado:</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <label class="fontModalArquivoCatalogo"
+                            style="font-weight:bold;color:#48bcf7">{{arquivo.nomeArquivo}}</label>
+                        <a class="btn-excluir" title="Excluir arquivo" (click)="excluirArquivo(arquivo.id)">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-sm-12 text-center">
+                        <input class="btn-adc" type="button" value="Salvar" (click)="salvar();">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</ng-template>
+
+<a (click)="open(content)" class="icon-adc-catalogo"><i class="iconeCatalogo fas fa-pen"></i></a>

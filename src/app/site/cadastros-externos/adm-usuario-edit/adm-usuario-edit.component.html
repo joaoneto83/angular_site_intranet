@@ -1,0 +1,122 @@
+
+<ng-container >
+    <div style="width: 700px; margin: 0 auto;">
+        <div style ="text-align: center; margin: 60px 0px;">
+
+  <app-titulo-secoes-produto cor="#008EB8"  altura2="0px"  altura="0px"  fonte="41px" titulo="Bem-vindo ao Portal Elgin">
+    </app-titulo-secoes-produto>
+    <app-titulo-secoes-produto cor="#A5A5A5"  altura2="0px"  altura="0px"  altura="true" titulo="Preencha os dados abaixo para se cadastrar">
+    </app-titulo-secoes-produto>
+    </div>
+    <form [formGroup]="usuarioForm" class="form" autocomplete="off">
+        <div class="row">
+            <div class="col-sm-12">
+                <app-custom-input [form]="usuarioForm" id="nome" label="Nome" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <input type="text" class="form-control" formControlName="nome" maxlength="100">
+                </app-custom-input>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div  class="col-sm-12" *ngIf="!isRepresentante">
+                <app-custom-input id="idPerfil" [form]="usuarioForm" label="Área de Atuação" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <select class="form-control" formControlName="idPerfil">
+                        <option value="">- Selecione -</option>
+                        <option  value ="1ab65ffe-40b3-42ed-a6ef-b512579724c6">Energia Solar</option>
+                        <option  value ="1ab65ffe-40b3-42ed-a6ef-b512579724c8">Ar-Condicionado, Costura e Eletroportáteis</option>
+                        <option  value ="2ab65ffe-40b3-42ed-a6ef-b512579724c9">Iluminação, Pilhas, Telefonia e Informática</option>
+                        <option  value ="d19ec9f1-db69-409c-88f7-c2fceb31a2ab">Merchandising</option>
+                        <option  value ="b6115d80-2cc8-484a-b300-0be482fe5f3e">Automação</option>
+                        <option  value ="5c38ffdd-4c4f-4efb-8ae5-cbd2bd0f6bbe">Refrigeração</option>
+                    </select>
+                </app-custom-input>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12" *ngIf="!isRepresentante">
+                <app-custom-input id="comoSerChamado" [form]="usuarioForm" label="Como quer ser chamado"
+                    [obrigatorio]="false" errorMessage="Campo Obrigatório">
+                    <input type="text" class="form-control" formControlName="comoSerChamado" maxlength="250">
+                </app-custom-input>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <app-custom-input id="login" [form]="usuarioForm" label="CPF" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <input type="text" class="form-control" formControlName="login" maxlength="11" minlength="11">
+                </app-custom-input>
+            </div>
+            <div class="col-sm-6">
+                <app-custom-input id="email" [form]="usuarioForm" label="Email" errorEmailMessage="Email inválido."
+                    [obrigatorio]="true" errorMessage="Campo Obrigatório">
+                    <input type="text" class="form-control" formControlName="email" maxlength="250">
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <app-custom-input id="dataNascimento" [form]="usuarioForm" label="Data de Nascimento"
+                    [obrigatorio]="false" errorMessage="Campo Obrigatório">
+                    <input type="Date" class="form-control" formControlName="dataNascimento">
+                </app-custom-input>
+            </div>
+            <div class="col-sm-6">
+                <app-custom-input id="telefone" [form]="usuarioForm" label="Telefone" [obrigatorio]="false"
+                    errorMessage="Campo Obrigatório">
+                    <input type="text" [textMask]="mask()" class="form-control" formControlName="telefone">
+                </app-custom-input>
+            </div>
+        </div>
+        <ng-container *ngIf="!isRepresentante">
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-custom-input id="celular" [form]="usuarioForm" label="Celular" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" [textMask]="mask()" class="form-control" formControlName="celular">
+                    </app-custom-input>
+                </div>
+  
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-custom-input id="endereco" [form]="usuarioForm" label="Endereço" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="endereco" maxlength="255">
+                    </app-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <app-custom-input id="bairro" [form]="usuarioForm" label="Bairro" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="bairro" maxlength="50">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-6">
+                    <app-custom-input id="cidade" [form]="usuarioForm" label="Cidade" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="cidade" maxlength="50">
+                    </app-custom-input>
+                </div>
+            </div>
+
+        </ng-container>
+      
+    </form>
+
+
+    <div class="row" style="margin-bottom:25px;">
+        <div class="col-sm-12 text-center">
+            <input class="btnEnviar" type="button" value="Salvar" (click)="salvar()">
+      
+        </div>
+    </div>
+ </div>
+</ng-container>

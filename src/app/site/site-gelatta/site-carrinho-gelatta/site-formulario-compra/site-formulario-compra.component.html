@@ -1,0 +1,126 @@
+<div class="text-center">
+    <label class="subTituloCarrinho fontSecundaria fontLight">Preencha o formulário com seus dados</label>
+</div>
+<div class="row justify-content-center">
+    <div class="col-sm-10 text-center">
+        <div style="display: flex;">
+            <div style="display: flex; margin: auto">
+                <div [ngClass]="{'ativo': !isPessoaFisica}" class="btnTipoPagamento"
+                    style="margin-right: 30px;" (click)="isPessoaFisica = false; mudarImagem()">
+
+                    <img [src]="caminhoEmpresa" alt>
+                    <label class="lblBtnTipoPgto">Empresa</label>
+                </div>
+
+                <div [ngClass]="{'ativo': isPessoaFisica}" class="btnTipoPagamento"
+                    (click)="isPessoaFisica = true; mudarImagem()">
+
+                    <img style="height: 43px;" [src]="caminhoPessoaFisica" alt>
+                    <label class="lblBtnTipoPgto">Pessoa física</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <form [formGroup]="form" style="padding-top: 60px;">
+            <div class="row">
+                <ng-container *ngIf="isPessoaFisica; else formEmpresa">
+                    <div class="col-sm-6 col-12">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="Nome Completo"
+                            labelClass="control-label fontPrincipal fontLight">
+                            <input class="form-control" formControlName="nomeCompleto" type="text" maxlength="250">
+                        </app-site-custom-input>
+                    </div>
+                    <div class="col-sm-3 col-12">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="CPF"
+                            labelClass="control-label fontPrincipal fontLight">
+                            <input class="form-control" formControlName="cpf" mask='000.000.000-00' type="text">
+                        </app-site-custom-input>
+                    </div>
+                    <div class="col-sm-3 col-12">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="RG"
+                            labelClass="control-label fontPrincipal fontLight">
+                            <input class="form-control" formControlName="rg" type="text" maxlength="14">
+                        </app-site-custom-input>
+                    </div>
+                </ng-container>
+                <ng-template #formEmpresa>
+                    <div class="col-sm-6 col-12">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="Razão Social"
+                            labelClass="control-label fontPrincipal fontLight">
+                            <input class="form-control" formControlName="razaoSocial" type="text" maxlength="250">
+                        </app-site-custom-input>
+                    </div>
+                    <div class="col-sm-3 col-12">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="CNPJ"
+                            labelClass="control-label fontPrincipal fontLight">
+                            <input class="form-control" mask='00.000.000/0000-00' formControlName="cnpj" type="text">
+                        </app-site-custom-input>
+                    </div>
+                    <div class="col-sm-3 col-12">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="Inscrição Estadual"
+                            labelClass="control-label fontPrincipal fontLight">
+                            <input class="form-control" formControlName="inscricaoEstadual" type="text" maxlength="10">
+                        </app-site-custom-input>
+                    </div>
+                </ng-template>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Endereço"
+                        labelClass="control-label fontPrincipal fontLight">
+                        <input class="form-control" formControlName="endereco" type="text" maxlength="250">
+                    </app-site-custom-input>
+                </div>
+                <div class="col-sm-2 col-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Número"
+                        labelClass="control-label fontPrincipal fontLight">
+                        <input class="form-control" formControlName="numero" type="text" maxlength="10">
+                    </app-site-custom-input>
+                </div>
+                <div class="col-sm-4 col-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="CEP"
+                        labelClass="control-label fontPrincipal fontLight">
+                        <input class="form-control" formControlName="cep" type="text" mask='00000-000'>
+                    </app-site-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Cidade"
+                        labelClass="control-label fontPrincipal fontLight">
+                        <input class="form-control" formControlName="cidade" type="text" maxlength="100">
+                    </app-site-custom-input>
+                </div>
+                <div class="col-sm-2 col-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Estado"
+                        labelClass="control-label fontPrincipal fontLight">
+                        <input class="form-control" formControlName="estado" type="text" maxlength="100">
+                    </app-site-custom-input>
+                </div>
+                <div class="col-sm-4 col-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Bairro"
+                        labelClass="control-label fontPrincipal fontLight">
+                        <input class="form-control" formControlName="bairro" type="text" maxlength="100">
+                    </app-site-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Telefone"
+                        labelClass="control-label fontPrincipal fontLight">
+                        <input class="form-control" [textMask]="mask()" formControlName="telefone" type="text" maxlength="100">
+                    </app-site-custom-input>
+                </div>
+                <div class="col-sm-6 col-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Email"
+                        labelClass="control-label fontPrincipal fontLight">
+                        <input class="form-control" formControlName="email" type="text" maxlength="100">
+                    </app-site-custom-input>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

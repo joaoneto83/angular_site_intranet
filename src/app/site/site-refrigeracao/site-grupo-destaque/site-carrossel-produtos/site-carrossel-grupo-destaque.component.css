@@ -1,0 +1,100 @@
+.imgProduto{
+    max-height: 150px;
+}
+
+.divImgProduto{
+    min-height: 150px;
+}
+
+.lblNomeProduto{
+    font-size: 17px;
+    color: #4A4A4A;
+    padding-top: 25px;
+}
+
+.divArrows{
+    display: flex;
+}
+
+.btnCarrossel{
+    margin: auto;
+    font-size: 30px;
+    color: #575756 !important;
+    cursor: pointer;
+}
+
+.cardProduto{
+    max-width: 200px;
+    padding: 15px;
+}
+
+.cardEspacamento{
+    margin-top: 80px;
+}
+
+.carrosselMobile{
+    display: none;
+}
+
+.carrosselDesk{
+    display: flex;
+}
+
+@media (max-width: 1024px){
+    .imgProduto{
+        max-height: 110px;
+    }
+
+    .divImgProduto{
+        min-height: 110px;
+    }
+}
+
+@media (max-width: 768px){
+    .lblNomeProduto{
+        font-size: 15px;
+    }
+
+    .cardProduto{
+        max-width: 150px;
+        padding: 5px;
+    }
+
+    .cardEspacamento{
+        margin-top: 50px;
+    }
+}
+
+@media(max-width: 575px){
+    .btnCarrossel{
+        font-size: 25px;
+    }
+
+    .carrosselMobile{
+        display: flex;
+    }
+
+    .carrosselDesk{
+        display: none;
+    }
+
+    .btnVoltar{
+        padding-bottom: 20px;
+    }
+
+    .btnAvancar{
+        padding-top: 20px;
+    }
+
+    .cardEspacamento{
+        margin-top: 10px;
+    }
+
+    .divArrows{
+        min-height: 57px;
+    }
+}
+
+@media (max-width: 320px){
+    
+}

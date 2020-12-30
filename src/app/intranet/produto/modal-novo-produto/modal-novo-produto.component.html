@@ -1,0 +1,67 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-novo-produto container">
+        <div>
+            <label class="tituloModal">Novo Produto</label>
+            <button type="button" class="close" aria-label="Close" (click)="close()"
+                style="border:0px; outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <ng-container>
+        <div class="modal-body container">
+            <form [formGroup]="formProduto" class="col-sm-12" style="margin-top:50px;">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <app-custom-input [form]="formProduto" errorMessage="Campo Obrigatório"
+                            label="Nome do Produto" labelClass="control-label fontSecundaria" id="nomeProduto">
+                            <input class="form-control" formControlName="nomeProduto" type="text" maxlength="100">
+                        </app-custom-input>
+                    </div>
+                    <div class="col-sm-3">
+                        <app-custom-input [form]="formProduto" errorMessage="Campo Obrigatório"
+                            label="Código do Produto" labelClass="control-label fontSecundaria" id="codigoProduto">
+                            <input class="form-control" formControlName="codigoProduto" type="text" maxlength="100">
+                        </app-custom-input>
+                    </div>
+                    <div class="col-sm-3">
+                        <app-custom-input [form]="formProduto" errorMessage="Campo Obrigatório"
+                            label="Código Legado" labelClass="control-label fontSecundaria" id="codigoLegado">
+                            <input class="form-control" formControlName="codigoLegado" type="text" maxlength="50">
+                        </app-custom-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <app-custom-input [form]="formProduto" errorMessage="Campo Obrigatório" label="Linha" labelClass="control-label fontSecundaria" id="idLinha">
+                            <select class="form-control" formControlName="idLinha" (change)="carregarSubLinha($event.target.value)">
+                                <option value="">- Selecione a Linha -</option>
+                                <option *ngFor="let linha of linhas" [value]="linha.id">
+                                    {{linha.nomeLinha | titlecase}}
+                                </option>
+                            </select>
+                        </app-custom-input>
+                    </div>
+                    <div class="col-sm-6">
+                        <app-custom-input [form]="formProduto" errorMessage="Campo Obrigatório" label="SubLinha"
+                            labelClass="control-label fontSecundaria" id="idSubLinha">
+                            <select class="form-control" formControlName="idSubLinha">
+                                <option value="">- Selecione a Categoria -</option>
+                                <option *ngFor="let subLinha of subLinhas" [value]="subLinha.id">
+                                    {{subLinha.nomeSubLinha | titlecase}}
+                                </option>
+                            </select>
+                        </app-custom-input>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-sm-12 text-center">
+                        <input class="btn-adc" type="button" value="Criar" (click)="salvar();">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </ng-container>
+</ng-template>
+
+<input style="margin-bottom: 25px;" type="button" class="btn-adc" (click)="open(content)" value="Novo Produto">

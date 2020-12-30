@@ -1,0 +1,29 @@
+.imgPeca{
+    max-width: 100%;
+}
+
+.fontTablePeca{
+    color: #006198;
+}
+
+#tablePecas, *{
+    border-color: #FFF !important;
+}
+
+.tableMobile{
+    display: none;
+}
+
+.tableDesk{
+    display: flex;
+}
+
+@media (max-width: 575px) {
+    .tableMobile{
+        display: flex;
+    }
+
+    .tableDesk{
+        display: none;
+    }
+}

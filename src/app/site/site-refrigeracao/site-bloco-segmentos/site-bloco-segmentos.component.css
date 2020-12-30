@@ -1,0 +1,112 @@
+.imgRefrigeracaoIndustrial {
+    background: url(/assets/img/Site/Refrigeracao/refrigeracao-industrial.png) center/cover no-repeat;
+    height: 345px;
+    position: relative;
+}
+
+.imgAletados {
+    background: url(/assets/img/Site/Refrigeracao/aletados.png) center/cover no-repeat;
+    height: 345px;
+    position: relative;
+    margin-left:5px;
+}
+
+.imgSupermercados {
+    background: url(/assets/img/Site/Refrigeracao/supermercados.png) center/cover no-repeat;
+    height: 369px;
+    position: relative;
+    margin-top:5px;
+}
+
+.imgRefrigeracaoComercial {
+    background: url(/assets/img/Site/Refrigeracao/refrigeracao-comercial.png) center/cover no-repeat;
+    height: 369px;
+    position: relative;
+    margin-left:5px;
+    margin-top:5px;
+}
+
+.bloco {
+    text-align: center !important;
+    color: white;
+}
+
+.titulo {
+    color: white;
+    font-size: 30px;
+    margin: 0;
+}
+
+.subtitulo {
+    color: white;
+    font-size: 13px;
+    margin-bottom: 13px;
+    padding: 0 5px;
+}
+
+.btn-saiba-mais{
+    color: white !important;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-saiba-mais:hover{
+    color: #6E6E6E !important;
+    background-color: white;
+}
+
+.align-bottom {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+}
+
+.degrade {
+    position: absolute;
+    bottom: 0;
+    height: 70%;
+    width: 100%;
+    background: transparent linear-gradient(0deg, #07080B 0%, #07080B00 100%) 0% 0% no-repeat padding-box;
+    opacity: 0.74;
+}
+
+.row:first-of-type{
+    margin-top: 70px;
+}
+
+@media (min-width: 1400px) {
+    .subtitulo {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .subtitulo {
+        font-size: 15px;
+    }
+
+    .imgAletados{
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .imgSupermercados{
+        margin-left: 0;
+    }
+
+    .imgRefrigeracaoComercial{
+        margin-left: 0;
+    } 
+}
+
+@media (max-width: 575px) {
+    .degrade{
+        height: 100%;
+    }
+
+    .imgRefrigeracaoIndustrial, .imgAletados, .imgSupermercados, .imgRefrigeracaoComercial{
+        height: 230px;
+    }
+}

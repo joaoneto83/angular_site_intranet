@@ -1,0 +1,111 @@
+.banner-detalhe{
+    position: relative;
+    text-align: right !important;
+    color: white;
+    padding-bottom: 90px;
+}
+
+.imagem-banner-detalhe{
+    width: 100%;
+}
+
+.img-conteudo-detalhe{
+    max-width: 100%;
+    margin-top: 60px;
+}
+
+.p-b-40{
+    padding-bottom: 40px;
+}
+
+.tags-detalhe{
+    border: 1px solid #9F9F9F;
+    margin: 5px 5px 5px 0;
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: #747474 !important;
+    font-size:11px
+}
+
+#tag-detalhe{
+    justify-content: center;   
+    width: 40%;
+    margin: 0 auto;
+}
+
+#conteudoHtml {
+    font-size:16px; 
+    line-height: 2.1;
+    /* margin: 0 auto; */
+    /* padding: 0 10px; */
+}
+
+::ng-deep #conteudoHtml img,div{
+    max-width: 100%;
+    height: auto;
+}
+
+::ng-deep #conteudoHtml img{
+    padding: 15px 0px 30px;
+    margin: 0px 0px 30px;
+}
+
+::ng-deep #conteudoHtml table tbody>tr:nth-child(odd)>td {
+    background: #f9f9f9;
+}
+
+::ng-deep #conteudoHtml td {
+    border-bottom: 1px solid #ddd;
+}
+
+::ng-deep #conteudoHtml figure{
+    margin: 0 0 0 !important;
+}
+
+::ng-deep #conteudoHtml p {
+    margin: 0px 0px 30px;
+}
+
+.voltar{
+    font-family: fontPrincipal;
+    font-size: 15px;
+    font-weight: 200;
+    margin-bottom: 40px !important;
+    cursor: pointer;
+    width: 100%;
+}
+
+.postTitle{
+    width: 100%;
+    margin: 0 auto 70px;
+    padding: 0px 0px 28px;
+    position: relative;
+}
+
+h1.postTitle::after{
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: #006198;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -30px;
+}
+
+.postContainer{
+    max-width: 719px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.postagem{
+    margin-top: 200px;
+}
+
+@media (max-width: 575px) {
+    .postagem{
+        margin-top: 120px;
+    }
+}

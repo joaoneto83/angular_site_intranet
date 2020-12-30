@@ -1,0 +1,36 @@
+<br />
+<div class="container"> 
+  <div class="row" showIfAdmin="MODELO_SECAO_EDICAO">
+    <div class="col-sm-3 text-center">
+      <app-modal-novo-modelo (produtoNovo)="retornaProduto($event)"></app-modal-novo-modelo>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <app-sidebargrupo [sublinhas]="secaoModeloGrupos" (clickProduto)="selecionaGrupo($event);"></app-sidebargrupo>
+    </div>
+
+    <div *ngIf="grupo" class="col-sm-9" style="margin-top:17px;">
+
+      <app-titulo-secoes-produto showIfAdmin="MODELO_SECAO_EDICAO" cor="#008EB8" de="#3FEFFC" ate="#1579DE"
+        titulo="Informações do Modelo de Seção">
+      </app-titulo-secoes-produto>
+
+      <label class="tituloProduto fontPrincipal fontLight">{{grupo.descricao | uppercase}}</label>
+
+      <app-cadastro-secao-modelo-detalhe showIfAdmin="PRODUTO_EDICAO" [idGrupo]="grupo.id" [secoesProduto]="secoesProduto" [produtoRel]="produtoRel" >
+      </app-cadastro-secao-modelo-detalhe>
+       
+      <!--Seção Modelo-->
+      <!--<app-cadastro-secao-modelo showIfAdmin="PRODUTO_EDICAO" [idProduto]="produto.id"
+                                 [secoesProduto]="produto.secoesProduto">
+      </app-cadastro-secao-modelo>-->
+
+      <!--<div showIfAdmin="PRODUTO_EDICAO" class="row" style="margin-top:25px; position: sticky; background-color: white; bottom:0px; padding-bottom: 20px;z-index: 1000;">
+        <div class="col-sm-12 text-center">
+          <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+        </div>
+      </div>-->
+    </div>
+  </div>
+</div>

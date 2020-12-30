@@ -1,0 +1,34 @@
+.divTituloCaixaMpdv{
+    font-size: 21px;
+    line-height: 35px;
+    padding-bottom: 25px;
+    padding-left: 30px;
+}
+
+.divMpdv{
+    margin-top: 90px;
+}
+
+.acoesArquivoMdpv{
+    color: #bfbfbf;
+}
+
+.acoesArquivoMdpv i{
+    margin: 3px; 
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.acoesArquivoMdpv a{
+    color: inherit;
+}
+
+.btn-adc-arquivo-mpdv{
+    color: #bfbfbf !important;
+    font-size: 18px;
+    margin-left: 20px;
+}
+
+.linkMpdv{
+    cursor: pointer;
+}

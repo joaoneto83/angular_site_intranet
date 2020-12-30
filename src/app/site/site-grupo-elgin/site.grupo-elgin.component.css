@@ -1,0 +1,123 @@
+.banner{
+    position: relative;
+    text-align: right !important;
+    color: white;
+    padding-bottom: 90px;
+}
+
+.imagem{
+    width: 100%;
+}
+
+.imagemMarca{
+    width: 100%;
+}
+
+.divCaixa{
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 5px 30px;
+}
+
+.divCaixa label{
+    color: #006198 !important;
+}
+
+.divCaixa .fontPrincipal{
+    font-size:35px;
+}
+
+.divCaixa .fontSecundaria{
+    font-size: 15px;
+}
+
+.btn-saiba-mais{
+    color: #006198 !important;
+    border: 1px solid #006198;
+    border-radius: 20px;
+    font-size: 11px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 1px 20px;
+}
+
+/* #divMarca{
+    background-image: url('/assets/img/Site/GrupoElgin/marca.jpg');
+} */
+
+.btn-saiba-mais:hover{
+    color: #FFF !important;
+    background-color: #006198;
+}
+
+@media (max-width: 768px){
+    /* .divCaixa{
+        width: 250px;
+        margin-left: 70px;
+    } */
+
+    .divCaixa .fontPrincipal{
+        font-size:30px;
+    }
+    
+    .divCaixa .fontSecundaria{
+        font-size: 15px;
+    }
+
+    .btn-saiba-mais{
+        font-size: 11px;
+        margin-top: 5px;
+    }
+
+    .embed-responsive{
+        height: 300px !important;
+    }
+
+    .imagemMarca{
+        /* height: 170px; */
+    }
+}
+
+@media (max-width: 576px){
+    .divCaixa{
+        width: 180px;
+        margin-left: 30px;
+    }
+
+    .divCaixa .fontPrincipal{
+        font-size:18px;
+        margin-bottom: 4px;
+    }
+    
+    .divCaixa .fontSecundaria{
+        font-size: 12px;
+        margin-bottom: 4px;
+    }
+
+    .btn-saiba-mais{
+        font-size: 11px !important;
+        margin-top: 3px;
+    }
+
+    .embed-responsive{
+        height: 190px !important;
+    }
+
+    #tituloGrupo{
+        padding-bottom: 50px !important;
+        font-size: 35px !important;
+    }
+
+    .banner{
+        padding-bottom: 50px;
+    }
+
+    .imagemMarca{
+        height: 120px;
+    }
+
+    .container.bloco-link{
+        padding-bottom: 0;
+    }
+}

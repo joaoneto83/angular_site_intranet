@@ -1,0 +1,12 @@
+<div class="row divRelacionados">
+    <div class="col-sm-4 col-12" *ngFor="let relacionado of relacionados">
+        <div  [routerLink]="['/' + codigoBlog + '/Cases/Post/' + relacionado.id]" style="cursor:pointer;">
+            <div>
+                <img *ngIf="relacionado.embedded['wp:featuredmedia'] !== undefined" [src]="relacionado.embedded['wp:featuredmedia'][0]['source_url']" class="img" [alt]="relacionado.titulo.rendered">
+                <img *ngIf="post.embedded['wp:featuredmedia'] == undefined" style="width: 100%;height: auto;" [src]="relacionado.foto"
+                    [alt]="relacionado.titulo">
+            </div>
+            <div class="fontPrincipal fontLight titleRelacionados" [innerHtml]="relacionado.titulo"></div>
+        </div>
+    </div>
+</div>

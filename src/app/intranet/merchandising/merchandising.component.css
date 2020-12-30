@@ -1,0 +1,18 @@
+.margin-auto{
+    margin: 0 auto 30px auto;
+}
+
+.div-bloco{
+    padding-bottom: 15px;
+}
+
+app-button-gradient label{
+    font-size: 25px;
+    line-height: 30px;
+    cursor: pointer;
+    padding-top: 8px;
+}
+
+.m-t-20{
+    margin-top:20px;
+}

@@ -1,0 +1,326 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import '~@ngx-share/button/themes/default/default-theme';
+@import '~@ngx-share/button/themes/circles/circles-dark-theme'; */
+
+.has-danger label, .has-danger .form-control-feedback, .has-danger .custom-control, .has-danger .input-group .input-group-addon, .has-danger.input-group .input-group-addon, .has-danger .form-control:focus~.input-group-addon {
+  color: #ff5252;
+}
+
+.has-danger .form-control, .has-danger .form-control:focus {
+  border-color: #ff5252;
+}
+
+.has-danger .form-control-danger {
+  padding-right: 42px;
+  background-position: center right 15px;
+  background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDI0MS4xNzEgMjQxLjE3MSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMjQxLjE3MSAyNDEuMTcxOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjE2cHgiIGhlaWdodD0iMTZweCI+CjxnPgoJPHBhdGggaWQ9IkNsb3NlIiBkPSJNMTM4LjEzOCwxMjAuNzU0bDk5LjExOC05OC41NzZjNC43NTItNC43MDQsNC43NTItMTIuMzE5LDAtMTcuMDExYy00Ljc0LTQuNzA0LTEyLjQzOS00LjcwNC0xNy4xNzksMCAgIGwtOTkuMDMzLDk4LjQ5MkwyMS4wOTUsMy42OTljLTQuNzQtNC43NTItMTIuNDM5LTQuNzUyLTE3LjE3OSwwYy00Ljc0LDQuNzY0LTQuNzQsMTIuNDc1LDAsMTcuMjI3bDk5Ljg3Niw5OS44ODhMMy41NTUsMjIwLjQ5NyAgIGMtNC43NCw0LjcwNC00Ljc0LDEyLjMxOSwwLDE3LjAxMWM0Ljc0LDQuNzA0LDEyLjQzOSw0LjcwNCwxNy4xNzksMGwxMDAuMTUyLTk5LjU5OWw5OS41NTEsOTkuNTYzICAgYzQuNzQsNC43NTIsMTIuNDM5LDQuNzUyLDE3LjE3OSwwYzQuNzQtNC43NjQsNC43NC0xMi40NzUsMC0xNy4yMjdMMTM4LjEzOCwxMjAuNzU0eiIgZmlsbD0iI2ZmNTI1MiIvPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=);
+  background-size: 13px 13px;
+  background-repeat: no-repeat;
+}
+
+/* @font-face {
+  font-family: fontPrincipal;
+  font-style:italic;
+  font-weight:200;
+  src: url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff2) format('woff2'),
+       url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff) format('woff');
+} */
+
+@font-face {
+  font-family: fontPrincipal;
+  font-style: normal;
+  font-weight: 200;
+  src: url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff2) format('woff2'), url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff) format('woff');
+}
+
+/* @font-face {
+  font-family: fontPrincipal;
+  font-style:italic;
+  font-weight:300;
+  src: url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff2) format('woff2'),
+       url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff) format('woff');
+} */
+
+@font-face {
+  font-family: fontPrincipal;
+  font-style: normal;
+  font-weight: 300;
+  src: url(/assets/fonts/CoreRhino2/corerhino35light-webfont.woff2) format('woff2'), url(/assets/fonts/CoreRhino2/corerhino35light-webfont.woff) format('woff');
+}
+
+/* @font-face {
+  font-family: fontPrincipal;
+  font-style:italic;
+  font-weight:400;
+  src: url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff2) format('woff2'),
+       url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff) format('woff');
+} */
+
+@font-face {
+  font-family: fontPrincipal;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/CoreRhino2/corerhino45regular-webfont.woff2) format('woff2'), url(/assets/fonts/CoreRhino2/corerhino45regular-webfont.woff) format('woff');
+}
+
+/* @font-face {
+  font-family: fontPrincipal;
+  font-style:italic;
+  font-weight:500;
+  src: url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff2) format('woff2'),
+       url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff) format('woff');
+} */
+
+@font-face {
+  font-family: fontPrincipal;
+  font-style: normal;
+  font-weight: 500;
+  src: url(/assets/fonts/CoreRhino2/corerhino55medium-webfont.woff2) format('woff2'), url(/assets/fonts/CoreRhino2/corerhino55medium-webfont.woff) format('woff');
+}
+
+/* @font-face {
+  font-family: fontPrincipal;
+  font-style:italic;
+  font-weight:700;
+  src: url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff2) format('woff2'),
+       url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff) format('woff');
+} */
+
+@font-face {
+  font-family: fontPrincipal;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/fonts/CoreRhino2/corerhino65bold-webfont.woff2) format('woff2'), url(/assets/fonts/CoreRhino2/corerhino65bold-webfont.woff) format('woff');
+}
+
+/* @font-face {
+  font-family: fontPrincipal;
+  font-style:italic;
+  font-weight:800;
+  src: url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff2) format('woff2'),
+       url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff) format('woff');
+} */
+
+@font-face {
+  font-family: fontPrincipal;
+  font-style: normal;
+  font-weight: 800;
+  src: url(/assets/fonts/CoreRhino2/corerhino75heavy-webfont.woff2) format('woff2'), url(/assets/fonts/CoreRhino2/corerhino75heavy-webfont.woff) format('woff');
+}
+
+/* @font-face {
+  font-family: fontPrincipal;
+  font-style:italic;
+  font-weight:900;
+  src: url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff2) format('woff2'),
+       url(/assets/fonts/CoreRhino2/corerhino25thin-webfont.woff) format('woff');
+} */
+
+@font-face {
+  font-family: fontPrincipal;
+  font-style: normal;
+  font-weight: 900;
+  src: url(/assets/fonts/CoreRhino2/corerhino75heavy-webfont.woff2) format('woff2'), url(/assets/fonts/CoreRhino2/corerhino75heavy-webfont.woff) format('woff');
+}
+
+.fontThin {
+  font-weight: 100;
+}
+
+.fontLight {
+  font-weight: 200;
+}
+
+.fontExtraLight {
+  font-weight: 300;
+}
+
+.fontRegular {
+  font-weight: 400;
+}
+
+.fontMedium {
+  font-weight: 500;
+}
+
+.fontSemiBold {
+  font-weight: 600;
+}
+
+.fontBold {
+  font-weight: 700;
+}
+
+.fontExtraBold {
+  font-weight: 800;
+}
+
+.fontBlack {
+  font-weight: 900;
+}
+
+.fontSecundaria {
+  color: #7E7E7E;
+  font-family: soleil;
+}
+
+.fontPrincipal {
+  color: #222222;
+  font-family: fontPrincipal;
+}
+
+.carousel-indicators li {
+  background-color: #10a7b4 !important;
+}
+
+#banner .carousel-indicators li {
+  background-color: #fff !important;
+}
+
+ngb-carousel {
+  outline: none !important;
+}
+
+.carousel-control-next {
+  cursor: pointer;
+}
+
+.carousel-control-prev {
+  cursor: pointer;
+}
+
+#gvpFloatChat{
+  left:10px;
+  text-align: center;
+  
+}
+
+
+
+.btn-adc {
+  color: #48bcf7 !important;
+  border: 1px solid #48bcf7;
+  background-color: #FFF;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: soleil;
+  font-weight: 200;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.btn-adc:hover {
+  color: #FFF !important;
+  background-color: #48bcf7;
+}
+
+.textoBtn{
+  font-family: fontPrincipal;
+  font-weight: 500;
+  font-size: 17px;
+  padding-left: 25px;
+  cursor: pointer;
+}
+.textoBtn:hover{
+  text-decoration: none;
+}
+
+.textoBtn i, .textoBtn span{
+  color: #40beff;
+}
+
+.select-branco{
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('/assets/icones/arrow-down-dropdown-white.png');
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: right 5px;
+}
+
+.select-preto{
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('/assets/icones/arrow-down-dropdown.png');
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: right 5px;
+}
+
+.select-azul{
+  -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('/assets/icones/arrow-down-dropdown-blue.png');
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: right 5px;
+}
+
+.swal2-container {
+  z-index: 1080 !important;
+}
+.s-centerVertical {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.p-b-90 {
+  padding-bottom: 90px;
+}
+
+.p-b-60 {
+  padding-bottom: 60px;
+}
+
+.botoes .cancelar {
+  border-color: #7E7E7E;
+  color: #7E7E7E !important;
+}
+
+.botoes .cancelar:hover {
+  border-color: #7E7E7E;
+  color: white !important;
+  margin-right: 15px;
+}
+
+.btn-cancelar{
+  color: #7E7E7E !important;
+  border: 1px solid #7E7E7E;
+  background-color: #FFF;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: soleil;
+  font-weight: 200;
+  padding: 5px 10px;
+  outline: none;
+  margin-right: 15px;
+}
+
+.btn-cancelar:hover{
+  background-color: #7E7E7E;
+  color: white !important;
+}
+
+.ngxImageZoomContainer {
+  max-width: 100%;
+  height: auto !important;
+}
+.ngxImageZoomFullContainer.ngxImageZoomLensEnabled {
+  border: 1px solid rgb(240, 240, 240) !important;
+  background-color: rgb(240, 240, 240, 0.8);
+  width: 350px !important;
+  height: 350px !important;
+}

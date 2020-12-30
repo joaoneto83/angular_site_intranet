@@ -1,0 +1,241 @@
+.imgCardProduto{
+    max-height: 150px;
+    margin: auto 0;
+}
+
+.cardProduto{
+    padding: 0 10px;
+    border: 1px solid #006198;
+    border-radius: 9px;
+    justify-content: center;
+    max-width: 307px;
+    height: 100%;
+}
+
+.lblNomeProduto{
+    font-size: 29px;
+    color: #006198;
+    max-width: 125px;
+    margin: auto 0 auto 5px;
+    display: grid;
+}
+
+.headerCardProduto{
+    display: flex;
+    top: -77px;
+    position: relative;
+    background: #FFF;
+    min-height: 150px;
+    justify-content: center;
+}
+
+.lblSublinha{
+    font-size: 12px;
+    color: #747474;
+}
+
+.contentCardProduto{
+    margin-top: -77px;
+    height: 100%;
+}
+
+.lblPreco{
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    color: #006198;
+    margin: 0px;
+}
+
+.lblParcela{
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #006198;
+    margin-bottom: 30px;
+}
+
+.lblEspec{
+    width: 100%;
+    font-size: 15px;
+    color: #3C3C3C;
+}
+
+.btn-comprar{
+    width: 100%;
+    background: #006198;
+    color: #FFF !important;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: 100 !important;
+}
+
+.footerCardProduto{
+    width: 90%;
+    margin: auto;
+    position: relative;
+    top: -99px;
+}
+
+.divArrows{
+    display: flex;
+}
+
+.btnCarrossel{
+    margin: auto;
+    font-size: 30px;
+    color: #006198 !important;
+    cursor: pointer;
+}
+
+.cardProdutoMobile{
+    display: none;
+}
+
+.cardProdutoDesk{
+    display: flex;
+}
+
+.lblFormasPgto{
+    font-size: 12px;
+    color: #006198;
+    width: 74px;
+    margin: 10px 30px 0 0;
+}
+
+.spanFormasPgto{
+    font-size: 10px;
+    color: #3C3C3C;
+    margin: 0;
+}
+
+.lblEntrega{
+    font-size: 10px;
+    color: #3C3C3C;
+    margin: 0;
+    width: 71px;
+    padding: 25px 0 0 5px;
+    margin-right: 30px;
+}
+
+.imgTransferencia{
+    border: 0.5px solid #747474ad;
+    padding: 1.5px 5px;
+    border-radius: 2px;
+}
+
+.linha{
+    border-left: 1px solid #747474;
+}
+
+.lblAceitaCartoes{
+    font-size: 10px;
+    color: #3C3C3C;
+    margin: 0;
+}
+
+.lblCondicaoCompra{
+    font-size: 13.5px;
+    color: #005EB8;
+}
+
+.divFormaPgtoMobile{
+    display: none;
+}
+
+.divFormaPgtoDesk{
+    display: block;
+}
+
+.linhaMobile{
+    display: none;
+}
+
+.contentCardProduto .lblEspec{
+    padding: 0 20px;
+}
+
+@media (max-width: 1025px){
+
+    .lblNomeProduto{
+        font-size: 25px;
+        max-width: 109px;
+    }
+
+    .imgCardProduto{
+        max-width: 95px;
+    }
+}
+
+
+@media (max-width: 768px){
+
+    .cardProdutoDesk{
+        display: none;
+    }
+
+    .cardProdutoMobile{
+        display: flex;
+    }
+
+    .cardProduto{
+        margin: auto;
+    }
+
+    .divFormaPgtoMobile{
+        display: block;
+    }
+
+    .divFormaPgtoDesk{
+        display: none;
+    }
+
+    .lblFormasPgto{
+        width: auto;
+        margin: 0 0 10px 0;
+
+    }
+    
+    .imgMapaBrasil{
+        margin: auto;
+    }
+
+    .lblEntrega{
+        margin: 0;
+    }
+}
+
+@media(max-width: 575px){
+    .btnCarrossel{
+        font-size: 25px;
+    }
+
+    .tituloGelatta{
+        font-weight: 400;
+    }
+
+    .linhaMobile{
+        display: block;
+        margin: 0 30px 30px;
+    }
+
+    .linhaDesk{
+        margin: 30px 30px 60px !important;
+    }
+
+}
+
+@media (max-width: 320px){
+    .lblPreco{
+        font-size: 35px;
+    }
+
+    .lblNomeProduto{
+        font-size: 20px;
+    }
+
+    .contentCardProduto .lblEspec{
+        padding: 0 10px;
+    }
+}

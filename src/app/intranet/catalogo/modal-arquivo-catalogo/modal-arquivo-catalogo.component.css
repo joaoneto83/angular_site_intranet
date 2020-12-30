@@ -1,0 +1,62 @@
+::ng-deep .modal{
+    z-index: 1080;
+}
+
+::ng-deep .modal-lg{
+    max-width: 100%;
+    top:75px;
+}
+
+::ng-deep .modal-content{
+    border-radius: 0;
+}
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #48bcf7;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.fontModalArquivoCatalogo{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 16px;
+    color: #222;    
+    margin-bottom: 0;
+}
+
+.modal-header-arquivo-catalogo{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border: 0;
+}
+
+::ng-deep .modal-footer{
+    border: 0;
+}
+
+.p-l-50{
+    padding-left: 50px;
+}
+
+.divUpload{
+    padding-left:50px;
+    padding-bottom: 20px;
+}
+
+.icon-adc-catalogo .iconeCatalogo{
+    color:#bfbfbf !important;
+    cursor: pointer;
+    font-size: 11px;
+    margin: 3px;
+}
+
+.btn-excluir{
+    margin-left: 10px;
+    color: #bfbfbf !important;
+    cursor: pointer;
+}

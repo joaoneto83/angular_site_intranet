@@ -1,0 +1,7 @@
+
+<app-site-header [linhas]="linhas" [linhasCompletas]="linhasFooter" [sublinhas]="sublinhas" 
+    [headerAutomacao]="headerAutomacao" [headerGelatta]="headerGelatta" [headerRefrigeracao]="headerRefrigeracao">
+</app-site-header>
+
+<router-outlet (activate)="onActivate($event)" ></router-outlet>
+<app-site-footer [linhasFooter]="linhasFooter"></app-site-footer>

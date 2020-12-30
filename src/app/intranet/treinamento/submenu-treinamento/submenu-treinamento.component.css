@@ -1,0 +1,27 @@
+.nav-link:hover{
+    color: #40D3FF !important;
+    font-weight: 400;
+}
+
+.ativo{
+    color: #40D3FF !important;
+    font-weight: 400;
+
+}
+
+
+.fontSubMenu{
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 400;
+}
+
+#navbar2{
+    padding-top: 25px;
+    padding-bottom:62px;
+}
+
+#navbar2 .nav-link{
+    padding-left: 15px;
+    padding-right: 15px;
+}

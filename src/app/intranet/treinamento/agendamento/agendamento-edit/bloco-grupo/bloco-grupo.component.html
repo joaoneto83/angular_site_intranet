@@ -1,0 +1,19 @@
+<app-box de="#47ecf5" ate="#48bcf7" style="height:200px">
+    <div class="col-md-9 text-center" style="margin: auto auto 30px;">
+        <span class="tituloBoxProduto fontPrincipal fontLight">Grupos</span>
+        <input (keyup)="debounce.next($event.target.value)" class="inputBoxProduto" type="text"
+            placeholder="Buscar Grupos">
+    </div>
+    <ul style="padding-left: 0;list-style-type: none;min-height: 170px; overflow-y: auto; overflow-x: hidden; max-height: 150px"
+        *ngIf="itens">
+        <ng-container *ngFor="let item of itens">
+            <div class="row" style="height: 35px">
+                <li class="boxItens fontSecundaria fontThin col-sm-9">{{item.nomeGrupo}}</li>
+                <div class="col-sm-3">
+                    <a class="btnSelecionar" (click)="selecionar(item.id)">Selecionar</a>
+                </div>
+            </div>
+            <hr style="margin-top:0">
+        </ng-container>
+    </ul>
+</app-box>

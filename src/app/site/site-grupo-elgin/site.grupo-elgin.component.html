@@ -1,0 +1,86 @@
+<div class="banner">
+    <img class="imagem" src="/assets/img/Site/GrupoElgin/banner_grupo.jpg" alt>
+</div>
+
+<div class="container">
+    <label id="tituloGrupo" class="fontPrincipal fontExtraLight" style="font-size: 41px;padding-bottom:60px;">O GRUPO
+        ELGIN</label>
+
+    <div class="row" style="padding-bottom: 60px;">
+        <div class="col-md-6 col-sm-12">
+            <label class="fontSecundaria fontLight" style="font-size: 14px;">
+                A Elgin, em seus mais de 66 anos de história tornou-se uma marca conhecida por sua qualidade, 
+                credibilidade e inovações constantes, sempre com o objetivo de oferecer os melhores produtos aos 
+                seus consumidores. Começando pelo segmento de máquinas de costura, diversificou sua atuação no 
+                mercado brasileiro, e hoje conta com uma enorme variedade de produtos para uso comercial e 
+                residencial nos segmentos de Ar-Condicionado, Automação Comercial, Energia Solar, Escritório,
+                Iluminação, Mídias, Informática, Pilhas e Carregadores, Refrigeração, Segurança e Telefonia.</label>
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <label class="fontSecundaria fontLight" style="font-size: 14px;">
+                Sempre com o foco no bem-estar das pessoas e na preservação ambiental, a Elgin procura agregar em suas 
+                linhas de produtos, atributos sustentáveis que colaboram com as metas de redução de emissão de 
+                poluentes e baixos níveis de consumo de energia. Esse respeito ao cliente não se faz presente apenas 
+                através da qualidade dos produtos oferecidos pela Elgin, mas também pelos serviços de pós-venda, 
+                disponibilizados pelo SAC e por diversas Assistências Técnicas Autorizadas espalhadas pelo Brasil, 
+                que garantem a satisfação de seus usuários e reforçam a confiança adquirida ao longo dos anos.</label>
+        </div>
+    </div>
+</div>
+
+<div style="background: #000;">
+    <div class="container">
+        <div class="row justify-content-center" style="margin-bottom:30px">
+            <div class="col-md-12">
+                <div class="embed-responsive embed-responsive-16by9" style="height:400px">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/0ArUPLFR5rs" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="justify-content-center" id="divMarca" style="margin-bottom:90px;margin-top:90px;">
+    <div class="col-md-12 px-0 text-left" style="position:relative">
+        <div class="divCaixa container">
+            <label class="fontPrincipal fontRegular">A Marca</label><br/>
+            <label class="fontSecundaria fontLight">
+                Mais de 66 anos de<br/>qualidade, confiança e cada<br/>vez mais presente no seu dia<br/>a dia.
+            </label>
+            <br/>
+            <a routerLink="/SaibaMais/Marca" class="btn btn-saiba-mais fontSecundaria fontLight">Saiba+</a>
+        </div>
+        <img class="imagemMarca" src="/assets/img/Site/GrupoElgin/marca.jpg" alt>
+    </div>
+</div>
+
+<div class="container bloco-link">
+    <div class="row justify-content-center" style="margin-bottom:60px; padding:20px;">
+        <div *ngIf="rowsBloco1 && rowsBloco1.length">
+            <div *ngFor="let cols of rowsBloco1" class="row" style="justify-content:center">
+                <div *ngFor="let linksBloco1 of cols">
+                    <app-bloco-link [link]="linksBloco1"></app-bloco-link>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="LinhaTempo" style="padding-bottom:75px;">
+    <app-site-linha-tempo></app-site-linha-tempo>
+</div>
+
+<div class="container">
+    <div class="row justify-content-center" style="margin-bottom:40px; padding:20px;">
+        <div *ngIf="rowsBloco2 && rowsBloco2.length">
+            <div *ngFor="let cols of rowsBloco2" class="row" style="justify-content:center">
+                <div *ngFor="let linksBloco2 of cols">
+                    <app-bloco-link [link]="linksBloco2"></app-bloco-link>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

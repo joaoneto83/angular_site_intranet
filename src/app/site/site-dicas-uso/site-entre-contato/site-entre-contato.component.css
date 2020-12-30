@@ -1,0 +1,57 @@
+a { 
+    color: inherit;
+} 
+
+a label {
+    cursor:pointer !important;
+}
+
+.titulo {
+    font-size: 25px;
+    vertical-align: middle;
+}
+.saibaMais {
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 15px;
+    color: #9F9F9F;
+    border: 1px solid #9F9F9F;
+    border-radius: 18px;
+   
+    background-color: white;
+    margin-top:15px;
+    padding: 5px 40px;
+    
+}
+
+.subtitulo {
+    font-size: 19px;
+}
+
+.texto {
+    font-size: 15px;
+}
+
+.fonteTelefone {
+    font-size: 16px;
+}
+
+.espacamentoTitulo {
+    padding-bottom: 30px;
+}
+
+.bordaDireita{
+    border-right: 1px solid #707070;
+}
+
+.espacamentoItens {
+    padding-top: 30px;
+}
+
+select {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #FFF;
+    width: 100%;
+    margin-left:-10px;
+}

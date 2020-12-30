@@ -1,0 +1,45 @@
+.tabelaTraducao{
+    width: 100%;
+}
+
+.tabelaTraducao td{
+    border: 1px solid #818181;
+    padding: 5px;
+}
+
+.tabelaTraducao td input{
+    border: 0;
+}
+
+.modal-header-traducao{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border: 0;
+}
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #48bcf7;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.modal-content {
+    border-top: 0;
+}
+
+.modelBackdrop {
+    z-index: 1060 !important;
+}
+
+.modal-open {
+    padding: 0 !important;
+}
+
+.divOverflow{
+    max-height: 500px;
+    overflow: auto;
+}

@@ -1,0 +1,54 @@
+#divCaixa{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    padding: 40px  20px 20px 40px;
+}
+
+#divCaixa h1{
+    font-size:30px !important;
+    color: #FFF !important;
+}
+#divCaixa label{
+    font-size:15px !important;
+    color: #FFF !important;
+}
+
+.btn-saiba-mais{
+    color: #FFF !important;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: 11px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 1px 20px;
+}
+
+.btn-saiba-mais:hover{
+    color: #6E6E6E !important;
+    background-color: #FFF;
+}
+
+.alinhaDireita {
+    right: 0 !important;
+}
+
+@media (max-width: 576px){
+
+    #divCaixa h1{
+        font-size: 18px !important;
+    }
+
+    #divCaixa label{
+        font-size: 12px !important;
+        margin-bottom: 2px;
+    }
+
+    #divCaixa{
+        padding: 10px;
+    }
+
+    .btn-saiba-mais{
+        margin-top: 0;
+    }
+}

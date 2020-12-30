@@ -1,0 +1,48 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-nova-tabela container">
+        <div>
+            <label class="tituloModal">Novo Treinamento</label>
+            <button type="button" class="close" aria-label="Close" (click)="close()" style="border:0px;outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <ng-container>
+        <div class="modal-body container">
+            <div class="col-sm-8" style="margin: 0 auto">
+                <form [formGroup]="formTabela" class="col-sm-12" style="margin-top:50px;">
+                    <div class="row" style="padding-left:50px">
+                        <div class="col-sm-12" style="padding-left:0">
+                            <app-custom-input [form]="formTabela" errorMessage="Campo Obrigatório"
+                                label="Nome do Treinamento" labelClass="fontModalNovaTabela" id="nome">
+                                <input class="form-control" formControlName="nome" type="text"
+                                    maxlength="100">
+                            </app-custom-input>
+                        </div>
+                    </div>
+                </form>
+                <div>
+                    <label class="fontModalNovaTabela p-l-50">Arquivos:</label>
+                </div>
+                <div class="divUpload">
+                    <app-upload-file-multiple idPai="dataHora" caminho="treinamentosMerchan" (resposta)="getRespostaArquivo($event)"></app-upload-file-multiple>
+                </div>
+                <div class="p-l-50" *ngIf="listaArquivos.length">
+                    <div>
+                        <label class="fontModalNovaTabela">Arquivos Adicionados:</label>
+                    </div>
+                    <div *ngFor="let arquivo of listaArquivos" class="col-sm-12">
+                        <label class="fontModalNovaTabela" style="font-weight:bold;color:#40beff">{{arquivo.nomeArquivo}}</label>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-sm-12 text-center">
+                        <input class="btn-adc" type="button" value="Criar" (click)="salvar();">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</ng-template>
+
+<input style="margin-bottom: 25px;" type="button" class="btn-adc" (click)="open(content)" value="Novo Treinamento">

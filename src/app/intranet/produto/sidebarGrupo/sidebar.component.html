@@ -1,0 +1,8 @@
+<label class="lblProd fontPrincipal fontLight">Lista de Modelos</label>
+<ul class="ulProduto">
+  <li *ngFor="let sublinha of sublinhas" class="liProduto" (click)="selecionaGrupo(sublinha.id);">
+    <span class="lnkProd fontPrincipal fontLight">
+        {{sublinha.descricao}}
+    </span>   
+  </li>
+</ul>

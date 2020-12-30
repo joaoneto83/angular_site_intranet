@@ -1,0 +1,41 @@
+<nav id="navbarSite" class="navbar navbar-expand-lg navbar-light sticky">
+    <div class="divContainerHeader" style="margin: 0 auto;">
+        <a class="navbar-brand" [routerLink]="['/']" style="padding-top: 12px;">
+            <img class="logoHeaderMini" src="../../assets/img/Elgin_logo_branco.png" alt>
+        </a>
+        <div *ngIf="menus" class="collapse navbar-collapse pull-right" id="navbarSupportedContent"
+            style="padding-top:7px">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link fontPrincipal fontThin fontMenu" [routerLink]="['/Blog']">
+                        Home | Blog
+                    </a>
+                </li>
+                <li *ngFor="let menu of menus" class="nav-item">
+                    <a class="nav-link fontPrincipal fontThin fontMenu" [innerHtml]="menu.nome"
+                        [routerLink]="['/Blog/' + menu.slug]">
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+            <span class="fa fa-bars" style="color: white;"></span>
+        </button>
+    </div>
+</nav>
+<div class="collapse navbar-collapse menuMobile" [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link fontPrincipal fontThin fontMenu" [routerLink]="['/Blog']">
+                Home | Blog
+            </a>
+        </li>
+        <li *ngFor="let menu of menus" class="nav-item">
+            <a class="nav-link fontPrincipal fontThin fontMenu" [innerHtml]="menu.nome"
+                [routerLink]="['/Blog/' + menu.slug]">
+
+            </a>
+        </li>
+    </ul>
+</div>

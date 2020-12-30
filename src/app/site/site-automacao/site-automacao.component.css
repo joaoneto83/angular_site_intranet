@@ -1,0 +1,134 @@
+.divLinks{
+    width: 120px;
+    text-align: center;
+    margin: 0 auto;
+    outline: none;
+}
+
+.divLinks img{
+    padding-bottom: 20px;
+}
+
+.divLinks.redes img{
+    max-height: 86px;
+}
+
+.divLinks *{
+    cursor: pointer;
+}
+
+.espacamento-100{
+    margin-top: 100px;
+}
+
+.display-flex-links{
+    display: flex;
+}
+
+.youtube{
+    padding-top: 10px;
+}
+
+.lblTextoLink{
+    font-size: 15px; 
+    color: #575756
+}
+
+.btnClick{
+    color: #4A4A4A !important;
+    width: 180px;
+    height: 30px;;
+    border: 1px solid #4A4A4A;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 3px 20px;
+    font-family: fontPrincipal;
+    text-transform: uppercase;
+}
+
+.btnClick:hover{
+    color: #FFF !important;
+    background:  #4A4A4A;
+    text-decoration: none;
+}
+
+.conteudoClick{
+    display: flex;
+}
+
+.imgClick{
+    max-height: 98px;
+}
+
+.espacamento-click{
+    padding: 0 30px;
+}
+
+.divImgClick{
+    display: flex;
+    align-items: center;
+}
+
+.divImgClick img{
+    margin-left: auto;
+}
+
+.titulo {
+    font-size: 49px;
+}
+
+.texto {
+    font-size: 21px;
+    margin-top: 20px;
+}
+
+.imgTools {
+    width: 100%;
+}
+
+.tituloClick{
+    font-size: 35px;
+    margin-bottom: .1rem;
+    font-weight: 300;
+}
+
+.subtituloClick{
+    font-size: 22px;
+    margin-bottom: 1.5rem;
+}
+
+@media (max-width: 575px) {
+    .display-flex-links{
+        display: contents;
+    }
+
+    .espacamento-100{
+        margin-top: 80px;
+    }
+
+    .divRotas .divLinks{
+        width: 150px;
+    }
+
+    .divLinks{
+        padding-bottom: 10px;
+    }
+
+    .youtube{
+        padding-top: 6px;
+    }
+
+    .youtube img{
+        padding-bottom: 26px;
+    }
+
+    .imgClick{
+        margin: auto;
+    }
+
+    .divTextoClick{
+        text-align: center;
+        padding: 20px 15px 0;
+    }
+}

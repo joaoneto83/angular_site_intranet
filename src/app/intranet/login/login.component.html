@@ -1,0 +1,71 @@
+<app-site-header [linhas]="linhas" [headerAutomacao]="false"></app-site-header>
+
+<div class="body centerVertical">
+    <!-- <div class="imagem justify-content-center text-center">
+        <img src="/assets/img/Elgin_logo_branco.png">
+    </div> -->
+    <div class="container">
+        <div *ngIf="passo == 1" class="justify-content-center text-center">
+            <form [formGroup]="formLogin" class="form">
+                <div class="titulo">
+                    Área Restrita
+                </div>
+                <div class="form-group" [class.has-danger]="hasErrorLogin('login')">
+                    <input formControlName="login" (keydown.enter)="login()" type="text" class="inputUsuario inputTexto"
+                        placeholder="CPF">
+                </div>
+                <div class="form-group" [class.has-danger]="hasErrorLogin('senha')">
+                    <input formControlName="senha" (keydown.enter)="login()" type="password"
+                        class="inputSenha inputTexto" placeholder="Senha">
+                </div>
+                <div>
+                    <input (click)="login()" type="button" class="btnLogin" value="Entrar">
+                </div>
+                <div (click)="recuperarSenha()" class="recuperarSenha">
+                    Recuperar Senha
+                </div>
+            </form>
+        </div>
+        <div *ngIf="passo == 2" class="justify-content-center text-center">
+            <form [formGroup]="formResetar" class="form">
+                <div class="titulo">
+                    Recuperar Senha
+                </div>
+                <!-- <div>
+                <input type="text" class="inputTexto" placeholder="E-mail Cadastrado">
+            </div> -->
+                <div class="form-group" [class.has-danger]="hasErrorResetar('codigo')">
+                    <input formControlName="codigo" (keydown.enter)="enviarCodigo()" type="text" class="inputTexto"
+                        placeholder="Código Recebido">
+                </div>
+                <div>
+                    <input (click)="enviarCodigo()" type="button" class="btnLogin" value="Enviar">
+                </div>
+                <div (click)="cancelar()" class="recuperarSenha">
+                    cancelar
+                </div>
+            </form>
+        </div>
+        <div *ngIf="passo == 3" class="justify-content-center text-center">
+            <form [formGroup]="formNovaSenha" class="form">
+                <div class="titulo">
+                    Recuperar Senha
+                </div>
+                <div class="form-group" [class.has-danger]="hasErrorNovaSenha('password')">
+                    <input formControlName="password" type="password" class="inputTexto" placeholder="Nova Senha"
+                        minlength="6">
+                </div>
+                <div class="form-group" [class.has-danger]="hasErrorNovaSenha('confirmPassword')">
+                    <input formControlName="confirmPassword" type="password" class="inputTexto"
+                        placeholder="Confirma a Senha">
+                </div>
+                <div>
+                    <input (click)="alterarSenha()" type="button" class="btnLogin" value="Alterar">
+                </div>
+                <div (click)="cancelar()" class="recuperarSenha">
+                    cancelar
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,145 @@
+.footer {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  background-image: url(~/assets/img/Site/Footer/footer.jpg);
+  padding: 40px;
+  margin-top: 120px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tituloFooter {
+  font-family: fontPrincipal;
+  font-weight: 400;
+  color: #818181;
+  padding-bottom: 10px;
+  padding-top: 30px;
+  font-size: 12px;
+}
+
+.fontLateral {
+  font-size: 12px;
+}
+
+.itensFooter {
+  font-family: fontPrincipal;
+  color: #818181;
+  font-weight: 200;
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  font-size: 12px;
+}
+.itensFooter:hover {
+  font-weight: 400;
+  cursor: pointer;
+}
+.img-icon-footer {
+  padding-top: 5px;
+  cursor: pointer;
+}
+
+.finalFooter {
+  margin-top: 20px;
+  font-family: fontPrincipal;
+  font-weight: 400;
+  color: #818181;
+  text-align: center;
+}
+
+.tituloLinkFooter:hover {
+  cursor: pointer;
+}
+.iconesSociais {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.coluna-linha {
+  width: 180px;
+}
+
+@media (max-width: 768px) {
+  .img-logo-footer {
+    max-width: 85px !important;
+  }
+
+  .footer {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 424px) {
+  .colSmart-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .imgLogofooter {
+    display: none;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 574px) {
+  .colSmart-12 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .colLast {
+    position: absolute;
+    left: 0;
+    top: 385px;
+  }
+  .imgLogofooter {
+    display: none;
+  }
+}
+
+
+@media (min-width: 575px) and (max-width: 767px) {
+  .imgLogofooter {
+    display: none;
+  }
+  .colSmart-12 {
+    flex: 0 0 33%;
+    max-width: 33%;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    margin-top: 0;
+  }
+  .img-logo-footer {
+    max-width: 100px !important;
+  }
+
+  .coluna-linha {
+    padding-left: 0px;
+  }
+}
+
+@media (min-width: 576px) {
+  
+}
+
+@media (min-width: 768px) {
+  .coluna-linha {
+    width: 45%;
+    margin: 0 2%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .coluna-linha {
+    width: 22%;
+    margin: 0 5%;
+  }
+}
+
+@media (min-width: 992px) {
+  .coluna-linha {
+    width: 22%;
+    margin: 0 5%;
+  }
+}
+

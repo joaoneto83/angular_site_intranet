@@ -1,0 +1,87 @@
+label.fontPrincipal{ 
+    font-size: 40px;
+    color: #fff;
+}
+
+.textCentered {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    text-align: center;
+    line-height: 50px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+label.fontSecundaria{
+    color: #222;
+    padding-bottom:20px;
+}
+
+.banner{
+    position: relative;
+    text-align: right !important;
+    color: white;
+    padding-bottom: 50px;
+}
+
+.imagem{
+    width: 100%;
+}
+
+.control-label{
+    font-size: 16px;
+    font-weight: 200;
+    color: #747474;
+    padding-top:20px; 
+}
+
+.btnEnviar{
+    color: #005EB8 !important;
+    width: 220px;
+    height: 40px;;
+    border: 1px solid #005EB8;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top:30px;
+    background-color: white;
+    font-family: fontPrincipal;
+}
+
+a {
+    color: #1f98ff;
+}
+
+@media (max-width: 768px){
+    label.fontPrincipal{
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .textCentered{
+        top:35%;
+    }
+}
+
+@media (max-width: 576px){
+
+    label.fontPrincipal br{
+        display:none
+    }
+
+    .textCentered{
+        top: 45%;
+    }
+
+    .imagemBanner{
+        display:none;
+       
+    }
+
+    .banner{
+        background-image: url('/assets/img/Site/SejaAssistenciaTecnica/banner_seja_assistencia.jpg');
+        height: 150px;
+        background-position-x: 40%;
+        margin-bottom: 50px;
+    }
+}

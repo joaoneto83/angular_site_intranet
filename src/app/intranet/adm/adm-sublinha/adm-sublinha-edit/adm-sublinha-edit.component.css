@@ -1,0 +1,71 @@
+.tituloSublinha{
+    font-size: 23px;
+}
+
+.mat-expansion-panel{
+    border: 1px solid #ddd;
+}
+
+.divSalvar{
+    margin-top:25px; 
+    position: sticky; 
+    background-color: white; 
+    bottom:0px; 
+    padding-bottom: 20px;
+    z-index: 1000;
+    text-align: center;
+}
+
+.img-exemplo{
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+}
+
+.checkBox{
+    margin: 7px 7px 7px 0;
+}
+
+.divCheckbox{
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    padding: 0 15px;
+}
+
+.img-exemplo-banner{
+    width: 100%;
+}
+
+.fontArquivo{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 16px;
+    color: #222;    
+    margin-bottom: 0;
+}
+
+.fontAbreImagem{
+    margin-top: 8px;
+    font-family: fontPrincipal;
+    font-weight: 500;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.fontAbreImagem span{
+    color: #40beff;
+}
+
+::ng-deep .modal{
+    z-index: 1080;
+}
+
+::ng-deep .modal-lg{
+    max-width: 100%;
+    top:75px;
+}
+
+::ng-deep .modal-content{
+    border-radius: 0;
+}

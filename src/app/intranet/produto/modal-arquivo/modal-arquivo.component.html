@@ -1,0 +1,71 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-arquivo container">
+        <div>
+            <label *ngIf="!isEditar; else labelEditar" class="tituloModal">Adicionar Arquivo</label>
+            <ng-template #labelEditar>
+                <label class="tituloModal">Editar Arquivo</label>
+            </ng-template>
+            <ng-template #labelEditar>
+                <label class="tituloModal">Adicionar Icone</label>
+            </ng-template>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"
+                style="border:0px;outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <ng-container>
+        <div class="modal-body container">
+            <form [formGroup]="formArquivo" class="col-sm-12">
+                <div class="row" style="padding-left:50px;">
+                    <div class="col-sm-5" style="padding-left:0 !important">
+                        <app-custom-input [form]="formArquivo" errorMessage="Campo Obrigatório" label="Nome" labelClass="fontModalArquivo"
+                            id="nomeArquivo">
+                            <input class="inputBox" formControlName="nomeArquivo" type="text" maxlength="150">
+                        </app-custom-input>
+                    </div>
+                    <div class="col-sm-5" >
+                        <app-custom-input [form]="formArquivo" errorMessage="Campo Obrigatório" label="Alt" labelClass="fontModalArquivo"
+                            id="nomeArquivo">
+                            <input class="inputBox" formControlName="alt" type="text" maxlength="150">
+                        </app-custom-input>
+                    </div>
+                    <!-- <div class="col-sm-5">
+                        <input label="ALT" class="inputBox" > -->
+                        <!-- <app-custom-input  > -->
+                            
+                            <!-- [form]="formArquivo" errorMessage="Campo Obrigatório"   labelClass="fontModalArquivo" id="ordem" formControlName="ordem" type="text" -->
+                        <!-- </app-custom-input> -->
+                    <!-- </div> -->
+                    <div class="col-sm-2">
+                        <app-custom-input [form]="formArquivo" errorMessage="Campo Obrigatório" label="Ordem" labelClass="fontModalArquivo" id="ordem">
+                            <input class="inputBox" formControlName="ordem" type="number">
+                        </app-custom-input>
+                    </div>
+                </div>
+            </form>
+            <div>
+                <label class="fontModalArquivo p-l-50">Arquivo:</label>
+            </div>
+            <div class="divUpload">
+                <app-upload-file [idPai]="idProduto" caminho="imgCard" (resposta)="getRespostaArquivo($event)"></app-upload-file>
+            </div>
+            <div *ngIf="mostrarBotao" class="row">
+                <div class="col-sm-12 text-center">
+                    <input *ngIf="!mostrarBotaoCaract" class="btn-adc" type="button" value="Salvar" (click)="adicionar();">
+                    <input *ngIf="mostrarBotaoCaract" class="btn-adc" type="button" value="Salvar" (click)="adicionarCaract();">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <div *ngIf="preencherCampos" class="fontPrincipal text-center" style="padding:5px;">
+        Preencha todos os campos!
+    </div>
+</ng-template>
+
+
+<a *ngIf="!isEditar; else botaoEditar" class="pull-right adc-arquivo" (click)="open(content)"><i
+        class="fas fa-plus"></i></a>
+<ng-template #botaoEditar>
+    <a (click)="open(content)"><i class="iconeAdcArquivo fas fa-pen"></i></a>
+</ng-template>

@@ -1,0 +1,81 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-edit-documentos">
+        <div class="row">
+            <div class="col-sm-12">
+                <label class="tituloModal">Documentos</label>
+                <button type="button" class="close" aria-label="Close" (click)="close()"
+                    style="border:0px;outline: 0px;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6" style="margin: 0 auto">
+                <label class="labelTreinamento">Linha</label>
+                <select class="form-control" [(ngModel)]="model.idLinha" (change)="carregarSubLinha($event.target.value)">
+                    <option value="">- Selecione a Linha -</option>
+                    <option *ngFor="let linha of linhas" [value]="linha.id">
+                        {{linha.nomeLinha | titlecase}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-sm-6" style="margin: 0 auto">
+                <label class="labelTreinamento">Sub Linha</label>
+                <select class="form-control" [(ngModel)]="model.idSublinha"
+                    (change)="carregarProdutos($event.target.value)">
+                    <option value="">- Selecione a Categoria -</option>
+                    <option *ngFor="let subLinha of subLinhas" [value]="subLinha.id">
+                        {{subLinha.nomeSubLinha | titlecase}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-sm-12" style="margin-top: 15px;">
+                <label class="labelTreinamento">Produto</label>
+                <select class="form-control" [(ngModel)]="model.idProduto"
+                (change)="selecionaProduto($event.target.value)">
+                    <option value="">- Selecione o Produto -</option>
+                    <option *ngFor="let produto of produtos" [value]="produto.id">
+                        {{produto.nomeProduto | titlecase}}
+                    </option>
+                </select>
+            </div>
+            <div class="col-sm-12 text-center" style="margin-top: 15px;">
+                <input type="radio" name="tipo" id="tipoArquivo" [(ngModel)]="tipo" value="A">
+                <label class="labelTreinamento" for="tipoArquivo" style="margin-right: 30px;">Arquivo</label>
+                <input class="labelTreinamento" type="radio" name="tipo" id="tipoVideo" [(ngModel)]="tipo" value="V">
+                <label for="tipoVideo">Vídeo</label>
+            </div>
+            <ng-container *ngIf="tipo == 'A'">
+                <div class="col-sm-12">
+                    <app-upload-file-multiple [idPai]="idPai" caminho="treinamento" (resposta)="getRespostaArquivo($event)"></app-upload-file-multiple>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="tipo == 'V'">
+                <div class="col-sm-12">
+                    <label class="labelTreinamento" style="margin-right: 10px;">Código do Vídeo</label>
+                    <input type="text" style="margin-right: 10px;" [(ngModel)]="codigoVideo">
+                    <input type="button" class="addVideo" (click)="addVideo()" value="Adicionar">
+                </div>
+            </ng-container>
+            <div class="col-sm-12" *ngIf="model.arquivos.length" style="margin-top: 15px;">
+                <div>
+                    <label class="labelTreinamento">Documentos Adicionados:</label>
+                </div>
+                <div *ngFor="let arq of model.arquivos; let i = index" class="col-sm-12">
+                    <label class="fontModalNovaTabela"
+                        style="font-weight:bold;color:#48bcf7">{{arq.nomeArquivo}}</label>
+                    <a class="btn-excluir" title="Excluir arquivo" (click)="excluirArquivo(i)">
+                        &nbsp;<i class="fas fa-times"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-sm-12 botoes text-center">
+                <input class="btn-adc" type="button" value="Salvar" (click)="salvar();">
+            </div>
+        </div>
+    </div>
+</ng-template>

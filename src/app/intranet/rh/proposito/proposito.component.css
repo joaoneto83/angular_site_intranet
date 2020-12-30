@@ -1,0 +1,19 @@
+.fontTituloPropositoDetalhe{
+    padding-bottom: 25px;
+    color: #59c2f1 !important;
+    text-align: center;
+    font-size: 41px;
+}
+
+.fontCorpoProposito {
+    text-align: justify;
+    font-size: 18px;
+}
+
+.voltar{
+    font-family: fontPrincipal;
+    font-size: 15px;
+    font-weight: 200;
+    margin-bottom: 40px;
+    cursor: pointer;
+}

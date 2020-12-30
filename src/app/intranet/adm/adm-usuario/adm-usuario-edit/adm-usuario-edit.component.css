@@ -1,0 +1,27 @@
+.foto{
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    border: 0.5 solid #fff;
+}
+
+.checkBox{
+    margin: 7px 7px 7px 0;
+}
+
+.divCheckbox{
+    display: flex;
+}
+
+.depend{
+    margin-bottom: 16px;
+}
+
+.excluirDepend{
+    width: 100%;
+    cursor: pointer;
+    padding-right: 15px;
+    text-align: right;
+}

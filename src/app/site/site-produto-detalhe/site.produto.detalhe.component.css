@@ -1,0 +1,48 @@
+.sticky {
+  display: none !important;
+}
+
+body {
+  font-family: fontPrincipal;
+}
+
+.breadcumbs {
+  padding-top: 25px;
+  font-family: fontPrincipal;
+  font-size: 12px;
+  font-weight: 400;
+  color: #777;
+}
+
+.breadcumbs label {
+  cursor: pointer;
+}
+
+.breadcumbs .separado {
+  padding: 0 10px;
+}
+
+.breadcumbs .selecionado {
+  color: #005e93;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .comparativo {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  #divDownloadCenter,
+  #divCaracteristicas {
+    margin-top: 40px;
+  }
+}
+@media (min-width: 1380px) {
+  .container.containerDeskFull {
+    min-width: 1300px;
+    max-width: 1300px;
+  }
+
+}

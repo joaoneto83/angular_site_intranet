@@ -1,0 +1,23 @@
+<div *ngIf="secao" class="container p-b-90">
+    <div class="divConteudoImagemEsquerda">
+        <div *ngIf="secao.arquivos && secao.arquivos.length" class="divImgEsquerda text-right">
+            <div *ngIf="!linqueImagem"><img *ngIf="secao.arquivos[0].caminho" id="img-secao-esquerda" [src]="secao.arquivos[0].caminho" alt></div>
+            <a *ngIf="linqueImagem" href="{{ linqueImagem }}" target="_blank"><img *ngIf="secao.arquivos[0].caminho" id="img-secao-esquerda" [src]="secao.arquivos[0].caminho"></a>
+            <div class="text-center" style="padding-top:10px;">
+                <span class="fontSecundaria" style="font-size:15px">{{secao.arquivos[0].nomeArquivo}}</span>
+            </div>
+        </div>
+        <div class="divLabelImagemEsquerda">
+            <div class="divTextoImagemEsquerda">
+                <animate-box axis="X" position="-80" delay="0">
+                    <h1 *ngIf="secao.texto1" class="tituloEsquerda fontPrincipal fontRegular" [innerHtml]="secao.texto1">
+                    </h1>
+                    <h4 *ngIf="secao.texto2" class="fontPrincipal fontLight" style="font-size:20px" [innerHtml]="secao.texto2">
+                    </h4>
+                    <label *ngIf="secao.texto3" class="fontPrincipal fontLight" style="font-size:16px" [innerHtml]="secao.texto3">
+                    </label>
+                </animate-box>
+            </div>
+        </div>
+    </div>
+</div>

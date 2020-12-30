@@ -1,0 +1,79 @@
+<div class="banner">
+    <img class="imagem imagemBanner" src="/assets/img/Site/SejaAssistenciaTecnica/banner_seja_assistencia.jpg">
+    <label class="fontPrincipal textCentered fontExtraLight m-0">Quero Comprar</label>
+</div>
+<div class="container">
+    <label class="fontSecundaria fontLight">
+        A Elgin divisão automação, tem um portfólio completo para a sua empresa. Fale com a gente e descubra a solução certa pra você. Preencha o formulário abaixo ou envie um e-mail para <a href="mailto:automacao@elgin.com.br">automacao@elgin.com.br</a>
+    </label>
+    
+    <form [formGroup]="form" style="padding-top: 60px;">
+        <div class="row">
+            <div class="col-md-6">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Razão Social" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="razaoSocial" type="text">
+                </app-site-custom-input>
+            </div>
+            <div class="col-md-6">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Nome Fantasia" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="nomeFantasia" type="text">
+                </app-site-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Cidade" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="cidade" type="text">
+                </app-site-custom-input>
+            </div>
+            <div class="col-md-2">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Estado" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="estado" type="text">
+                </app-site-custom-input>
+            </div>
+            <div class="col-md-4">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Endereço" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="endereco" type="text">
+                </app-site-custom-input>
+            </div>
+            <div class="col-md-2">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="CEP" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="cep" type="text">
+                </app-site-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Telefone" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="telefone" type="text">
+                </app-site-custom-input>
+            </div>
+            <div class="col-md-3">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Celular" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="celular" type="text">
+                </app-site-custom-input>
+            </div>
+            <div class="col-md-3">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="E-mail" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="email" type="text">
+                </app-site-custom-input>
+            </div>
+            <div class="col-md-3">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="CNPJ" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="cnpj" type="text" mask='00.000.000/0000-00'>
+                </app-site-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Descrição da Área de Atuação da sua Empresa" labelClass="control-label fontSecundaria fontLight">
+                    <textarea class="form-control" formControlName="descricao" rows="4" cols="50"
+                        style="resize: none;"></textarea>
+                </app-site-custom-input>
+            </div>
+        </div>
+        <div class="text-center">
+            <input (click)="salvar();" type="button" class="btnEnviar" value="Enviar Solicitação">
+        </div>
+    </form>
+</div>

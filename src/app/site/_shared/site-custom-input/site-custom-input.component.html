@@ -1,0 +1,18 @@
+<div class="form-group" [class.has-success]="hasSuccess()"
+                        [class.has-danger]="hasError()">
+  <ng-container *ngIf="!translate; else traduz">
+    <label class="control-label" [className]="labelClass" for="inputSuccess">{{label}}</label> 
+  </ng-container>
+  <ng-template #traduz>
+    <label class="control-label" [className]="labelClass" for="inputSuccess">
+      {{label | translate}}
+      <ng-container *ngIf="obrigatorio">
+        *
+      </ng-container>
+    </label> 
+  </ng-template>
+  <span *ngIf="obrigatorio && !translate" class="text-muted"> (obrigátorio)</span>
+  <ng-content></ng-content>
+
+  <!-- <span class="form-control-feedback" *ngIf="hasError()"><i class="fa fa-remove"></i> {{errorMessage}}</span> -->
+</div>

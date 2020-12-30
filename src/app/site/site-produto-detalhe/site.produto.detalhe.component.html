@@ -1,0 +1,89 @@
+<div class="container containerDeskFull p-b-60">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="breadcumbs">
+                <label [routerLink]="['/']">Home</label>
+                <label class="separado">/</label>
+                <ng-container *ngIf="produto.codigoLinha != 'Refrigeracao'; else refriTraduzida">
+                    <label [routerLink]="['/Produtos/'+ produto.codigoLinha + '/' + produto.codigoSublinha]">
+                        {{produto.nomeLinha}}
+                    </label>
+                </ng-container>
+                <ng-template #refriTraduzida>
+                    <label [routerLink]="['/Produtos/'+ produto.codigoLinha + '/' + produto.codigoSublinha]">
+                        {{produto.codigoLinha | translate}}
+                    </label>
+                </ng-template>
+                <label class="separado">/</label>
+                <label
+                    [routerLink]="['/Produtos/'+ produto.codigoLinha + '/' + produto.codigoSublinha]">{{produto.nomeSublinha}}</label>
+                <label class="separado">/</label>
+                <label class="selecionado">{{produto.nomeProduto}}</label>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-container *ngIf="produto.secoesProduto">
+    <div *ngFor="let secao of produto.secoesProduto | orderBy: 'ordem' ">
+        <app-site-secao-parallax *ngIf="secao.codigoSecao == 'secaoParallax'" [secao]="secao"></app-site-secao-parallax>
+        <app-site-secao-imagem-carrossel *ngIf="secao.codigoSecao == 'secao1'" [secao]="secao">
+        </app-site-secao-imagem-carrossel>
+        <app-site-secao-banner
+            *ngIf="secao.codigoSecao == 'secao2' || secao.codigoSecao == 'secao14'|| secao.codigoSecao == 'secao15'|| secao.codigoSecao == 'secao3'"
+            [secao]="secao">
+        </app-site-secao-banner>
+        <app-site-secao-icones *ngIf="secao.codigoSecao == 'secao4'" [secao]="secao"></app-site-secao-icones>
+        <app-site-secao-imagem-esquerda *ngIf="secao.codigoSecao == 'secao5'" [secao]="secao">
+        </app-site-secao-imagem-esquerda>
+        <app-site-secao-imagem-direita *ngIf="secao.codigoSecao == 'secao6'" [secao]="secao">
+        </app-site-secao-imagem-direita>
+        <app-site-secao-videos-com-titulo *ngIf="secao.codigoSecao == 'secao16'" [secao]="secao">
+        </app-site-secao-videos-com-titulo>
+        <app-site-secao-video *ngIf="secao.codigoSecao == 'secao7'" [secao]="secao"></app-site-secao-video>
+        <app-site-secao-video *ngIf="secao.codigoSecao == 'secao8'" [secao]="secao"></app-site-secao-video>
+        <app-site-secao-imagem-baixo *ngIf="secao.codigoSecao == 'secao9'" [secao]="secao">
+        </app-site-secao-imagem-baixo>
+
+        <!--Novas seções-->
+        <app-site-secao-imagem-baixo-icones-laterais *ngIf="secao.codigoSecao == 'secao10'" [secao]="secao">
+        </app-site-secao-imagem-baixo-icones-laterais>
+        <app-site-secao-imagem-esquerda-icones-direita *ngIf="secao.codigoSecao == 'secao11'" [secao]="secao">
+        </app-site-secao-imagem-esquerda-icones-direita>
+        <app-site-secao-imagem-direita-icones-esquerda *ngIf="secao.codigoSecao == 'secao12'" [secao]="secao">
+        </app-site-secao-imagem-direita-icones-esquerda>
+        <app-site-secao-titulo-icones *ngIf="secao.codigoSecao == 'secao13'" [secao]="secao">
+        </app-site-secao-titulo-icones>
+
+    </div>
+    <!-- <div id="divAssistenciaTecnica" style="height: 100px;">
+        divAssistenciaTecnica
+    </div> -->
+</ng-container>
+<div class="container">
+    <div class="row">
+        <div id="divEspecificacoes" class="col-md-4">
+            <app-site-especificacoes-tecnicas [especificacoesTecnicas]="produto.especificacoesTecnicas"
+                [modelos]="produto.modelos">
+            </app-site-especificacoes-tecnicas>
+        </div>
+        <div id="divCaracteristicas" class="col-md-4">
+            <app-site-caracteristicas [caracteristicas]="produto.caracteristicas"></app-site-caracteristicas>
+        </div>
+        <div id="divDownloadCenter" class="col-md-4">
+            <app-site-download-center-produto
+                [arquivos]="produto.arquivos | FiltraPorTipoArquivo : ['manual','certificado']">
+            </app-site-download-center-produto>
+        </div>
+    </div>
+    <div id="divAssistenciaTecnica" style="height: 100px;">
+    </div>
+
+    <!--Primeiro nivel-->
+    <div id="divCompararProduto" class="row comparativo primeiroNivel">
+        <div class="col-sm-12 segundoNivel">
+            <app-site-comparativo [mostraCombo]="true" [classificacoes]="filtrosComparativo"
+                [especificacoes]="especificacoes" [produtos]="produtos">
+            </app-site-comparativo>
+        </div>
+    </div>
+</div>

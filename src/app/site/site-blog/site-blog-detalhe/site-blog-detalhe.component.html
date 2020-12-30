@@ -1,0 +1,28 @@
+<div *ngIf="postagem" class="postagem">
+    <!-- <div class="row">
+            <div class="col-md-2 d-none d-md-block">
+                <app-site-detalhe-categorias></app-site-detalhe-categorias>
+            </div>
+            <div class="col-md-12"> -->
+    <!-- <div class="postContainer voltar">
+            <span [routerLink]="['/Blog']">&#60; Voltar</span>
+        </div> -->
+    <div class="postContainer">
+        <h1 style="font-size:41px;" class="text-center fontPrincipal fontRegular postTitle"
+            [innerHtml]="postagem.titulo.rendered">
+        </h1>
+        <!-- <div class="row" id="tag-detalhe" *ngIf="postagem.tags">
+                    <ng-container *ngFor="let tag of postagem.tags">
+                        <span class="tags-detalhe fontPrincipal fontLight">{{tag}}</span>
+                    </ng-container>
+                </div> -->
+        <div  id="conteudoHtml" class="fontPrincipal fontLight" [innerHTML]="postagem.content.rendered">
+        </div>
+        <div class="voltar text-right">
+            <span [routerLink]="['/Blog']">&#60; Voltar</span>
+        </div>
+        <app-site-blog-relacionados [relacionados]="relacionados"></app-site-blog-relacionados>
+        <!-- </div>
+            </div> -->
+    </div>
+</div>

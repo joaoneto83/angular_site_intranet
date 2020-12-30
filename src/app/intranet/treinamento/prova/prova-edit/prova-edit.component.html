@@ -1,0 +1,91 @@
+<app-submenu-treinamento></app-submenu-treinamento>
+<div class="container" style="padding-bottom:50px">
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Treinamentos/ListaProvas']">&#60; Voltar</span>
+        </div>
+    </div>
+    <div class="row">
+        <form [formGroup]="formProva" class="col-sm-12" style="margin-top:20px;">
+            <div class="row">
+                <div class="col-sm-10">
+                    <app-custom-input [form]="formProva" errorMessage="Campo Obrigatório" label="Nome da Prova"
+                        labelClass="control-label fontSecundaria" id="nome">
+                        <input class="form-control" formControlName="nome" type="text" maxlength="100">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label class="control-label fontSecundaria">Ativo</label><br />
+                        <input type="checkbox" formControlName="ativo">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-custom-input [form]="formProva" errorMessage="Campo Obrigatório" label="Descrição"
+                        labelClass="control-label fontSecundaria" id="descricao">
+                        <input class="form-control" formControlName="descricao" type="text" maxlength="50">
+                    </app-custom-input>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <label class="control-label fontSecundaria">Tipo de Prova</label>
+            <div class="row">
+                <div class="col-md-2">
+                    <input (change)="verificarCampo($event)" class="check-especial" type="checkbox" id="rbProduto"
+                        [(ngModel)]="isProduto" />
+                    <label class="control-label fontSecundaria" for="rbProduto">Produto</label>
+                </div>
+                <div class="col-md-2">
+                    <input (change)="verificarCampo($event)" class="check-especial" type="checkbox" id="rbLinha"
+                        [(ngModel)]="isLinha" />
+                    <label class="control-label fontSecundaria" for="rbLinha">Linha</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6" id="divLinha" [ngClass]="{'hide': !isLinha}">
+            <label class="">Linha</label>
+            <select [(ngModel)]="prova.idLinha" class="form-control">
+                <option value="">- Selecione a Linha -</option>
+                <option *ngFor="let linha of linhas" [value]="linha.id">
+                    {{linha.nomeLinha | titlecase}}
+                </option>
+            </select>
+        </div>
+        <div class="col-sm-6" id="divLinha" [ngClass]="{'hide': !isProduto}">
+            <ng-template #content let-modal>
+                <app-bloco-produto (produto)="retornaProduto($event)" [idProduto]="prova.idProduto"></app-bloco-produto>
+            </ng-template>
+            <label class="">Produto</label><br/>
+            <ng-container *ngIf="!prova.idProduto">
+                <button class="btn-adc" (click)="open(content)">Selecionar Produto</button>
+            </ng-container>
+            <ng-container *ngIf="prova.idProduto">
+                    <i class="far fa-times-circle" style="color:red;cursor: pointer;" (click)="removerProduto()"></i> {{prova.nomeProduto}}
+            </ng-container>
+
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 20px">
+        <div class="col-sm-12">
+            <label class="control-label fontSecundaria" style="font-size:17px">Questão</label>
+            <hr style="margin-top: 0">
+            <app-cadastro-questao [idProva]="prova.id" [questoes]="prova.questoes"></app-cadastro-questao>
+        </div>
+    </div>
+
+    <div class="col-md-12 text-center" style="margin-top: 20px;">
+        <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Treinamentos/ListaProvas']">&#60; Voltar</span>
+        </div>
+    </div>
+</div>

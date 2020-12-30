@@ -1,0 +1,17 @@
+export interface FormularioCompra{
+    nomeCompleto: string,
+    endereco: string,
+    numero: string,
+    cep: string,
+    cidade: string,
+    estado: string,
+    bairro: string,
+    telefone: string,
+    email: string,
+    cpf: string,
+    rg: string,
+    isPessoaFisica: boolean,
+    razaoSocial: string,
+    cnpj: string,
+    inscricaoEstadual: string,
+}

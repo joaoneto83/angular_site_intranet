@@ -1,0 +1,22 @@
+<app-box de="#3FEFFC" ate="#1579DE">
+    <span class="fontPrincipal fontExtraLight titulo" style="padding-left:40px;">{{titulo}}</span>
+    <a [showIfAdmin]="perfilAdmin" class="btn-add-aviso" (click)="open()"><i class="fas fa-plus"></i></a>
+    <app-edit-aviso #modalAviso (reload)="atualiza()"></app-edit-aviso>
+    <hr>
+    <ul>
+        <ng-container *ngFor="let item of itens | FiltraPorTipoAviso: codigoTipoAviso">
+            <li class="fontPrincipal fontLight">
+                <div class="row">
+                    <div (click)="verAviso(item.id)" class="col-sm-9 descricao-item" style="padding-left:55px;cursor:pointer">
+                        {{item.titulo}}
+                    </div>
+                    <div class="col-sm-3" style="text-align:right;">
+                        <span class="data-item" style="padding-right:40px;"> {{item.dataAviso | date: 'dd.MM.yyyy'}} </span>
+                        <a [showIfAdmin]="perfilAdmin" class="btn-edit-aviso" (click)="editAviso(item)"><i class="fas fa-pen"></i></a>
+                    </div>
+                </div>
+            </li>
+            <hr>
+        </ng-container>
+    </ul>
+</app-box>

@@ -1,0 +1,14 @@
+<app-descricao-caminho menu="RH" pagina="Elgin News" corPagina="#00008b"></app-descricao-caminho>
+<div>
+    <div class="container">
+        <app-modal-editar-elginnews  showIfAdmin="RH_EDICAO" (recarregar)="retornaCarregamento()"></app-modal-editar-elginnews>
+        <div class="">
+            <app-titulo-categoria  cor="#3FEFFC" de="#3FEFFC" ate="#1579DE" [titulo]="tituloPagina"></app-titulo-categoria>
+            <div class="row mb-3">
+                <div *ngFor="let item of elginNews" class="col-md-3 col-sm-6 margem-topo">
+                    <app-card-news [itens]="item" (recarregar)="retornaCarregamento()"></app-card-news>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+::ng-deep .submenuSubLinha .card {
+    border-radius: 0;
+    background-color: transparent;
+    border: 0;
+    word-wrap: normal;
+    
+  }
+
+::ng-deep .submenuSubLinha .card-header {
+    background-color: transparent;
+    text-align: left;
+    word-wrap: normal;
+    border: 0;
+    padding: 0;
+}
+
+::ng-depp .submenuSubLinha .card-body{
+    padding: 0px;
+}
+
+::ng-deep .submenuSubLinha .btn-link{
+
+    font-size: 16px;
+    font-family: fontPrincipal;
+    font-weight: 300;
+    word-wrap: normal;
+    word-break: keep-all;
+}
+
+.liSublinha{
+    line-height: 15px;
+    padding: 0 0 15px;
+}
+.ulSublinha{
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebarLinha{
+    font-size: 15px;
+}
+
+.aSidebar{
+    font-size: 14px;
+}
+
+.mat-expanded span{
+    color: #77dffe;
+    font-weight: 500;
+}
+
+.mat-expansion-panel-spacing {
+    margin: 0 0;
+}
+
+::ng-deep .submenuSubLinha .mat-expansion-panel-body
+{
+    padding: 0 24px !important;
+}
+
+::ng-deep .submenuSubLinha .mat-expansion-panel{
+    border-bottom: 1px solid #e9e9e9;
+    border-radius: 0px;
+    color: #7E7E7E;
+}

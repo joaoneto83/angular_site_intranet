@@ -1,0 +1,7 @@
+<div class="" *ngIf="rows && rows.length" style="margin-bottom: 5%;">
+    <div *ngFor="let cols of rows " class="row" style="margin-bottom: 30px;">
+        <div *ngFor="let produto of cols | orderBy: 'ordem'" class="col-xl-4 col-lg-6 col-md-12 col-sm-12 p-t-1 divCardProduto">
+      <app-site-card-produtos [produto]="produto"></app-site-card-produtos>
+        </div>
+    </div>
+</div>

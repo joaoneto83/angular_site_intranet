@@ -1,0 +1,9 @@
+<div style="max-width: 550px;position:relative">
+    <div id="divCaixa" [ngClass]="{'alinhaDireita': link.alinhaDireita}" 
+    [style.background-color]="link.cor" [style.opacity]="link.transparencia">
+        <h1 class="fontPrincipal fontRegular">{{link.titulo}}</h1>
+        <label class="fontSecundaria fontLight">{{link.descricao}}</label>
+        <a [routerLink]="link.link" class="btn btn-saiba-mais fontSecundaria fontLight">Saiba+</a>
+    </div>
+    <img style="width:100%;" [src]="link.urlImagem" alt="Category" alt>
+</div>

@@ -1,0 +1,351 @@
+.passos{
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.passos img{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.botaoOff{
+    color: #9F9F9F !important;
+    border: 1px solid #9F9F9F !important;
+    margin-right: 30px;
+}
+
+.botoes{
+    text-align: center;
+}
+
+.botoes input{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 18px;
+    color: #005EB8;
+    border: 1px solid #005EB8;
+    border-radius: 9px;
+    width: 125px;
+    background-color: white;
+    padding: 5px;
+    outline: none;
+}
+
+.tituloCarrinho{
+    color: #005EB8;
+    font-size: 28px;
+}
+
+.subTituloCarrinho{
+    font-size: 16px;
+    color: #222222;
+    margin-bottom: 20px;
+}
+
+.imgCardProduto{
+    max-height: 135px;
+    margin: auto;
+}
+
+.lblNomeProduto{
+    font-size: 22px;
+    color: #222222;
+}
+
+.lblPrecoProduto{
+    font-size: 16px;
+    color: #222222;
+}
+
+.cardProduto{
+    text-align: center;
+    border: 1px solid #9F9F9F;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.lblQtd{
+    font-size: 16px;
+    color: #222222;
+}
+
+.divQuantidade{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.inputQtd{
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 17px;
+    color: #222222;
+    width: 80px;
+    height: 28px;
+    margin: 0 3px;
+    border: 1px solid #DEDEDE;
+    border-radius: 5px;
+}
+
+.btnMais{
+    cursor: pointer;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 24px;
+    color:#747474;
+    width: 28px;
+    height: 28px;
+    background: #EEEEEE;
+    border-radius: 5px;
+    line-height: 25px;
+}
+
+.btnMenos{
+    cursor: pointer;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 24px;
+    color:#747474;
+    width: 28px;
+    height: 28px;
+    background: #EEEEEE;
+    border-radius: 5px;
+    line-height: 25px;
+}
+
+.lblTotal{
+    font-size: 23px
+}
+
+.lblTotalPedido{
+    font-size: 16px;
+    color: #006198;
+}
+
+.lblValorTotal{
+    color: #006198;
+    font-size: 33px;
+}
+
+.lblFormaPagamento{
+    font-size: 17px;
+    color: #006198;
+    margin-bottom: 25px;
+}
+
+.btnTipoPagamento{
+    cursor: pointer;
+    padding: 15px 45px;
+    border-radius: 17px;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 160px;
+    text-align: center;
+}
+
+.btnTipoPagamento *{
+    cursor: pointer;
+}
+
+.lblBtnTipoPgto{
+    font-size: 12px;
+    color: #222222;
+    font-weight: 400;
+    margin: 0;
+}
+
+.btnTipoPagamento.ativo{
+    background: #006198;
+}
+
+.btnTipoPagamento.ativo .lblBtnTipoPgto{
+    color: #FFF;
+}
+
+.paragrafoTermo{
+    font-size: 15px;
+}
+
+.tituloFinalCompra{
+    font-size: 43px;
+    color: #005EB8;
+    padding-top: 60px;
+}
+
+.lblTextoCompraFinalizada{
+    color: #222222;
+    font-size: 15px;
+    padding-top: 45px;
+    line-height: 30px;
+}
+
+.divNumeroPedido{
+    width: 200px;
+    border: 1px solid #005EB8;
+    border-radius: 9px;
+    padding: 4px;
+    font-size: 21px;
+    color: #005EB8;
+    margin: auto;
+}
+
+.espcamentoNumeroPedido{
+    padding: 60px 0;
+}
+
+.lblInfoAssistencia{
+    color: #006198;
+    font-size: 19px;
+    margin: 0;
+}
+
+.divImgIconContato{
+    display: flex;
+    justify-content: center;
+}
+
+.divTotalPedido{
+    margin-top: 20px;
+}
+
+.checkboxFiltro:checked,
+.checkboxFiltro:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.checkboxFiltro:checked + label {
+  position: relative;
+  cursor: pointer;
+  line-height: 16px;
+  display: inline-block;
+  color: #005eb8;
+}
+
+.checkboxFiltro:not(:checked) + label {
+  position: relative;
+  cursor: pointer;
+  line-height: 16px;
+  display: inline-block;
+  color: #222;
+}
+
+.checkboxFiltro:checked + label:before,
+.checkboxFiltro:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #5d5d5d;
+  border-radius: 100%;
+  background: #fff;
+}
+
+.checkboxFiltro:checked + label:after,
+.checkboxFiltro:not(:checked) + label:after {
+  content: "";
+  width: 11px;
+  height: 11px;
+  background: #005eb8;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.checkboxFiltro:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.checkboxFiltro:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.lblLeuTermo{
+    padding-left: 25px;
+}
+
+@media(max-width: 768px){
+    .lblTotal{
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 575px) {
+
+    .tituloFinalCompra{
+        font-size: 32px;
+        padding-top: 30px;
+    }
+
+    .lblInfoAssistencia{
+        font-size: 15px;
+    } 
+
+    .divImgIconContato{
+        display: block;
+    }
+
+    .btnTipoPagamento{
+        width: 125px;
+        padding: 15px 20px;
+    }
+
+    .headerCardProduto{
+        display: flex;
+        text-align: left;
+    }
+
+    .imgCardProduto{
+        max-height: none;
+        margin: auto;
+        max-width: 150px;
+    }
+
+    .divDescProduto{
+        display: flex;
+        width: 130px;
+        margin: auto;
+    }
+
+    .cardProduto{
+        margin-bottom: 20px;
+    }
+
+    .divTotalPedido{
+        margin-top: 0;
+    }
+
+    .lblDescProduto{
+        margin: auto;
+    }
+
+    .footerCardProduto{
+        display: flex;
+    }
+
+    .lblTotal{
+        margin-left: auto;
+        font-size: 16px;
+    }
+
+    .lblLeuTermo{
+        width: 200px;
+        padding-left: 19px;
+    }
+}
+
+@media(max-width: 375px){
+    .imgCardProduto{
+        max-width: 100px;
+    }
+
+}

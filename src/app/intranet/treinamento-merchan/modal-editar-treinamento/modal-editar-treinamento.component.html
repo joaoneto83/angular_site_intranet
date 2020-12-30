@@ -1,0 +1,51 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-editar-treino container">
+        <div>
+            <label class="tituloModal">Novos Arquivos</label>
+            <button type="button" class="close" aria-label="Close" (click)="close()" style="border:0px;outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <ng-container>
+        <div class="modal-body container">
+            <div class="col-sm-8" style="margin: 0 auto">
+                <div class="col-sm-12" style="padding-left:50px">
+                    <div class="form-group" style="margin-bottom:20px;">
+                        <label class="fontModalNovaTabela">Nome do Treinamento</label>
+                        <input type="text" class="form-control" [(ngModel)]="nome" />
+                    </div>
+                    <div class="form-group" style="margin-bottom:20px;">
+                        <label class="fontModalNovaTabela">Ativo</label><br/>
+                        <input [(ngModel)]="ativo" type="checkbox">
+                    </div>
+                </div>
+                <div>
+                    <label class="fontModalNovaTabela p-l-50">Arquivos:</label>
+                </div>
+                <div class="divUpload">
+                    <app-upload-file-multiple [idPai]="treinamento.id" caminho="treinamentosMerchan" (resposta)="getRespostaArquivo($event)"></app-upload-file-multiple>
+                </div>
+                <div class="p-l-50" *ngIf="listaArquivos.length">
+                    <div>
+                        <label class="fontModalNovaTabela">Arquivos Adicionados:</label>
+                    </div>
+                    <div *ngFor="let arq of listaArquivos; let i = index" class="col-sm-12">
+                        <label class="fontModalNovaTabela"
+                            style="font-weight:bold;color:#40beff">{{arq.nomeArquivo}}</label>
+                        <a class="btn-excluir" title="Excluir arquivo" (click)="excluirArquivo(i)">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-sm-12 text-center">
+                        <input class="btn-adc" type="button" value="Salvar" (click)="salvar();">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</ng-template>
+
+<a (click)="open(content)" title="Editar" class="icon-adc-modal-editar-tabela"><i class="fas fa-pen"></i></a>

@@ -1,0 +1,50 @@
+<div class="headerElgin">
+  <div style="width: 110px;" class="fotoPerfil">
+    <a style="width: 50px; float: left;" (click)="clickMenuUsuario()">
+      <div class="foto" *ngIf="usuario.caminhoFoto" [style.backgroundImage]="'url('+ usuario.caminhoFoto +')'">
+      </div>
+      <label class="sigla" *ngIf="!usuario.caminhoFoto">{{usuario.sigla}}</label>
+      <label *ngIf="novasNotificacoes" class="notificacoes">{{novasNotificacoes}}</label>
+    </a>
+    <div *ngIf="showMenuUsuario" (mouseleave)="clickMenuUsuario()" class="divMenuUsuario">
+      <div class="nomeUsuario">
+        {{usuario.nome}}
+      </div>
+      <div>
+        <a [routerLink]="['MeusDados']">
+          - Meus Dados
+        </a>
+      </div>
+      <div>
+        <a [routerLink]="['AlterarSenha']">
+          - Alterar Senha
+        </a>
+      </div>
+      <div *ngIf="notificacoes">
+        <div class="tituloNotificacoes">
+          Notificações
+        </div>
+        <div class="divNotificacoes">
+          <ng-container *ngFor="let notificacao of notificacoes">
+
+            <div (click)="abrirLink(notificacao.link)" [class.bold]="!notificacao.dataVisualizacao"
+              class="blocoNotificacao">
+              <label class="tipo">{{notificacao.tipo}}</label>
+              <label class="descricao">{{notificacao.descricao}}</label>
+              <label class="data">{{notificacao.dataInclusao | date: 'dd/MM/yyyy HH:mm' }}</label>
+            </div>
+
+          </ng-container>
+        </div>
+        <label (click)="limpar();" class="limpar">limpar</label>
+      </div>
+
+    </div>
+    <a (click)="logout()" style="cursor:pointer;width: 50px;    line-height: 34px;">
+      <img src="assets\icones\sair.png" alt>
+    </a>
+  </div>
+  <img class="logoHeader" src="../../assets/img/Elgin_logo_branco.png" alt>
+</div>
+
+<app-submenu [menus]="menus"></app-submenu>

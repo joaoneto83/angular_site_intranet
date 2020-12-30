@@ -1,0 +1,11 @@
+<div class="row divRelacionados">
+    <div class="col-sm-4 col-12" *ngFor="let relacionado of relacionados">
+        <div  [routerLink]="['/Blog/Post/' + relacionado.id]" style="cursor:pointer;">
+            <div>
+                <img style="width: 100%;height: auto;" [src]="relacionado.foto"
+                    [alt]="relacionado.titulo">
+            </div>
+            <div class="fontPrincipal fontLight titleRelacionados" [innerHtml]="relacionado.titulo"></div>
+        </div>
+    </div>
+</div>

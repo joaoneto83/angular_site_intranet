@@ -1,0 +1,118 @@
+.imagem {
+  display: block;
+  margin: 0 auto 0 auto;
+  height: 90px;
+  cursor: pointer;
+}
+
+.p-t-1 {
+  padding-top: 20px;
+  padding-right: 0px;
+}
+
+.titulo-produto {
+  position: relative;
+  color: black;
+  padding-bottom: 10px;
+  margin: 0 5px 5px;
+  border-bottom: 1px solid #ccc;
+}
+.supInfoCaracteristicas {
+  padding: 0px 0 0 15px;
+  width: 100%;
+}
+.caracteristicas {
+  font-size: 13px;
+  padding-left: 15px;
+  color: black;
+}
+
+label.caracteristicas {
+  width: 200px;
+  vertical-align: middle;
+  margin-bottom: 0;
+}
+
+.card-body {
+  padding-bottom: 0;
+  /*padding-top: 25px;*/
+}
+
+.btn-detalhe {
+  color: #5d5d5d !important;
+  border: 1px solid #565555;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 1px 20px;
+}
+
+.btn-detalhe:hover {
+  color: #005eb8 !important;
+  border-color: #005eb8;
+}
+
+.ckb {
+  margin-top: 3px;
+  margin-right: 6px;
+}
+
+.comparar {
+  font-size: 13px;
+}
+
+.img-icone {
+  max-width: 40px;
+}
+
+.largura-100 {
+  width: 100% !important;
+  margin: auto 0;
+}
+
+.altura-65 {
+  display: flex;
+  height: 65px;
+}
+
+@media (max-width: 576px) {
+  .divCaracteristicas {
+    padding: 0 20px 0;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 475px) {
+    .divCardProduto {
+        margin-bottom: 35px;
+    }
+  .supInfoCaracteristicas {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: center;
+  }
+  label.caracteristicas {
+    width: auto;
+    vertical-align: middle;
+    margin-bottom: 0;
+  }    
+}
+
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}

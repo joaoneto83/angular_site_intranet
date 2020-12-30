@@ -1,0 +1,94 @@
+<h1 class="text-center fontPrincipal fontLight">Ótimo! Confira a análise abaixo!</h1>
+<div class="row">
+    <div class="col-md-6 p-t-1">
+        <div class="card shadow">
+            <div class="card-body text-center">
+                <h5 id="condicaoSolar" style="font-size: 35px; padding: 12px;"
+                    class="card-title fontPrincipal fontLight">
+                    {{resultado.condicaoSolar}}
+                </h5>
+                <div id="barraVerde" class="module-border-wrap"></div>
+                <div class="row">
+                    <label class="lblResultado">Condição Solar da Cidade Selecionada</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 p-t-1">
+        <div class="card shadow">
+            <div class="card-body text-center">
+                <h5 class="tituloResultado card-title fontPrincipal fontThin">
+                    {{resultado.estimativaArea | number:'1.2-2'}}
+                    <span style="font-size:30px">m²</span>
+                </h5>
+                <div id="barraAzul" class="module-border-wrap"></div>
+                <div class="row">
+                    <label class="lblResultado">Estimativa da Área de instalação</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 p-t-1">
+        <div class="card shadow">
+            <div class="card-body text-center">
+                <h5 class="tituloResultado card-title fontPrincipal fontThin">R$
+                    {{resultado.economiaFinanceira | number:'1.2-2'}}
+                </h5>
+                <div id="barraAmarela" class="module-border-wrap"></div>
+                <div class="row">
+                    <label class="lblResultado">No primeiro ano, economize até</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 p-t-1">
+            <div class="card shadow">
+                <div class="card-body text-center">
+                    <h5 class="tituloResultado card-title fontPrincipal fontThin">
+                        {{resultado.economiaEnergia | number:'1.2-2'}}%</h5>
+                    <div id="barraRosa" class="module-border-wrap"></div>
+                    <div class="row">
+                        <label class="lblResultado">De economia em Energia Elétrica</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- <div class="col-md-6 p-t-1">
+        <div class="card shadow">
+            <div class="card-body text-center">
+                <h5 class="tituloResultado card-title fontPrincipal fontThin">{{resultado.qtdIntegradores}}</h5>
+                <div id="barraAzulClaro" class="module-border-wrap"></div>
+                <div class="row">
+                    <label class="lblResultado">Encontramos Integradores Perto de você</label>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+<div class="divKit row justify-content-center" style="margin-top: 70px; margin-bottom: 55px;">
+    <div class="divTituloKit">
+        <h1 class="fontPrincipal fontLight" style="font-size:29px">
+            O Kit Solar Elgin ideal para você é o
+            <strong>
+                KIT {{resultado.kit1 | number:'1.2-2'}} kw
+                <ng-container *ngIf="resultado.kit2 > 0">
+                    + {{resultado.kit2 | number:'1.2-2'}} kw
+                </ng-container>
+            </strong>
+        </h1>
+        <label *ngIf="resultado.kit2 > 0">
+            Kit Total {{resultado.kitTotal | number:'1.2-2'}} kw
+        </label>
+        <label>
+            Consulte um dos nossos integradores para maiores informações.
+        </label>
+    </div>
+    <div>
+        <img id="imgKit" src="/assets/img/Site/Solar/kit_1.png" alt>
+    </div>
+    <div class="col-sm-12 text-center" style="color:#707070; font-family: fontPrincipal; font-size: 10px; font-weight: 200;margin-top: 75px;">
+        Esta simulação é apenas uma previsão com base nos dados informados podendo sofrer alteração em uma avaliação prática.<br/>Para um resultado mais preciso, solicite uma avaliação com um dos integradores credenciados próximo ao local de instalação.
+    </div>
+</div>

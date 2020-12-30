@@ -1,0 +1,9 @@
+<div class="4NivelSelect h-100">
+    <div *ngIf="produto" class="text-center">
+        <button *ngIf="produto.nomeProduto && mostraCombo" type="button" class="close" aria-label="Close"
+            (click)="removerProduto()" style="border:0px;outline: 0px;float:right">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <label class="tituloProdutoComparativo">{{produto.preco  | currency:'BRL':true}}</label>
+    </div>
+</div>

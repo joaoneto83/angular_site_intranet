@@ -1,0 +1,276 @@
+<div style="margin-top:35px;">
+  <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Modelo de Seções para Página de Detalhes">
+  </app-titulo-secoes-produto>
+
+  <div class="row" style="margin-bottom: 45px;">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="control-label fontSecundaria fontLight">Incluir nova seção</label>
+        <select class="form-control" [(ngModel)]="idSecao">
+          <option value="">- Selecione -</option>
+          <option *ngFor="let item of secoes" [value]="item.id">{{item.descricao}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <input type="button" class="btn-adc supBtn1" value="Adicionar Seção" [disabled]="!idSecao"
+        (click)="adicionaSecao()">
+    </div>
+    <div class="col-sm-12">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let secao of secoesProduto | orderBy: 'ordem'; let i = index">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span class="" class="fontSecundaria fontLight" style="font-size:15px;">
+                {{secao.descricao}} - {{secao.descricaoModelo}}
+              </span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row pull-right">
+            <span style="cursor:pointer;padding-right: 10px;" (click)="removeSecao(secao.id)">
+              remover <i class="fas fa-trash-alt"></i>
+            </span>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group ">
+                <label class="control-label">Ordem</label>
+                <input class="form-control" type="number" [(ngModel)]="secao.ordem">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label class="control-label">Ativo</label><br />
+                <input class="" type="checkbox" [(ngModel)]="secao.ativo">
+              </div>
+            </div>
+          </div>
+          <div *ngIf="secao.exibeTexto1" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Título</label>
+                <input class="form-control" type="text" [(ngModel)]="secao.texto1" maxlength="200">
+              </div>
+            </div>
+          </div>
+          <div *ngIf="secao.exibeTexto2" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Subtítulo</label>
+                <textarea class="form-control" [(ngModel)]="secao.texto2" maxlength="500"></textarea>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="secao.exibeTexto3" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Descrição</label>
+                <ckeditor [(ngModel)]="secao.texto3"
+                  [config]="{extraPlugins: 'divarea',toolbarGroups: toolbarGroup,autoParagraph: false}"
+                  [readonly]="false" debounce="500">
+                </ckeditor>
+                <!-- <textarea class="form-control" [(ngModel)]="secao.texto3" maxlength="500"></textarea> -->
+              </div>
+            </div>
+          </div>
+          <div *ngIf="secao.exibeCodigoVideo" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Código do video</label>
+                <input class="form-control" [(ngModel)]="secao.codigoVideo" maxlength="50">
+              </div>
+            </div>
+          </div>
+          <div *ngIf="secao.exibeCodigoVideo2" class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label">Código do video 2</label>
+                    <input class="form-control" [(ngModel)]="secao.codigoVideo2" maxlength="50">
+                </div>
+            </div>
+        </div>
+        <div *ngIf="secao.exibeCodigoVideo3" class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label">Código do video 3</label>
+                    <input class="form-control" [(ngModel)]="secao.codigoVideo3" maxlength="50">
+                </div>
+            </div>
+        </div>
+        <div *ngIf="secao.exibeCodigoVideo4" class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label class="control-label">Código do video 4</label>
+                    <input class="form-control" [(ngModel)]="secao.codigoVideo4" maxlength="50">
+                </div>
+            </div>
+        </div>
+          <div *ngIf="secao.exibeAparelhoIdeal" class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="control-label">Exibir "Encontre a Potência Ideal" </label><br />
+                <input class="" type="checkbox" [(ngModel)]="secao.aparelhoIdeal">
+              </div>
+            </div>
+          </div>
+          <ng-container *ngIf="secao.qtdIcones > 0">
+            <div class="row fontSecundaria fontLight" style="font-size:15px;" *ngIf="secao.qtdIcones">
+              <div class="col-sm-12">
+                Icones ({{secao.icones.length}} de {{secao.qtdIcones}})
+              </div>
+            </div>
+            <ng-container *ngIf="secao.icones.length >= secao.qtdIcones && secao.qtdIcones > 0">
+              <div class="row fontSecundaria fontLight" style="font-size:15px;">
+                <div class="col-sm-12">
+                  Esta seção atingiu o limite de icones.
+                </div>
+              </div>
+            </ng-container>
+            <div class="row" *ngIf="secao.icones.length < secao.qtdIcones">
+              <div class="col-sm-12">
+                <input style="margin-bottom: 25px;" type="button" class="btn-adc" value="Adicionar Icone"
+                  (click)="adicionaIcone(secao)">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="table-responsive" *ngIf="secao.icones && secao.icones.length && icones">
+                  <table class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th style="width: 40%;">Icone</th>
+                        <th style="width: 20%;">Descrição</th>
+                        <th style="width: 20%;">Sub Descrição</th>
+                        <th style="width: 15%;">Ordem</th>
+                        <th style="width: 5%;"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let icos of secao.icones; let i = index">
+                        <td>
+                          <select class="form-control" [(ngModel)]="icos.idIcone">
+                            <option>Sem Icone</option>
+                            <option *ngFor="let icone of icones" [value]="icone.id">
+                              {{icone.nomeArquivo}}
+                            </option>
+                          </select>
+                        </td>
+                        <td>
+                          <input class="form-control" type="text" [(ngModel)]="icos.descricaoIcone" maxlength="150">
+                        </td>
+                        <td>
+                          <input class="form-control" type="text" [(ngModel)]="icos.subDescricaoIcone" maxlength="150">
+                        </td>
+                        <td>
+                          <input class="form-control" type="number" [(ngModel)]="icos.ordem">
+                        </td>
+                        <td>
+                          <i class="fas fa-trash-alt" style="cursor:pointer;" (click)="removeIcone(secao, i)"></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="secao.qtdImagens > 0">
+            <div class="row fontSecundaria fontLight" style="font-size:15px;" *ngIf="secao.qtdImagens">
+              <div class="col-sm-12">
+                Arquivos ({{secao.arquivos.length}} de {{secao.qtdImagens}})
+              </div>
+            </div>
+            <ng-container *ngIf="secao.arquivos.length < secao.qtdImagens">
+              <app-upload-file [idPai]="secao.id" caminho="imgDetProduto" (resposta)="getRespostaArquivo($event)">
+              </app-upload-file>
+            </ng-container>
+
+            <ng-container *ngIf="secao.arquivos.length >= secao.qtdImagens && secao.qtdImagens > 0">
+              <div class="row fontSecundaria fontLight" style="font-size:15px;">
+                <div class="col-sm-12">
+                  Esta seção atingiu o limite de arquivos.
+                </div>
+              </div>
+            </ng-container>
+
+            <div class="table-responsive" *ngIf="secao.arquivos.length">
+              <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th style="width: 40%;">Descrição</th>
+                    <th style="width: 25%;">link</th>
+                    <th style="width: 5%;">Ordem</th>
+                    <th style="width: 5%;">Ativo</th>
+                    <th style="width: 15%;">Visualizar</th>
+                    <th style="width: 5%;"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let arquivo of secao.arquivos">
+                    <td>
+                      <input class="form-control" type="text" [(ngModel)]="arquivo.nomeArquivo" maxlength="150">
+                    </td>
+                    <td><input class="form-control" type="text" [(ngModel)]="arquivo.linque" maxlength="500"></td>
+                    <td><input class="form-control" type="number" [(ngModel)]="arquivo.ordem"></td>
+                    <td><input class="" type="checkbox" [(ngModel)]="arquivo.ativo"></td>
+                    <td><a target="_blank" [href]="arquivo.caminho">Link</a></td>
+                    <td>
+                      <i class="fas fa-trash-alt" style="cursor:pointer;"
+                        (click)="removeArquivo(secao.id, arquivo.id)"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </ng-container>
+
+          <div class="row">
+            <div class="col">
+              <input class="btn-adc" style="margin-bottom: 25px;" type="button" value="Salvar" (click)="salvar(secao)">
+            </div>
+          </div>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+
+  </div>
+  
+
+  <ng-container>
+    <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Aplicar aos Produtos">
+    </app-titulo-secoes-produto>
+    <div class="row">
+      <div class="form-group col-sm-6">
+        <input class="form-control" type="text" name="" id="" [(ngModel)]="addproduto">
+      </div>
+      <div class="col">
+        <input class="btn-adc" (click)="adicionarProduto()" style="margin-bottom: 25px;" type="button" value="Adicionar Produto">
+      </div>
+    </div>
+
+    <div class="titLabel row">
+      <label class="col-sm-2 control-label fontSecundaria fontLight">Selecionar</label>
+      <label class="col-sm-3 control-label fontSecundaria fontLight">Código</label>
+      <label class="col-sm-4 control-label fontSecundaria fontLight">Produto</label>
+    </div>
+
+    <div *ngFor="let prod of produtoRel" class="supProduto row" ng-class-odd="'striped'">
+      <div class="col-sm-2 supCheckBox">
+        <input class="form-control " type="checkbox" name="" id="" [(ngModel)]="prod.ativo">
+      </div>
+      <div class="col-sm-3">
+        <input class="form-control" type="text" name="" id="" readonly [(ngModel)]="prod.codigoProduto">
+      </div>
+      <div class="col-sm-4">
+        <input class="form-control" type="text" name="" id="" readonly [(ngModel)]="prod.nomeProduto">
+      </div>
+    </div>
+
+    <div class="supBtnSalvar">     
+        <input class="btn-adc" (click)="replicar()" style="margin-bottom: 25px;" type="button" value="Aplicar">      
+    </div>
+
+  </ng-container>
+
+</div>

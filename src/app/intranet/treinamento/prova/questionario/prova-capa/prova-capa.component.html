@@ -1,0 +1,24 @@
+<ng-template #content let-modal>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center titulo">
+                {{agendamentoUsuario.nome}}
+            </div>
+            <div class="col-sm-12 text-center desejaIniciar ">
+                Deseja iniciar o seu teste?
+            </div>
+            <div class="linha">
+
+            </div>
+            <div class="col-sm-12 texto">
+                    Após a confirmação do início, você<br/>terá {{agendamentoUsuario.duracao}} minutos para realizar o teste.
+            </div>
+        </div>
+        <div class="row botoes-capa-prova">
+            <div class="col-sm-12 text-center">
+                <input class="btn-cancelar" type="button" (click)="modal.close('voltar')" value="Cancelar">
+                <input class="btn-adc btn-adc-capa-prova" type="button" (click)="modal.close('iniciar')" value="Confirmar">
+            </div>
+        </div>
+    </div>
+</ng-template>

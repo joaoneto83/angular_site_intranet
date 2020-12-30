@@ -1,0 +1,44 @@
+<div class="container" style="margin-top:70px; margin-bottom: 5%;">
+    <div class="row">
+        <div *ngIf="response.idPai && response.idPai != guidEmpty" class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/TabelaPreco', response.idPai]">&#60; Voltar</span>
+        </div>
+        <div *ngIf="response.idPai == guidEmpty" class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/TabelaPreco']">&#60; Voltar</span>
+        </div>
+        <div class="col-md-12" style="padding-right:0;">
+            <label *ngIf="response.nome" class="titulo-pasta fontPrincipal">{{response.nome}}</label>
+        </div>
+    </div>
+    <app-modal-nova-pasta #modal showIfAdmin="TABPRECO_EDICAO" (recarregar)="retornaCarregamento($event)" [idPai]="id">
+    </app-modal-nova-pasta>
+    <app-modal-nova-tabela showIfAdmin="TABPRECO_EDICAO" (recarregar)="retornaCarregamento($event)" [idPasta]="id">
+    </app-modal-nova-tabela>
+    <div *ngIf="response" class="row">
+        <ng-container *ngFor="let filho of response.pastas">
+            <div class="col-md-3 col-sm-6 p-t-1 text-center" style="padding-right:0;">
+                <div class="row">
+                    <div class="col-12">
+                        <app-modal-mover-item showIfAdmin="TABPRECO_EDICAO" [id]="filho.id" [isTabela]="false"
+                            (recarregar)="retornaCarregamento($event)"></app-modal-mover-item>
+                        <app-modal-editar-pasta showIfAdmin="TABPRECO_EDICAO" [pasta]="filho"
+                            (recarregar)="retornaCarregamento($event)"></app-modal-editar-pasta>
+                    </div>
+                    <div class="col-12">
+                        <div class="btn-pasta" [routerLink]="['/PortaldeApoio/TabelaPreco', filho.id]">
+                            <i class="far fa-folder fa-6x pointer folder"></i><br>
+                            <label class="fontRegular fontPrincipal">{{filho.nome}}</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngFor="let tabela of response.tabelaPrecos">
+            <div class="col-md-3 col-sm-6 p-t-1" style="padding-right:0;">
+                <app-card-tabela-preco (recarregar)="retornaCarregamento($event)" [itens]="tabela">
+                </app-card-tabela-preco>
+            </div>
+        </ng-container>
+    </div>
+</div>

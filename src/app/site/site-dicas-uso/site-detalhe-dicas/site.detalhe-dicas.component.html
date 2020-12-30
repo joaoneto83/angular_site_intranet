@@ -1,0 +1,25 @@
+<div class="banner-detalhe">
+    <img class="imagem-banner-detalhe" src="/assets/img/Site/GrupoElgin/banner_marca.jpg" alt>
+</div>
+<div *ngIf="postagem" class="container" style="padding: 0 15px;">
+    <div class="row">
+        <div class="col-md-3 d-none d-md-block">
+            <app-site-detalhe-categorias></app-site-detalhe-categorias>
+        </div>
+        <div class="col-md-6">
+            <h1 style="font-size:30px;" class="text-center fontPrincipal fontRegular" [innerHtml]="postagem.titulo">
+            </h1>
+            <div class="row" id="tag-detalhe" *ngIf="postagem.tags">
+                <ng-container *ngFor="let tag of postagem.tags">
+                    <span class="tags-detalhe fontPrincipal fontLight">{{tag}}</span>
+                </ng-container>
+            </div>
+            <div *ngIf="postagem.content;" id="conteudoHtml" style="font-size:16px; padding-top: 50px;"
+                class="fontSecundaria fontLight" [innerHTML]="postagem.content">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <app-site-detalhe-relacionado [relacionados]="relacionados"></app-site-detalhe-relacionado>
+        </div>
+    </div>
+</div>

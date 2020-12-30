@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row submenuSubLinha" style="margin-top:30px">
+        <div class="col-sm-3">
+            <div class="text-center" style="margin-bottom: 25px;">
+                <input class="btn-adc" type="button" value="Nova Sublinha" (click)="novaSublinha()">
+            </div>
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let linha of linhas">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span class="sidebarLinha" class="fontSecundaria fontLight" style="font-size:15px;">
+                                {{linha.nomeLinha}}
+                            </span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ul class="ulSublinha">
+                        <li *ngFor="let sublinha of linha.subLinhas" class="liSublinha">
+                            <a class="fontSecundaria aSidebar"
+                                [ngClass]="(sublinhaSelecionada==sublinha.id)?'fontSemiBold':'fontLight'"
+                                (click)="selecionaSublinha(sublinha.id);" style="cursor:pointer;">
+                                {{sublinha.nomeSubLinha}}
+                            </a>
+                        </li>
+                    </ul>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+        <div class="col-sm-9">
+            <app-adm-sublinha-edit (atualizar)="atualizarLinhas()" #sublinhaEdit [linhas]="linhas"></app-adm-sublinha-edit>
+        </div>
+    </div>
+</div>
+

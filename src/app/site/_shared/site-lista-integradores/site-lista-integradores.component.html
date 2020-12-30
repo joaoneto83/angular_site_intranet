@@ -1,0 +1,44 @@
+<ng-container *ngIf="!temIntegradores && integradores">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="tituloIntegrador">
+                {{'NenhumItemEncontrado' | translate}}
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="temIntegradores && integradores">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="tituloIntegrador">
+                {{integradores[0].nomePais}}
+            </div>
+        </div>
+    </div>
+    <div class="divItens divOverflow">
+        <div class="row divItem" *ngFor="let i of integradores">
+            <div class="col-sm-9">
+                <div class="itemTitulo">
+                    {{i.nome}}
+                </div>
+                <div class="itemDescricao">
+                    {{i.email}}
+                </div>
+                <div class="itemDescricao">
+                   {{i.uf}}
+                </div> 
+               <!--  {{i.nomeCidade}}/ -->
+            </div>
+            <div class="col-sm-3">
+                <div class="telefones">
+                    <div class="itemDescricao">
+                        {{i.telefoneMovel}}
+                    </div>
+                    <div class="itemDescricao">
+                        {{i.telefoneFixo}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container >

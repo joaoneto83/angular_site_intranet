@@ -1,0 +1,69 @@
+label.fontSecundaria{
+    color: #222;
+    padding-bottom:20px;
+    font-size: 16px;
+    width: 100%;
+}
+
+label.fontPrincipal{ 
+    font-size: 40px;
+    color: #fff;
+}
+
+.bannerTrabalheConosco{
+    position: relative;
+    text-align: right !important;
+    color: white;
+    padding-bottom: 50px;
+    /* background-image: url('/assets/img/Site/SejaAssistenciaTecnica/banner_seja_assistencia.jpg'); */
+    /* width: 100%;
+    height: 256px; */
+}
+
+.imagemTrabalheConosco{
+    width: 100%;
+}
+
+.textCentered {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    text-align: center;
+    line-height: 50px;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px){
+    label.fontPrincipal{
+        font-size: 30px;
+        line-height: 1.5;
+    }
+
+    .textCentered{
+        top:35%;
+    }
+}
+
+@media (max-width: 576px){
+
+    label.fontPrincipal br{
+        display:none
+    }
+
+    .textCentered{
+        top: 45%;
+    }
+
+    .imagemBannerTrabalhe{
+        display:none;
+       
+    }
+
+    .bannerTrabalheConosco{
+        background-image: url('/assets/img/Site/TrabalheConosco/trabalhe_conosco.jpg');
+        height: 150px;
+        background-position-x: 32%;
+        margin-bottom: 50px;
+    }
+}

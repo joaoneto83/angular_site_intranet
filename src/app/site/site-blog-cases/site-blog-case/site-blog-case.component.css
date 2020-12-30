@@ -1,0 +1,66 @@
+img {
+    width: 100%;
+    opacity: 1;
+    cursor: pointer;
+    height: 265px;
+}
+  
+.bloco {
+    position: relative;
+    text-align: center !important;
+    color: white;
+    padding: 0 2.5px;
+    outline: none;
+}
+  
+.textCentered {
+    position: absolute;
+    left: 50%;
+    width: calc(100% - 5px);
+    transform: translate(-50%, -105%);
+    padding: 0 20px;
+}
+
+label.titulo {
+    font-size: 23px;
+    margin: 0;
+    color: white;
+    line-height: 1.2;
+}
+
+label.descricao {
+    font-size: 15px;
+    color: white;
+}
+
+.paddingboxImg {
+    padding: 5px 0 0 0;
+}
+
+img:hover {
+    opacity: 1;
+}
+
+.tituloCase {
+    font-size: 49px; 
+    margin-bottom: 65px;
+    margin-top: 80px;
+}
+
+@media (max-width: 1024px) {
+    label.titulo {
+        font-size: 21px;
+    }
+}
+
+@media (max-width: 768px) {
+}
+  
+@media (max-width: 575px) {
+    .bloco {
+      padding: 0;
+    }
+    .paddingboxImg {
+      padding: 2px 0 0 0;
+    }
+}

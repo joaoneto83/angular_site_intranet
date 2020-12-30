@@ -1,0 +1,47 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-edit-evento">
+        <div class="row">
+            <div class="col-sm-12">
+                <label class="tituloModal">Evento</label>
+                <button type="button" class="close" aria-label="Close" (click)="close()"
+                    style="border:0px;outline: 0px;float:right">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body" style="padding: 30px">
+        <div class="row linhasCampos">
+            <div class="col-sm-12">
+                <label class="labelEvento">Título</label>
+                <input class="form-control" type="text" [(ngModel)]="model.titulo" maxlength="150">
+            </div>
+        </div>
+        <div class="row linhasCampos">
+            <div class="col-sm-12">
+                <label class="labelEvento">Descrição</label>
+                <textarea class="form-control" [(ngModel)]="model.descricao" maxlength="500" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="row linhasCampos">
+            <div class="col-sm-4">
+                <label class="labelEvento">Data De</label>
+                <input class="form-control" type="Date" [(ngModel)]="model.dataDe">
+            </div>
+            <div class="col-sm-4">
+                <label class="labelEvento">Data Até</label>
+                <input class="form-control" type="Date" [(ngModel)]="model.dataAte">
+            </div>
+            <div class="col-sm-4">
+                <label class="labelEvento">Ativo</label>
+                <br>
+                <input type="checkbox" [(ngModel)]="model.ativo">
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-sm-12 botoes text-center">
+                <input class="btn-adc" type="button" value="Salvar" (click)="salvar();">
+            </div>
+        </div>
+    </div>
+</ng-template>

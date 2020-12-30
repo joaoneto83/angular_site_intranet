@@ -1,0 +1,42 @@
+.divTitulo {
+    padding-bottom:20px;
+    margin-top:80px;
+}
+
+.titulo {
+    font-size: 37px;
+}
+
+.imgProduto{
+    max-height: 150px;
+}
+
+.divImgProduto{
+    min-height: 150px;
+}
+
+.lblNomeProduto{
+    font-size: 17px;
+    color: #4A4A4A;
+    padding-top: 25px;
+}
+
+.cardProduto{
+    max-width: 200px;
+    padding: 15px;
+}
+
+.pad-top{
+    padding-top: 50px;
+}
+
+@media (max-width: 768px){
+
+    .imgProduto{
+        max-height: 110px;
+    }
+
+    .divImgProduto{
+        min-height: 110px;
+    }
+}

@@ -1,0 +1,52 @@
+.divClassificacao{
+    margin-top: 90px;
+}
+.divCategoria {
+    margin-bottom: 20px;
+}
+.divTitulo{
+    line-height: 35px;
+    padding-bottom: 40px;
+}
+.titulo1{
+    font-size: 21px;
+    line-height: 35px;
+    
+}
+.altura-65 {
+    color: white;
+}
+.titulo2{
+    font-size: 16px;
+    padding-bottom: 25px;
+}
+.titulo3{
+    font-size: 15px;
+    word-break: keep-all;
+    line-height: 15px;
+    display: inline-table;
+}
+.linhaCompleta{
+    color: #AAA; 
+    font-size: 16px;
+    line-height: 35px;
+}
+.barra{
+    color: #AAA; 
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.divCategoria{
+    width: 33%;
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+@media (max-width: 767px) {
+    .divCategoria{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

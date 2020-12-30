@@ -1,0 +1,134 @@
+select {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0%;
+    width: 90%;
+    margin: 0 5%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('/assets/icones/arrow-down-dropdown.png');
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position: right 5px;
+    font-family: fontPrincipal !important;
+    font-size: 17px !important;
+    font-weight: 200 !important;
+    color: #747474 !important;
+}
+
+select {
+    text-align: center;
+    text-align-last: center;
+    /* webkit*/
+  }
+  option {
+    text-align: left;
+    /* reset to left*/
+  }
+
+.imagem{
+    width: 100%;
+}
+
+.tituloProdutoComparativo{
+    font-family: fontPrincipal;
+    font-weight: 400;
+    font-size: 17px;
+    max-width: 180px;
+}
+
+.cardSelectProdutos{
+    box-shadow: 0px 0px 10px 0px #ccc;
+    border-radius: 25px;
+    padding: 1rem;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    background-color: #FFFFFF;
+    max-height: 350px;
+    overflow: auto;
+    width: 350px;
+    right: -35px;
+    top: 70%;
+}
+
+.showCard{
+  display: block;
+}
+
+.divImagemProduto{
+  min-width: 100px;
+  max-width: 100px;
+}
+
+.divImagemProduto img{
+  max-width: 100%;
+}
+
+.divSelecionaProduto{
+  display: flex;
+  cursor: pointer;
+}
+
+.divSelecionaProduto *{
+  cursor: pointer;
+}
+
+.display-flex{
+  display: flex;
+}
+
+.margin-auto{
+  margin: auto;
+}
+
+.btn-adc-grafico{
+  font-size: 30px;
+  border: 5px solid #c7c7c7;
+  color: #c7c7c7!important;
+  padding: 5px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 100;
+}
+
+.cardSelectProdutos::-webkit-scrollbar {
+  width: 5px;
+}
+
+.cardSelectProdutos::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 25px;
+}
+
+.cardSelectProdutos::-webkit-scrollbar-thumb {
+  background: #DDDCDC; 
+  border-radius: 25px;
+}
+
+.cardSelectProdutos::-webkit-scrollbar-thumb:hover {
+  background: #DDDCDC;
+}
+
+.cardSelectProdutos::-webkit-scrollbar-button {
+  width: 0px;
+  height: 26px;
+}
+
+.btnAdd{
+  cursor: pointer;
+}
+
+@media (max-width: 768px){
+  select{
+    font-size: 16px !important;
+  }
+}
+
+@media (max-width: 576px){
+  select{
+    margin-bottom: 30px;
+  }
+}

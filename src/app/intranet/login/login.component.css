@@ -1,0 +1,99 @@
+.body{
+    background-image: url('/assets/img/Login/background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* width: 100vw; */
+    height: calc(100vh - 132px);
+}
+
+.centerVertical {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.inputBusca::placeholder{
+    color: rgba(255, 255, 255, 0.425);
+    padding: 0px;
+}
+
+.btnLogin{
+    border-radius: 23px;
+    border: 0.7px solid #fff;
+    margin-bottom: 35px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 400px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.imagem{
+    position: absolute;
+    top:30px;
+    left: 0;
+    right: 0;
+}
+
+input{
+    width: 250px;
+}
+
+.inputTexto::placeholder{
+    color: #D0D0D0;
+    padding: 0px;
+    text-align: center;
+    font-family: fontPrincipal;
+    font-weight: 300px;
+    font-size: 21px;
+}
+
+.inputUsuario{
+    padding: 5px 60px !important;
+    background-repeat: no-repeat;
+    background-position: center left calc(.375em + .1875rem);
+
+    background-image: url('/assets/img/Login/icones/login.png');
+}
+.inputSenha{
+    padding: 5px 60px !important;
+    background-repeat: no-repeat;
+    background-position: center left calc(.375em + .1875rem);
+
+    background-image: url('/assets/img/Login/icones/senha.png');
+    
+}
+
+.recuperarSenha{
+    font-family: fontPrincipal;
+    font-size: 18px;
+    font-weight: 200;
+    color: #EAEAEA;
+    cursor: pointer;
+}
+
+.inputTexto{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 0.5px solid #C9C9C9;
+    padding: 5px 30px;
+    
+    color: #D0D0D0;
+    font-size: 21px;
+    font-weight: 300px;
+    margin-bottom: 25px;
+}
+
+.has-danger .ng-invalid{
+    border-bottom: 0.5px solid red;
+    color:red;
+}
+
+.titulo{
+    font-family: fontPrincipal;
+    font-size: 23px;
+    font-weight: 400;
+    color: #FFF;
+    margin-bottom: 40px;
+}

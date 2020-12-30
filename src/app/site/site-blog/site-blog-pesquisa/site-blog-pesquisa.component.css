@@ -1,0 +1,92 @@
+.inputBusca{
+    /* background-color: rgba(195, 195, 195, 0.62); */
+    border: 0;
+    /* border-bottom: 0.5px solid #707070; */
+    width: 50%;
+    padding: 5px 20px;
+    color: #000;
+
+    /* background-image: url('/assets/img/Site/Home/icons/busca.png');
+    background-repeat: no-repeat;
+    background-position: center right calc(.375em + .1875rem);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem); */
+
+    font-size: 40px;
+    font-weight: 200;
+    margin-top: 90px
+}
+
+.inputBusca::placeholder{
+    color:#000;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 200;
+    padding: 0px;
+}
+
+.inputBuscaProduto{
+    background-color: transparent;
+    border: 1px solid #9A9A9A;
+    width: 50%;
+    padding: 5px 20px;
+    color: #9A9A9A;
+    background-image: url('/assets/img/Site/Home/icons/busca.png');
+    background-repeat: no-repeat;
+    background-position: center right calc(.375em + .1875rem);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+.inputBuscaProduto::placeholder{
+    color: #9A9A9A;
+    padding: 0px;
+}
+
+.resultadoBusca{
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: left;
+    z-index: 9999 !important;
+
+    border: solid 1px #aaa;
+    color: #222222;
+}
+
+.itemResultado{
+    padding: 10px 0px;
+    margin-left: 30px;
+    margin-right: 20px;
+    border-bottom: 1px solid #aaa;
+    height: 70px;
+    cursor: pointer;
+}
+
+.itemResultado label{
+    cursor: pointer;
+}
+
+.itemResultado img{
+    max-height: 50px;
+    padding-right: 30px;
+}
+
+@media (max-width: 767px) {
+    .inputBusca{
+        width: 100%;
+        font-size: 28px;
+    }
+    
+    .inputBusca::placeholder{
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 575px) {
+    .inputBusca{
+        margin-top: 35px;
+    }
+}

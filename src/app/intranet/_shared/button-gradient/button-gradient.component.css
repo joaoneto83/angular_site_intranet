@@ -1,0 +1,18 @@
+.module-border-wrap {
+  padding-top: 3px;
+}
+
+.module {
+  background: white;    
+  padding:30px;
+  transition: .2s all;
+  cursor: pointer;
+  color: #6E6E6E;
+}
+.module:hover{
+  background: transparent;
+  color: white !important;
+} 
+a{
+  text-decoration: none;
+}

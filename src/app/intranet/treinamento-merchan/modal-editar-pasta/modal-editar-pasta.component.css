@@ -1,0 +1,62 @@
+::ng-deep.modal{
+    z-index: 1070;
+}
+
+.modal-lg{
+    max-width: 100%;
+    top:75px;
+}
+
+.modal-content{
+    border-radius: 0;
+}
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #48bcf7;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.fontModalNovaTabela{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 16px;
+    color: #222;    
+    margin-bottom: 0;
+}
+
+.modal-header-editar-tabela{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border: 0;
+}
+
+.modal-footer{
+    border: 0;
+}
+
+.p-l-50{
+    padding-left: 50px;
+}
+
+.divUpload{
+    padding-left:50px;
+    padding-bottom: 20px;
+}
+
+.icon-adc-modal-editar-tabela{
+    color:#bfbfbf !important;
+    float:right;
+    cursor: pointer;
+    padding: 10px 15px 5px 5px;
+}
+
+.btn-excluir{
+    margin-left: 10px;
+    color: #bfbfbf !important;
+    cursor: pointer;
+}

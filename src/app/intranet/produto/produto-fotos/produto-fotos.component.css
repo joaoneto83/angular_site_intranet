@@ -1,0 +1,7 @@
+.product-gallery {
+    padding-top: 15px !important;
+}
+
+.ngx-gallery-thumbnail-size-cover .ngx-gallery-thumbnails .ngx-gallery-thumbnail {
+    background-size: contain !important;
+}

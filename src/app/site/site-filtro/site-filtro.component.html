@@ -1,0 +1,52 @@
+<ng-container *ngIf="subLinha.banner || subLinha.banner2">
+    <img *ngIf="subLinha.banner" class="banner imagem-banner-home" [src]="subLinha.banner.caminho" alt>
+    <img *ngIf="subLinha.banner2" class="banner imagem-banner-home-mobile" [src]="subLinha.banner2.caminho" alt>
+</ng-container>
+
+<!-- <ng-template #bannerPadrao>
+        <div class="banner">
+            <img class="imagem" src="/assets/img/Site/Filtros/banner_climatizacao.png" alt>
+        </div>
+    </ng-template> -->
+
+<div class="container contProdutos">
+    <div *ngIf="subLinha.mostraAparelhoIdeal" class="fontPrincipal fontLight font20 text-center divAparelhoIdeal">
+        <label class="pr-3">{{'AparelhoIdealTexto' | translate}}</label>
+        <input type="button" class="btnAssistente" value="{{'EncontreIdeal' | translate}}" (click)="abreAparelhoIdeal()">
+        <app-site-aparelho-ideal [produtos]="produto"></app-site-aparelho-ideal>
+    </div>
+    <div *ngIf="subLinha.mostraLink || subLinha.mostraRota" class="fontPrincipal fontLight font20 text-center divAparelhoIdeal">
+        <label class="pr-3">{{subLinha.textoInformativo}}</label>
+        <a *ngIf="subLinha.mostraLink" class="btnAssistente" [href]="subLinha.textoUrl">{{subLinha.textoBotao}}</a>
+        <a *ngIf="subLinha.mostraRota" class="btnAssistente" [routerLink]="[subLinha.textoUrl]">{{subLinha.textoBotao}}</a>
+    </div>
+    <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 supFiltro">
+            <app-sidebar [titulo]="subLinha.nomeSubLinha" [filtros]="filtros"
+                [mostraAparelhoIdeal]="subLinha.mostraAparelhoIdeal" (clickAparelhoIdeal)="abreAparelhoIdeal()"
+                (idsFiltrosSelecionados)="filtrar($event)"></app-sidebar>
+        </div>
+        
+        <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12">
+            <app-site-lista-cards *ngIf="filterShow" [produtos]="produtos | FiltrarProdutos: filter"></app-site-lista-cards>
+            <div>
+                <app-site-lista-cards *ngIf="filterShow2" [produtos]="produtos | FiltrarProdutos: filter2"></app-site-lista-cards>
+                <app-site-lista-cards *ngIf="filterShow3" [produtos]="produtos | FiltrarProdutos: filter3"></app-site-lista-cards>
+                <app-site-lista-cards *ngIf="filterShow4" [produtos]="produtos | FiltrarProdutos: filter4"></app-site-lista-cards>
+                <app-site-lista-cards *ngIf="filterShow5" [produtos]="produtos | FiltrarProdutos: filter5"></app-site-lista-cards>
+                <app-site-lista-cards *ngIf="filterShow6" [produtos]="produtos | FiltrarProdutos: filter6"></app-site-lista-cards>
+                <app-site-lista-cards *ngIf="filterShow7" [produtos]="produtos | FiltrarProdutos: filter7"></app-site-lista-cards>
+                <app-site-lista-cards *ngIf="filterShow8" [produtos]="produtos | FiltrarProdutos: filter8"></app-site-lista-cards>
+                <app-site-lista-cards *ngIf="filterShow9" [produtos]="produtos | FiltrarProdutos: filter9"></app-site-lista-cards>
+                <app-site-lista-cards *ngIf="filterShow10" [produtos]="produtos | FiltrarProdutos: filter10"></app-site-lista-cards>
+                <app-site-lista-cards *ngIf="filterShow11" [produtos]="produtos | FiltrarProdutos: filter11"></app-site-lista-cards>
+            </div>    
+        </div>
+    </div>
+    <div class="row comparativo">
+        <div class="col-sm-12">
+            <app-site-comparativo [classificacoes]="filtrosComparativo" [especificacoes]="especificacoes" [produtos]="produtos">
+            </app-site-comparativo>
+        </div>
+    </div>
+</div>

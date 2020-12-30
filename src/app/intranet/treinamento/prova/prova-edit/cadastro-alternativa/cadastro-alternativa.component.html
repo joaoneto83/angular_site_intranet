@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-sm-12">
+        <input style="margin-bottom: 25px;" type="button" class="btn-adc" value="Adicionar Alternativa"
+            (click)="adicionaAlternativa()">
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive" *ngIf="alternativas.length">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Correta</th>
+                        <th>Ativo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let a of alternativas; let i = index">
+                        <td><textarea class="form-control" rows="2" [(ngModel)]="a.descricao" maxlength="150"></textarea></td>
+                        <td><input (change)="verificarCorreta(a.id)" type="checkbox" [(ngModel)]="a.correta"></td>
+                        <td><input type="checkbox" [(ngModel)]="a.ativo"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

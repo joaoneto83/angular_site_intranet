@@ -1,0 +1,12 @@
+<app-submenu-treinamento></app-submenu-treinamento>
+<div class="container" style="padding-bottom:50px">
+    <ng-container *ngFor="let resultado of resultados">
+        <app-grafico-resultado [resultado]="resultado"></app-grafico-resultado>
+    </ng-container>
+    
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <a (click)="adicionarGrafico()" class="btn-adc-grafico"><i class="fas fa-plus"></i></a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+.modal-content {
+    border-top: 0;
+    border-radius: 0 !important;
+}
+
+.modelBackdrop {
+    z-index: 1060 !important;
+}
+
+.modal-open {
+    padding: 0 !important;
+}
+
+.modalTreinamento{
+    z-index: 1061 !important;
+}
+
+.labelTreinamento{
+    font-family: fontPrincipal;
+}
+
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #48bcf7;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.fontArquivo{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 16px;
+    color: #222;    
+    margin-bottom: 0;
+}
+
+.modal-header-edit-documentos{
+    display: block;
+    text-align: center;
+    border: 0;
+}
+
+.addVideo{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 14px;
+    color: #005EB8;
+    border: 1px solid #005EB8;
+    border-radius: 9px;
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+}

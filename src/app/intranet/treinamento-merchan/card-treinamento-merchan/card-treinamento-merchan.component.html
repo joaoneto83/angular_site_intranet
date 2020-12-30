@@ -1,0 +1,57 @@
+<div class="card shadow">
+    <a class="card-img-tiles">
+        <div class="inner">
+            <app-modal-mover-item showIfAdmin="MERCHAN_EDICAO" [id]="itens.id" [isTreinamento]="true"
+                (recarregar)="retornaCarregamento($event)"></app-modal-mover-item>
+            <app-modal-editar-treinamento showIfAdmin="MERCHAN_EDICAO" [treinamento]="itens"
+                (recarregar)="retornaCarregamento($event)"></app-modal-editar-treinamento>
+        </div>
+    </a>
+    <div class="card-body text-center">
+        <h5 class="card-title titulo-produto fontPrincipal fontExtraLight">{{itens.nome | uppercase}}</h5>
+        <div class="row">
+            <ng-container *ngFor="let arquivo of itens.arquivos">
+                <div [ngClass]="tamanhoItens" style="padding: 0px 1px;">
+                    <a *ngIf="arquivo.extensao == 'pdf'; else video" [href]="arquivo.caminho">
+                        <div class="iconPDF"></div>
+                    </a>
+                    <ng-template #video>
+                        <a *ngIf="arquivo.extensao == 'mp4'; else apresentacao" [href]="arquivo.caminho">
+                            <div class="iconVideo"></div>
+                        </a>
+                    </ng-template>
+
+                    <ng-template #apresentacao>
+                        <a *ngIf="arquivo.extensao == 'ppt'; else imagem" [href]="arquivo.caminho">
+                            <div class="iconPPT"></div>
+                        </a>
+                    </ng-template>
+
+                    <ng-template #imagem>
+                        <a *ngIf="arquivo.extensao == 'png' || arquivo.extensao == 'jpg'; else planilha" [href]="arquivo.caminho">
+                            <div class="iconArquivo"></div>
+                        </a>
+                    </ng-template>
+
+                    <ng-template #planilha>
+                        <a *ngIf="arquivo.extensao == 'xls' || arquivo.extensao == 'xlsx'; else desconhecido"
+                            [href]="arquivo.caminho">
+                            <div class="iconXLS"></div>
+                        </a>
+                    </ng-template>
+
+                    <ng-template #desconhecido>
+                        <a [href]="arquivo.caminho">
+                            <div class="iconArquivo"></div>
+                        </a>
+                    </ng-template>
+                    
+                    <ng-container *ngIf="arquivo.nomeArquivo != ''">
+                        <br />
+                        <label class="descricao fontSecundaria fontLight" [innerHtml]="arquivo.nomeArquivo" ></label>
+                    </ng-container>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

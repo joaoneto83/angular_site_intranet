@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="fontPrincipal fontLight text-center">
+        <label class="titulo">SOLICITAÇÕES</label>
+        <div class="col-sm-4" style="margin:auto">
+            <div class="module-border-wrap"></div>
+        </div>
+        <p class="text-center">
+            Preencha os campos abaixo e nos diga qual é a sua solicitação de melhoria.
+            <br>
+            Solicitações de manutenção e dúvidas devem ser feitas através do <u>Elgin Service Desk</u>.
+        </p>
+    </div>
+    <form [formGroup]="form" class="form">
+        <div class="row">
+            <div class="col-sm-12">
+                <app-custom-input [form]="form" id="solicitacao" errorMessage="Campo Obrigatório" label="Solicitação" labelClass="control-label fontSecundaria fontLight">
+                    <textarea formControlName="solicitacao" class="form-control"></textarea>
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="fontPrincipal fontLight text-center">
+            <a class="btn btn-circle" (click)="enviarSolicitacao()">Enviar</a>
+        </div>
+    </form>
+</div>

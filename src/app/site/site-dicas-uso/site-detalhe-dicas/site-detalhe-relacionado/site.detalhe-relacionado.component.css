@@ -1,0 +1,25 @@
+.banner{
+    position: relative;
+    text-align: right !important;
+    color: white;
+    padding-bottom: 90px;
+}
+
+.imagem{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+li{
+    cursor: pointer;
+    outline: none;
+}
+
+a{
+    text-decoration: none;
+    color: #222222;
+}

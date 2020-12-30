@@ -1,0 +1,172 @@
+<app-submenu link="Produtos" [linhas]="linhas"></app-submenu>
+<div class="container">
+    <div class="row" showIfAdmin="PRODUTO_EDICAO">
+        <div class="col-sm-3 text-center">
+            <app-modal-novo-produto (produtoNovo)="retornaProduto($event)"></app-modal-novo-produto>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <app-sidebar [sublinhas]="subLinhas" (clickProduto)="selecionaProduto($event);"></app-sidebar>
+        </div>
+
+        <div *ngIf="produto" class="col-sm-9" style="margin-top:17px;">
+            <app-titulo-secoes-produto showIfAdmin="PRODUTO_EDICAO" cor="#008EB8" de="#3FEFFC" ate="#1579DE"
+                titulo="Informações do Produto">
+            </app-titulo-secoes-produto>
+            <span class="tituloProduto fontPrincipal fontLight">{{produto.nomeProduto | uppercase}}</span>
+            <div showIfAdmin="PRODUTO_EDICAO" class="row" style="margin-bottom:50px">
+                <form [formGroup]="formProduto" class="col-sm-12" style="margin-top:20px;">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <app-custom-input [form]="formProduto" errorMessage="Campo Obrigatório"
+                                label="Nome do Produto" labelClass="control-label fontSecundaria" id="nomeProduto">
+                                <input class="form-control" formControlName="nomeProduto" type="text" maxlength="100">
+                            </app-custom-input>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <label class="control-label fontSecundaria">Ativo</label><br />
+                                <input class="" type="checkbox" formControlName="ativo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <app-custom-input [form]="formProduto" errorMessage="Campo Obrigatório"
+                                label="Código do Produto" labelClass="control-label fontSecundaria" id="codigoProduto">
+                                <input class="form-control" formControlName="codigoProduto" type="text" maxlength="100">
+                            </app-custom-input>
+                        </div>
+                        <div class="col-sm-6">
+                            <app-custom-input [form]="formProduto" errorMessage="Campo Obrigatório"
+                                label="Código Legado" labelClass="control-label fontSecundaria" id="codigoLegado">
+                                <input class="form-control" formControlName="codigoLegado" type="text" maxlength="50">
+                            </app-custom-input>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <app-custom-input [form]="formProduto" errorMessage="Campo Obrigatório" label="Linha"
+                                labelClass="control-label fontSecundaria" id="idLinha">
+                                <select class="form-control" formControlName="idLinha"
+                                    (change)="carregarSubLinhas($event.target.value)">
+                                    <option value="">- Selecione a Linha -</option>
+                                    <option *ngFor="let linha of linhas" [value]="linha.id">
+                                        {{linha.nomeLinha | titlecase}}
+                                    </option>
+                                </select>
+                            </app-custom-input>
+                        </div>
+                        <div class="col-sm-6">
+                            <app-custom-input [form]="formProduto" errorMessage="Campo Obrigatório" label="Sub Linha"
+                                labelClass="control-label fontSecundaria" id="idSubLinha">
+                                <select class="form-control" formControlName="idSubLinha"
+                                    (change)="recarregarEspecificacoes($event.target.value)">
+                                    <option value="">- Selecione a Sub Linha -</option>
+                                    <option *ngFor="let subLinhaCombo of subLinhasCombo" [value]="subLinhaCombo.id">
+                                        {{subLinhaCombo.nomeSubLinha | titlecase}}
+                                    </option>
+                                </select>
+                            </app-custom-input>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <app-custom-input [form]="formProduto" label="Preço"
+                                labelClass="control-label fontSecundaria" id="preco">
+                                <input class="form-control" currencyMask formControlName="preco" [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }"/>
+                            </app-custom-input>
+                        </div>
+                        <div class="col-sm-6">
+                            <app-custom-input [form]="formProduto" label="Ordem"
+                                labelClass="control-label fontSecundaria" id="ordem">
+                                <input class="form-control"  formControlName="ordem" />
+                            </app-custom-input>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <app-titulo-secoes-produto showIfAdmin="PRODUTO_EDICAO" cor="#008EB8" de="#3FEFFC" ate="#1579DE"
+                titulo="Arquivos">
+            </app-titulo-secoes-produto>
+            <div class="row" style="padding:20px 10px 0">
+                <div class="col-sm-4 divBloco">
+                    <app-bloco [idProduto]="produto.id" tipoArquivo="manual" icone="/assets/icones/manual.png"
+                        titulo="MANUAL" [itens]="produto.arquivos | FiltraPorTipoArquivo : 'manual'" liHeight="35"
+                        height="286">
+                    </app-bloco>
+                </div>
+                <div class="col-sm-4 divBloco">
+                    <app-bloco [idProduto]="produto.id" tipoArquivo="treinamento"
+                        icone="/assets/icones/treinamentos.png" titulo="TREINAMENTOS"
+                        [itens]="produto.arquivos | FiltraPorTipoArquivo : 'treinamento'" liHeight="35" height="286">
+                    </app-bloco>
+                </div>
+                <div class="col-sm-4 divBloco">
+                    <app-bloco [idProduto]="produto.id" tipoArquivo="materialApoio" icone="/assets/icones/materiais.png"
+                        titulo="MATERIAL DE APOIO" [itens]="produto.arquivos | FiltraPorTipoArquivo : 'materialApoio'"
+                        liHeight="35" height="286">
+                    </app-bloco>
+                </div>
+            </div>
+            <div class="row" style="padding: 0 10px;">
+                <div class="col-sm-8 divBloco">
+                    <app-bloco icone="/assets/icones/fotos.png" titulo="FOTOS" height="516"
+                        [fotos]="produto.arquivos | FiltraPorTipoArquivo : 'imgCard'">
+                    </app-bloco>
+                </div>
+                <div class="col-sm-4 divBloco">
+                    <app-bloco [idProduto]="produto.id" tipoArquivo="certificado"
+                        icone="/assets/icones/certificados.png" titulo="CERTIFICADOS"
+                        [itens]="produto.arquivos | FiltraPorTipoArquivo : 'certificado'" height="516" liHeight="60">
+                    </app-bloco>
+                </div>
+            </div>
+            <div showIfAdmin="PRODUTO_EDICAO" class="row" style="margin-bottom:50px;padding: 0 10px;">
+                <div class="col-sm-12 divBloco">
+                    <app-bloco [idProduto]="produto.id" tipoArquivo="imgCard" icone="/assets/icones/fotos.png"
+                        titulo="FOTOS PARA APRESENTAÇÃO DO PRODUTO" height="286"
+                        [itens]="produto.arquivos | FiltraPorTipoArquivo : 'imgCard'" liHeight="35"></app-bloco>
+                </div>
+            </div>
+
+            <app-cadastro-modelo showIfAdmin="PRODUTO_EDICAO" [idProduto]="produto.id" [modelos]="produto.modelos">
+            </app-cadastro-modelo>
+
+            <app-cadastro-caracteristicas showIfAdmin="PRODUTO_EDICAO" [idProduto]="produto.id"
+                [caracteristicas]="produto.caracteristicas">
+            </app-cadastro-caracteristicas>
+
+            <app-cadastro-especificacao showIfAdmin="PRODUTO_EDICAO"
+                [especificacoesTecnicas]="produto.especificacoesTecnicas">
+            </app-cadastro-especificacao>
+
+            <app-cadastro-secao showIfAdmin="PRODUTO_EDICAO" [idProduto]="produto.id"
+                [secoesProduto]="produto.secoesProduto">
+            </app-cadastro-secao>
+
+
+            <app-cadastro-palavra-chave showIfAdmin="PRODUTO_EDICAO" [idProduto]="produto.id"
+                [palavrasChave]="produto.palavrasChave">
+            </app-cadastro-palavra-chave>
+
+            <app-cadastro-classificacao showIfAdmin="PRODUTO_EDICAO" [(classificacao)]="produto.classificacoes">
+            </app-cadastro-classificacao>
+
+            <div showIfAdmin="PRODUTO_EDICAO" class="row"
+                style="margin-top:25px; position: sticky; background-color: white; bottom:0px; padding-bottom: 20px;z-index: 1000;">
+                <div class="col-sm-12 text-center">
+                    <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+                    <input style="margin-left: 10px;" class="btn-adc" type="button"
+                        value="Copiar Especificações e Classificações" (click)="abrirModalCopiar()">
+                    <input *ngIf="linhaSelecionada == 'Refrigeracao'" class="btn-adc" type="button" value="Traduzir" (click)="abreTraducao()" style="margin-left: 10px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-modal-copiar-produto #modalCopiarProduto (idProdutoDestino)="copiarProduto($event)"></app-modal-copiar-produto>
+<app-modal-traducao></app-modal-traducao>

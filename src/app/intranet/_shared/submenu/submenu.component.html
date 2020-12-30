@@ -1,0 +1,12 @@
+<nav id="navbar2" class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+        <ul class="navbar-nav w-100 justify-content-center">
+
+            <li *ngFor="let linha of linhas | orderBy:'ordem'" class="nav-item active" >
+                <a class="nav-link  fontPrincipal fontLight fontSubMenu" [routerLink]="['/PortaldeApoio/' + link + '/' + linha.codigoLinha]">
+                    {{linha.nomeLinha | uppercase }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

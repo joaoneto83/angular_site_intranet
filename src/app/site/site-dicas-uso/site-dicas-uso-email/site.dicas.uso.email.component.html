@@ -1,0 +1,71 @@
+<div class="bannerEmailDicas" >
+    <div class="divEsquerda  centerVertical">
+        <div class="blocoTexto">
+            <img src="/assets/img/Site/SuporteTecnico/icons/email.png" alt>
+            <div class="tit1 fontSecundaria">
+                Mande-nos<br />um email
+            </div>
+            <div class="tit2 fontSecundaria">
+                Selecione a linha que você deseja<br />entrar em contato
+            </div>
+            <div class="tit3">
+                Preencha os dados abaixo. Os campos marcados<br />com * são de preenchimento obrigatório.
+            </div>
+        </div>
+    </div>
+    <div class="divDireita  centerVertical">
+            <form [formGroup]="form">
+                <div class="row">
+                    <div class="col-md-12">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="Nome Completo*"
+                            labelClass="control-label">
+                            <input class="form-control inputEmail" maxlength="250" formControlName="nome" type="text">
+                        </app-site-custom-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="CPF ou CNPJ*" labelClass="control-label">
+                            <input class="form-control inputEmail" maxlength="20" formControlName="cpf" type="text">
+                        </app-site-custom-input>
+                    </div>
+                    <div class="col-md-6">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="E-mail*"
+                            labelClass="control-label">
+                            <input class="form-control inputEmail" maxlength="250" formControlName="email" type="text">
+                        </app-site-custom-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="Telefone*"
+                            labelClass="control-label">
+                            <input class="form-control inputEmail" maxlength="20" formControlName="telefone" type="text">
+                        </app-site-custom-input>
+                    </div>
+                    <div class="col-md-6">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="Linha*"
+                            labelClass="control-label">
+                            <select class="form-control inputEmail" formControlName="idLinha" style="width: 100%;height: 38px;">
+                                <option value="" style="color:#222"></option>
+                                <option *ngFor="let linha of linhas" [value]="linha.id" style="color:#222">{{linha.nomeLinha | titlecase}}
+                                </option>
+                            </select>
+                        </app-site-custom-input>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <app-site-custom-input errorMessage="Campo Obrigatório" label="Mensagem"
+                            labelClass="control-label">
+                            <textarea class="form-control inputEmail" maxlength="800" formControlName="mensagem" rows="4" cols="50"
+                                style="resize: none;"></textarea>
+                        </app-site-custom-input>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <input (click)="enviar();" type="button" class="btnEnviar" value="Enviar">
+                </div>
+            </form>
+    </div>
+</div>

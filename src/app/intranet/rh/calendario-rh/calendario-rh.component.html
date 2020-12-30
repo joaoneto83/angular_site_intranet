@@ -1,0 +1,44 @@
+<div class="calendariofundo">
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <!-- <span class="fontPrincipal fontRegular" style="font-size: 25px;color:#FFF">{{ano}}</span> -->
+            <div>
+                <i (click)="voltarMes()" id="btn-voltar-mes" class="fas fa-caret-left"></i>
+                <div class="mes">{{mesSelecionado.nome}}</div>
+                <i (click)="avancarMes()" id="btn-avancar-mes" class="fas fa-caret-right"></i>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <table id="schedule">
+                <ng-container *ngFor="let semana of semanas">
+                    <tr>
+                        <td><div [innerHTML]="semana.domingo"></div></td>
+                        <td><div [innerHTML]="semana.segunda"></div></td>
+                        <td><div [innerHTML]="semana.terca"></div></td>
+                        <td><div [innerHTML]="semana.quarta"></div></td>
+                        <td><div [innerHTML]="semana.quinta"></div></td>
+                        <td><div [innerHTML]="semana.sexta"></div></td>
+                        <td><div [innerHTML]="semana.sabado"></div></td>
+                    </tr>
+                </ng-container>
+            </table>
+        </div>
+    </div>
+    <div class="row datas">
+        <div class="col-sm-12">
+            <ng-container *ngFor="let feriado of feriados">
+                <div class="row">
+                    <div class="col-sm-2 text-right" style="padding: 0 5px">
+                        <span class="data">{{feriado.dias}}</span>
+                    </div>
+                    <div class="col-sm-10" style="padding: 0 5px">
+                        <span class="dataDescricao">{{feriado.name}}</span><br />
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+
+</div>

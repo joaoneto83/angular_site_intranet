@@ -1,0 +1,20 @@
+<div *ngIf="rows && rows.length" class="espacamento-100">
+    <div *ngFor="let cols of rows" class="row" style="margin:0px auto">
+        <div *ngFor="let c of cols" class="col-sm-12 col-md-4 paddingBox">
+            <div class="bloco img" [style.background-image]="'url(' + c.imagemUrl + ')'">
+                <div class="degrade"></div>
+                <div class="divTextos">
+                    <label class="fontPrincipal fontLight" style="font-size:25px;">{{c.titulo | uppercase}}</label>
+                    <div>
+                        <label class="fontPrincipal fontLight" style="font-size:13px;padding-bottom:10px;">{{c.subtitulo}}</label>
+                    </div>
+                    <div>
+                        <a class="btn btn-saiba-mais fontPrincipal fontLight" [routerLink]="c.rota">
+                            Saiba Mais
+                        </a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>

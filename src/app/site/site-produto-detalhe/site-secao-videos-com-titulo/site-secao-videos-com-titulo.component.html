@@ -1,0 +1,52 @@
+<div *ngIf="secao" [ngClass]="{'text-center espacamentoSecao':secao.codigoSecao === 'secao16'}">
+    <div>
+        <animate-box axis="Y" position="80" delay="0">
+            <label *ngIf="secao.texto1" class="tituloBanner labelBanner fontPrincipal fontRegular" [innerHtml]="secao.texto1">
+            </label>
+        </animate-box>
+    </div>
+    <div class="espacamentoTitulo" *ngIf="secao.exibeTexto2">
+        <animate-box axis="y" position="80" delay="100">
+            <label class="labelBanner fontPrincipal fontLight" style="font-size:20px" [innerHtml]="secao.texto2"> 
+            </label>
+        </animate-box>
+    </div>
+    <div class="espacamentoConteudo" *ngIf="secao.exibeTexto3">
+        <animate-box axis="Y" position="80" delay="200">
+            <label class="labelBanner fontPrincipal fontLight" style="font-size:16px" [innerHtml]="secao.texto3">
+            </label>
+        </animate-box>
+    </div>
+    <div style="display: flex;
+    flex-wrap: wrap;">
+   
+    <div class="justify-content-center" style="padding: 5px; width: 50%;" *ngIf="showVideo !== ''">
+        <div class="embed-responsive embed-responsive-16by9 divVideo">
+            <iframe width="100%" height="100%" [src]="urlVideo" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="justify-content-center" style="padding: 5px; width: 50%;" *ngIf="showVideo2 !== ''" >
+        <div class="embed-responsive embed-responsive-16by9 divVideo">
+            <iframe width="100%" height="100%" [src]="urlVideo2" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="justify-content-center" style="padding: 5px; width: 50%;" *ngIf="showVideo3 !== ''">
+        <div class="embed-responsive embed-responsive-16by9 divVideo">
+            <iframe width="100%" height="100%" [src]="urlVideo3" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <div class="justify-content-center" style="padding: 5px; width: 50%;" *ngIf="showVideo4 !== ''" >
+        <div class="embed-responsive embed-responsive-16by9 divVideo">
+            <iframe width="100%" height="100%" [src]="urlVideo4" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+    
+    </div>
+</div>

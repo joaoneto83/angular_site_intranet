@@ -1,0 +1,67 @@
+<nav id="navbar2" class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse w-100" id="navbarSubMenu">
+        <ul class="navbar-nav w-100 justify-content-center">
+            <li class="nav-item active">
+
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" style="padding-left: 0;" (mouseenter)="removeClasse()">
+                    {{"Produtos" | uppercase}}
+                </a>
+
+                <ul class="sub-menu">
+                    <li *ngFor="let sublinha of sublinhas | orderBy: ['ordem']" class="nav-item active"
+                        style="text-align:center" (click)="adicionaClasse($event.target)">
+                        <a class="link-sub-menu" [routerLink]="['/Produtos/Automacao/' + sublinha.codigoSubLinha ]">
+                            <img class="img-menu" [src]="sublinha.caminhoImagem"
+                                onError="this.src='./assets/img/noimage.jpg';" alt>
+                            <label class="span-menu fontPrincipal">{{sublinha.nomeSubLinha | uppercase}}</label>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()" target="_blank"
+                    href="http://www.clubeautomacaoelgin.com.br/">
+                    {{"Software Partners" | uppercase}}
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    [routerLink]="['/Automacao/Home/To/Contato/']">
+                    {{"Encontre uma autorizada" | uppercase}}
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    [routerLink]="['/Automacao/Home/To/SuporteTecnico/']">
+                    {{"Suporte Técnico" | uppercase}}
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    [routerLink]="['/Automacao/Cases']">
+                    {{"Cases" | uppercase}}
+                </a>
+            </li>
+            <li class="nav-item">
+                <a (click)="showMenuClick = !showMenuClick" id="btnClick">
+                    <img id="btnClick" class="imgClick" src="/assets/img/Site/Automacao/clickP.jpg">
+                </a>
+                <!-- (mouseleave)="showMenuClick = false" -->
+                <div (clickOutside)="fecharClickVendas($event)"  *ngIf="showMenuClick" class="imagenet-botoes-top">
+                    <div class="hvr-underline-from-left "><a
+                            href="https://www.automacao.elgin.com.br/chamado/sistema/autorizada" target="_blank">Acesso
+                            Autorizada</a></div>
+                    <div class="hvr-underline-from-left "><a
+                            href="https://www.automacao.elgin.com.br/chamado/sistema/cliente" target="_blank">Acesso
+                            Contratos</a></div>
+                </div>
+
+            </li>
+            <li class="nav-item queroComprar active">
+                <a (mouseenter)="removeClasse()" [routerLink]="['/Automacao/QueroComprar']">
+                    <input type="button" class="btnQueroComprar" value="QUERO COMPRAR">
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

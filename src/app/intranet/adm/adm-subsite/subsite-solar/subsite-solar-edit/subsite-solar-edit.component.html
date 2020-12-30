@@ -1,0 +1,89 @@
+<div class="container" style="padding:50px 0">
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Adm/Subsite/Solar']">&#60; Voltar</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <form [formGroup]="formIntegrador" class="col-sm-12" style="margin-top:20px;">
+            <div class="row">
+                <div class="col-sm-4">
+                    <app-custom-input [form]="formIntegrador" errorMessage="Campo Obrigatório" label="Nome"
+                        labelClass="control-label fontSecundaria" id="nome">
+                        <input class="form-control" formControlName="nome" type="text" maxlength="250">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-4">
+                    <app-custom-input [form]="formIntegrador" label="CNPJ" errorMessage="Campo Obrigatório"
+                        labelClass="control-label fontSecundaria" id="cnpj">
+                        <input class="form-control" formControlName="cnpj" [textMask]="{mask: cnpjMask}" type="text" maxlength="20">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-4">
+                    <app-custom-input [form]="formIntegrador" errorEmailMessage="Email inválido." label="E-mail"
+                        labelClass="control-label fontSecundaria" id="email">
+                        <input class="form-control" formControlName="email" type="text" maxlength="250">
+                    </app-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <app-custom-input [form]="formIntegrador" label="Endereço" labelClass="control-label fontSecundaria"
+                        id="endereco">
+                        <input class="form-control" formControlName="endereco" type="text" maxlength="500">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-4">
+                    <app-custom-input [form]="formIntegrador" label="Telefone" labelClass="control-label fontSecundaria"
+                        id="telefone">
+                        <input class="form-control" formControlName="telefone" type="text" maxlength="100">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-4">
+                    <app-custom-input [form]="formIntegrador" label="Site" labelClass="control-label fontSecundaria"
+                        id="site">
+                        <input class="form-control" formControlName="site" type="text" maxlength="100">
+                    </app-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <app-custom-input [form]="formIntegrador" label="Estado" errorMessage="Campo Obrigatório"
+                        labelClass="control-label fontSecundaria" id="uf">
+                        <select class="form-control" formControlName="uf"
+                            (change)="carregarCidades($event.target.value)">
+                            <option value="">- Selecione -</option>
+                            <option *ngFor="let e of estados" [value]="e.sigla">{{e.descricao}}</option>
+                        </select>
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-4">
+                    <app-custom-input [form]="formIntegrador" label="Cidade" labelClass="control-label fontSecundaria"
+                        id="idCidade">
+                        <select class="form-control" formControlName="idCidade">
+                            <option value="">- Selecione -</option>
+                            <option *ngFor="let c of cidades" [value]="c.id">{{c.descricao | titlecase}}</option>
+                        </select>
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-4">
+                    <app-custom-input [form]="formIntegrador" label="Ativo" labelClass="control-label fontSecundaria"
+                        id="ativo"><br>
+                        <input formControlName="ativo" type="checkbox">
+                    </app-custom-input>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-12 text-center" style="margin-top: 40px;">
+        <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Adm/Subsite/Solar']">&#60; Voltar</span>
+        </div>
+    </div>
+</div>

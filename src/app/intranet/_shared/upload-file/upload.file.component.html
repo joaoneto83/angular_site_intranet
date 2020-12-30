@@ -1,0 +1,15 @@
+<input *ngIf="justImages" #file type="file" [id]="'files_'+ idPai" style="display:none;" (change)="upload(file.files)" accept="image/*" />
+<input *ngIf="!justImages" #file type="file" [id]="'files_'+ idPai" style="display:none;" (change)="upload(file.files)" />
+<label class="btn-adc" [for]="'files_'+ idPai">{{texto}}</label>
+
+<span style="font-weight:bold;color:green;" *ngIf="progress > 0 && progress < 100">
+    {{progress}}%
+</span>
+
+<span style="font-weight:bold;color:#48bcf7;padding-left:10px" *ngIf="response && response.sucesso == true">
+    Arquivo selecionado: {{fileName}}
+</span>
+
+<span style="font-weight:bold;color:red;" *ngIf="response && response.sucesso == false">
+    Algo inesperado aconteceu. Selecione o arquivo novamente.
+</span>

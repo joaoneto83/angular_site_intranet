@@ -1,0 +1,34 @@
+<nav #divFixaTopo id="divFixaTopo" class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="#">
+        <img class="logoHeaderMini2" src="../../assets/img/Elgin_logo_branco.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+        <ul class="navbar-nav justify-content-center" style="width: calc(100% - 115px);">
+            <ng-container *ngFor="let menu of menus | FiltraMenuPai; let i = index">
+                <li *ngIf="!menu.filhos.length" class="nav-item" [ngClass]="{'menuAtivo': menuAtivo == menu.codigo}">
+                    <a class="nav-link fontPrincipal fontThin fontMenu" [routerLink]="[menu.rota]" >
+                        {{menu.nome}}
+                    </a>
+                </li>
+                <li *ngIf="menu.filhos.length" class="nav-item dropdown" [ngClass]="{'menuAtivo': menuAtivo == menu.codigo}">
+                    <a class="nav-link dropdown-toggle  fontPrincipal fontThin fontMenu" [id]="'navbar_' + i"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{menu.nome}}
+                    </a>
+                    <ul class="dropdown-menu" >
+                        <li *ngFor="let menuFilho of menu.filhos">
+                            <a class="dropdown-item itemFilho" [routerLink]="[menuFilho.rota]">
+                                {{menuFilho.nome}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,66 @@
+<div class="bannerIntegrador">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 tituloIntegrador">
+                Que tal começar sua economia agora?
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 textoIntegrador">
+                Encontre um dos nossos integradores credenciados<br />para fazer seu orçamento e projeto personalizado
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <select #estadoIntegrador class="select-preto" [value]="estadoSelecionado" (change)="carregarCidades(estadoIntegrador.value)">
+                    <option value="0">Selecione o estado</option>
+                    <option *ngFor="let estado of estados" [value]="estado.sigla">{{estado.descricao}}</option>
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <select #cidadeIntegrador class="select-preto" [value]="idCidadeSelecionada" (change)="retornaAssistencias(estadoIntegrador.value, cidadeIntegrador.value)">
+                    <option value="0">Selecione a cidade</option>
+                    <option *ngFor="let cidade of cidades" [value]="cidade.id">{{cidade.descricao | titlecase }}</option>
+                </select>
+            </div>
+        </div>
+        <ng-container *ngIf="!temCredenciados && credenciados">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="cidadeIntegrador">
+                        Não encontramos credenciados para a cidade escolhida.
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="temCredenciados && credenciados">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="cidadeIntegrador">
+                        {{credenciados[0].nomeEstado}}
+                    </div>
+                </div>
+            </div>
+            <div class="divItens">
+                <div class="row divItem" *ngFor="let cred of credenciados | filter: 'true'">
+                    <div class="col-sm-10">
+                        <div class="itemTitulo">
+                            {{cred.nome}}
+                        </div>
+                        <div class="itemDescricao">
+                            {{cred.endereco}}
+                        </div>
+                        <div class="itemDescricao">
+                            {{cred.telefone}}
+                        </div>
+                    </div>
+                    <!-- <div class="col-sm-4">
+                        <div *ngFor="let tel of cred.telefones" class="itemDescricao" style="text-align: right;">
+                            {{tel}}
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

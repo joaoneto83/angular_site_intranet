@@ -1,0 +1,49 @@
+<div class="bannerDownloadCenter">
+    <div class="container">
+        <div class="divTitulo">
+            <img class="imgIcon" src="/assets/img/Site/SuporteTecnico/icons/download_center.png" alt>
+            <h1 class="fontSecundaria fontLight">Download Center</h1>
+        </div>
+        <div class="divCombos">
+            <div class="divLinhaProduto">
+                <select class="fontSecundaria select-preto" (change)="getProdutos($event.target.value)">
+                    <option value="">Linha de Produto</option>
+                    <option *ngFor="let linhaProduto of linhas " [value]="linhaProduto.id">
+                        {{linhaProduto.nomeLinha | titlecase}}
+                    </option>
+                </select>
+            </div>
+            <div style="color: #222222; margin: 3px 25px;">
+                |
+            </div>
+            <div class="divProduto">
+                <select class="fontSecundaria select-preto" (change)="getProduto($event.target.value)">
+                    <option value="">Produto</option>
+                    <option *ngFor="let produto of produtos | filter:'true' | orderBy: 'nomeProduto'" [value]="produto.id">{{produto.nomeProduto | titlecase}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div *ngIf="produto" class="divLista">
+            <ul class="fontPrincipal fontLight" style="font-size:17px">
+                <ng-container
+                    *ngFor="let arquivo of produto.arquivos | FiltraPorTipoArquivo : ['manual','certificado']">
+                    <li>
+                        <a class="arquivos" [href]="arquivo.caminho">
+                            {{arquivo.nomeArquivo}}
+                            <img style="max-height:20px" class="imgIcon"
+                                src="/assets/img/Site/SuporteTecnico/icons/download_center.png" alt>
+                        </a>
+                    </li>
+                    <hr>
+                </ng-container>
+            </ul>
+            <ng-container *ngIf="!temArquivo">
+                <div class="text-center">
+                    Nenhum Arquivo Encontrado
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <!-- <img class="imagem" src=""> -->
+</div>

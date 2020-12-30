@@ -1,0 +1,82 @@
+<div  class="fontPrincipal divSejaIntegrador">
+    <a routerLink="/SejaIntegrador" class="btnSejaIntegrador">Integradores</a>
+</div>
+<div class="banner">
+    <img class="imagemEnergiaSolar" src="/assets/img/Site/Solar/main_img.png" (click)="scrollTo('video')">
+</div>
+<app-site-solar-calculo (pesquisaCidadeEstadoEvent)="eventoPesquisa = $event;"></app-site-solar-calculo>
+
+<app-site-solar-integrador [eventoPesquisa]="eventoPesquisa"></app-site-solar-integrador>
+<div id="video" class="container container-video" style="padding-top:100px;">
+    <div class="row justify-content-center" style="margin-bottom:30px">
+        <div class="col-md-10">
+            <div class="embed-responsive embed-responsive-16by9" style="height:400px">
+                <iframe width="100%" height="100%" [src]="urlVideo" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-vantagem-solar></app-vantagem-solar>
+
+<div class="divEnergia centerVertical">
+    <div class="centerVertical" style="display:flex;    margin: 0 auto;">
+        <img class="imgPlanta" src="/assets/img/Site/Solar/img_economize_planta.png" alt>
+        <div class="conteudo">
+            <h1 class="fontPrincipal fontLight" style="font-size:35px">
+                Energia Barata <br>e Sustentável
+            </h1>
+            <label class="fontPrincipal fontLight" style="font-size:15px">
+                Reduza até 99% da sua conta de energia
+                elétrica com o sistema fotovoltaico da Elgin
+            </label>
+        </div>
+    </div>
+</div>
+
+<div class="container containerTexto centerVertical">
+    <div class="row divPais">
+        <div class="">
+            <img id="imgPais" src="/assets/img/Site/Solar/img_brasil.png" alt>
+        </div>
+        <div class="conteudo">
+            <h1 class="fontSecundaria fontLight" style="font-size:35px">
+                Gigante por <br>natureza
+            </h1>
+            <label class="fontPrincipal fontLight" style="font-size:15px">
+                O Brasil possui um enorme potencial
+                energético solar em toda a sua extensão.
+                Com os produtos da Elgin, você pode ter até
+                25 anos de economia de energia elétrica com
+                essa fonte de energia limpa e inesgotável.
+            </label>
+            <!-- <div class="divImgPais">
+                <img class="imgPais" src="/assets/img/Site/Solar/img_brasil.png">
+            </div> -->
+        </div>
+    </div>
+    <div class="row divSistemas centerVertical">
+        <div class="conteudo">
+            <h1 class="fontSecundaria fontLight" style="font-size:35px">
+                Sistemas conectado à rede (On-Grid)
+            </h1>
+            <label class="fontPrincipal fontLight" style="font-size:15px">
+                Com sistema On-Grid, toda energia excedente produzida gera créditos junto a sua concessionária de
+                energia elétrica
+            </label>
+        </div>
+        <div class="divImgSistema">
+            <img id="imgSistema" src="/assets/img/Site/Solar/img_ongrid.png" alt>
+        </div>
+    </div>
+</div>
+
+<div style="margin: 90px 50px 100px 50px" class="divProdutos">
+    <app-site-solar-produto></app-site-solar-produto>
+</div>
+
+<div class="divInfo">
+    <app-info-solar></app-info-solar>
+</div>

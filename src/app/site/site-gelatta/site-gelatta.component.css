@@ -1,0 +1,322 @@
+::ng-deep.tituloGelatta{
+    font-size: 35px;
+    color: #3C3C3C;
+    text-transform: uppercase;
+}
+
+.divPergunta{
+    display: flex;
+    text-decoration: none;
+}
+
+.divPergunta label{
+    cursor: pointer;
+    font-size: 20px;
+    color: #3C3C3C;
+}
+
+.lblResposta{
+    font-size: 15px;
+    color: #3C3C3C;
+    padding: 0 24px 0 15px;
+}
+
+ul{
+    list-style-type: none;
+    /* padding: 0; */
+}
+
+.btnToggle{
+    color: #006198;
+    border: 1px solid #006198;
+    border-radius: 20px;
+    padding: 6px 6px;
+    margin-left: auto;
+    margin-top: 5px;
+    height: 24px;
+    width: 24px;
+    font-size: 12px;
+}
+
+.titlePerguntas{
+    color: #006198;
+    font-size: 35px;
+    text-transform: uppercase;
+}
+
+.subTitlePerguntas{
+    color: #3C3C3C;
+    font-size: 15px;
+}
+
+.imgBannerSorvete{
+    width: 100%;
+}
+
+.imgBannerSorvete {
+    width: 100%;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background: url("/assets/img/Site/Gelatta/banner-sorvete.png") 70%;
+}
+
+.imgIcones{
+    max-height: 51px;
+}
+
+.lblLegendaIcone{
+    width: 100%;
+    font-size: 18px;
+    padding-left: 30px;
+}
+
+.divIcones{
+    width: 55px;
+    text-align: center;
+}
+
+.divLegenda{
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.rowLegendas{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.colLegendas{
+    padding: 40px 15px;
+}
+
+.rowLegendasNoBorder{
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.mobileImg{
+    display: none;
+}
+
+.tituloSorveteAcai{
+    margin-bottom: 20px;
+}
+
+.imgMaquina{
+    max-height: 450px;
+    max-width: 100%;
+}
+
+.tituloMobileMaquina{
+    display: none;
+}
+
+.tituloAssistencia{
+    font-size: 49px;
+    color: #006198;
+    max-width: 499px;
+}
+.divAssistencia{
+    background: url("/assets/img/Site/Gelatta/banner-assistencia.png")70% 90% no-repeat;
+    display: flex;
+    height: 600px;
+    background-size: 100%;
+}
+
+.lblAssistencia{
+    font-size: 20px;
+    max-width: 640px;
+}
+
+.lblInfoAssistencia{
+    color: #006198;
+    font-size: 19px;
+}
+
+.imgIconeTelefone{
+    padding-right: 10px;
+}
+
+.imgIconeEmail{
+    padding-right: 15px;
+    margin-left: 50px;
+}
+
+.divBgOpaco{
+    display: flex;
+    padding-left: 400px;
+    width: 100%;
+    height: 100%;
+    background: transparent linear-gradient(90deg, #FFFFFF 0%, #FFFFFF00 100%) 0% 0% no-repeat padding-box;
+}
+
+.divImgIconContato{
+    margin-top: 30px;
+    display: flex;
+}
+
+@media (max-width: 1024px) {
+    .divBgOpaco{
+        padding-left: 100px !important;
+    }
+}
+
+@media(max-width: 1440px){
+    .divBgOpaco{
+        padding-left: 200px;
+    }
+}
+
+@media (max-width: 575px) {
+
+    ::ng-deep.tituloGelatta{
+        font-size: 21px;
+    }
+
+    .titlePerguntas{
+        font-size: 21px;
+        font-weight: 400;
+        color: #3C3C3C;
+    }
+
+    .tituloLinha{
+        font-weight: 400;
+    }
+
+    .linhaDesk{
+        display: none;
+    }
+
+    .rowLegendas{
+        margin-left: 15px;
+        margin-right: 15px;
+        border: 1px solid #707070;
+        border-radius: 32px;
+    }
+
+    .colLegendas{
+        padding: 40px 15px 10px;
+    }
+
+    .mobileImg{
+        display: block;
+    }
+
+    .deskImg{
+        display: none;
+    }
+
+    .tituloSorveteAcai{
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .lblTexto{
+        text-align: center;
+    }
+
+    .rowLegendas{
+        padding-top: 30px;
+    }
+
+    .tituloMobileMaquina{
+        background: #FFF;
+        font-size: 17px;
+        text-transform: uppercase;
+        display: block;
+        width: 184px;
+    }
+
+    .tituloSoft{
+        margin: -56px auto 30px;
+    }
+
+    .tituloExpresso{
+        margin: -43px auto 30px;
+    }
+
+    .tituloAssistencia{
+        font-size: 21px;
+        color: #3C3C3C;
+        font-weight: 400;
+        text-transform: uppercase;
+    }
+
+    .lblAssistencia{
+        font-size: 16px;
+    }
+
+    .lblInfoAssistencia{
+        font-size: 12px;
+    }
+
+    .divBgOpaco{
+        padding-left: 35px !important;;
+    }
+
+    .divTextoAssistencia{
+        width: 300px;
+    }
+
+    .divAssistencia{
+        background: url(/assets/img/Site/Gelatta/banner-assistencia.png)42% 90% no-repeat;
+        height: 300px;
+        background-size: 900px 300px !important;
+    }
+
+    .divImgIconContato .imgIconeEmail{
+        margin-left: 0px;
+    }
+
+    .divImgIconContato{
+        display: block;
+    }
+
+    .divContatoEmail{
+        margin-top: 15px;
+    }
+}
+
+/* Estilos Banner */
+
+@media(max-width: 1024px){
+    .imgBannerSorvete {
+        background:url("/assets/img/Site/Gelatta/banner-sorvete.png") 62%;
+    }
+
+    .divAssistencia{
+        background: url(/assets/img/Site/Gelatta/banner-assistencia.png)35% 90% no-repeat;
+        background-size: 1700px 600px;
+    }
+
+}
+
+@media (max-width: 768px){
+    .imgBannerSorvete {
+        height: 400px;
+        background-size: 2200px 400px !important;
+    }
+}
+
+@media (max-width: 320px){
+    .imgBannerSorvete{
+        background:url("/assets/img/Site/Gelatta/banner-sorvete.png") 58% !important;
+    }
+}
+
+@media (max-width: 375px) {
+    .imgBannerSorvete {
+        background: url("/assets/img/Site/Gelatta/banner-sorvete.png") 62%;
+    }
+}
+
+@media (max-width: 575px) {
+    .imgBannerSorvete {
+        height: 194px;
+        background-size: 1080px 194px !important;
+        /* background: url("/assets/img/Site/Gelatta/banner-sorvete.png") 65%; */
+    }
+}

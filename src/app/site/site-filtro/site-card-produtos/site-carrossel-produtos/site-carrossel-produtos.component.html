@@ -1,0 +1,8 @@
+<ngb-carousel #carrosselProduto *ngIf="imagens" class="text-center" [interval]="1000"
+id="carrosselProduto" 
+    [showNavigationIndicators]="true" [showNavigationArrows]="false"
+    (mouseenter)="carrosselProduto.cycle()" (mouseleave)="carrosselProduto.pause()">
+    <ng-template ngbSlide *ngFor="let item of imagens">
+        <img [routerLink]="[link]" [src]="item.caminho" class="imagemCarrossel" onError="this.src='/assets/img/noimage.jpg';" alt>
+    </ng-template>
+</ngb-carousel> 

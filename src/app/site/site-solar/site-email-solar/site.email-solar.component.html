@@ -1,0 +1,16 @@
+<div class="text-center tituloEmail">
+    <h1 class="fontPrincipal fontLight">Envie essa simulação para seu email</h1>
+</div>
+<div class="row row-input" style="padding: 20px 70px;margin-bottom: 55px;">
+    <form id="emailForm" [formGroup]="emailForm" class="col-md-12" style="display:flex;">
+        <div class="col-md-5 col-input">
+            <input formControlName="nome" type="text" placeholder="Seu Nome">
+        </div>
+        <div class="col-md-6 col-input">
+            <input formControlName="email" type="text" placeholder="Seu E-mail">
+        </div>
+        <div class="col-md-1 divEnviar">
+            <a id="btnEnviar" class="fontPrincipal fontRegular" (click)="enviarEmail()">Enviar</a>
+        </div>
+    </form>
+</div>

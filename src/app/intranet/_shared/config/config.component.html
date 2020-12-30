@@ -1,0 +1,5 @@
+<div *ngIf="haveAdmin" id="divAdmin" class="text-center">
+    <i id="icoGear" class="fas fa-cog"></i>
+    <label for="chkAdmin">Visão Admin</label><br/>
+    <input [(ngModel)]="isAdmin" id="chkAdmin" type="checkbox" (click)="clicaAdmin();" >
+</div>

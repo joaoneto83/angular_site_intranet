@@ -1,0 +1,24 @@
+<div class="card">
+    <a *ngIf="!itens.siteExterno; else acessoExterno" class="card-img-tiles" [routerLink]="[itens.rota]">
+        <div class="inner text-center posResponsivo">
+            <div class="main-img">
+                <img *ngIf="itens.imagemUrl" [src]="itens.imagemUrl" class="imagem2" alt="Category">
+            </div>
+            <label class="card-title fontPrincipal fontThin font-small2">{{itens.texto}}</label>
+        </div>
+    </a>
+    <ng-template #acessoExterno>
+        <a target="_blank" rel="noopener noreferrer" [href]="itens.rota" class="card-img-tiles">
+            <div class="inner text-center posResponsivoExterno">
+                <div class="main-img">
+                    <img id="{{itens.id}}" 
+                    [src]="itens.imagemUrl || itens.imagemHoverOffUrl"
+                    (mouseover)="itens.imagemUrl = itens.imagemHoverUrl"
+                    (mouseout)="itens.imagemUrl = itens.imagemHoverOffUrl"
+                     class="imagem" alt="Category"alt>
+                </div>
+                <label class="card-title fontPrincipal fontThin font-small">{{itens.texto}}</label>
+            </div>
+        </a>
+    </ng-template>
+</div>

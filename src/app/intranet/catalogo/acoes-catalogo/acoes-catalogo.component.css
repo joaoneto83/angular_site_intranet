@@ -1,0 +1,13 @@
+.acoesProduto{
+    color: #bfbfbf;
+}
+
+.acoesProduto i{
+    margin: 3px; 
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.acoesProduto a{
+    color: inherit;
+}

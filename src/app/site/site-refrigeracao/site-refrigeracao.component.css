@@ -1,0 +1,116 @@
+.divLinks{
+    width: 85px;
+    text-align: center;
+    margin: 0 auto;
+    outline: none;
+}
+
+.divLinks img{
+    padding-bottom: 20px;
+}
+
+.divLinks.redes img{
+    max-height: 86px;
+}
+
+.divLinks *{
+    cursor: pointer;
+}
+
+.lblTexto{
+    font-size: 16px;
+    color: #222222;
+    line-height: 1.9;
+    margin-bottom: 0;
+}
+
+.lblTituloTexto{
+    font-size: 37px;
+    color: #222222;
+    margin-right: 30px;
+    margin-left: 40px;
+}
+
+.linha{
+    position: absolute;
+    height: 2px;
+    width: 150px;
+    background-color: #4A4A4A;
+    bottom: 15px;
+    right: 30px;
+}
+
+.espacamento-100{
+    margin-top: 100px;
+}
+
+.display-flex-links{
+    display: flex;
+}
+
+.tituloCliente{
+    font-size: 49px; 
+    margin-bottom: 80px;
+}
+
+.divTextoInovacao{
+    position: relative; 
+    padding: 0;
+    text-align: right;
+}
+
+.lblLink{
+    font-size: 15px; 
+    color: #575756;
+    text-transform: uppercase;
+}
+
+@media(max-width: 1024px){
+    .lblLink{
+        font-size: 13px;
+    }
+    
+    .divRotas img{
+        max-height: 60%;
+    }
+}
+
+@media (max-width: 768px){
+    .lblTituloTexto{
+        font-size: 34px;
+    }
+
+    .lblTexto{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .display-flex-links{
+        display: contents;
+    }
+
+    .espacamento-100{
+        margin-top: 80px;
+    }
+
+    .divTextoInovacao{
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    .lblTituloTexto{
+        margin: 0;
+        padding: 0 10px 10px;
+    }
+
+    .linha{
+        width: 50%;
+        right: calc(50% - 25%);
+        bottom: 0;
+    }
+
+    .divRotas {
+        width: 150px;
+    }
+}

@@ -1,0 +1,78 @@
+<ng-template #contentTraducao let-modal>
+    <div class="modal-header modal-header-traducao container">
+        <div style="width: 100%">
+            <label class="tituloModal">Tradução</label>
+            <button type="button" class="close" aria-label="Close" (click)="close()" style="border:0px;outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <ng-container>
+        <div class="modal-body container">
+            <div class="col-sm-12">
+                <label class="fontSecundaria" style="margin-bottom: 30px;">
+                    Atenção: Apenas alterações salvas serão exibidas na tabela abaixo. 
+                </label>
+            </div>
+            <div class="col-sm-12 divOverflow" style="margin: 0 auto">
+                <table class='tabelaTraducao' *ngIf="traducao">
+                    <tr>
+                        <th>
+                            Código
+                        </th>
+                        <th style="width: 100%;">
+                            PT
+                        </th>
+                        <th>
+                            EN
+                        </th>
+                        <th>
+                            ES
+                        </th>
+                    </tr>
+                    <tr *ngFor="let item of traducao">
+                        <td>
+                            {{item.campo}}
+                        </td>
+                        <td>
+                            <div [innerHTML]="item.pt"></div>
+                        </td>
+                        <td>
+                            <ng-container *ngIf="isHtml(item.campo)">
+                                <ng-container *ngIf="item.en">
+                                    <div (click)="abreHtmlEditor(item, 'en')" [innerHTML]="item.en"></div>
+                                </ng-container>
+                                <ng-container *ngIf="!item.en">
+                                    <span (click)="abreHtmlEditor(item, 'en')" style="color: gray;">&nbsp;Preencha a
+                                        tradução</span>
+                                </ng-container>
+                            </ng-container>
+                            <ng-container *ngIf="!isHtml(item.campo)">
+                                <input placeholder=" Preencha a tradução" [(ngModel)]="item.en">
+                            </ng-container>
+                        </td>
+                        <td>
+                            <ng-container *ngIf="isHtml(item.campo)">
+                                <ng-container *ngIf="item.es">
+                                    <div (click)="abreHtmlEditor(item, 'es')" [innerHTML]="item.es"></div>
+                                </ng-container>
+                                <ng-container *ngIf="!item.es">
+                                    <span (click)="abreHtmlEditor(item, 'es')" style="color: gray;">&nbsp;Preencha a
+                                        tradução</span>
+                                </ng-container>
+                            </ng-container>
+                            <ng-container *ngIf="!isHtml(item.campo)">
+                                <input placeholder=" Preencha a tradução" [(ngModel)]="item.es">
+                            </ng-container>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-sm-12 text-center" style="margin-top: 10px;">
+                <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+            </div>
+        </div>
+    </ng-container>
+</ng-template>
+
+<app-modal-html-editor (resposta)="getHtmlValue($event)"></app-modal-html-editor>

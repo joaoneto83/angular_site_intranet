@@ -1,0 +1,119 @@
+.bannerIntegrador {
+    background-image: url('/assets/img/Site/Solar/bg_credenciados.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+.tituloIntegrador {
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 36px;
+    color: #3C3C3C;
+    text-align: center;
+    margin: 50px auto 30px;
+}
+
+.textoIntegrador {
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 15px;
+    color: #3C3C3C;
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.cidadeIntegrador {
+    font-family: fontPrincipal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+    margin-top: 50px;
+    border-bottom: 1px #959595 solid;
+    padding-bottom: 10px;
+}
+
+.itemTitulo {
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 14px;
+    color: #000000;
+}
+
+.itemDescricao {
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 14px;
+    color: #959595;
+}
+
+.divItens {
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    max-height: 300px;
+}
+
+.divItem {
+    padding: 20px;
+    border-bottom: 1px #959595 solid;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+select {
+    background-color: transparent;
+    border: 0;
+    color: #959595;
+    border-bottom: 1px solid #959595;
+    width: 100%;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #DDDCDC; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #DDDCDC; 
+  }
+
+@media (max-width: 576px){
+    .tituloIntegrador{
+        font-size: 29px;
+        margin: 20px auto;
+    }
+
+    .textoIntegrador{
+        margin-bottom: 20px;
+    }
+
+    .textoIntegrador br {
+        display: none;
+    }
+
+    .bannerIntegrador .container{
+        padding-bottom: 30px;
+    }
+}

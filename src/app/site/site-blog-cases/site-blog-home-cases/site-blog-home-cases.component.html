@@ -1,0 +1,34 @@
+<div class="inner" style="margin-top:100px;margin-bottom: 80px;">
+    <div>
+        <h1 class="titulo text-center fontPrincipal fontExtraLight">Cases de sucesso</h1>
+    </div>
+    <div style="display: flex; margin-top: 50px;" *ngIf="codigoBlog == 'Refrigeracao'">
+        <!-- <div class="divCategorias">
+            <a class="fontSecundaria linkCategoria" [routerLink]="['/Refrigeracao/Cases/refrigeracao-industrial']">Refrigeração industrial</a>
+        </div>
+        <div class="divCategorias">
+            <a class="fontSecundaria linkCategoria" [routerLink]="['/Refrigeracao/Cases/refrigeracao-comercial']">Refrigeração Comercial</a>
+        </div>
+        <div class="divCategorias">
+            <a class="fontSecundaria linkCategoria" [routerLink]="['/Refrigeracao/Cases/supermercado']">Supermercado</a>
+        </div>
+        <div class="divCategorias">
+            <a class="fontSecundaria linkCategoria" [routerLink]="['/Refrigeracao/Cases/fabricantes']">Fabricantes</a>
+        </div> -->
+    </div>
+    <div class="text-center divPesquisa" style="margin-top: 60px;">
+        <app-site-blog-pesquisa-cases
+        (pesquisarOutput)="realizaPesquisa($event);" [codigoBlog]="codigoBlog"></app-site-blog-pesquisa-cases>
+    </div>
+    <ul class="list">
+        <li *ngFor="let postagem of postagens" class="hentry">
+            <app-site-blog-card-cases [postagem]="postagem"></app-site-blog-card-cases>
+        </li>
+    </ul>
+</div>
+<div *ngIf="linkCarregarMais" class="justify-content-center" style="margin-bottom: 40px;text-align: center;width: 100%;"
+    (click)="carregarMais();">
+    <a class="btnCarregarMais fontSecundaria fontLight">Carregar mais
+        <i class="fas fa-caret-down"></i>
+    </a>
+</div>

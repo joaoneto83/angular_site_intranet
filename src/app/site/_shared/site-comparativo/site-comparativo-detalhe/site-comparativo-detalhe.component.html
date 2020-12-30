@@ -1,0 +1,20 @@
+
+<div *ngIf="produto" class="5NivelDestalhes detalhes text-center">
+    <label *ngIf="getValue() == true">
+        <img src="/assets/icones/check.png" alt="Sim">
+    </label>
+    <label *ngIf="getValue() != true">{{getValue()}}</label>
+    <!-- <ng-container *ngIf="produto.id">
+        <label *ngIf="classificacao" class="valorProdutoComparativo">
+            {{classificacao.nomeClassificacao}}:
+            <ng-container *ngFor="let valor of getClassificacoes() ; let i = index">
+                <label class="unidadeProdutoComparativo">{{valor.nomeClassificacao}}</label>
+                <label *ngIf="qtd > i + 1">,</label>
+            </ng-container>
+        </label>
+        <label *ngIf="especificacao" class="valorProdutoComparativo">
+            {{especificacao.nomeEspecificacao}}:
+            <label class="unidadeProdutoComparativo">{{getEspecificacoes()}}</label>
+        </label>
+    </ng-container> -->
+</div>

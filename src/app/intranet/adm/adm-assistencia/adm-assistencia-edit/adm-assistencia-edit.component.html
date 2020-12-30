@@ -1,0 +1,165 @@
+<div class="container" style="padding:50px 0">
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Adm/Assistencia']">&#60; Voltar</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <form [formGroup]="assistenciaForm" class="col-sm-12" style="margin-top:20px;">
+            <div class="row">
+                <div class="col-sm-10">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Nome"
+                        labelClass="control-label fontSecundaria" id="nome">
+                        <input class="form-control" formControlName="nome" type="text" maxlength="255">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-2">
+                    <div class="form-group">
+                        <label class="control-label fontSecundaria">Ativo</label><br />
+                        <input type="checkbox" formControlName="ativo">
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Email"
+                        labelClass="control-label fontSecundaria" id="email">
+                        <input class="form-control" formControlName="email" type="text" maxlength="255">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-6">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Linha"
+                        labelClass="control-label fontSecundaria" id="idLinha">
+                        <select class="form-control" formControlName="idLinha">
+                            <option value="">- Selecione a Linha -</option>
+                            <option *ngFor="let linha of linhas" [value]="linha.id">
+                                {{linha.nomeLinha | titlecase}}
+                            </option>
+                        </select>
+                    </app-custom-input>
+                </div>
+
+                <div class="col-sm-6">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Estado"
+                        labelClass="control-label fontSecundaria" id="idEstado">
+                        <select class="form-control" formControlName="idEstado"
+                            (change)="carregarCidades($event.target.value)">
+                            <option value="0">- Selecione o Estado -</option>
+                            <option value="">Estado</option> 
+                            <option value="1">Acre</option>
+                            <option value="2">Alagoas</option>
+                            <option value="4">Amapá</option>
+                            <option value="3">Amazonas</option>
+                            <option value="5">Bahia</option>
+                            <option value="6">Ceará</option>
+                            <option value="7">Distrito Federal</option>
+                            <option value="8">Espírito Santo</option>
+                            <option value="9">Goiás</option>
+                            <option value="10">Maranhão</option>
+                            <option value="11">Mato Grosso</option>
+                            <option value="12">Mato Grosso Do Sul</option>
+                            <option value="13">Minas Gerais</option>
+                            <option value="14">Pará</option>
+                            <option value="15">Paraíba</option>
+                            <option value="18">Paraná</option>
+                            <option value="16">Pernambuco</option>
+                            <option value="17">Piauí</option>
+                            <option value="19">Rio De Janeiro</option>
+                            <option value="20">Rio Grande Do Norte</option>
+                            <option value="23">Rio Grande do Sul</option>
+                            <option value="21">Rondônia</option>                 
+                            <option value="22">Roraima</option>
+                            <option value="24">Santa Catarina</option>
+                            <option value="26">São Paulo</option>
+                            <option value="25">Sergipe</option>
+                            <option value="27">Tocantins</option>
+                        </select>
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-6">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Cidade"
+                        labelClass="control-label fontSecundaria" id="idCidade">
+                        <select class="form-control" formControlName="idCidade">
+                            <option value="0">- Selecione a Cidade -</option>
+                            <option *ngFor="let cidade of cidades" [value]="cidade.id">
+                                {{cidade.descricao | titlecase}}
+                            </option>
+                        </select>
+                    </app-custom-input>
+                </div>
+
+                <div class="col-sm-4">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Rua"
+                        labelClass="control-label fontSecundaria" id="rua">
+                        <input class="form-control" formControlName="rua" type="text" maxlength="255">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-4">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Número"
+                        labelClass="control-label fontSecundaria" id="numero">
+                        <input class="form-control" formControlName="numero" type="text" maxlength="255">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-4">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Complemento"
+                        labelClass="control-label fontSecundaria" id="complemento">
+                        <input class="form-control" formControlName="complemento" type="text" maxlength="255">
+                    </app-custom-input>
+                </div>
+
+                <div class="col-sm-6">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Bairro"
+                        labelClass="control-label fontSecundaria" id="bairro">
+                        <input class="form-control" formControlName="bairro" type="text" maxlength="255">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-6">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="CEP"
+                        labelClass="control-label fontSecundaria" id="cep">
+                        <input [textMask]="{mask: cep}" class="form-control" formControlName="cep" type="text">
+                    </app-custom-input>
+                </div>
+
+                <div class="col-sm-6">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Telefone"
+                        labelClass="control-label fontSecundaria" id="telefone">
+                        <input [textMask]="mask()" class="form-control" formControlName="telefone"
+                            type="text">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-6">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Telefone 2"
+                        labelClass="control-label fontSecundaria" id="telefone_2">
+                        <input [textMask]="mask()" class="form-control" formControlName="telefone_2"
+                            type="text">
+                    </app-custom-input>
+                </div>
+
+                <div class="col-sm-6">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Telefone 3"
+                        labelClass="control-label fontSecundaria" id="telefone_3">
+                        <input  [textMask]="mask()" class="form-control" formControlName="telefone_3"
+                            type="text">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-6">
+                    <app-custom-input [form]="assistenciaForm" errorMessage="Campo Obrigatório" label="Telefone 4"
+                        labelClass="control-label fontSecundaria" id="telefone_4">
+                        <input [textMask]="mask()" class="form-control"
+                            formControlName="telefone_4" type="text">
+                    </app-custom-input>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md-12 text-center" style="margin-top: 40px;">
+        <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Adm/Assistencia']">&#60; Voltar</span>
+        </div>
+    </div>
+</div>

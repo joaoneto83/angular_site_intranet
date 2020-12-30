@@ -1,0 +1,32 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-novo-produto container">
+        <div>
+            <label class="tituloModal">Novo Modelo</label>
+            <button type="button" class="close" aria-label="Close" (click)="close()"
+                style="border:0px;outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <ng-container>
+        <div class="modal-body container">
+            <form [formGroup]="formSecaoModeloGrupo" class="col-sm-12" style="margin-top:50px;">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <app-custom-input [form]="formSecaoModeloGrupo" errorMessage="Campo Obrigatório"
+                            label="Nome do Modelo" labelClass="control-label fontSecundaria" id="descricao">
+                            <input class="form-control" formControlName="descricao" type="text" maxlength="100">
+                        </app-custom-input>
+                    </div>
+                </div>
+                <div class="row pt-3">
+                    <div class="col-sm-12 text-center">
+                        <input class="btn-adc" type="button" value="Criar" (click)="salvar();">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </ng-container>
+</ng-template>
+
+<input style="margin-bottom: 25px;" type="button" class="btn-adc" (click)="open(content)" value="Novo Modelo">

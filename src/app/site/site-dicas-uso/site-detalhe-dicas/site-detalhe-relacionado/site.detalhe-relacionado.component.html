@@ -1,0 +1,11 @@
+<div class="col-md-12">
+    <label class="fontSecundaria fontLight" style="font-size: 26px;padding-bottom: 30px;">RELACIONADOS</label>
+    <ul class="fontSecundaria fontLight" style="font-size:16px">
+        <div *ngIf="relacionados && relacionados.length">
+            <div *ngFor="let relacionado of relacionados">
+                <li [routerLink]="['/DicasUso/' + relacionado.id]" [innerHtml]="relacionado.titulo"></li>
+                <hr>
+            </div>
+        </div>
+    </ul>
+</div>

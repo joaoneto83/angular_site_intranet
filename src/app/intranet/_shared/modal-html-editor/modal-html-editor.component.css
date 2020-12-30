@@ -1,0 +1,20 @@
+.modalHtmlEditor{
+    z-index: 99999;
+    position: fixed;
+    left: 0;
+    top: 41px;
+    background: white;
+    box-shadow: 1px 1px 5px;
+    right: 0px;
+    padding: 25px;;
+}
+
+.backgroundBlack{
+    z-index: 9999;
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+}

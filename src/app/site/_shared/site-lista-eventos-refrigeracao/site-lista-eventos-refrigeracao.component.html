@@ -1,0 +1,45 @@
+<ng-container *ngIf="!temEventos && eventos">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="tituloEvento">
+                {{'NenhumEventoEncontrado' | translate}}
+            </div>
+        </div>
+    </div>
+</ng-container>
+<ng-container *ngIf="temEventos && eventos">
+    <!-- <div class="row">
+        <div class="col-sm-12">
+            <div class="tituloEvento">
+                {{eventos[0].nomePais}}
+            </div>
+        </div>
+    </div> -->
+    <div class="row">
+        <div class="col-12 col-md-12 divItens divOverflow">
+            <div class="row divItem" *ngFor="let e of eventos">
+                <div class="col-lg-3 col-sm-2 col-md-12 divImg">
+                    <img *ngIf="e.caminhoImagem" class="imgEvento" [src]="e.caminhoImagem">
+                </div>
+                <div class="col-lg-7 col-sm-7 col-md-12">
+                    <div class="itemTitulo">
+                        {{e.titulo}}
+                    </div>
+                    <div class="itemDescricao">
+                        {{'Data' | translate}}: {{e.dataFormatada}}
+                    </div>
+                    <div class="itemDescricao">
+                        {{'Local' | translate}}: {{e.local}}
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-3 col-md-12 text-center divLink">
+                    <div *ngIf="e.link" class="btnSaibaMais">
+                        <a target="_blank" [href]="e.link" class="fontRegular fontPrincipal">
+                            {{'SaibaMais' | translate}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

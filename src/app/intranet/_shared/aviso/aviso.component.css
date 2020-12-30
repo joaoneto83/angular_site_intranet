@@ -1,0 +1,46 @@
+.descricao-item{
+    font-size: 15px;
+}
+
+.data-item{
+    font-size: 12px;
+    padding-top: 4px;
+}
+
+ul{ 
+    list-style-type: none;
+    padding: 0;
+}
+
+span.fontPrincipal.fontRegular{
+    font-size: 17px;
+}
+
+.btn-saiba-mais{
+    color: #35aade !important;
+    width: 30px;
+    border: 1px solid #35aade;
+    border-radius: 20px;
+    font-size: 14px;
+    padding: 0px 16px;
+    margin-right: 6px;
+}
+
+.titulo{
+    color: #29ABD0;
+    font-size:17px;
+}
+
+.btn-add-aviso{
+    float: right;
+    font-size: 18px;
+    color: #34c5f2 !important;
+    cursor: pointer;
+}
+
+.btn-edit-aviso{
+    float: right;
+    font-size: 16px;
+    color: #34c5f2 !important;
+    cursor: pointer;  
+}

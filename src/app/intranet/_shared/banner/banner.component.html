@@ -1,0 +1,26 @@
+<div [showIfAdmin]="perfil" class="row">
+  <div class="col-sm-12 text-right">
+    <a style="cursor: pointer" (click)="editar()"><i class="fas fa-pen"></i></a>
+  </div>
+</div>
+<ngb-carousel *ngIf="banners" class="text-center" style="margin-left: -9px; margin-bottom:30px;"
+              [showNavigationIndicators]="false">
+  <ng-template ngbSlide *ngFor="let item of banners | FiltraBannerAtivo">
+    <img [src]="item.caminho" alt>
+    <div class="carousel-caption">
+      <div class="div-texto-banner col-md-4 col-sm-4" [style.background-color]="item.cor">
+        <h1 class="fontPrincipal fontRegular">
+          {{item.texto1}}
+        </h1>
+        <p class="fontSecundaria fontLight">{{item.texto2}}</p>
+        <a *ngIf="item.link" class="btn btn-saiba-mais fontSecundaria fontLight" [routerLink]="[item.link]">
+          Saiba Mais
+        </a>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<app-edit-banner [showIfAdmin]="perfil" #editBanner [modulo]="codigoBanner" [componente]="1" (atualiza)="atualiza($event)" [banners]="banners"></app-edit-banner>
+
+<app-edit-banner [showIfAdmin]="perfil" #editBanner2 [modulo]="codigoBanner" [componente]="2" (atualiza)="atualiza($event)" [banners]="banners"></app-edit-banner>

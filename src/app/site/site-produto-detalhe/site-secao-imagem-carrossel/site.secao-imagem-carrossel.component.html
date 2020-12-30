@@ -1,0 +1,25 @@
+<div class="container p-b-60" *ngIf="secao">
+    <div class="row">
+        <div class="col-sm-6 text-right">
+            <app-site-secao-carrossel [imagens]="secao.arquivos"></app-site-secao-carrossel>
+        </div>
+        <div class="conteudo col-sm-6" style="padding:15px 50px">
+            <div>
+            <label *ngIf="secao.texto1" class="fontPrincipal fontRegular" style="font-size:32px"
+                [innerHtml]="secao.texto1">
+            </label>
+            </div>
+            <div>
+                <label *ngIf="secao.texto2" class="fontPrincipal fontLight" style="font-size:20px"
+                [innerHtml]="secao.texto2">
+                </label>
+            </div>
+            <div>
+                <label *ngIf="secao.texto3" class="fontPrincipal fontLight" style="font-size:16px"
+                [innerHtml]="secao.texto3">
+                </label>
+            </div>
+        
+        </div>
+    </div>
+</div>

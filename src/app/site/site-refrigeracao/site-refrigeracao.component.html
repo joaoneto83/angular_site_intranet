@@ -1,0 +1,124 @@
+<app-banner-home [podeEditar]="false" codigoBanner="Site-Refrigeracao" [traduzir]="true" [banners]="banner" [banners2]="banner2">
+</app-banner-home>
+
+<div class="container contSup">
+    <div class="row" style="margin-top: 60px;">
+        <div class="col-sm-12 justify-content-center display-flex-links divRotas">
+            <div class="divLinks" routerLink="/Refrigeracao/Home/To/DownloadCenter">
+                <img src="/assets/img/Site/Refrigeracao/catalagos-boletins.svg">
+                <label class="lblLink fontPrincipal fontThin">
+                    {{'CatalogoBoletim' | translate | uppercase}}
+                </label>
+            </div>
+            <div class="divLinks" routerLink="/Refrigeracao/Home/To/ProdutosDestaque">
+                <img src="/assets/img/Site/Refrigeracao/portifolios-produtos.svg">
+                <label class="lblLink fontPrincipal fontThin">
+                    {{'PortifolioProdutos' | translate | uppercase}}
+                </label>
+            </div>
+            <div class="divLinks" routerLink="/Refrigeracao/Calendario">
+                <img src="/assets/img/Site/Refrigeracao/treinamentos-eventos.svg">
+                <label class="lblLink fontPrincipal fontThin">
+                    {{'TreinamentosEventos' | translate | uppercase}}
+                </label>
+            </div>
+            <div class="divLinks" routerLink="/Refrigeracao/Home/To/SuporteTecnico">
+                <img src="/assets/img/Site/Refrigeracao/assistencia-tecnica.svg">
+                <label class="lblLink fontPrincipal fontThin">
+                    {{'AssistenciaTecnica' | translate | uppercase}}
+                </label>
+            </div>
+            <a class="divLinks" href="http://www.resfriando.com.br" target="_blank">
+                <div>
+                    <img src="/assets/img/Site/Refrigeracao/resfriando-1.svg">
+                </div>
+                <label class="lblLink fontPrincipal fontThin">
+                    {{'Resfriando' | translate | uppercase}}
+                </label>
+            </a>
+        </div>
+    </div>
+
+    <app-site-bloco-segmentos id="Segmentos"></app-site-bloco-segmentos>
+
+    <div class="row espacamento-100">
+        <div class="col-sm-12 text-center">
+            <label class="fontPrincipal fontLight tituloCliente">
+                {{'NossosClientes' | translate}}
+            </label>
+        </div>
+        <div class="col-sm-12 text-center">
+            <img style="max-width: 90%;" src="/assets/img/Site/Refrigeracao/nossos-clientes.png">
+        </div>
+    </div>
+
+    <app-site-grupo-destaque id="ProdutosDestaque" [gruposDestaque]="gruposDestaqueHome"></app-site-grupo-destaque>
+
+    <app-site-blog-case codigoBlog="Refrigeracao"></app-site-blog-case>
+
+    <div class="row espacamento-100">
+        <div class="col-sm-12 text-center" style="margin-bottom: 80px;">
+            <label class="fontPrincipal fontLight" style="font-size: 49px">
+                {{'FiqueCom' | translate}}
+            </label>
+            <br>
+            <label class="fontPrincipal fontLight" style="font-size: 21px; margin: 0">
+                {{'SigaNos' | translate}}
+            </label>
+        </div>
+        <div class="col-sm-12 justify-content-center display-flex-links divRedes">
+            <a class="divLinks redes" target="_blank" href="http://www.resfriando.com.br">
+                <img src="/assets/img/Site/Refrigeracao/resfriando-2.svg">
+                <label style="font-size: 19px; color: #575756"
+                    class="fontPrincipal fontLight">{{'Resfriando' | translate}}</label>
+            </a>
+            <a class="divLinks" target="_blank" href="https://www.facebook.com/elginrefrigeracao/">
+                <img src="/assets/img/Site/Home/icons/fb.png">
+                <label style="font-size: 19px; color: #575756" class="fontPrincipal fontLight">Facebook</label>
+            </a>
+            <a class="divLinks" target="_blank" href="https://br.linkedin.com/company/elgin-s.a.-brazil-">
+                <img src="/assets/img/Site/Home/icons/Lk.png">
+                <label style="font-size: 19px; color: #575756" class="fontPrincipal fontLight">Linkedin</label>
+            </a>
+            <a class="divLinks" target="_blank" href="https://www.youtube.com/channel/UC4EEMFjqb3zQcn0vpE0ewAg">
+                <img src="/assets/img/Site/Home/icons/yt.png">
+                <label style="font-size: 19px; color: #575756" class="fontPrincipal fontLight">Youtube</label>
+            </a>
+            <a class="divLinks" target="_blank" href="http://blog.elgin.com.br/blog/">
+                <img src="/assets/img/Site/Home/icons/blogger.png"><br>
+                <label style="font-size: 19px; color: #575756" class="fontPrincipal fontLight">Blog</label>
+            </a>
+            <a class="divLinks" target="_blank" href="https://www.instagram.com/grupo_elgin/">
+                <img src="/assets/img/Site/Home/icons/insta.png">
+                <label style="font-size: 19px; color: #575756" class="fontPrincipal fontLight">Instagram</label>
+            </a>
+        </div>
+    </div>
+
+    <app-site-bloco-institucional tela="refrigeracao"></app-site-bloco-institucional>
+
+    <div class="row justify-content-center espacamento-100">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-5 col-12 divTextoInovacao">
+                    <label class="fontPrincipal fontLight lblTituloTexto">
+                        {{'InovacaoTecnologica' | translate}}
+                    </label>
+                    <div class="linha"></div>
+                </div>
+                <div class="col-sm-7 col-12" style="padding: 15px">
+                    <label class="fontSecundaria fontLight lblTexto">
+                        {{'PioneirismoInovacao' | translate}}
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-site-videos [videos]="videos"></app-site-videos>
+</div>
+<div class="espacamento-100">
+    <app-download-center-sublinha id="DownloadCenter" tela="Refrigeracao" [sublinhas]="sublinhas"></app-download-center-sublinha>
+    <app-site-refrigeracao-info></app-site-refrigeracao-info>
+    <app-site-refrigeracao-email id="SuporteTecnico"></app-site-refrigeracao-email>
+</div>

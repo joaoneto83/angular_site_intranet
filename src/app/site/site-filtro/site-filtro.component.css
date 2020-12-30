@@ -1,0 +1,111 @@
+::ng-deep .card {
+  border-radius: 0;
+  background-color: transparent;
+  border: 0;
+  word-wrap: normal;
+  max-width: 270px;
+}
+
+.font20 {
+  font-size: 20px;
+}
+
+.banner {
+  position: relative;
+  text-align: right !important;
+  color: white;
+  /* height: 320px; */
+  /* padding-bottom: 65px; */
+  margin-bottom: 30px;
+}
+
+.imagem {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.fontTitulo {
+  /* position: relative; */
+  font-size: 20px;
+  /* padding-right: 200px;
+    top: -160px; */
+
+  position: absolute;
+  right: 25px;
+  top: 15px;
+}
+
+.divAparelhoIdeal {
+  margin-bottom: 30px;
+}
+
+.comparativo {
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.btnAssistente {
+  background-color: #fff;
+  color: #005eb8 !important;
+  border-color: #005eb8;
+  border-style: solid;
+  border-width: 1.5px;
+  height: 36px;
+  width: 174px;
+  font-size: 15px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.btnAssistente{
+  padding: 7.3px 20px;
+  font-weight: normal;
+}
+
+.imagem-banner-home {
+  width: 100%;
+  display: none;
+}
+
+.imagem-banner-home-mobile {
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .imagem-banner-home-mobile {
+    display: none;
+  }
+  .imagem-banner-home {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .fontTitulo {
+    /* position: relative; */
+    font-size: 42px;
+    /* padding-right: 200px;
+        top: -160px; */
+
+    position: absolute;
+    left: 80%;
+    top: 35%;
+    transform: translate(-35%, -35%);
+  }
+}
+
+@media (min-width: 1380px) {
+  .contProdutos {
+    min-width: 1335px;
+  }
+  .supFiltro {
+    max-width: 285px;
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .comparativo {
+    display: none;
+  }
+}

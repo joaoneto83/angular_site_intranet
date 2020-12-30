@@ -1,0 +1,92 @@
+<ng-container *ngIf="podeEditar">
+  <div [showIfAdmin]="perfil">
+    <div class="col-sm-12 text-right" style="margin-bottom: 10px;">
+      Banner - Alta Resolução <a style="cursor: pointer" (click)="editar()"><i class="fas fa-pen"></i></a>
+    </div>
+  </div>
+</ng-container>
+<ngb-carousel *ngIf="banners" class="text-center" style="margin-left: -9px;" [showNavigationArrows]="true" [showNavigationIndicators]="true">
+  <ng-template ngbSlide *ngFor="let item of banners | FiltraBannerAtivo"> 
+    <div class="container containerDeskFull">
+      <div class="divContainerTextoHome">
+        <div class="div-texto-banner-home-site" [style.background-color]="item.cor">
+          <h1 class="fontPrincipal">
+            {{item.texto1}}
+          </h1>
+          <p class="fontPrincipal fontLight">{{item.texto2}}</p>
+          <ng-container *ngIf="item.link">
+            <a *ngIf="!traduzir; else btnTranslate" class="btn btn-saiba-mais-banner-home fontPrincipal fontLight"
+               href= "{{item.link}}">
+              Saiba Mais
+            </a>
+            <ng-template #btnTranslate>
+              <a *ngIf="traduzir" class="btn btn-saiba-mais-banner-home fontPrincipal fontLight"
+              href= "{{item.link}}">
+                {{'SaibaMais' | translate}}
+              </a>
+            </ng-template>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+    <!-- <source class="imagem-banner-home-mobile" srcset="/assets/img/Site/Home/banner_mobile_iluminacao.jpg" media="(max-width: 575px)">
+    <img class="imagem-banner-home" [src]="item.caminho">  -->
+    <div class="imagem-banner-home" [style.background-image]="'url(' +item.caminho + ')'"></div>
+    <div class="imagem-banner-home-mobile" [style.background-image]="'url(' +item.caminho2 + ')'"></div>
+  
+  </ng-template>
+
+</ngb-carousel>
+
+
+<div *ngIf="podeEditar">
+  <ng-container *ngIf="podeEditar">
+    <div [showIfAdmin]="perfil">
+      <div class="col-sm-12 text-right" style="margin-bottom: 10px;">
+        Banner - Baixa Resolução <a style="cursor: pointer" (click)="editar2()"><i class="fas fa-pen"></i></a>
+      </div>
+    </div>
+  </ng-container>
+  <ngb-carousel *ngIf="banners" class="text-center" style="margin-left: -9px;" [showNavigationIndicators]="false">
+    <ng-template ngbSlide *ngFor="let item of banners2 | FiltraBannerAtivo">
+      <div class="container containerDeskFull">
+        <div class="divContainerTextoHome">
+          <div class="div-texto-banner-home-site" [style.background-color]="item.cor">
+            <h1 class="fontPrincipal">
+              {{item.texto1}}
+            </h1>
+            <p class="fontPrincipal fontLight">{{item.texto2}}</p>
+            <ng-container *ngIf="item.link">
+              <a *ngIf="!traduzir; else btnTranslate" class="btn btn-saiba-mais-banner-home fontPrincipal fontLight"
+                [routerLink]="[item.link]">
+                Saiba Mais
+              </a>
+              <ng-template #btnTranslate>
+                <a *ngIf="traduzir" class="btn btn-saiba-mais-banner-home fontPrincipal fontLight"
+                  [routerLink]="[item.link]">
+                  {{'SaibaMais' | translate}}
+                </a>
+              </ng-template>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <!-- <source class="imagem-banner-home-mobile" srcset="/assets/img/Site/Home/banner_mobile_iluminacao.jpg" media="(max-width: 575px)">
+      <img class="imagem-banner-home" [src]="item.caminho">  -->
+      <div class="imagem-banner-home"
+        style="max-width: 425px;      display: block;      margin-left: auto;      margin-right: auto;"
+        [style.background-image]="'url(' +item.caminho + ')'"></div>
+      <div class="imagem-banner-home-mobile" [style.background-image]="'url(' +item.caminho + ')'">></div>
+
+    </ng-template>
+
+  </ngb-carousel>
+</div>
+
+<ng-container *ngIf="podeEditar">
+  <app-edit-banner [showIfAdmin]="perfil" #editBanner [modulo]="codigoBanner" [componente]="1"
+    (atualiza)="atualiza($event)" [titulo]="'Banner - Alta Resolução'" [banners]="banners"></app-edit-banner>
+
+  <app-edit-banner [showIfAdmin]="perfil" #editBanner2 [modulo]="codigoBanner" [componente]="2"
+    (atualiza)="atualiza2($event)" [titulo]="'Banner - Baixa Resolução'" [banners]="banners2"></app-edit-banner>
+</ng-container>

@@ -1,0 +1,159 @@
+<div class="row" style="margin-top: 50px">
+    <div class="col-sm-12 text-center">
+        <h1 class="tituloGelatta fontPrincipal fontLight">Escolha seu modelo</h1>
+    </div>
+</div>
+
+<ng-container *ngIf="pages[contCarrossel]">
+    <div class="row justify-content-center cardProdutoDesk" style="margin-top: 100px;">
+        <div class="divArrows">
+            <a class="btnCarrossel" *ngIf="contCarrossel != 0" (click)="voltarPagina()">
+                <i class="fas fa-chevron-circle-left"></i>
+            </a>
+        </div>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-sm-4" *ngFor="let produto of pages[contCarrossel]">
+                    <div class="cardProduto">
+                        <div class="headerCardProduto">
+                            <div style="display: flex;">
+                                <img class="imgCardProduto" [src]="produto.arquivos[0].caminho" alt>
+                            </div>
+                            <label class="lblNomeProduto fontPrincipal fontLight">
+                                {{produto.nomeProduto}}
+                                <span class="lblSublinha">{{produto.nomeSublinha}}</span>
+                            </label>
+                        </div>
+                        <div class="contentCardProduto">
+                            <label class="lblPreco fontPrincipal fontRegular">{{getValorMoeda(produto.preco)}}</label>
+                            <label class="lblParcela fontPrincipal fontLight">Parcelamento até 12x</label>
+                            <ng-container *ngFor="let espec of produto.especificacoesTecnicas; let i = index">
+                                <label *ngIf="espec.valor"
+                                    class="lblEspec fontPrincipal fontLight">{{espec.nomeEspecificacao}}:
+                                    {{espec.valor}}</label>
+                            </ng-container>
+                        </div>
+                        <div class="footerCardProduto">
+                            <a (click)="adquirirProduto(produto.id)" class="btn btn-comprar fontPrincipal">
+                                Adquirir Agora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divArrows">
+            <a class="btnCarrossel" *ngIf="contCarrossel<pages.length - 1" (click)="proximaPagina()"><i
+                    class="fas fa-chevron-circle-right"></i></a>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="produtos[contCarrossel]">
+    <div class="row cardProdutoMobile" style="margin-top: 100px;">
+        <div class="col-sm-12 justify-content-center" style="display: flex;">
+            <div class="divArrows" style="width: 30px;">
+                <a class="btnCarrossel" *ngIf="contCarrossel != 0" (click)="voltarPagina()">
+                    <i class="fas fa-chevron-circle-left"></i>
+                </a>
+            </div>
+            <div class="col-sm-10 col-10">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cardProduto">
+                            <div class="headerCardProduto">
+                                <div style="display: flex;">
+                                    <img class="imgCardProduto" [src]="produtos[contCarrossel].arquivos[0].caminho" alt>
+                                </div>
+                                <label class="lblNomeProduto fontPrincipal fontLight">
+                                    {{produtos[contCarrossel].nomeProduto}}
+                                    <span class="lblSublinha">{{produtos[contCarrossel].nomeSublinha}}</span>
+                                </label>
+                            </div>
+                            <div class="contentCardProduto">
+                                <label
+                                    class="lblPreco fontPrincipal fontRegular">{{getValorMoeda(produtos[contCarrossel].preco)}}</label>
+                                <label class="lblParcela fontPrincipal fontLight">Parcelamento até 12x</label>
+                                <ng-container
+                                    *ngFor="let espec of produtos[contCarrossel].especificacoesTecnicas; let i = index">
+                                    <label *ngIf="espec.valor"
+                                        class="lblEspec fontPrincipal fontLight">{{espec.nomeEspecificacao}}:
+                                        {{espec.valor}}</label>
+                                </ng-container>
+                            </div>
+                            <div class="footerCardProduto">
+                                <a (click)="adquirirProduto(produtos[contCarrossel].id)" class="btn btn-comprar fontPrincipal fontLight">
+                                    Adquirir Agora
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divArrows" style="width: 30px;">
+                <a class="btnCarrossel" *ngIf="contCarrossel<produtos.length - 1" (click)="proximaPagina()"><i
+                        class="fas fa-chevron-circle-right"></i></a>
+            </div>
+        </div>
+    </div>
+</ng-container>
+<div class="row" style="margin-top: 70px;">
+    <div class="col-sm-12 divFormaPgtoDesk">
+        <div style="display: flex; justify-content: center;">
+            <label class="lblFormasPgto fontPrincipal fontRegular">FORMAS DE PAGAMENTO</label>
+            <div class="text-center" style="width: 50px; margin-right: 30px;">
+                <img src="/assets/img/Site/Gelatta/cartao.svg" alt>
+                <label class="spanFormasPgto fontPrincipal fontRegular">Cartão</label>
+            </div>
+            <div class="text-center" style="width: 67px; margin-right: 30px;">
+                <img class="imgTransferencia" src="/assets/img/Site/Gelatta/transferencia.svg" alt>
+                <label class="spanFormasPgto fontPrincipal fontRegular">Transferência</label>
+            </div>
+            <div class="linha" style="padding-left: 30px;">
+                <img class="imgMapaBrasil" src="/assets/img/Site/Gelatta/mapa-brasil.svg" alt>
+            </div>
+            <label class="lblEntrega fontPrincipal fontRegular">ENTREGA EM TODO BRASIL</label>
+            <div class="linha text-center" style="padding-left: 30px;">
+                <label class="lblAceitaCartoes fontPrincipal fontRegular">
+                    ACEITAMOS AS PRINCIPAIS BANDEIRAS DE CARTÃO
+                </label><br>
+                <img style="margin-right: 15px;" src="/assets/img/Site/Gelatta/mastercard.png" alt>
+                <img style="margin-right: 15px;" src="/assets/img/Site/Gelatta/visa.png" alt>
+                <img style="margin-right: 15px;" src="/assets/img/Site/Gelatta/elo.png" alt>
+                <img style="margin-right: 15px;" src="/assets/img/Site/Gelatta/cabal.png" alt>
+                <img style="margin-right: 15px;" src="/assets/img/Site/Gelatta/banri.png" alt>
+                <img src="/assets/img/Site/Gelatta/verdecard.png" alt>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 30px;">
+            <label class="lblCondicaoCompra fontPrincipal fontLight">*Condições de compra com cartão de crédito sob
+                consulta. Opção de parcelamento inside jurus.</label>
+        </div>
+    </div>
+</div>
+<hr class="linhaMobile">
+<div class="row">
+    <div class="col-sm-12 divFormaPgtoMobile">
+        <div style="display: flex; justify-content: center;">
+            <div style="text-align: center; margin-right: 15px;">
+                <label class="lblFormasPgto fontPrincipal fontRegular">FORMAS DE PAGAMENTO</label>
+                <div style="display: flex; justify-content: center;">
+                    <div class="text-center" style="width: 50px; margin-right: 15px;">
+                        <img src="/assets/img/Site/Gelatta/cartao.svg" alt>
+                        <label class="spanFormasPgto fontPrincipal fontRegular">Cartão</label>
+                    </div>
+                    <div class="text-center" style="width: 67px;">
+                        <img class="imgTransferencia" src="/assets/img/Site/Gelatta/transferencia.svg" alt>
+                        <label class="spanFormasPgto fontPrincipal fontRegular">Transferência</label>
+                    </div>
+                </div>
+            </div>
+            <div class="linha" style="padding-left: 15px; display: flex;">
+                <img class="imgMapaBrasil" src="/assets/img/Site/Gelatta/mapa-brasil.svg" alt>
+            </div>
+            <label class="lblEntrega fontPrincipal fontRegular">ENTREGA EM TODO BRASIL</label>
+
+        </div>
+    </div>
+</div>
+<hr class="linhaDesk" style="margin-top: 50px; margin-bottom: 60px;">

@@ -1,0 +1,29 @@
+<div class="container" style="padding: 30px 15px">
+    <div class="row justify-content-center" style="margin: 30px 0 40px">
+        <div class="col-md-10" style="padding: 0">
+            <input (keyup.enter)="pesquisarProduto()" class="input-busca-produto" [(ngModel)]="txtPesquisa"
+                placeholder="Pesquisar" type='text'>
+        </div>
+    </div>
+    <div class="row justify-content-center rowTitulo">
+        <div class="col-md-10">
+            <label class="fontTituloBusca">
+                RESULTADO DA BUSCA POR "{{termo | uppercase}}"
+            </label>
+        </div>
+    </div>
+    <div class="row justify-content-center" *ngFor="let produto of produtos">
+        <div class="col-md-10">
+            <div class="row" style="padding: 0 15px;">
+                <div class="col-md-3 col-lg-2 col-6 s-centerVertical">
+                    <img class="img-busca-produto" *ngIf="produto.imagemUrl" [src]="produto.imagemUrl" alt>
+                    <img class="img-busca-produto" *ngIf="!produto.imagemUrl" src="/assets/img/noimage.jpg" alt>
+                </div>
+                <div class="col-md-9 col-lg-10 col-6" style="display: flex; height: 100px">
+                    <a class="link-produto-pesquisa" [routerLink]="produto.link">{{produto.texto | titlecase}}</a>
+                </div>
+            </div>
+            <hr style="margin: 0" />
+        </div>
+    </div>
+</div>

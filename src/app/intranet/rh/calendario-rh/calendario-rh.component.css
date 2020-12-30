@@ -1,0 +1,87 @@
+.calendariofundo{
+    background-image: url('~/assets/img/Prototipo/RH/calendario.jpg');
+    /* height: 420px; */
+    color: white;
+    padding: 25px;
+    height: 620px;
+}
+
+.mes{
+    border: 1px solid #fff;
+    border-radius: 45px;
+    width: 200px;
+    display: inline-block;
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 20px;
+    margin: 0 5px;
+}
+
+#schedule {
+    margin: 25px auto; /* or margin: 0 auto 0 auto */
+    /* width: 70%; */
+    height: 360px;
+}
+
+#schedule tr td{
+    padding: 15px;
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+::ng-deep .today{
+    background-color: #C4B7D6;
+    border-radius: 45px; 
+    width: 35px;
+    height: 35px;
+    padding-top: 3px !important;
+}
+
+.datas{
+    margin: 0 auto;
+    padding-left: 25%;
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.dataDescricao{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 12px;
+    padding-left: 5px;
+}
+
+.data{
+    font-family: fontPrincipal;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+#btn-avancar-mes{
+    cursor: pointer;
+}
+#btn-voltar-mes{
+    cursor: pointer;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #37266d; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #DDDCDC; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #DDDCDC; 
+  }

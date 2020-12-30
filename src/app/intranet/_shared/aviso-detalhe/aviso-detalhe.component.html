@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row" style="margin-top:40px">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="linkVoltar">&#60; Voltar</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-10 fontLight fontPrincipal" style="margin: 30px auto;">
+            <h1 class="fontTituloAvisoDetalhe">{{aviso.titulo}}</h1>
+            <div class="fontCorpoAviso" [innerHTML]="aviso.content">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="linkVoltar">&#60; Voltar</span>
+        </div>
+    </div>
+</div>

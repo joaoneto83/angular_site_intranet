@@ -1,0 +1,49 @@
+<div class="bordaDireita">
+    <div class="supTituloFiltro">
+        <label class="fontPrincipal fontLight tituloFiltro">{{titulo}}</label>
+    </div>
+    <mat-accordion id="sideBarFiltro" [multi] ="true" >
+        <mat-expansion-panel *ngFor="let filtro of filtros  | orderBy: 'ordem'" [expanded]="filtro.expansivo">
+            <!-- let isFirst = index" [expanded]="isFirst" -->
+            <mat-expansion-panel-header   >
+                <mat-panel-title>
+                    <span class="sidebarFiltro" class="fontPrincipal fontLight">
+                        {{filtro.nomeClassificacao}}
+                    </span>
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <ul class="ulSubFiltro">
+                <ng-container *ngFor="let subFiltro of filtro.filhos | orderBy: 'nomeClassificacao'" >
+                    <ng-container *ngIf="!subFiltro.caminhoImagem; else imagemPilha">
+                        <li class="filtro">
+                            <input type="checkbox" #checkboxes [name]="subFiltro.id" [value]="subFiltro.id"
+                                [id]="subFiltro.id" style="float:right" class="checkboxFiltro"
+                                (click)="atualizaListaFiltro(subFiltro.id,$event.target.checked)">
+                            <label [for]="subFiltro.id" class="fontPrincipal fontLight aSidebar">
+                                {{subFiltro.nomeClassificacao}}
+                            </label>
+                        </li>
+                    </ng-container>
+                    <ng-template #imagemPilha>
+                        <input type="checkbox" #checkboxes [name]="subFiltro.id" [value]="subFiltro.id"
+                            [id]="subFiltro.id" style="display:none"
+                            (click)="atualizaListaFiltro(subFiltro.id,$event.target.checked)">
+                        <label [title]="subFiltro.nomeClassificacao" [for]="subFiltro.id" class="lblImagemPilha"
+                            (click)="selecionaImagem(subFiltro.id)">
+                            <img [id]="'img-'+subFiltro.id" [src]="subFiltro.caminhoImagem" alt>
+                        </label>
+                    </ng-template>
+                </ng-container>
+            </ul>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+<div *ngIf="mostraAparelhoIdeal" class="supBtnFiltro">
+    <input type="button" class="btnFiltro fontPrincipal fontLight" (click)="abreAparelhoIdeal()"
+        value="{{'EncontreIdeal' | translate}}">
+</div>
+
+
+<div class="supLimparFiltro">
+    <label class="fontPrincipal fontThin limparFiltro" (click)="uncheckAll()">{{'LimparFiltros' | translate}}</label>
+</div>

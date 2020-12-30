@@ -1,0 +1,48 @@
+<ng-container *ngIf="banners && banners2">
+    <app-banner-home [podeEditar]="false" [codigoBanner]="segmento.codigoBanner" [banners]="banners"
+        [banners2]="banners2" [traduzir]="true">
+    </app-banner-home>
+</ng-container>
+
+<div class="container">
+    <div class="text-center espacamento">
+        <label class="fontPrincipal fontLight titulo">{{(segmento.titulo | translate) | titlecase}}</label>
+    </div>
+
+    <div class="text-center">
+        <label class="fontPrincipal fontLight subtitulo">{{segmento.subtitulo}}</label>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 divTextoDestaque">
+            <div class="textoDestaque fontPrincipal">
+                {{segmento.textoDestaque}}
+            </div>
+            <div class="linha"></div>
+        </div>
+        <div class="col-md-8 divTexto">
+            <div class="fontSecundaria fontLight texto" [innerHTML]="segmento.texto"></div>
+        </div>
+    </div>
+
+    <div style="margin-top: 80px;">
+        <div *ngFor="let cols of rows" class="row justify-content-md-center">
+            <div *ngFor="let icone of cols" class="col-md-4 col-lg-2 cardIcon" style="text-align: center;">
+                <img class="icone" [src]="icone.caminhoImagem">
+                <div class="divTitulo">
+                    <label *ngIf="icone.titulo" class="fontPrincipal fontRegular iconeTitulo">
+                        {{icone.titulo}}
+                    </label>
+                </div>
+                <div *ngIf="icone.descricao" class="fontPrincipal fontLight iconeDescricao"
+                    [innerHTML]="icone.descricao"></div>
+            </div>
+        </div>
+    </div>
+
+    <app-site-produtos-segmentos [grupo]="grupoDestaque" [rows]="rowsProdutos"></app-site-produtos-segmentos>
+
+    <app-site-bloco-institucional tela="refrigeracao"></app-site-bloco-institucional>
+    <app-site-refrigeracao-segmentos-contato [codigoSegmento]="codigoSegmento">
+    </app-site-refrigeracao-segmentos-contato>
+</div>

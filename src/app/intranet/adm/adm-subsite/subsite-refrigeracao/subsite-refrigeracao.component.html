@@ -1,0 +1,278 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 50px;">
+            <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Produtos em Destaque">
+            </app-titulo-secoes-produto>
+            <div class="row">
+                <div class="col-sm-12">
+                    <mat-accordion>
+                        <mat-expansion-panel *ngFor="let grupo of gruposHome; let i = index">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span class="fontSecundaria fontLight" style="font-size:15px;">
+                                        {{grupo.nomeGrupoDestaque}}
+                                    </span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input style="margin: 25px 0;" type="button" class="btn-adc"
+                                        value="Selecionar Produtos"
+                                        (click)="abrirModalSelecionarProduto(grupo.codigoGrupoDestaque, grupo.produtos, false)">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div>
+                                        <label class="fontPrincipal fontRegular"
+                                            *ngIf="grupo.produtos.length > 0">Produtos
+                                            Selecionados:</label>
+                                    </div>
+                                    <ng-container *ngFor="let prod of grupo.produtos">
+                                        <div style="padding-left: 30px;">
+                                            <span class="fontSecundaria fontLight" style="font-size:15px;">
+                                                {{prod.nomeProduto}}
+                                            </span>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 50px;">
+            <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE"
+                titulo="Produtos em Destaque - Segmentos">
+            </app-titulo-secoes-produto>
+            <div class="row">
+                <div class="col-sm-12">
+                    <mat-accordion>
+                        <mat-expansion-panel *ngFor="let grupo of gruposSegmento; let i = index">
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span class="fontSecundaria fontLight" style="font-size:15px;">
+                                        {{grupo.nomeGrupoDestaque}}
+                                    </span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <input style="margin: 25px 0;" type="button" class="btn-adc"
+                                        value="Selecionar Produtos"
+                                        (click)="abrirModalSelecionarProduto(grupo.codigoGrupoDestaque, grupo.produtos, true)">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div>
+                                        <label class="fontPrincipal fontRegular"
+                                            *ngIf="grupo.produtos.length > 0">Produtos
+                                            Selecionados:</label>
+                                    </div>
+                                    <ng-container *ngFor="let prod of grupo.produtos">
+                                        <div style="padding-left: 30px;">
+                                            <span class="fontSecundaria fontLight" style="font-size:15px;">
+                                                {{prod.nomeProduto}}
+                                            </span>
+                                        </div>
+                                    </ng-container>
+                                </div>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 50px;">
+            <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Vídeos em Destaque">
+            </app-titulo-secoes-produto>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <input style="margin: 0 0 25px;" type="button" class="btn-adc" value="Adicionar Vídeo"
+                        (click)="adicionarVideoHome()">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div *ngIf="videosHome.length">
+                        <mat-accordion>
+                            <mat-expansion-panel *ngFor="let video of videosHome; let i = index">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <span class="fontSecundaria fontLight" style="font-size:15px;">
+                                            {{video.tituloVideo}}
+                                        </span>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+
+                                <div class="row">
+                                    <div class="col-sm-11 form-group">
+                                        <label class="control-label fontSecundaria">Título</label>
+                                        <input class="form-control" type="text" [(ngModel)]="video.tituloVideo"
+                                            maxlength="150">
+                                    </div>
+                                    <div class="col-sm-1 form-group">
+                                        <i class="fas fa-trash-alt" style="cursor:pointer;"
+                                            (click)="removerVideoHome(i)"></i>
+                                    </div>
+                                    <div class="col-sm-12 form-group">
+                                        <label class="control-label fontSecundaria">Descrição</label><br>
+                                        <textarea class="form-control" [(ngModel)]="video.descricaoVideo"
+                                            maxlength="250"></textarea>
+                                    </div>
+                                    <div class="col-sm-12 form-group">
+                                        <label class="control-label fontSecundaria">Link</label><br>
+                                        <input class="form-control" maxlength="250" type="text"
+                                            [(ngModel)]="video.linkVideo">
+                                    </div>
+                                    <div class="col-sm-3 form-group">
+                                        <label class="control-label fontSecundaria">Ordem</label><br>
+                                        <input class="form-control" type="number" [(ngModel)]="video.ordem">
+                                    </div>
+                                    <div class="col-sm-3 form-group">
+                                        <label class="control-label fontSecundaria">Ativo</label><br>
+                                        <input type="checkbox" [(ngModel)]="video.ativo">
+                                    </div>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 50px;">
+            <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Eventos">
+            </app-titulo-secoes-produto>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <input style="margin: 0 0 25px;" type="button" class="btn-adc" value="Adicionar Evento"
+                        (click)="adicionarEvento()">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-subsite-refrigeracao-eventos [eventos]="eventos" (idEvento)="editarEvento($event)"
+                        (atualizar)="atualizarListaEventos()"></app-subsite-refrigeracao-eventos>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 50px;">
+            <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Treinamentos">
+            </app-titulo-secoes-produto>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div><label class="control-label fontSecundaria">Links para treinamento:</label></div>
+                </div>
+                <div class="col-sm-4">
+                    <label class="control-label fontSecundaria">Refrigeração Leve</label><br>
+                    <input class="form-control" type="text" [(ngModel)]="links.linkRefrigeracaoLeve">
+                </div>
+                <div class="col-sm-4">
+                    <label class="control-label fontSecundaria">Refrigeração Comercial</label><br>
+                    <input class="form-control" type="text" [(ngModel)]="links.linkRefrigeracaoComercial">
+                </div>
+                <div class="col-sm-4">
+                    <label class="control-label fontSecundaria">Refrigeração Industrial</label><br>
+                    <input class="form-control" type="text" [(ngModel)]="links.linkRefrigeracaoIndustrial">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 30px;">
+                <div class="col-sm-12">
+                    <input style="margin: 0 0 25px;" type="button" class="btn-adc" value="Adicionar Vídeo"
+                        (click)="adicionarVideoTreinamento()">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div *ngIf="videosTreinamento.length">
+                        <mat-accordion>
+                            <mat-expansion-panel *ngFor="let video of videosTreinamento; let i = index">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <span class="fontSecundaria fontLight" style="font-size:15px;">
+                                            {{video.tituloVideo}}
+                                        </span>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+
+                                <div class="row">
+                                    <div class="col-sm-11 form-group">
+                                        <label class="control-label fontSecundaria">Título</label>
+                                        <input class="form-control" type="text" [(ngModel)]="video.tituloVideo"
+                                            maxlength="150">
+                                    </div>
+                                    <div class="col-sm-1 form-group">
+                                        <i class="fas fa-trash-alt" style="cursor:pointer;"
+                                            (click)="removerVideoTreinamento(i)"></i>
+                                    </div>
+                                    <div class="col-sm-12 form-group">
+                                        <label class="control-label fontSecundaria">Descrição</label><br>
+                                        <textarea class="form-control" [(ngModel)]="video.descricaoVideo"
+                                            maxlength="250"></textarea>
+                                    </div>
+                                    <div class="col-sm-12 form-group">
+                                        <label class="control-label fontSecundaria">Link</label><br>
+                                        <input class="form-control" maxlength="250" type="text"
+                                            [(ngModel)]="video.linkVideo">
+                                    </div>
+                                    <div class="col-sm-3 form-group">
+                                        <label class="control-label fontSecundaria">Ordem</label><br>
+                                        <input class="form-control" type="number" [(ngModel)]="video.ordem">
+                                    </div>
+                                    <div class="col-sm-3 form-group">
+                                        <label class="control-label fontSecundaria">Ativo</label><br>
+                                        <input type="checkbox" [(ngModel)]="video.ativo">
+                                    </div>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12" style="margin-top: 50px;">
+            <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Integrador Refrigeração">
+            </app-titulo-secoes-produto>
+            <app-subsite-refrigeracao-integrador></app-subsite-refrigeracao-integrador>
+        </div>
+    </div>
+
+
+    <div class="col-sm-12 divSalvar">
+        <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+        <input class="btn-adc" type="button" value="Traduzir" (click)="abreTraducao()" style="margin-left: 10px;">
+    </div>
+</div>
+
+<app-modal-selecionar-produto #modalSelecionarProduto (response)="selecionarProduto($event)">
+</app-modal-selecionar-produto>
+
+<app-modal-editar-evento #modalEditarEvento (atualizar)="atualizarListaEventos()">
+</app-modal-editar-evento>
+
+<app-modal-traducao></app-modal-traducao>

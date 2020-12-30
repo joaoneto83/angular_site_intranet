@@ -1,0 +1,46 @@
+.imagemBannerHome {
+  max-width: 100%;
+  width: 100%;
+}
+
+.carousel-control-prev-icon {
+  background-image: url('/assets/icones/seta_esq.png') !important
+}
+
+.carousel-control-next-icon {
+  background-image: url('/assets/icones/seta_dir.png') !important
+}
+
+.carousel-caption-site {
+  position: absolute;
+  top: 115px;
+  right: unset;
+  bottom: unset;
+  left: 185px;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: left;
+  font-family: fontPrincipal;
+  font-size: 23px;
+  font-weight: 200;
+}
+
+.carousel-caption-site h3{
+  font-size: 40px;
+  font-weight: 400;
+}
+
+.carousel-caption-site .btnLink{
+  color: #FFF !important;
+  width: 145px;
+  height: 35px;
+  border: 1px solid #FFF;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 13px;
+  background-color: transparent;
+  font-family: fontPrincipal;
+  font-weight: 400;
+}

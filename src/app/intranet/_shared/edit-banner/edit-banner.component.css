@@ -1,0 +1,40 @@
+.modal-content {
+    border-top: 0;
+    border-radius: 0 !important;
+}
+
+.modelBackdrop {
+    z-index: 1060 !important;
+}
+
+.modal-open {
+    padding: 0 !important;
+}
+
+::ng-deep .modalBanner {
+    z-index: 1061 !important;
+}
+
+.icon-adc-edit-banner {
+    cursor: pointer;
+}
+
+::ng-deep .modalBanner .icon-adc-edit-banner i {
+    margin-right: 5px;
+    margin-left: 15px;
+}
+
+.textoBtn {
+    font-size: 16px !important;
+    padding-left: 16px !important;
+    margin-bottom: 10px;
+}
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #48bcf7;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}

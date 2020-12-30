@@ -1,0 +1,11 @@
+/* Evita que quebre layout quando é aberto um modal ou sweet alert dentro de outro modal */
+::ng-deep body {
+    padding-right: 0 !important;
+}
+
+.selecioneSegmento{
+    text-align: center;
+    top: 0px;
+    bottom: 0px;
+    position: absolute;
+}

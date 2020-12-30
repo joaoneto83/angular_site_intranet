@@ -1,0 +1,148 @@
+.navbar-nav {
+    left: auto;
+    right: 90px;
+}
+    
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: -webkit-box;
+}
+   
+.fa-chevron-down::before {
+    padding-left: 5px !important;
+}
+
+.fa-chevron-up::before {
+    padding-left: 5px !important;
+}
+  
+.menuMobile {
+    background-color: #006198;
+    z-index: 9999;
+    top: 70px;
+    left: 0;
+    border-top: 0.5px solid #fff;
+    padding: 20px;
+    margin-bottom: 70px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+  
+.menuMobile .nav-link {
+    color: white;
+    font-family: fontPrincipal;
+}
+  
+.nav-link2 {
+    font-family: fontPrincipal !important;
+    font-weight: 100 !important;
+    color: white !important;
+    width: 100% !important;
+    text-align: left !important;
+    padding: 5px 0px 5px 40px !important;
+}
+  
+.nav-link3 {
+    font-family: fontPrincipal !important;
+    font-weight: 100 !important;
+    color: white !important;
+    width: 100% !important;
+    text-align: left !important;
+    padding: 5px 0px 5px 40px !important;
+}
+    
+input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #f2f2f2;
+    border-radius: 0;
+    padding-top: 14px;
+    outline: none;
+}
+  
+input::placeholder {
+    color: #f2f2f2;
+}
+  
+.input-mobile {
+    font-size: 16px;
+    color: white;
+}
+  
+.menu {
+    background-color: #FFF;
+    box-shadow: 0px 2px 10px #868585;
+}
+  
+  .menu .nav-link {
+    color: #222222;
+    font-family: soleil;
+  }
+  
+  .menu input::placeholder {
+    color: #222222;
+  }
+  
+  .menu input {
+    border-bottom: 1px solid #222222;
+  }
+  
+  .menu .input-mobile {
+    color: #222222;
+  }
+  
+.tituloSecao {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #868585;
+    font-weight: 400;
+    font-family: soleil;
+    color: #222222;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+
+select {
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    font-family: soleil;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 8px 35px 8px 10px;
+    outline: none;
+}
+
+.idioma{
+    display: flex;
+}
+
+.bandeira{
+    width: 15px;
+    height: 10px;
+    margin-top: 15.4px;
+}
+
+.br{
+    background: url('/assets/img/Site/Refrigeracao/menu/brasil.png');
+}
+
+.eng{
+    background: url('/assets/img/Site/Refrigeracao/menu/usa.png');
+}
+
+.esp{
+    background: url('/assets/img/Site/Refrigeracao/menu/espanha.png');
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select-preto {
+    background-size: 12px;
+    background-position: calc(100% - 16px) 15px;
+}

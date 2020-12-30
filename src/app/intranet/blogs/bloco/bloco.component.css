@@ -1,0 +1,47 @@
+.tituloBox{
+    font-size: 17px;
+}
+.boxItens{
+    font-size: 14px;
+    color: #949494;
+    line-height: 15px;
+}
+
+.acoesCatalogoProduto a{
+  color: inherit;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #DDDCDC; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #DDDCDC; 
+}
+
+.acoesCatalogoProduto{
+    color: #bfbfbf; 
+    margin-left: 10px;
+}
+
+.acoesCatalogoProduto .icone{
+    margin: 3px; 
+    font-size: 11px;
+    cursor: pointer;
+    top: -5px;
+    position: relative;
+}
+
+  

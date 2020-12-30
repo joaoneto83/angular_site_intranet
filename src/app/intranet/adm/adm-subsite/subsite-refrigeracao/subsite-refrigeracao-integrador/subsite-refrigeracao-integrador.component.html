@@ -1,0 +1,73 @@
+<div class="">
+    <input style="margin: 0 0 25px;" type="button" class="btn-adc" value="Adicionar Integrador" (click)="editar('')">
+</div>
+<div class="table-responsive" *ngIf="integradores.length">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="headerTabela">Nome</th>
+                <th class="headerTabela">País</th>
+                <th class="headerTabela">Estado</th>
+                <th class="headerTabela">Cidade</th>
+                <th class="headerTabela">Email</th>
+                <th class="headerTabela">Segmento</th>
+                <th class="text-center headerTabela">Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of integradores | paginate: config">
+                <td class="conteudoTabela">
+                    {{i.nome}}
+                </td>
+                <td class="conteudoTabela">
+                    {{i.nomePais | titlecase}}
+                </td>
+                <td class="conteudoTabela ">
+                    {{i.uf}}
+                </td>
+                <td class="conteudoTabela ">
+                    {{i.nomeCidade | titlecase}}
+                </td>
+                <td class="conteudoTabela">
+                    {{i.email}}
+                </td>
+                <td class="conteudoTabela">
+                    {{i.nomeSegmento | titlecase}}
+                </td>
+                <td class="text-center">
+                    <a style="cursor:pointer;" (click)="editar(i.id)">
+                        <i class="far fa-edit"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ng-container *ngIf="integradores.length">
+    <pagination-template #pagination="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+        <div class="custom-pagination">
+            <div class="pagination-previous" [class.disabled]="pagination.isFirstPage()">
+                <span class="span-previous" *ngIf="!pagination.isFirstPage()" (click)="pagination.previous()">
+                    <i class="fas fa-angle-left"></i>
+                </span>
+            </div>
+            <div class="page-number" *ngFor="let page of pagination.pages"
+                [class.current]="pagination.getCurrent() === page.value">
+                <span class="" (click)="pagination.setCurrent(page.value)"
+                    *ngIf="pagination.getCurrent() !== page.value">{{ page.label }}</span>
+                <div *ngIf="pagination.getCurrent() === page.value">
+                    <span class="headerTabela">{{ page.label }}</span>
+                </div>
+            </div>
+            <div class="pagination-next" [class.disabled]="pagination.isLastPage()">
+                <span class="span-next" *ngIf="!pagination.isLastPage()" (click)="pagination.next()">
+                    <i class="fas fa-angle-right"></i>
+                </span>
+            </div>
+        </div>
+    </pagination-template>
+</ng-container>
+
+
+<app-modal-integrador-edit #modalEditarIntegrador (atualizar)="atualizarLista()"></app-modal-integrador-edit>

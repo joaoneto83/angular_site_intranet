@@ -1,0 +1,167 @@
+.logoHeaderMini {
+  width: 70px;
+  vertical-align: sub;
+}
+
+.menuAtivo a {
+  font-weight: 400;
+  color: #56e4fd;
+}
+
+/* Style the navbar */
+#navbarSite {
+  height: 70px;
+  overflow: hidden;
+  background-color: #006198;
+  z-index: 9999;
+}
+
+/* Navbar links */
+#navbarSite a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+@media (min-width: 1024px) {
+  #navbarSite a {
+    padding-left: 0;
+  }
+}
+#navbar .nav-link {
+  padding-left: 22px !important;
+  padding-right: 22px !important;
+}
+
+.navbar-nav {
+  left: auto;
+  right: 90px;
+  /* margin-left: auto;
+  position: relative; */
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: -webkit-box;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.fontMenu {
+  font-size: 12px;
+}
+
+.containerDeskFull {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (min-width: 1380px) {
+  .container.containerDeskFull {
+    min-width: 1300px;
+    max-width: 1300px;
+  }
+}
+
+@media (max-width: 992px) {
+  #navbarSupportedContent {
+    display: none;
+  }
+}
+
+.navbar-toggler {
+  outline: none;
+}
+
+#btnCategorias {
+  border: none;
+  padding: 14px;
+}
+
+.fa-chevron-down::before {
+  padding-left: 5px !important;
+}
+.fa-chevron-up::before {
+  padding-left: 5px !important;
+}
+
+.menuMobile {
+  background-color: #006198;
+  /* position: sticky; */
+  z-index: 9999;
+  top: 70px;
+  left: 0;
+  border-top: 0.5px solid #fff;
+  padding: 20px;
+  margin-bottom: 70px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.menuMobile .nav-link {
+  color: white;
+  font-family: fontPrincipal;
+}
+
+.menuGelatta{
+  background-color: #FFF;
+  box-shadow: 0px 2px 10px #868585;
+}
+
+.menuGelatta .nav-link {
+  color: #222222;
+  font-family: soleil;
+}
+
+.menuGelatta input::placeholder {
+  color: #222222;
+}
+
+.menuGelatta input {
+  border-bottom: 1px solid #222222;
+}
+
+.navbar-toggler {
+  border: 0;
+  right: 20px;
+  position: fixed;
+  top: 20px;
+}
+
+input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px solid #f2f2f2;
+  border-radius: 0;
+  padding-top: 14px;
+  outline: none;
+}
+
+input::placeholder {
+  color: #f2f2f2;
+}
+
+.input-desktop {
+  font-size: 12px;
+  font-family: fontPrincipal;
+  color: #f2f2f2;
+  font-weight: 100;
+}

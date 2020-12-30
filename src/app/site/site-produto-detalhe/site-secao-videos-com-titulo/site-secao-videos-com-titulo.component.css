@@ -1,0 +1,44 @@
+.espacamentoSecao{
+    padding-bottom:90px;
+}
+.espacamentoConteudo {
+    padding-top: 20px;
+}
+.espacamentoTitulo {
+    padding-top: 10px;
+}
+.divVideo{
+    height:400px;
+}
+.espacamentoSecao{
+    padding-bottom:90px;
+}
+.semEspacamentoSecao{
+    padding-bottom:0px;
+}
+
+.espacamentoConteudo {
+    padding-top: 20px;
+}
+
+.labelBanner{
+    max-width: 50%;
+}
+
+.tituloBanner{
+    font-size:32px;
+}
+
+@media (max-width: 768px){
+    .tituloBanner{
+        font-size:30px;
+    }
+}
+@media (max-width: 576px) {
+    .labelBanner{
+        max-width: 90%;
+    }
+    .divVideo{
+        height:200px;
+    }
+}

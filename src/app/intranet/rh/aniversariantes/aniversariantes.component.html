@@ -1,0 +1,26 @@
+<app-box de="#FDC137" ate="#FF7F00" height="346">
+    <div class="tituloAniversariantes fontPrincipal fontLight">
+        ANIVERSARIANTES DO MÊS
+    </div>
+    <div class="row justify-content-center caixaAniversariantes">
+        <div class="col-sm-11" >
+            <ng-container *ngFor="let niver of aniversariantes |filter:'true'">
+                <div class="row divAniversariante">
+                    <div class="col-md-2">
+                        <a style="width: 50px; float: left;">
+                            <div class="foto" *ngIf="niver.caminhoFoto"
+                                [style.backgroundImage]="'url('+ niver.caminhoFoto +')'">
+                            </div>
+                            <label class="sigla" *ngIf="!niver.caminhoFoto">{{niver.sigla}}</label>
+                        </a>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="fontPrincipal fontLight" style="font-size:15px;">{{niver.nome}}</div>
+                        <div class="fontPrincipal fontThin" style="font-size:12px;">
+                            {{niver.dataNascimento | date: 'dd.MM'}}</div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</app-box>

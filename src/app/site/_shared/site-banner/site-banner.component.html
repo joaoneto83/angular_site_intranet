@@ -1,0 +1,11 @@
+<ngb-carousel *ngIf="imagens" class="text-center" id="banner" [showNavigationIndicators]="false"
+    [showNavigationArrows]="false">
+    <ng-template ngbSlide *ngFor="let item of imagens">
+        <div class="carousel-caption carousel-caption-site">
+            <h3 *ngIf="item.texto1" [innerHtml]="item.texto1"></h3>
+            <p *ngIf="item.texto2" [innerHtml]="item.texto2"></p>
+            <input *ngIf="item.link" type="button" class="btnLink" [routerLink]="item.link" value="Saiba mais">
+        </div>
+        <img [src]="item.caminho" class="imagemBannerHome" alt>
+    </ng-template>
+</ngb-carousel>

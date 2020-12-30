@@ -1,0 +1,80 @@
+.inputBusca{
+    font-family: fontPrincipal;
+    background-color: rgba(195, 195, 195, 0.30);
+    border: 0.2px solid #BFBFBF;
+    width: 50%;
+    padding: 5px 20px;
+    color: white;
+
+    background-image: url('/assets/img/Site/Home/icons/busca.png');
+    background-repeat: no-repeat;
+    background-position: center right calc(.375em + .1875rem);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+
+    margin-top: 10px
+}
+
+.inputBusca::placeholder{
+    font-family: fontPrincipal;
+    color: rgba(255, 255, 255, 0.425);
+    padding: 0px;
+}
+
+.inputBuscaProduto{
+    background-color: transparent;
+    border: 1px solid #9A9A9A;
+    width: 50%;
+    padding: 5px 20px;
+    color: #9A9A9A;
+    background-image: url('/assets/img/Site/Home/icons/busca.png');
+    background-repeat: no-repeat;
+    background-position: center right calc(.375em + .1875rem);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+}
+.inputBuscaProduto::placeholder{
+    color: #9A9A9A;
+    padding: 0px;
+}
+
+.resultadoBusca{
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    margin-top: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: left;
+    z-index: 9999 !important;
+
+    border: solid 1px #aaa;
+    color: #222222;
+}
+
+.itemResultado{
+    padding: 10px 0px;
+    margin-left: 30px;
+    margin-right: 20px;
+    border-bottom: 1px solid #aaa;
+    min-height: 70px;
+    cursor: pointer;
+}
+
+.itemResultado label{
+    cursor: pointer;
+}
+
+.itemResultado img{
+    max-height: 50px;
+    padding-right: 30px;
+}
+
+@media (max-width: 767px) {
+    .inputBusca,.inputBuscaProduto{
+        width: 100%;
+    }
+    .resultadoBusca{
+        width: 100%;
+    }
+}

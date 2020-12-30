@@ -1,0 +1,193 @@
+ul{ 
+    list-style-type: none;
+    /* padding: 0; */
+}
+
+.divFaq{
+    background: url("/assets/img/Site/Solar/bg_faq.jpg");
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 317px;
+    background-position: 40% 0;
+    background-size:cover;
+    background-position:center;
+}
+
+.conteudoFaq{
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 100px;
+    display: flex;
+}
+
+.conteudoFaq h1 ,
+.conteudoFaq label{
+    color: #4a4a4a !important;
+}
+
+.conteudoFaq label{
+    margin-bottom:20px;
+}
+
+.conteudoSaiba{
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 120px;
+    display: flex;
+}
+
+.conteudoSaiba h1 ,
+.conteudoSaiba label{
+    color: #4A4A4A !important;
+}
+.conteudoSaiba img{
+    margin-right: 40px;
+}
+
+
+.btnFaq{
+    /* color: #FFF !important; */
+    width: 180px;
+    height: 30px;;
+    border: 1px solid #AAA;
+    color: #AAA;
+    border-radius: 20px;
+    font-size: 17px;
+    cursor: pointer;
+    padding: 3px 20px;
+}
+.btnFaq:hover{
+    color: #fff !important;
+    border:0;
+    background:  #9c9c9c;
+}
+
+.selected{
+    color: #fff !important;
+    border:0;
+    background: #9c9c9c;
+}
+
+.btnSaibaMais{
+    color: #4A4A4A !important;
+    width: 180px;
+    height: 30px;;
+    border: 1px solid #4A4A4A;
+    border-radius: 20px;
+    font-size: 17px;
+    cursor: pointer;
+    padding: 3px 20px;
+}
+.btnSaibaMais:hover{
+    color: #FFF !important;
+    background:  #4A4A4A;
+}
+
+a{
+    font-family: fontPrincipal;
+    font-size: 13px !important;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.btnToggle{
+    color: #C9C9C9;
+    border: 1px solid #C9C9C9;
+    border-radius: 20px;
+    padding: 8px 8px;
+    margin-left: auto;
+    height: 32px;
+}
+
+.divPergunta{
+    display: flex;
+}
+
+.divPergunta label{
+    cursor: pointer;
+    padding-top: 10px;
+    font-size: 15px;
+}
+
+.divAindaDuvidas{
+    color: #4A4A4A;
+    text-align: center;
+    margin-top: 90px;
+}
+
+@media (max-width: 991px){
+    .conteudoFaq{
+        padding-right: 30px;
+    }
+}
+
+@media (max-width: 768px){
+    .conteudoFaq{
+        margin: 0 auto !important;
+    }
+}
+
+@media (max-width: 575px){
+    .divSaiba{
+        margin-bottom: 100px;
+    }
+
+    .conteudoFaq{
+        width: 100%;
+        
+        /* padding-left: 20px;
+        margin: 0 auto 0 0 !important; */
+        text-align: left !important;
+    }
+
+    .divFaq{
+        /* height: 100%; */
+        padding: 20px;
+        /* background-position: 54% 0; */
+    }
+
+    .imgFaq img{
+        width: 70px;
+    }
+
+    .conteudoFaq label {
+        font-size: 18px !important;
+    }
+
+    .conteudoFaq h1 {
+        font-size: 28px !important;
+    }
+
+    .conteudoSaiba{
+        display: block;
+        width: auto;
+        text-align: center;
+    }
+
+    
+}
+
+@media (max-width: 320px){
+    .conteudoSaiba img{
+        max-width: 70px;
+        margin-right: 10px !important;
+        margin-left: 10px !important;
+    }
+
+    .conteudoSaiba{
+        width: auto;
+    }
+
+    .conteudoFaq h1 , .conteudoFaq label
+    , .conteudoFaq div{
+        text-align: left;
+    }
+
+    .conteudoFaq h1 , .conteudoSaiba h1{
+        font-size: 23px;
+    }
+
+    .conteudoFaq label , .conteudoSaiba label{
+        font-size: 23px;
+    }
+}

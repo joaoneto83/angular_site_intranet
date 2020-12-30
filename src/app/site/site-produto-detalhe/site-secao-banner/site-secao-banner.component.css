@@ -1,0 +1,43 @@
+.imagem-banner-100{
+    width: 100%;
+}
+
+.imagem-banner-60{
+    width: 60%;
+}
+
+.espacamentoSecao{
+    padding-bottom:90px;
+}
+
+.espacamentoTitulo {
+    padding-top: 10px;
+}
+
+.espacamentoConteudo {
+    padding-top: 20px;
+}
+
+.labelBanner{
+    max-width: 50%;
+}
+
+.tituloBanner{
+    font-size:32px;
+}
+
+@media (max-width: 768px){
+    .labelBanner{
+        max-width: 70%;
+    }
+
+    .tituloBanner{
+        font-size:30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .labelBanner{
+        max-width: 90%;
+    }
+}

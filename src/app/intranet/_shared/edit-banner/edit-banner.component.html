@@ -1,0 +1,93 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+        <div class="col-sm-12 text-center">
+            <label class="tituloModal">{{ titulo }}</label>
+            <button type="button" class="close" aria-label="Close" (click)="close()" style="border:0px;outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <div class="modal-body">
+        <ng-container *ngIf="!banner">
+            <div class="row">
+                <a class="textoBtn" (click)="novo()"><i class="fas fa-plus"></i><span> Novo Banner</span></a>
+            </div>
+            <div class="row" *ngFor="let b of banners | orderBy: 'ordem' ; let i = index">
+                <div class="col-sm-6">
+                    Banner {{i + 1}} - {{b.texto1}}
+                </div>
+                <div class="col-sm-6 text-right">
+                    <a (click)="editar(i)" class="icon-adc-edit-banner"><i class="fas fa-pen"></i>editar</a>
+                    <a (click)="exluir(i, b.id)" class="icon-adc-edit-banner"><i class="fas fa-trash"></i> excluir</a>
+                </div>
+            </div>
+        </ng-container>
+        <div *ngIf="banner" class="row" style="margin-top: 15px;">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    <label class="control-label fontSecundaria">Ordem</label>
+                    <input type="number" min="0" class="form-control" [(ngModel)]="banner.posicao">
+                </div>
+            </div>
+            <div class="col-sm-6" *ngIf="exibecampo">
+                <div class="form-group">
+                    <label class="control-label fontSecundaria">Cor(Hex)</label>
+                    <input [value]="banner.cor" [style.background]="rgbaText" [cpAlphaChannel]="'always'"
+                        [cpOutputFormat]="'hex'" [colorPicker]="banner.cor"
+                        (colorPickerChange)="rgbaText=onChangeColorHex8($event);color16=$event"
+                        [(ngModel)]="banner.cor" />
+                    <!-- <input type="text" class="form-control" [(ngModel)]="banner.cor" maxlength="6"> -->
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group">
+                    <label class="control-label fontSecundaria">Ativo</label><br />
+                    <input type="checkbox" [(ngModel)]="banner.ativo">
+                </div>
+            </div>
+            <div class="col-sm-12" *ngIf="exibecampo">
+                <div class="form-group">
+                    <label class="control-label fontSecundaria">ALT</label>
+                    <input type="text" class="form-control" maxlength="100">
+                    <!-- [(ngModel)]="banner.texto1" -->
+                </div>
+            </div>
+            <div class="col-sm-12" *ngIf="exibecampo">
+                <div class="form-group">
+                    <label class="control-label fontSecundaria">Texto 1</label>
+                    <input type="text" class="form-control" [(ngModel)]="banner.texto1" maxlength="100">
+                </div>
+            </div>
+            <div class="col-sm-12" *ngIf="exibecampo">
+                <div class="form-group">
+                    <label class="control-label fontSecundaria">Texto 2</label>
+                    <input type="text" class="form-control" [(ngModel)]="banner.texto2" maxlength="100">
+                </div>
+            </div>
+            <!-- <div class="col-sm-12">
+                <div class="form-group">
+                    <label class="control-label fontSecundaria">Texto 3</label>
+                    <input type="text" class="form-control" [(ngModel)]="banner.texto3" maxlength="100">
+                </div>
+            </div> -->
+            <div class="col-sm-12" *ngIf="exibecampo">
+                <div class="form-group">
+                    <label class="control-label fontSecundaria">Link</label>
+                    <input type="text" class="form-control" [(ngModel)]="banner.link" maxlength="100">
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <app-upload-file [uploadManual]="false" [caminho]="imgBanner"
+                    (respostaArquivo)="getRespostaArquivo($event)">
+                </app-upload-file>
+                <span style="font-weight:bold;color:#005EB8;padding-left:10px" *ngIf="this.banner.file">
+                    Arquivo selecionado: {{this.banner.file.name}}
+                </span>
+            </div>
+            <div class="col-sm-12 text-center" style="margin-top: 30px">
+                <input class="btn-cancelar" type="button" value="cancelar" (click)="cancelar()" style="margin-right: 30px;">
+                <input class="btn-adc" type="button" value="Salvar" (click)="salvar();">
+            </div>
+        </div>
+    </div>
+</ng-template>

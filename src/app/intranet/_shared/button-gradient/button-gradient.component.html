@@ -1,0 +1,30 @@
+<div *ngIf="style" class="module-border-wrap shadow" [style.background]="style">
+    <div *ngIf="!linkExterno || linkExterno == 'false'; else divExterna" class="module fontPrincipal fontLight text-center" 
+    [style.height.px]="height" [routerLink]="link">
+        <ng-container *ngTemplateOutlet="content" ></ng-container>
+    </div>
+
+    
+</div>
+
+<ng-template #content>
+    <ng-content></ng-content>
+</ng-template>
+
+<ng-template #divExterna>
+    <div *ngIf="!download || download == 'false'; else divDownload">
+        <a [href]="link" target="_blank">
+            <div class="module fontPrincipal fontLight text-center" [style.height.px]="height">
+                <ng-container *ngTemplateOutlet="content" ></ng-container>
+            </div>
+        </a>
+    </div>
+</ng-template>
+
+<ng-template #divDownload>
+    <a [href]="link" download>
+        <div class="module fontPrincipal fontLight text-center" [style.height.px]="height">
+            <ng-container *ngTemplateOutlet="content" ></ng-container>
+        </div>
+    </a>
+</ng-template>

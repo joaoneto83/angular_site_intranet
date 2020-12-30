@@ -1,0 +1,40 @@
+<div class="container divPerfil">
+    <div *ngIf="perfis" class="row">
+        <div class="col-sm-6">
+            <div class="row" style="margin-bottom:25px;">
+                <div class="col-sm-12 text-center">
+                    <input class="btn-adc" type="button" value="Novo Perfil" (click)="novoPerfil()">
+                </div>
+            </div>
+            <div class="table-responsive" *ngIf="perfis.length">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Ativo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let p of perfis">
+                            <td>
+                                {{p.nome}}
+                            </td>
+                            <td>
+                                {{p.ativo ? "Sim" : "Não" }}
+                            </td>
+                            <td>
+                                <a style="cursor:pointer;" (click)="editar(p.id)">
+                                    <i class="fas fa-pen"></i> Editar
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <app-adm-perfil-edit [perfil]="perfil" (atualizar)="atualizar()" ></app-adm-perfil-edit>
+        </div>
+    </div>
+</div>

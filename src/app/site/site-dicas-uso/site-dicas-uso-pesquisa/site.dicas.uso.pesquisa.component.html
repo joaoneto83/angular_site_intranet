@@ -1,0 +1,16 @@
+<input #inputPesquisaDicasUso [ngClass]="{'inputBusca': !isProduto, 'inputBuscaProduto': isProduto}" type="text" placeholder="Insira o modelo ou a palavra-chave"
+    (keyup)="debounce.next($event.target.value)" (keyup.enter)="enterPesquisa($event.target.value)" (focusout)="limpar();">
+<div *ngIf="resultaInput" class="resultadoBusca">
+    <ng-container *ngIf="temResultado">
+        <div *ngFor="let res of resultaInput" class="itemResultado" [routerLink]="res.link">
+            <img *ngIf="res.produto && res.imagemUrl" [src]="res.imagemUrl" alt>
+            <img *ngIf="!res.produto" [src]="res.imagemUrl" style="padding-left: 30px;padding-right: 40px;" alt>
+            <label *ngIf="res" [innerHtml]="res.texto | titlecase"></label>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="!temResultado">
+        <div style="text-align: center; padding: 5px;">
+            Nenhum item encontrado.
+        </div>
+    </ng-container>
+</div>

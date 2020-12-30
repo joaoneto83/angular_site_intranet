@@ -1,0 +1,29 @@
+<div class="banner imgBannerCalendario">
+</div>
+
+<div class="text-center divTitulo">
+    <label class="titulo fontPrincipal fontLight">{{'Calendario' | translate}}</label><br>
+    <label class="subtitulo fontPrincipal fontLight">
+        {{'FiquePorDentroCalendario' | translate}}
+    </label>
+</div>
+
+<div class="container containerCalendario">
+    <div class="row justify-content-md-center" style="margin-bottom: 60px;">
+        <div class="col-lg-4 col-md-5 col-12">
+            <select #tipoEvento class="select-azul" (change)="carregarEventos(tipoEvento.value, mesEvento.value)">
+                <option value="">{{'QueVoceProcura' | translate}}</option>
+                <option *ngFor="let t of tipos" [value]="t.id">{{t.codigo | translate}}</option>
+            </select>
+        </div>
+        <div class="col-lg-4 col-md-5 col-12">
+            <select #mesEvento class="select-azul espacamento-select" (change)="carregarEventos(tipoEvento.value, mesEvento.value)">
+                <option value="">{{'EscolhaMes' | translate}}</option>
+                <option *ngFor="let m of meses" [value]="m.id">{{'Meses.' + m.nome | translate}}</option>
+            </select>
+        </div>
+    </div>
+
+    <app-site-lista-eventos-refrigeracao [temEventos]="temEventos" [eventos]="eventos">
+    </app-site-lista-eventos-refrigeracao>
+</div>

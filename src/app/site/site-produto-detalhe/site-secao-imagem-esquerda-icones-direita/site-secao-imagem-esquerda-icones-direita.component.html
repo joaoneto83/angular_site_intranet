@@ -1,0 +1,54 @@
+<div class="container p-b-60" *ngIf="secao">
+    <div class="supIconesImagem espacamentoConteudo">
+        <div class="supImgVertical bloco-esq">
+            <animate-box axis="Y" position="80">
+                <img *ngIf="caminhoImagem" class="imgBannerBaixo" [src]="caminhoImagem" alt>
+                <div class="text-center" style="padding-top:10px" *ngIf="descricaoImagem">
+                    <span class="fontSecundaria" style="font-size:15px">{{descricaoImagem}}</span>
+                </div>
+            </animate-box>
+        </div>
+        <div class="blocoDir">
+            <div class="espacamentoTitulo">
+                <animate-box axis="Y" position="80">
+                    <label *ngIf="secao.texto1" class="tituloImagemBaixo fontPrincipal fontRegular"
+                        style="font-size:30px" [innerHtml]="secao.texto1">
+
+                    </label>
+                </animate-box>
+            </div>
+            <div class="espacamentoTitulo" *ngIf="secao.texto2">
+                <animate-box axis="Y" position="80" delay="150">
+                    <label class="fontPrincipal fontLight fontDif" style="font-size:17px; color: #6E6E6E"
+                        [innerHtml]="secao.texto2">
+
+                    </label>
+                </animate-box>
+            </div>
+            <!-- <div class="espacamentoConteudo" *ngIf="secao.texto3">
+                <animate-box axis="Y" position="80" delay="300">
+                    <label class="fontPrincipal fontLight" style="font-size:20px" [innerHtml]="secao.texto3">
+                    </label>
+                </animate-box>
+            </div> -->
+            <div class="supIcones">
+                <animate-box axis="Y" position="80" delay="150">
+                    <ul>
+                        <li *ngFor="let icone of secao.icones | orderBy: 'ordem'">
+                            <div class="supImgIcone">
+                                
+                                <div *ngIf="!linqueImagem"><img [src]="icone.urlIcone" class="icone"></div>
+                                <a *ngIf="linqueImagem" href="{{ linqueImagem }}" target="_blank"><img [src]="icone.urlIcone" class="icone"></a>
+                            </div>
+                            <div>
+                                <label class="fontPrincipal fontRegular fontDif">{{icone.descricaoIcone}}</label>
+                                <label class="fontPrincipal fontLight align-top fontDif2">{{icone.subDescricaoIcone}}</label>
+                            </div>
+                        </li>
+                    </ul>
+                </animate-box>
+            </div>
+
+        </div>
+    </div>
+</div>

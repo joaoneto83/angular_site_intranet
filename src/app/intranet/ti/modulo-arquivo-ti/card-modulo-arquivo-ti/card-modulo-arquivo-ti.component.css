@@ -1,0 +1,152 @@
+.btn-edit-modulo{
+    float: right;
+    padding: 10px 15px 5px 5px;
+    color: #bfbfbf !important;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.imagem{
+    display: block;
+    margin: 25px auto 0 auto;
+    /* width: 260px%; */
+    height: 90px;
+}
+
+.p-t-1{
+    padding-top: 20px;
+    padding-right: 0px;
+}
+
+.btn-circle {
+    width: 33px;
+    height: 33px;
+    padding: 9px 0px 6px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+    /* margin: 0 5px 0 0; */
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.btn-circle.btn-outline-warning:hover{
+    color:white !important;
+} 
+
+.btn-outline-purple{
+    border-color: #9c00f7;
+    color: #9c00f7;
+}
+.btn-circle.btn-outline-purple:hover{
+    background: #9c00f7;
+    color: white;
+}
+
+.btn-outline-pink{
+    border-color: #ec6bfd;
+    color: #ec6bfd;
+}
+.btn-circle.btn-outline-pink:hover{
+    background: #ec6bfd;
+    color: white;
+}
+
+.btn-circle.btn-outline-primary{
+    font-size: 12px;
+    padding: 7px 0px 6px 2px !important;
+    color: #007bff !important;
+}
+.btn-circle.btn-outline-primary:hover{
+    color:white !important;
+}
+
+.titulo-produto {
+    position: relative;
+    color: #7E7E7E;
+    padding-bottom: 25px;
+    margin: 0 0px 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* .titulo-produto::after{
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: -1%;
+    height: 2px;
+    width: 100%;
+    background-color: #cccccc;
+    font-size: 17px;
+} */
+
+.descricao{
+    font-size: 10px; 
+    margin-bottom: 25px;
+    /* width: 80px; */
+}
+
+.dynamic-buttons{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card.shadow{
+    height:100%;
+}
+
+.card-body{
+    padding-bottom: 0;
+    padding-top: 25px;
+}
+
+.iconPDF {
+    height: 45px;
+    width: 45px;
+    background: url("/assets/icones/pdf.png") no-repeat;
+    display: inline-block;
+}
+.iconPDF:hover {
+    background: url("/assets/icones/pdf_on.png") no-repeat;
+}
+
+.iconVideo {
+    height: 45px;
+    width: 45px;
+    background: url("/assets/icones/video.png") no-repeat;
+    display: inline-block;
+}
+.iconVideo:hover {
+    background: url("/assets/icones/video_on.png") no-repeat;
+}
+
+.iconXLS {
+    height: 45px;
+    width: 45px;
+    background: url("/assets/icones/xls.png") no-repeat;
+    display: inline-block;
+}
+.iconXLS:hover {
+    background: url("/assets/icones/xls_on.png") no-repeat;
+}
+
+.iconPPT {
+    height: 45px;
+    width: 45px;
+    background: url("/assets/icones/ppt.png") no-repeat;
+    display: inline-block;
+}
+.iconPPT:hover {
+    background: url("/assets/icones/ppt_on.png") no-repeat;
+}
+
+.iconArquivo {
+    height: 45px;
+    width: 45px;
+    background: url("/assets/icones/arquivo.png") no-repeat;
+    display: inline-block;
+}
+.iconArquivo:hover {
+    background: url("/assets/icones/arquivo_on.png") no-repeat;
+}

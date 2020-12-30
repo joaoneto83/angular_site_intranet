@@ -1,0 +1,48 @@
+<nav id="navbar2" class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+        <ul class="navbar-nav w-100 justify-content-center">
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontSubMenu" 
+                [ngClass]="{'ativo': submenuAtivo == 'MinhasProvas'}"
+                    [routerLink]="['/PortaldeApoio/Treinamentos/MinhasProvas']">
+                    {{"Minhas Provas" | uppercase }}
+                </a>
+            </li>
+            <li class="nav-item active" showIfAdmin="TREINAMENTO_EDICAO">
+                <a class="nav-link  fontPrincipal  fontSubMenu"
+                    [class.ativo]="submenuAtivo == 'Prova'"
+                    [routerLink]="['/PortaldeApoio/Treinamentos/ListaProvas']">
+                    {{"Lista de Provas" | uppercase }}
+                </a>
+            </li>
+            <li class="nav-item active" showIfAdmin="TREINAMENTO_EDICAO">
+                <a class="nav-link  fontPrincipal  fontSubMenu"
+                    [class.ativo]="submenuAtivo == 'Agendamento'"
+                    [routerLink]="['/PortaldeApoio/Treinamentos/Agendamentos']">
+                    {{"Agendamentos" | uppercase }}
+                </a>
+            </li>
+            <li class="nav-item active" showIfAdmin="TREINAMENTO_EDICAO">
+                <a class="nav-link  fontPrincipal  fontSubMenu" 
+                    [class.ativo]="submenuAtivo == 'Resultados'"
+                    [routerLink]="['/PortaldeApoio/Treinamentos/Resultados']">
+                    {{"Resultados" | uppercase }}
+                </a>
+            </li>
+            <li class="nav-item active" showIfAdmin="TREINAMENTO_EDICAO">
+                <a class="nav-link  fontPrincipal  fontSubMenu" 
+                    [class.ativo]="submenuAtivo == 'Grupo'"    
+                    [routerLink]="['/PortaldeApoio/Treinamentos/Grupos']">
+                    {{"Grupos" | uppercase }}
+                </a>
+            </li>
+            <li class="nav-item active" showIfAdmin="TREINAMENTO_EDICAO">
+                <a class="nav-link  fontPrincipal  fontSubMenu" 
+                    [class.ativo]="submenuAtivo == 'Usuario'"
+                    [routerLink]="['/PortaldeApoio/Treinamentos/Usuarios']">
+                    {{"Usuários" | uppercase }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

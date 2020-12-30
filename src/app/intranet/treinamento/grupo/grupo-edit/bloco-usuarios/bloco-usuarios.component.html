@@ -1,0 +1,31 @@
+<app-box de="#47ecf5" ate="#48bcf7" style="height:250px">
+    <div class="col-md-9 text-center" style="margin: auto auto 30px;">
+        <span class="tituloBoxProduto fontPrincipal fontLight">Pessoas</span>
+        <input (keyup)="debounce.next($event.target.value)" class="inputBoxProduto" type="text"
+            placeholder="Buscar Pessoas">
+    </div>
+    <ul style="padding-left: 0;list-style-type: none;min-height: 170px; overflow-y: auto; overflow-x: hidden; max-height: 200px"
+        *ngIf="usuarios">
+        <ng-container *ngFor="let usuario of usuarios">
+            <div class="row" style="height: 50px">
+                <div class="col-md-2">
+                    <a style="width: 50px; float: left;">
+                        <div class="foto" *ngIf="usuario.caminhoFoto"
+                            [style.backgroundImage]="'url('+ usuario.caminhoFoto +')'">
+                        </div>
+                        <label class="sigla" *ngIf="!usuario.caminhoFoto">{{usuario.sigla}}</label>
+                    </a>
+                </div>
+                <li class="boxItens fontSecundaria fontThin col-sm-8">
+                    <label style="padding: 10px 0">{{usuario.nome}}</label>
+                </li>
+                <div style="padding: 10px 15px" class="col-sm-2">
+                    
+                    <input [id]="usuario.id" type="checkbox" [(ngModel)]="usuario.selecionado" (change)="selecionar(usuario.id)">
+                    <label [for]="usuario.id"></label>
+                </div>
+            </div>
+            <hr style="margin-top:0">
+        </ng-container>
+    </ul>
+</app-box>

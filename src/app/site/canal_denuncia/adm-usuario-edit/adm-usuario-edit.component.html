@@ -1,0 +1,296 @@
+
+<ng-container *ngIf ="protocolo" >
+    <div style="width: 100%; margin: 0 auto;">
+        <div style ="text-align: center; margin: 60px 0px;">
+  <app-titulo-secoes-produto cor="#008EB8"  altura2="0px"  altura="0px"  fonte="41px" titulo="Canal de Denúncia">
+    </app-titulo-secoes-produto>
+        </div>
+        <hr>
+     
+      
+    <div  *ngIf = "!perguntas" style="text-align: center;">
+        <app-titulo-secoes-produto cor="#A5A5A5"  altura2="0px"  altura="0px"  altura="true" titulo="Denúncia aqui.">
+        </app-titulo-secoes-produto>
+        <app-titulo-secoes-produto cor="#A5A5A5"  altura2="0px"  altura="0px"  altura="true" titulo="Quer se endentificar?">
+    </app-titulo-secoes-produto>
+        
+        <div class="col-sm-6 text-center" style="margin:  0 auto;">
+            <input class="btnEnviar" type="button" value="sim" (click)="sim();">
+        </div>
+        
+        <div class="col-sm-6 text-center" style="margin: 0 auto;">
+            <input class="btnEnviar" type="button" value="não" (click)="nao();">
+        </div>
+
+    </div>
+    
+<div *ngIf = "perguntas">
+    <form [formGroup]="denunciaForm" class="form" autocomplete="off">
+        <div class="row" *ngIf = "simQuero">
+            <div class="col-sm-12">
+                <app-custom-input [form]="denunciaForm" id="nome" label="Nome Completo" [obrigatorio]="false">
+                    <input type="text" class="form-control" formControlName="nome" maxlength="100">
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="row" *ngIf = "simQuero">
+            <div class="col-sm-4">
+                <app-custom-input [form]="denunciaForm" id="empresa" label="Cargo/Empresa" [obrigatorio]="false">
+                    <input type="text" class="form-control" formControlName="empresa" maxlength="100">
+                </app-custom-input>
+            </div>
+            <div class="col-sm-8">
+                <app-custom-input [form]="denunciaForm" id="email" label="e-mail" [obrigatorio]="false">
+                    <input type="text" class="form-control" formControlName="email" maxlength="100">
+                </app-custom-input>
+            </div>
+        </div>
+    
+        <div class="row" *ngIf = "simQuero">
+            <div class="col-sm-6">
+                <app-custom-input [form]="denunciaForm" id="telefone" label="telefone" [obrigatorio]="false">
+                    <input type="text" class="form-control" formControlName="telefone" maxlength="100">
+                </app-custom-input>
+            </div>
+            <div class="col-sm-6">
+                <app-custom-input [form]="denunciaForm" id="celular" label="Celular" [obrigatorio]="false">
+                    <input type="text" class="form-control" formControlName="celular" maxlength="100">
+                </app-custom-input>
+            </div>
+        </div>
+    <hr>
+
+        <div class="row" style="padding-top: 10px;">
+            <div  class="col-sm-12" >
+                <app-custom-input id="pergunta1" [form]="denunciaForm" label="Qual a sua relação com o Grupo Elgin?" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <select class="form-control" formControlName="pergunta1">
+                        <option value="">- Selecione -</option>
+                        <option  value ="Colaborador">Colaborador</option>
+                        <option  value ="Fornecedor">Fornecedor</option>
+                        <option  value ="Ex-colaborador">Ex-colaborador</option>
+                        <option  value ="Terceirizado ou Prestador de Serviços">Terceirizado ou Prestador de Serviços</option>
+                    </select>
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div  class="col-sm-12" >
+                <app-custom-input id="pergunta2" [form]="denunciaForm" label="Escolha uma opção:" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <select class="form-control" formControlName="pergunta2">
+                        <option value="">- Selecione -</option>
+                        <option  value ="Assédio moral">Assédio moral</option>
+                        <option  value ="Assédio sexual">Assédio sexual</option>
+                        <option  value ="Conduta inadequada">Conduta inadequada</option>
+                        <option  value ="Conflito de interesses">Conflito de interesses</option>
+                        <option  value ="Corrupção">Corrupção</option>
+                        <option  value ="Uso indevido de recursos da ELGIN">Uso indevido de recursos da ELGIN</option>
+                        <option  value ="Descumprimento de Políticas e Normas da ELGIN">Descumprimento de Políticas e Normas da ELGIN</option>
+                        <option  value ="Discriminação/Preconceito">Discriminação/Preconceito</option>
+                        <option  value ="Fraude">Fraude</option>
+                        <option  value ="Quebra do sigilo ou da segurança da informação">Quebra do sigilo ou da segurança da informação</option>
+                    </select>
+                </app-custom-input>
+            </div>
+
+        </div>
+        <div class="row">
+            <div  class="col-sm-12" >
+                <app-custom-input id="pergunta3" [form]="denunciaForm" label="Sobre os fatos:" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <select class="form-control" formControlName="pergunta3">
+                        <option value="">- Selecione -</option>
+                        <option  value ="É boato">É boato</option>
+                        <option  value ="Há certeza">Há certeza</option>
+                        <option  value ="Há indínios, mas não certeza">Há indínios, mas não certeza</option>
+                        <option  value ="O acontecimento foi presenciado">O acontecimento foi presenciado</option>
+                    </select>
+                </app-custom-input>
+            </div>
+
+        </div>
+        <div class="row">
+            <div  class="col-sm-12" >
+                <app-custom-input id="pergunta4" [form]="denunciaForm" label="Qual a sua relação com o Grupo Elgin?" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <select class="form-control" formControlName="pergunta4">
+                        <option value="">- Selecione -</option>
+                        <option  value ="Colaborador">Colaborador</option>
+                        <option  value ="Fornecedor">Fornecedor</option>
+                        <option  value ="Ex-colaborador">Ex-colaborador</option>
+                        <option  value ="Terceirizado ou Prestador de Serviços">Terceirizado ou Prestador de Serviços</option>
+                    </select>
+                </app-custom-input>
+            </div>
+
+            <div  class="col-sm-12" >
+                <app-custom-input id="pergunta5" [form]="denunciaForm" label="Em qual unidade o fato aconteceu?" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <select class="form-control" formControlName="pergunta5">
+                        <option value="">- Selecione -</option>
+                        <option  value ="Elgin S/A Mogi das Cruzes">Elgin S/A Mogi das Cruzes</option>
+                        <option  value ="Elgin S/A Filial São Paulo">Elgin S/A Filial São Paulo</option>
+                        <option  value ="ELgin Manaus">ELgin Manaus</option>
+                        <option  value ="Elgin Manaus Filial Mogi">Elgin Manaus Filial Mogi</option>
+                        <option  value ="Elgin Distribuidora Itajaí">Elgin Distribuidora Itajaí</option>
+                        <option  value ="Elgin Distribuidora Filial Mogi das Cruzes">Elgin Distribuidora Filial Mogi das Cruzes</option>
+                        <option  value ="Elgin Distribuidora Filial São Paulo">Elgin Distribuidora Filial São Paulo</option>
+                        <option  value ="Elgin HDB São José dos Campos">Elgin HDB São José dos Campos</option>
+                        <option  value ="Elgin Bematech São José dos Pinhais">Elgin Bematech São José dos Pinhais</option>
+                    </select>
+                </app-custom-input>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12" >
+                <app-custom-input id="pergunta6" [form]="denunciaForm" label="Informe detalhadamente o local em que o fato ocorreu"
+                    [obrigatorio]="true" errorMessage="Campo Obrigatório">
+                    <textarea  class="form-control" formControlName="pergunta6" rows="4" cols="50" >
+                        </textarea>
+                </app-custom-input>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <app-custom-input id="pergunta7" [form]="denunciaForm" label="indique a(s) pessoas(s) envolvida(s) no evento, informando, se possível:" [obrigatorio]="false"
+                    Message="nome completo--Cargo--participação dos fatos">
+                    <input type="text" class="form-control" formControlName="pergunta7">
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" >
+                <app-custom-input id="pergunta8" [form]="denunciaForm" label="Descrição dos fatos"
+                    [obrigatorio]="true" errorMessage="Campo Obrigatório">
+                    <textarea  class="form-control" formControlName="pergunta8" rows="4" cols="50" >
+                        </textarea>
+                </app-custom-input>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12" >
+                <app-custom-input id="pergunta9" [form]="denunciaForm" label="Alguma sugestão para resolver a situação"
+                    [obrigatorio]="true" errorMessage="Campo Obrigatório">
+                    <textarea  class="form-control" formControlName="pergunta9" rows="4" cols="50" >
+                        </textarea>
+                </app-custom-input>
+            </div>
+        </div>
+        <app-titulo-secoes-produto cor="#A5A5A5"  altura2="0px"  altura="0px"  altura="true" titulo="
+        Informações complementares">
+    </app-titulo-secoes-produto>
+    
+        <p>Setiver informações adicionais que possa contribuir com a análise, compartilhe conosco. 
+      </p>
+      
+        <ng-container>
+           
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-custom-input id="pergunta10" [form]="denunciaForm" label="Ocorrências vinculadas a esta denúncio que você está reportanto " [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="pergunta10" maxlength="255">
+                    </app-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <app-custom-input id="pergunta11" [form]="denunciaForm" label="Valor financeiro" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="pergunta11" maxlength="50">
+                    </app-custom-input>
+                </div>
+                <!-- <div class="col-sm-6">
+                    <app-custom-input id="cidade" [form]="denunciaForm" label="Se desejar compartilhar, informe e/ou anexe a este formulário, evidência que eventualmente possua" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="cidade" maxlength="50">
+                    </app-custom-input>
+                </div> -->
+            </div>
+
+        </ng-container>
+      
+    </form>
+</div>
+
+    <div class="row" style="margin-bottom:25px;" *ngIf = "perguntas">
+        <div class="col-sm-12 text-center">
+            <input class="btnEnviar" type="button" value="Salvar" (click)="salvar()">
+      
+        </div>
+    </div>
+    <hr>
+    <form [formGroup]="denunciaForm" class="form" style="width: 90%; margin: 0 auto;" autocomplete="off">
+        <div class="col-sm-11">
+            <app-custom-input [form]="denunciaForm" id="protocolo" label="pesquisa por protocolo" [obrigatorio]="false">
+                <input type="text" class="form-control" formControlName="protocolo" maxlength="100">
+                <img _ngcontent-c3="" alt="" src="/assets/img/Site/Home/icons/busca.png" style="margin-right: -42px;
+                width: 36px;
+                border-radius: 6px;
+                float: right;
+                padding: 5px;
+                cursor: pointer;
+                margin-top: -38px;
+                background-color: rgb(123 88 218);"  (click)="pesquisaProtolo()">
+            </app-custom-input>
+        </div>
+    </form>
+ </div>
+</ng-container>
+<ng-container *ngIf ="!protocolo" style="width: 100%;"> 
+    <div style="width: 100%; margin: 0 auto;">
+        <div style ="text-align: center; margin: 60px 0px;">
+  <app-titulo-secoes-produto cor="#008EB8"  altura2="0px"  altura="0px"  fonte="41px" titulo="Denúncia Registrada">
+    </app-titulo-secoes-produto>
+    </div>
+    <p style=" padding: 5px;
+    cursor: pointer;
+    margin-top: -38px;
+    color: rgb(123 88 218);"  (click)="volta();">Volta</p>
+    <app-titulo-secoes-produto cor="#A5A5A5"  altura2="0px"  altura="0px"  altura="true" titulo="
+    {{denuncia.protocolo}}">
+</app-titulo-secoes-produto>
+    <div class="row">
+        <div class="col-sm-6">
+            <!-- <p>Nome:</p>
+            <p>Empresa:</p>
+            <p>Celular:</p>
+            <p>Telefone:</p>
+            <p>Protocolo:</p>
+            <p>Qual a sua relação com o Grupo Elgin?</p>
+            <p>Escolha uma opção:</p>
+            <p>Sobre os fatos:</p>
+            <p>Qual a sua relação com o Grupo Elgin?</p>
+            <p>Em qual unidade o fato aconteceu?</p>
+            <p>Informe detalhadamente o local em que o fato ocorreu</p>
+            <p>indique a(s) pessoas(s) envolvida(s) no evento, informando, se possível:</p>
+            <p>Descrição dos fatos:</p>
+            <p>Alguma sugestão para resolver a situação:</p>
+            <p>Ocorrências vinculadas a esta denúncio que você está reportanto</p>
+            <p>Valor financeiro</p> -->
+        </div>   
+        <div class="col-sm-6">
+            <p>{{denuncia.nome}}</p>
+            <p>{{denuncia.empresa}}</p>
+            <p>{{denuncia.celular}}</p>
+            <p>{{denuncia.Telefone}}</p>
+            <p>{{denuncia.pergunta1}}</p>
+            <p>{{denuncia.pergunta2}}</p>
+            <p>{{denuncia.pergunta3}}</p>
+            <p>{{denuncia.pergunta4}}</p>
+            <p>{{denuncia.pergunta5}}</p>
+            <p>{{denuncia.pergunta6}}</p>
+            <p>{{denuncia.pergunta7}}</p>
+            <p>{{denuncia.pergunta8}}</p>
+            <p>{{denuncia.pergunta9}}</p>
+            <p>{{denuncia.pergunta10}}</p>
+            <p>{{denuncia.pergunta11}}</p>
+        </div>  
+    </div>
+    </div>
+    </ng-container>

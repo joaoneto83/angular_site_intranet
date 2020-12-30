@@ -1,0 +1,168 @@
+.divTitulo {
+    padding-bottom:60px;
+}
+
+.divTituloInscricao{
+    padding-bottom:60px;
+    margin-top: 60px;
+}
+
+.titulo {
+    font-size: 37px;
+}
+
+.banner{
+    margin-top: 80px;
+    margin-bottom: 70px;
+}
+
+.imagem{
+    width: 100%;
+}
+
+select {
+    background-color: transparent;
+    border: 1px solid #005eb8;
+    border-radius: 20px;
+    color: #005eb8;
+    width: 100%;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 17px;
+    padding: 6px 25px;
+    text-align-last: center;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select-azul {
+    background-position: 98% 11px !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #DDDCDC; 
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #DDDCDC; 
+}
+
+.imgBannerCalendario {
+    width: 100%;
+    height: 300px;
+    background: url("/assets/img/Site/Refrigeracao/banner-treinamento.png")center/cover no-repeat;
+}
+
+.subtitulo{
+    font-size: 24px;
+    padding-top: 30px;
+}
+
+.nomeTreinamento{
+    font-size: 22px;
+    max-width: 140px;
+    margin-bottom: 20px;
+}
+
+.descTreinamento{
+    font-size: 16px;
+    max-width: 220px;
+    min-height: 168px;
+}
+
+.divBtnInscrever{
+    margin-top: 30px;
+}
+
+.btnInscrever {
+    color: #005EB8 !important;
+    border: 1px solid #005EB8;
+    background-color: #FFF;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 10px 20px;
+    outline: none;
+}
+
+.btnInscrever:hover{
+    text-decoration: none;
+}
+
+.divImgTreinamento{
+    margin-bottom: 20px;
+}
+
+.imgTreinamento {
+    max-height: 70px;
+}
+
+@media (max-width: 1200px) {
+    .btnInscrever{
+        padding: 5px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .btnInscrever{
+        white-space: nowrap;
+    }
+
+    .descTreinamento{
+        max-width: 200px;
+        min-height: 192px;
+    }
+}
+
+@media (max-width: 575px) {
+    .descTreinamento{
+        min-height: auto;
+    }
+
+    .espacamento-select{
+        margin-top: 10px;
+    }
+
+    .containerCalendario{
+        padding-bottom: 30px;
+    }
+
+    .imgBannerContato{
+        height: 200px;
+    }
+
+    .margin-mobile{
+        margin-top: 50px;
+    }
+
+    .titulo{
+        font-size: 30px;
+    }
+
+    .subtitulo{
+        font-size: 18px;
+    }
+
+    .divTitulo{
+        padding: 0 15px 60px;
+    }
+
+    .imgBannerCalendario{
+        height: 135px;
+    }
+}

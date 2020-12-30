@@ -1,0 +1,24 @@
+<app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Classificações"></app-titulo-secoes-produto>
+<div class="row">
+    <div class="col-sm-8">
+        <mat-accordion [multi]="multi" *ngFor="let item of classificacao">
+            <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <span class="sidebarFiltro" class="fontSecundaria fontLight">
+                            {{item.nomeClassificacao}}
+                        </span>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <ul class="ulSubClassificacao">
+                    <li *ngFor="let subClassificacao of item.filhos" class="liProduto filtro">
+                        <input type="checkbox" [(ngModel)]="subClassificacao.selecionado" [name]="subClassificacao.id"
+                            [id]="subClassificacao.id" style="float:right">
+                        <label [for]="subClassificacao.id"
+                            class="fontSecundaria fontLight aSidebar">{{subClassificacao.nomeClassificacao}}</label>
+                    </li>
+                </ul>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>

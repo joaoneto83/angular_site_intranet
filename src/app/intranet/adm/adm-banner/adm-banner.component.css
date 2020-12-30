@@ -1,0 +1,20 @@
+.imagem-banner-home {
+    display: block;
+  }
+
+  ::ng-deep .modal{
+    z-index: 1080;
+}
+
+::ng-deep .modal-lg{
+    max-width: 100%;
+    top:75px;
+}
+
+::ng-deep .modal-content{
+    border-radius: 0;
+}
+
+.btn-adc{
+    font-size: 16px;
+}

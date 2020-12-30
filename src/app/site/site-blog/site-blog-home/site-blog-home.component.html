@@ -1,0 +1,17 @@
+<div class="inner" style="margin-top:100px;margin-bottom: 80px;">
+    <div class="text-center divPesquisa">
+        <app-site-blog-pesquisa
+        (pesquisarOutput)="realizaPesquisa($event);"></app-site-blog-pesquisa>
+    </div>
+    <ul class="list">
+        <li *ngFor="let postagem of postagens" class="hentry">
+            <app-site-blog-card [postagem]="postagem"></app-site-blog-card>
+        </li>
+    </ul>
+</div>
+<div *ngIf="linkCarregarMais" class="justify-content-center" style="margin-bottom: 40px;text-align: center;width: 100%;"
+    (click)="carregarMais();">
+    <a class="btnCarregarMais fontSecundaria fontLight">Carregar mais
+        <i class="fas fa-caret-down"></i>
+    </a>
+</div>

@@ -1,0 +1,64 @@
+.modal-content {
+    border-top: 0;
+    border-radius: 0 !important;
+}
+
+.modelBackdrop {
+    z-index: 1060 !important;
+}
+
+.modal-open {
+    padding: 0 !important;
+}
+
+::ng-deep .modalArquivoMpdv{
+    z-index: 1061 !important;
+}
+
+::ng-deep .modalArquivoMpdv .modal-dialog{
+    max-width: 1140px;
+}
+
+.fontModalArquivoMpdv{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 16px;
+    color: #222;    
+    margin-bottom: 0;
+}
+
+.modal-header-arquivo-mpdv{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border: 0;
+}
+
+.icon-adc-mpdv .iconeMpdv{
+    color:#bfbfbf !important;
+    cursor: pointer;
+    font-size: 11px;
+    margin: 3px;
+}
+
+.inputModalMpdv {
+    background-color: transparent;
+    border: 0;
+    color: #222;
+    /* border-bottom: 1px solid #222; */
+    width: 100%;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 15px;
+    border-radius: 0;
+    outline: none;
+}
+
+.btn-download-image-mpdv{
+    width: 20px;
+    height: 31px;
+    background: url("/assets/icones/download.png") no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    outline: none;
+}

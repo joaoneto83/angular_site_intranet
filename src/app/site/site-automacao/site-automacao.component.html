@@ -1,0 +1,134 @@
+<app-banner-home [podeEditar]="false" codigoBanner="Site-Automacao" [banners]="banner" [banners2]="banner2">
+</app-banner-home>
+ <!-- <app-modal-banner ></app-modal-banner> -->
+<div class="container contSup">
+    <div class="row" style="margin-top: 60px;">
+        <div class="col-sm-12 justify-content-center display-flex-links divRotas">
+            <div class="divLinks" routerLink="/Automacao/Home/To/Contato">
+                <img src="/assets/img/Site/Home/icons/assistencia.png">
+                <label class="lblTextoLink fontPrincipal fontThin">
+                    ASSISTÊNCIA TÉCNICA
+                </label>
+            </div>
+            <div class="divLinks" routerLink="/Automacao/Home/To/DownloadCenter">
+                <img src="/assets/img/Site/Home/icons/download.png">
+                <label class="lblTextoLink fontPrincipal fontThin">
+                    DOWNLOAD CENTER
+                </label>
+            </div>
+            <a class="divLinks youtube" target="_blank"
+                href="https://www.youtube.com/playlist?list=PL-Wx4U81qUnSv7SCf0BmLGM-64FcwkePP">
+                <img src="/assets/img/Site/Home/icons/youtube.svg">
+                <label class="lblTextoLink fontPrincipal fontThin">
+                    VÍDEOS DE INSTRUÇÃO
+                </label>
+            </a>
+            <div class="divLinks" routerLink="/SuporteTecnico/Categoria/automacao">
+                <img src="/assets/img/Site/Home/icons/email.png">
+                <label class="lblTextoLink fontPrincipal fontThin">
+                    DICAS DE USO
+                </label>
+            </div>
+            <div class="divLinks" routerLink="/Automacao/Home/To/Contato" target="_blank">
+                <div>
+                    <img src="/assets/img/Site/Home/icons/contato.png">
+                </div>
+                <label class="lblTextoLink fontPrincipal fontThin">
+                    CONTATO
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <app-automacao-bloco class="espacamento-100"></app-automacao-bloco>
+
+    <div class="espacamento-100">
+        <div class="text-center">
+            <label class="fontPrincipal fontLight titulo">Elgin Tools</label>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-10 text-center">
+                <label class="fontPrincipal fontLight texto">Pacote de ferramentas</label>
+            </div>
+        </div>
+        <img src="/assets/img/Site/Automacao/elgin_tools.png" class="imgTools">
+        <div class="row justify-content-center">
+            <div class="col-md-10 text-center">
+                <label class="fontPrincipal fontLight texto">Monitore, comunique, pague, receba sem complicações. Aplicativo completo em plataforma web.</label>
+            </div>
+        </div>
+    </div>
+
+    <app-site-blog-case codigoBlog="Automacao"></app-site-blog-case>
+
+    <div class="row espacamento-100">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-6 col-12 espacamento-click divImgClick">
+                    <img class="imgClick" src="/assets/img/Site/Automacao/click-2.png">
+                </div>
+                <div class="col-sm-6 col-12 espacamento-click divTextoClick">
+                    <h1 class="fontPrincipal tituloClick">
+                        Precisa de Ajuda?
+                    </h1>
+                    <label class="fontPrincipal fontLight w-100 subtituloClick" >
+                        Acesse o Click, o pós-venda da Elgin
+                    </label>
+                    <div>
+                        <a class="btnClick" style="margin-right:10px;"
+                            href="https://www.automacao.elgin.com.br/chamado/sistema/autorizada" target="_blank">
+                            Autorizada
+                        </a>
+                        <a class="btnClick" href="https://www.automacao.elgin.com.br/chamado/sistema/cliente"
+                            target="_blank">
+                            Contratos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-site-bloco-institucional tela="automacao"></app-site-bloco-institucional>
+
+    <app-site-videos [videos]="videos"></app-site-videos>
+
+    <div class="row espacamento-100">
+        <div class="col-sm-12 text-center" style="margin-bottom: 80px;">
+            <label class="fontPrincipal fontLight" style="font-size: 49px">
+                Fique com a gente!
+            </label>
+            <label class="fontPrincipal fontLight" style="font-size: 21px; margin: 0">
+                Siga-nos nas redes sociais e fique por dentro de todas as novidades.
+            </label>
+        </div>
+        <div class="col-sm-12 justify-content-center display-flex-links divRedes">
+            <a class="divLinks" target="_blank" href="https://www.facebook.com/automacaoelgin">
+                <img src="/assets/img/Site/Home/icons/fb.png">
+                <label style="font-size: 19px; color: #575756" class="fontPrincipal fontLight">Facebook</label>
+            </a>
+            <a class="divLinks" target="_blank" href="https://br.linkedin.com/company/elgin-s.a.-brazil-">
+                <img src="/assets/img/Site/Home/icons/Lk.png">
+                <label style="font-size: 19px; color: #575756" class="fontPrincipal fontLight">Linkedin</label>
+            </a>
+            <a class="divLinks" target="_blank" href="https://www.youtube.com/user/elginhomeoffice">
+                <img src="/assets/img/Site/Home/icons/yt.png">
+                <label style="font-size: 19px; color: #575756" class="fontPrincipal fontLight">Youtube</label>
+            </a>
+            <a class="divLinks" target="_blank" href="http://blog.elgin.com.br/blog/">
+                <img src="/assets/img/Site/Home/icons/blogger.png"><br>
+                <label style="font-size: 19px; color: #575756" class="fontPrincipal fontLight">Blog</label>
+            </a>
+            <a class="divLinks" target="_blank" href="https://www.instagram.com/elgin.automacao">
+                <img src="/assets/img/Site/Home/icons/insta.png">
+                <label style="font-size: 19px; color: #575756" class="fontPrincipal fontLight">Instagram</label>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="espacamento-100">
+    <app-download-center-sublinha id="DownloadCenter" tela="Automacao" [sublinhas]="sublinhas"></app-download-center-sublinha>
+    <app-site-automacao-contato id="Contato"></app-site-automacao-contato>
+    <app-site-automacao-email id="SuporteTecnico"></app-site-automacao-email>
+</div> 

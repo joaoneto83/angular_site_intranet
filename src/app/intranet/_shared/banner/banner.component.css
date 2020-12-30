@@ -1,0 +1,36 @@
+.div-texto-banner{
+    max-width: 350px !important;
+    top: 28px;
+    height: 384px;
+    padding: 60px;
+    text-align: left;
+    left: -159px;
+    opacity: 0.8;
+}
+
+.div-texto-banner p{
+    font-size: 18px;
+    color: white !important;
+}
+
+.div-texto-banner h1{
+    font-size: 35px;
+    color: white !important;
+}
+
+.btn-saiba-mais{
+    color: white !important;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.btn-saiba-mais:hover{
+    color: #6E6E6E !important;
+    background-color: white;
+}
+
+h3, p{
+    color:black !important;
+}

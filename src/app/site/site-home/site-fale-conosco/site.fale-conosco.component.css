@@ -1,0 +1,185 @@
+.imagem {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.imgEsqListaLinks:hover,
+.imgDirListaLinksTop:hover,
+.imgDirListaLinksBotton:hover {
+  filter: brightness(75%);
+}
+
+.bloco {
+  /* position: relative; */
+  /* height: 540px; */
+  text-align: right !important;
+  color: white;
+  padding: 0px 0px 5px 0px;
+}
+
+.meioBloco {
+  /* position: relative; */
+  /* height: 270px; */
+  text-align: right !important;
+  color: white;
+  padding: 0px 0px 5px 5px;
+}
+
+.fiqueComGente {
+  font-size: 38px;
+  color: #575756;
+}
+
+/* label{
+    position: relative;
+    top: -50px;    
+    padding-right: 15px;
+} */
+
+.bottom-right {
+  position: absolute;
+  right: 16px;
+  color: white;
+  font-size: 25px;
+  margin-bottom: 0;
+}
+
+.row {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+@media (max-width: 575px) {
+  .meioBloco {
+    padding-left: 0px !important;
+    height: 160px;
+  }
+
+  .bloco {
+    height: 235px;
+  }
+  .SupLinksFaleConosco {
+    margin: 0;
+  }
+  .bottom-right {
+    font-size: 22px !important;
+    bottom: 10px;
+    top: 160px!important;
+  }
+
+  .imgEsqListaLinks {
+    height: 404px!important;
+    margin-bottom: 0!important;
+  }
+  .imgEsqListaLinks,
+  .imgDirListaLinksTop,
+  .imgDirListaLinksBotton {
+    height: 200px!important;
+    margin-top: 2px!important;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .meioBloco {
+    padding-left: 0px !important;
+    height: 280px;
+  }
+
+  .bloco {
+    height: 470px;
+  }
+
+}
+
+@media (max-width: 991px) {
+
+  .bloco {
+    margin-bottom: 5px;
+  }
+
+}
+
+.imgEsqListaLinks {
+  /* height: 460px; */
+  background: url(/assets/img/Site/Home/fabrica.jpg) center/cover no-repeat;
+  position: relative;
+  cursor: pointer;
+
+}
+
+@media (max-width: 991px) {
+
+  .imgEsqListaLinks {
+    height: 400px;
+  }
+
+}
+@media (max-width: 767px) {
+
+  .imgEsqListaLinks {
+    height: 400px;
+  }
+
+}
+
+.imgEsqListaLinks > .bottom-right {
+  bottom: 8px;
+}
+
+.imgDirListaLinksTop {
+  background: url(/assets/img/Site/Home/trabalhe.jpg) center/cover no-repeat;
+  margin-right: 0;
+  height: 225px;
+  margin-left: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .imgDirListaLinksTop {
+    margin-left: 0;
+  }
+}
+
+.imgDirListaLinksTop .bottom-right {
+  top: 180px;
+}
+
+.imgDirListaLinksBotton {
+  background: url(/assets/img/Site/Home/autorizada.jpg) center/cover no-repeat;
+  margin-right: 0;
+  margin-top: 5px;
+  height: 225px;
+  margin-left: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+.imgDirListaLinksBotton {
+    margin-left: 0;
+  }
+}
+
+.imgDirListaLinksBotton .bottom-right {
+  top: 180px;
+}
+
+.titLinksExternos {
+  text-align: center;
+  padding: 35px 0 0 0;
+}
+
+@media (max-width: 320px)
+{
+  .imgDirListaLinksBotton .bottom-right {
+    top: 125px!important;
+    width: 100%;
+    left: 0;
+    text-align: right;
+    padding-right: 16px;
+  }
+
+}

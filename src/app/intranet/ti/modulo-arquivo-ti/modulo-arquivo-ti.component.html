@@ -1,0 +1,32 @@
+<app-edit-modulo-arquivo-ti #modalModulo (reload)="atualiza()"></app-edit-modulo-arquivo-ti>
+<div class="container" >
+    <div class="m-t-40">
+        <app-titulo-categoria cor="#3FEFFC" de="#3FEFFC" ate="#1579DE" titulo="Capacitação"></app-titulo-categoria>
+        <input showIfAdmin="TI_EDICAO" style="color: #3FEFFC !important; border-color: #3FEFFC;" type="button" class="btn-add-modulo" (click)='open("Capacitação")' value="Novo">
+        <div *ngFor="let cols of rows" class="row">
+            <div *ngFor="let col of cols | FiltraPorCategoriaTi: 'Capacitação'" class="col-md-3 col-sm-6 p-t-1">
+                <app-card-modulo-arquivo-ti [modulo]="col" [modal]="modalModulo"></app-card-modulo-arquivo-ti>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-t-40">
+        <app-titulo-categoria cor="#B005EF" de="#8B39F3" ate="#33B0FB" titulo="UP"></app-titulo-categoria>
+        <input showIfAdmin="TI_EDICAO" style="color: #B005EF !important; border-color: #B005EF;" type="button" class="btn-add-modulo" (click)='open("UP")' value="Novo">
+        <div *ngFor="let cols of rows" class="row">
+            <div *ngFor="let col of cols | FiltraPorCategoriaTi: 'UP'" class="col-md-3 col-sm-6 p-t-1">
+                <app-card-modulo-arquivo-ti [modulo]="col" [modal]="modalModulo"></app-card-modulo-arquivo-ti>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-t-40 m-b-40">
+        <app-titulo-categoria cor="#73A6E3" de="#73A6E3" ate="#276993" titulo="SAP"></app-titulo-categoria>
+        <input showIfAdmin="TI_EDICAO" style="color: #73A6E3 !important; border-color: #73A6E3;"  type="button" class="btn-add-modulo" (click)='open("SAP")' value="Novo">
+        <div *ngFor="let cols of rows" class="row">
+            <div *ngFor="let col of cols | FiltraPorCategoriaTi: 'SAP'" class="col-md-3 col-sm-6 p-t-1">
+                <app-card-modulo-arquivo-ti [modulo]="col" [modal]="modalModulo"></app-card-modulo-arquivo-ti>
+            </div>
+        </div>
+    </div>
+</div>

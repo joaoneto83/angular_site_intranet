@@ -1,0 +1,87 @@
+<div class="collapse navbar-collapse menuMobile menu" [ngClass]="{ 'show': navbarOpen }">
+  <ul class="navbar-nav" style="width: 100%;">
+    <li class="nav-item tituloSecao">Automação</li>
+    <li class="nav-item" *ngIf="linha">
+      <a class="nav-link" (click)="toggleProdutos()">
+        Produtos <i class="fas fa-chevron-down" style="columns: #222222;;"></i>
+      </a>
+      <div class="" *ngIf="produtosOpen">
+        <div *ngFor="let sublinha of linha.subLinhas  | orderBy: ['ordem']" class="nav-link2">
+          <a class="nav-link" (click)="toggleNavbar()"
+            [routerLink]="['/Produtos/' + linha.codigoLinha + '/' + sublinha.codigoSubLinha ]">{{sublinha.nomeSubLinha}}</a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a (click)="toggleNavbar()" class="nav-link" href="http://www.clubeautomacaoelgin.com.br/">
+        Software Partners
+      </a>
+    </li>
+    <li class="nav-item">
+      <a (click)="toggleNavbar()" class="nav-link" [routerLink]="['/Automacao/Home/To/Contato']">
+        Encontre uma Autorizada
+      </a>
+    </li>
+    <li class="nav-item">
+      <a (click)="toggleNavbar()" class="nav-link" [routerLink]="['/Automacao/Home/To/SuporteTecnico/']">
+        Suporte Técnico
+      </a>
+    </li>
+    <li class="nav-item">
+      <a (click)="toggleNavbar()" class="nav-link" [routerLink]="['/Automacao/Cases']">
+        Cases
+      </a>
+    </li>
+    <li class="nav-item" *ngIf="linha">
+      <a class="nav-link" (click)="toggleClickVendas()">
+        Click Pós Vendas <i class="fas fa-chevron-down" style="columns: #222222;;"></i>
+      </a>
+      <div class="" *ngIf="clickOpen">
+        <div class="nav-link2">
+          <a class="nav-link" (click)="toggleNavbar()"
+            href="https://www.automacao.elgin.com.br/chamado/sistema/autorizada">
+            Acesso Autorizada
+          </a>
+        </div>
+        <div class="nav-link2">
+          <a class="nav-link" (click)="toggleNavbar()"
+            href="https://www.automacao.elgin.com.br/chamado/sistema/cliente">
+            Acesso Contratos
+          </a>
+        </div>
+      </div>
+    </li>
+    <li class="nav-item" style="margin-bottom: 50px;">
+      <a (click)="toggleNavbar()" class="nav-link" [routerLink]="['/Automacao/QueroComprar/']">
+        Quero Comprar
+      </a>
+    </li>
+    <li class="nav-item tituloSecao">Elgin</li>
+    <li class="nav-item" *ngIf="linhasCompletas">
+      <a class="nav-link" (click)="toggleLinha()">Linhas <i class="fas fa-chevron-down"
+          style="columns: #222222;;"></i></a>
+      <div class="" *ngIf="linhaOpen">
+        <ng-container *ngFor="let linha of linhasCompletas">
+          <div *ngIf="linha.codigoLinha != 'Refrigeracao'" class="nav-link2">
+            <a class="nav-link" (click)="linha.showMobile = !linha.showMobile">{{linha.nomeLinha}} <i
+                class="fas fa-chevron-down" style="columns: #222222;;"></i></a>
+            <div class="" *ngIf="linha.showMobile">
+              <div *ngFor="let sublinha of linha.subLinhas" class="nav-link3">
+                <a class="nav-link" (click)="toggleNavbar()"
+                  [routerLink]="['/Produtos/' + linha.codigoLinha + '/' + sublinha.codigoSubLinha ]">{{sublinha.nomeSubLinha}}</a>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </li>
+    <li class="nav-item" *ngFor="let menu of menus">
+      <a class="nav-link" [routerLink]="[menu.rota]"> {{menu.nome}}</a>
+    </li>
+    <li style="padding-bottom: 10px;">
+      <input (keyup.enter)="pesquisarProduto()" [(ngModel)]="txtPesquisa" class="input-mobile" placeholder="Pesquisar"
+        type='text'>
+      <img (click)="pesquisarProduto()" src="/assets/icones/search.png" style="padding-left:14px">
+    </li>
+  </ul>
+</div>

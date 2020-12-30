@@ -1,0 +1,32 @@
+<div class="container" style="margin-top:90px;">
+    <app-banner codigoBanner="Intranet-Merchandising" perfil="MERCHAN_EDICAO" [banners]="model.banners"></app-banner>
+
+    <div class="row">
+        <div class="col-sm-12 margin-auto">
+            <app-aviso perfilAdmin="MERCHAN_EDICAO" icone="" titulo="AVISOS" [itens]="avisos" codigoTipoAviso="aviso" modulo="Intranet-Merchandising"></app-aviso>
+        </div>
+    </div>
+    <div class="row div-bloco">
+        <div class="col-sm-4">
+            <app-button-gradient de="#FFC0AD" ate="#FF6AED" height="142" link="/PortaldeApoio/Merchandising/Mpdv">
+                <label class="m-t-20">Material de PDV</label>
+            </app-button-gradient>
+        </div>
+        <div class="col-sm-4">
+            <!-- <app-button-gradient de="#36BAFF" ate="#2CFFAE" height="142" deg="311" link="/PortaldeApoio/Treinamentos"> -->
+                <app-button-gradient de="#36BAFF" ate="#2CFFAE" height="142" deg="311" link="/PortaldeApoio/Merchandising/Treinamento">   
+                <label class="m-t-20">Treinamentos</label>
+            </app-button-gradient>
+        </div>
+        <div class="col-sm-4">
+            <app-button-gradient de="#FF5D2C" ate="#F3FCB0" height="142" deg="316" link="/assets/arquivos/ManualMerchandising.pdf" linkExterno="true" download="true">
+                <label>Manual de Merchandising</label>
+            </app-button-gradient>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 margin-auto">
+            <app-aviso perfilAdmin="MERCHAN_EDICAO" icone="" titulo="CAMPANHAS" [itens]="avisos" codigoTipoAviso="campanha" modulo="Intranet-Merchandising"></app-aviso>
+        </div>
+    </div>
+</div>

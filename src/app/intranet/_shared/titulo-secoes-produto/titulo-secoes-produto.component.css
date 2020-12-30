@@ -1,0 +1,15 @@
+.module-border-wrap {
+  padding-top: 3px;
+}
+
+.module-border-wrap {
+  padding: 1px;
+  margin: 15px 0 30px;
+  /* margin: 15px 0 30px 0 !important; */
+}
+
+label{
+  margin: 0;
+  font-size: 21px;
+}
+ 

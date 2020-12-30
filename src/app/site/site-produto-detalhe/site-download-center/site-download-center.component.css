@@ -1,0 +1,49 @@
+.fontTitulo{
+    font-size: 20px;
+    color: #777;
+}
+
+.btnDownload {    
+    border: 1px solid #777;
+    border-radius: 9px;
+    background-color: white;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 200px;
+    display: block;
+}
+.btnDownload:hover {
+    text-decoration: none;
+}
+
+.btnDownloadTxt {
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 15px;
+    color: #777;
+    background-color: #fff;
+    width: 185px;
+    text-align: center;
+    border: none;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 auto;
+    display: block;
+    text-overflow: ellipsis;
+}
+.marginTitulo{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px){
+    .fontTitulo{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .fontTitulo{
+        font-size: 20px;
+    }
+}

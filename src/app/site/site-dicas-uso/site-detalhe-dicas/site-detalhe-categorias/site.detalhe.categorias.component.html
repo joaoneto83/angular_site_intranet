@@ -1,0 +1,44 @@
+<ul class="ulSubFiltro ulCategoriaDicasUso">
+    <mat-accordion>
+        <ng-container *ngFor="let menu1 of menu">
+            <li class="sidebarFiltro liSemFilho fontPrincipal fontLight" [routerLink]="['/SuporteTecnico/Categoria/' + menu1.slug]"
+                *ngIf="menu1.filhos.length == 0 && menu1.post_count > 0" [innerHtml]="menu1.nome"></li>
+            <mat-expansion-panel *ngIf="menu1.filhos.length > 0">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <li class="sidebarFiltro" class="fontPrincipal fontLight" [innerHtml]="menu1.nome">
+                        </li>
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <ul class="ulSubFiltro" *ngIf="menu1.filhos.length > 0">
+                    <mat-accordion>
+                        <ng-container *ngFor="let menu2 of menu1.filhos">
+                            <li class="sidebarFiltro liSemFilho fontPrincipal fontLight"
+                                [routerLink]="['/SuporteTecnico/Categoria/' + menu2.slug]"
+                                *ngIf="menu2.filhos.length == 0 && menu2.post_count > 0" [innerHtml]="menu2.nome"></li>
+                            <mat-expansion-panel *ngIf="menu2.filhos.length > 0">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <li class="sidebarFiltro" class="fontPrincipal fontLight"
+                                            [innerHtml]="menu2.nome">
+
+                                        </li>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <ul class="ulSubFiltro">
+                                    <ng-container *ngFor="let menu3 of menu2.filhos">
+                                        <li class="sidebarFiltro liSemFilho fontPrincipal fontLight"
+                                            [routerLink]="['/SuporteTecnico/Categoria/' + menu3.slug]"
+                                            *ngIf="menu3.filhos.length == 0 && menu3.post_count > 0"
+                                            [innerHtml]="menu3.nome"></li>
+                                    </ng-container>
+                                </ul>
+                            </mat-expansion-panel>
+                        </ng-container>
+                    </mat-accordion>
+                </ul>
+            </mat-expansion-panel>
+        </ng-container>
+
+    </mat-accordion>
+</ul>

@@ -1,0 +1,199 @@
+.border-mpdv{
+    background: linear-gradient(to right, #ffafbc, #ff89d5) !important;
+}
+
+.border-trein{
+    background: linear-gradient(to right, #2fe7ca, #32caf0);
+}
+
+.border-mdm{
+    background: linear-gradient(to right, #b689ff, #514aff);
+}
+
+.btn-treinamento{
+    transition: .2s all;
+    cursor: pointer;
+    color: #ff89d5;
+}
+.btn-treinamento:hover{
+    background: linear-gradient(to right, #ffafbc, #ff89d5);
+    color: white;
+} 
+
+.iconTreinamentoRh {
+    height: 35px;
+    width: 51px;
+    background: url("/assets/icones/treinamentos_rh.png") no-repeat;
+    display: inline-block;
+}
+.btn-treinamento:hover .iconTreinamentoRh {
+    background: url("/assets/icones/treinamento_rh_on.png") no-repeat;
+}
+
+.iconElginNewsRh{
+    height: 35px;
+    width: 51px;
+    background: url("/assets/icones/elgin_news.png") no-repeat;
+    display: inline-block;
+}
+
+.btn-treinamento:hover .iconElginNewsRh{
+    background: url("/assets/icones/elgin_news_on.png") no-repeat;    
+}
+
+.btn-missao{
+    transition: .2s all;
+    cursor: pointer;
+    color: #32caf0;
+}
+.btn-missao:hover{
+    background: linear-gradient(to right, #2fe7ca, #32caf0);
+    color: white;
+} 
+
+.iconMissao {
+    height: 35px;
+    width: 51px;
+    background: url("/assets/icones/mvv.png") no-repeat;
+    display: inline-block;
+}
+.btn-missao:hover .iconMissao {
+    background: url("/assets/icones/mvv_on.png") no-repeat;
+}
+
+.btn-manual{
+    transition: .2s all;
+    cursor: pointer;
+    color: #65ABFC;
+}
+.btn-manual:hover{
+    background: linear-gradient(to right, #b689ff, #514aff);
+    color: white;
+} 
+
+.iconManual {
+    height: 35px;
+    width: 51px;
+    background: url("/assets/icones/loja.png") no-repeat;
+    display: inline-block;
+}
+.btn-manual:hover .iconManual {
+    background: url("/assets/icones/loja_on.png") no-repeat;
+}
+
+
+.margin-auto{
+    margin: 0 auto 30px auto;
+}
+
+.div-bloco{
+    /* padding: 5px; */
+    text-align: center;
+    padding-bottom: 40px;
+    
+}
+
+.module-border-wrap {
+    /* background: linear-gradient(to right, #1111, #FFF); */
+    padding-top: 3px;
+}
+
+.module {
+    background: white;    
+    padding: 20px 5px;
+}
+
+a.fontPrincipal.fontLight{
+    font-size: 12px;
+}
+
+.div-bloco a{
+    font-size: 21px;
+}
+
+.titulo{
+    font-size: 17px;
+    text-align: center;
+    border-bottom: 1px solid #AAA;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #DDDCDC; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #DDDCDC; 
+  }
+
+  .btn-circle {
+    width: 44px;
+    height: 44px;
+    padding: 9px 0px 6px;
+    border-radius: 45px;
+    border: 1px solid;
+    text-align: center;
+    font-size: 20px !important;
+    line-height: 25px;
+    font-weight: 200;    
+    cursor: pointer;
+    color: white;
+}
+
+.btn-circle-maior {
+    width: 60px;
+    height: 60px;
+    padding: 9px 0px 6px;
+    border-radius: 45px;
+    border: 1px solid;
+    text-align: center;
+    font-size: 25px !important;
+    line-height: 40px;
+    font-weight: 200;    
+    cursor: pointer;
+    color: white;
+}
+
+
+
+.div-bloco-solicitacaoes{
+    margin-top: 24px;
+}
+
+.btn-solicitacoes{
+    background: linear-gradient(to right, #ff7474, #ff2f67);
+    cursor: pointer;
+} 
+
+.titutlo-solicitacoes{
+    color: white;
+    border-bottom: 1px solid white; 
+    padding-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+
+.descricao-solicitacoes{
+    color: white;
+}
+
+.tituloBotao{
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    top: -7px;
+}

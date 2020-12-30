@@ -1,0 +1,44 @@
+*{
+    text-decoration: none;
+    list-style: none;
+}
+.p-t-1{
+    padding-top: 20px;
+    padding-right: 0px;
+}
+
+.titulo-categoria{
+    color: #22899a;
+    text-transform: uppercase;
+    font-size: 17px;
+}
+
+.row{
+    margin-right: 0 !important;
+}
+
+.nav-link{
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover{
+    color: #22899a !important;
+    cursor: pointer;
+    border-bottom: 2px solid #22899a;
+}
+
+.active{
+    color: #22899a !important;
+    cursor: pointer;
+    border-bottom: 2px solid #22899a;
+}
+
+.caminho.fontPrincipal{
+    font-size: 12px;
+}
+.caminho .fontPrincipal{
+    color: #22899a;
+}
+.nav-link .fontPrincipal{
+    font-size: 13px;
+}

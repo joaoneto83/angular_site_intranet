@@ -1,0 +1,52 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-edit-modulo">
+        <div class="row">
+            <div class="col-sm-12">
+                <label class="tituloModal">Módulo de {{model.secao}}</label>
+                <button type="button" class="close" aria-label="Close" (click)="close()"
+                    style="border:0px;outline: 0px;float:right">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body" style="padding: 30px">
+        <div class="row linhasCampos">
+            <div class="col-sm-8">
+                <label class="labelModulo">Nome</label>
+                <input type="text" class="form-control" [(ngModel)]="model.nome" maxlength="50" />
+            </div>
+            <div class="col-sm-4">
+                <label class="labelModulo">Ativo</label><br/>
+                <input [(ngModel)]="model.ativo" type="checkbox">
+            </div>
+        </div>
+        <div class="row linhasCampos">
+            <div class="col-sm-12">
+                <div>
+                    <label class="labelModulo">Arquivos:</label>
+                </div>
+                <div class="divUpload">
+                    <app-upload-file-multiple idPai="dataHora" [caminho]="model.secao" (resposta)="getRespostaArquivo($event)"></app-upload-file-multiple>
+                </div>
+                <div *ngIf="model.arquivos.length">
+                    <div>
+                        <label class="labelModulo">Arquivos Adicionados:</label>
+                    </div>
+                    <div *ngFor="let arq of model.arquivos; let i = index" class="col-sm-12">
+                        <label class="labelModulo"
+                            style="font-weight:bold;">{{arq.nomeArquivo}}</label>
+                        <a class="btn-excluir" title="Excluir arquivo" (click)="excluirArquivo(i)">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-sm-12 text-center">
+                <input class="btn-adc" type="button" value="Salvar" (click)="salvar();">
+            </div>
+        </div>
+    </div>
+</ng-template>

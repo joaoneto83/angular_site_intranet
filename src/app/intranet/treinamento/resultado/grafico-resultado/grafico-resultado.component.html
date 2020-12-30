@@ -1,0 +1,54 @@
+<div class="row" style="margin-bottom: 50px">
+    <div class="col-sm-4">
+        <select (change)="showGrafico = false" [(ngModel)]="resultado.idProva" class="select-preto">
+            <option value="">Título da Prova</option>
+            <option *ngFor="let prova of provas" [value]="prova.id">
+                {{prova.nome | titlecase}}
+            </option>
+        </select>
+    </div>
+    <div class="col-sm-4">
+        <select (change)="showGrafico = false" [(ngModel)]="resultado.idGrupo" class="select-preto">
+            <option value="">Grupo</option>
+            <option *ngFor="let grupo of grupos" [value]="grupo.id">
+                {{grupo.nomeGrupo | titlecase}}
+            </option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <label style="margin-top:30px" (click)="showCalendar = !showCalendar"
+            class="select-preto label-periodo w-100">{{periodo}}</label>
+        <app-range-date *ngIf="showCalendar" (selecionado)="selecionado($event)"
+            (mouseleave)="showCalendar = !showCalendar"></app-range-date>
+
+    </div>
+    <div class="col-sm-1">
+        <input type="button" class="btn-adc btn-busca" (click)="buscarResultado()" value="OK">
+    </div>
+</div>
+<ng-container *ngIf="showGrafico">
+    <div class="row" >
+        <div class="col-sm-4 text-center">
+            <circle-progress [percent]="100" [outerStrokeColor]="'#59cdff'" [subtitleColor]="'#2fc1ff'"
+                [subtitle]="resultado.totalProvas" [class]="'resultado resultado1'">
+            </circle-progress>
+        </div>
+        <div class="col-sm-4 text-center">
+            <circle-progress [percent]="resultado.percentRealizados" [outerStrokeColor]="'#00a4f6'"
+                [subtitleColor]="'#009ae7'" [subtitle]="resultado.percentRealizados+'%'"
+                [class]="'resultado resultado2'">
+            </circle-progress>
+        </div>
+        <div class="col-sm-4 text-center">
+            <circle-progress [percent]="resultado.percentAproveitamento" [outerStrokeColor]="'#0076f8'"
+                [subtitle]="resultado.percentAproveitamento+'%'" [subtitleColor]="'#006ce0'"
+                [class]="'resultado resultado3'">
+            </circle-progress>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 30px; margin-bottom: 100px">
+        <div class="col-sm-4 text-center subTitulo2" style="color:#5FCEFF">DISPONIBILIZADOS</div>
+        <div class="col-sm-4 text-center subTitulo2" style="color:#12AEFF">REALIZADOS</div>
+        <div class="col-sm-4 text-center subTitulo2" style="color:#127FFF">APROVEITAMENTO</div>
+    </div>
+</ng-container>

@@ -1,0 +1,7 @@
+<label class="fontPrincipal fontTitulo fontLight">{{'Caracteristicas' | translate | uppercase}}</label>
+<hr class="marginTitulo">
+<div *ngFor="let caracteristica of caracteristicas; let i = index;" class="row align-items-center">
+    <div class="col-12 col-sm-12 m-b-20">
+        <label class="fontPrincipal fontCaracteristica fontLight">{{caracteristica.descricaoCaracteristica}}</label>
+    </div>
+</div>

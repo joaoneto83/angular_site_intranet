@@ -1,0 +1,38 @@
+.divIcone {
+    width: 132px;
+    margin: 0 15px 0 15px;
+}
+
+.icone {
+    width: 100px;
+    opacity: 1;
+}
+
+.flex {
+    display: flex;
+}
+
+label {
+    font-size: 13px;
+    color: #777;
+}
+
+.divSuperiorIcone{
+    display: flex;
+}
+
+@media (max-width: 768px){
+    .icone{
+        width: 50px;
+    }
+}
+
+@media (max-width: 576px) {
+    .divIcone{
+        width: 100%;
+        margin: 0;
+    }
+    .divSuperiorIcone {
+        display: block;
+    }
+}

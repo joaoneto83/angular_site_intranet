@@ -1,0 +1,38 @@
+.divSalvar{
+  padding-top:25px; 
+  position: sticky; 
+  background-color: white; 
+  bottom:0px; 
+  padding-bottom: 20px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.fontAbreImagem{
+  margin-top: 8px;
+  font-family: fontPrincipal;
+  font-weight: 500;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.fontAbreImagem span{
+  color: #40beff;
+}
+
+.mat-expansion-panel{
+  border: 1px solid #ddd;
+}
+
+::ng-deep .modal{
+  z-index: 1080;
+}
+
+::ng-deep .modal-lg{
+  max-width: 100%;
+  top:75px;
+}
+
+::ng-deep .modal-content{
+  border-radius: 0;
+}

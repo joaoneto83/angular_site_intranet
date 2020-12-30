@@ -1,0 +1,83 @@
+<div class="container" style="padding:50px 0">
+    <div class="row" style="margin:0px">
+        <div class="col-sm-12">
+            <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Integrador Solar">
+            </app-titulo-secoes-produto>
+        </div>
+    </div>
+    <div class="row" style="margin:0px">
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-12" style="margin: 0 0 25px 0;">
+                    <a class="btn-adc" [routerLink]="['/PortaldeApoio/Adm/Subsite/EditarSolar']">
+                        Novo Integrador
+                    </a>
+                </div>
+            </div>
+            <div class="table-responsive" *ngIf="integradores.length">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="headerTabela">Nome</th>
+                            <th class="headerTabela">Estado</th>
+                            <th class="headerTabela">Cidade</th>
+                            <th class="headerTabela">CNPJ</th>
+                            <th class="headerTabela">Email</th>
+                            <th class="text-center headerTabela">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of integradores | paginate: config">
+                            <td class="conteudoTabela">
+                                {{i.nome}}
+                            </td>
+                            <td class="conteudoTabela ">
+                                {{i.uf}}
+                            </td>
+                            <td class="conteudoTabela ">
+                                {{i.nomeCidade | titlecase}}
+                            </td>
+                            <td class="conteudoTabela">
+                                {{i.cnpj}}
+                            </td>
+                            <td class="conteudoTabela">
+                                {{i.email}}
+                            </td>
+                            <td class="text-center">
+                                <a style="cursor:pointer;" (click)="editar(i.id)">
+                                    <i class="far fa-edit"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <ng-container *ngIf="integradores.length">
+                <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+                    <div class="custom-pagination">
+                        <div class="pagination-previous" [class.disabled]="p.isFirstPage()">
+                            <span class="span-previous" *ngIf="!p.isFirstPage()" (click)="p.previous()">
+                                <i class="fas fa-angle-left"></i>
+                            </span>
+                        </div>
+                        <div class="page-number" *ngFor="let page of p.pages"
+                            [class.current]="p.getCurrent() === page.value">
+                            <span class="" (click)="p.setCurrent(page.value)"
+                                *ngIf="p.getCurrent() !== page.value">{{ page.label }}</span>
+                            <div *ngIf="p.getCurrent() === page.value">
+                                <span class="headerTabela">{{ page.label }}</span>
+                            </div>
+                        </div>
+                        <div class="pagination-next" [class.disabled]="p.isLastPage()">
+                            <span class="span-next" *ngIf="!p.isLastPage()" (click)="p.next()">
+                                <i class="fas fa-angle-right"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                </pagination-template>
+            </ng-container>
+        </div>
+    </div>
+</div>

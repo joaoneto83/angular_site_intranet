@@ -1,0 +1,144 @@
+<div class="container">
+    <div class="divMpdv">
+        <app-box de="#73A6E3" ate="#276993">
+            <div style="padding: 30px;">
+                <div class="row divTituloCaixaMpdv col-sm-12">
+                    <span class="fontPrincipal fontLight" [style.color]="'#6A9FDA'">INSTITUCIONAL</span>
+                    <a showIfAdmin="MERCHAN_EDICAO" class="btn-adc-arquivo-mpdv"
+                        (click)="open('merchanInstitucional', false)"><i class="fas fa-plus"></i></a>
+                    <app-modal-arquivo-mpdv showIfAdmin="MERCHAN_EDICAO" #modalArquivoMpdv
+                        (recarregar)="retornaCarregamento()">
+                    </app-modal-arquivo-mpdv>
+                </div>
+                <ngx-masonry [options]="{ transitionDuration: '0s' }">
+                    <div ngxMasonryItem
+                        *ngFor="let arquivo of arquivos | FiltraPorTipoArquivoMpdv: 'merchanInstitucional'"
+                        class="col-md-4" style="padding: 15px">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span (click)="openConsulta(arquivo)"
+                                    class="titulo2 linkMpdv fontPrincipal fontRegular">{{arquivo.nomeArquivo | uppercase }}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="acoesArquivoMdpv">
+                                    <ng-container *ngIf="arquivo">
+                                        <a (click)="abreEnviarArquivo(arquivo.id)"><i class="fas fa-share-alt"></i></a>
+                                        <a showIfAdmin="MERCHAN_EDICAO" (click)="editArquivo(arquivo)"><i
+                                                class="fas fa-pen"></i></a>
+                                        <a showIfAdmin="MERCHAN_EDICAO" (click)="excluirArquivo(arquivo.id)"><i
+                                                class="fas fa-trash"></i></a>
+                                    </ng-container>
+                                </span>
+                                <app-modal-enviar-arquivo></app-modal-enviar-arquivo>
+                                <app-modal-visualizar-imagem></app-modal-visualizar-imagem>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-masonry>
+            </div>
+        </app-box>
+    </div>
+    <div class="divMpdv">
+        <app-box de="#3FEFFC" ate="#1579DE">
+            <div style="padding: 30px;">
+                <div class="row divTituloCaixaMpdv col-sm-12">
+                    <span class="fontPrincipal fontLight" [style.color]="'#008EB8'">EXPOSITORES</span>
+                    <a showIfAdmin="MERCHAN_EDICAO" class="btn-adc-arquivo-mpdv"
+                        (click)="open('merchanExpositores', false)"><i class="fas fa-plus"></i></a>
+                </div>
+                <ngx-masonry [options]="{ transitionDuration: '0s' }">
+                    <div ngxMasonryItem
+                        *ngFor="let arquivo of arquivos | FiltraPorTipoArquivoMpdv: 'merchanExpositores'"
+                        class="col-md-4" style="padding: 15px">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span (click)="openConsulta(arquivo)"
+                                    class="titulo2 linkMpdv fontPrincipal fontRegular">{{arquivo.nomeArquivo | uppercase }}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="acoesArquivoMdpv">
+                                    <ng-container *ngIf="arquivo">
+                                        <a (click)="abreEnviarArquivo(arquivo.id)"><i class="fas fa-share-alt"></i></a>
+                                        <a showIfAdmin="MERCHAN_EDICAO" (click)="editArquivo(arquivo)"><i
+                                                class="fas fa-pen"></i></a>
+                                        <a showIfAdmin="MERCHAN_EDICAO" (click)="excluirArquivo(arquivo.id)"><i
+                                                class="fas fa-trash"></i></a>
+                                    </ng-container>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-masonry>
+            </div>
+        </app-box>
+    </div>
+
+    <div class="divMpdv">
+        <app-box de="#3FEFFC" ate="#1579DE">
+            <div style="padding: 30px;">
+                <div class="row divTituloCaixaMpdv col-sm-12">
+                    <span class="fontPrincipal fontLight" [style.color]="'#008EB8'">LINHA DE PRODUTOS</span>
+                    <a showIfAdmin="MERCHAN_EDICAO" class="btn-adc-arquivo-mpdv"
+                        (click)="open('merchanLinhaProdutos', false)"><i class="fas fa-plus"></i></a>
+                </div>
+                <ngx-masonry [options]="{ transitionDuration: '0s' }">
+                    <div ngxMasonryItem
+                        *ngFor="let arquivo of arquivos | FiltraPorTipoArquivoMpdv: 'merchanLinhaProdutos'"
+                        class="col-md-4" style="padding: 15px">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span (click)="openConsulta(arquivo)"
+                                    class="titulo2 linkMpdv fontPrincipal fontRegular">{{arquivo.nomeArquivo | uppercase }}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="acoesArquivoMdpv">
+                                    <ng-container *ngIf="arquivo">
+                                        <a (click)="abreEnviarArquivo(arquivo.id)"><i class="fas fa-share-alt"></i></a>
+                                        <a showIfAdmin="MERCHAN_EDICAO" (click)="editArquivo(arquivo)"><i
+                                                class="fas fa-pen"></i></a>
+                                        <a showIfAdmin="MERCHAN_EDICAO" (click)="excluirArquivo(arquivo.id)"><i
+                                                class="fas fa-trash"></i></a>
+                                    </ng-container>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-masonry>
+            </div>
+        </app-box>
+    </div>
+
+    <div class="divMpdv">
+        <app-box de="#FF0000" ate="#A22429">
+            <div style="padding: 30px;">
+                <div class="row divTituloCaixaMpdv col-sm-12">
+                    <span class="fontPrincipal fontLight" [style.color]="'#FB0202'">SAZONAL</span>
+                    <a showIfAdmin="MERCHAN_EDICAO" class="btn-adc-arquivo-mpdv"
+                        (click)="open('merchanSazonal', false)"><i class="fas fa-plus"></i></a>
+                </div>
+                <ngx-masonry [options]="{ transitionDuration: '0s' }">
+                    <div ngxMasonryItem *ngFor="let arquivo of arquivos | FiltraPorTipoArquivoMpdv: 'merchanSazonal'"
+                        class="col-md-4" style="padding: 15px">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <span (click)="openConsulta(arquivo)"
+                                    class="titulo2 linkMpdv fontPrincipal fontRegular">{{arquivo.nomeArquivo | uppercase }}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="acoesArquivoMdpv">
+                                    <ng-container *ngIf="arquivo">
+                                        <a (click)="abreEnviarArquivo(arquivo.id)"><i class="fas fa-share-alt"></i></a>
+                                        <a showIfAdmin="MERCHAN_EDICAO" (click)="editArquivo(arquivo)"><i
+                                                class="fas fa-pen"></i></a>
+                                        <a showIfAdmin="MERCHAN_EDICAO" (click)="excluirArquivo(arquivo.id)"><i
+                                                class="fas fa-trash"></i></a>
+                                    </ng-container>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-masonry>
+            </div>
+        </app-box>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+::ng-deep .modal{
+    z-index: 1070;
+}
+
+::ng-deep .modal-lg{
+    max-width: 100%;
+    top:75px;
+}
+
+::ng-deep .modal-content{
+    border-radius: 0;
+}
+
+::ng-deep .tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #48bcf7;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+::ng-deep .fontModalNovaTabela{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 16px;
+    color: #222;    
+    margin-bottom: 0;
+}
+
+::ng-deep .modal-header-nova-tabela{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border: 0;
+}
+
+::ng-deep .modal-footer{
+    border: 0;
+}
+
+::ng-deep .p-l-50{
+    padding-left: 50px;
+}
+
+::ng-deep .divUpload{
+    padding-left:50px;
+    padding-bottom: 20px;
+}
+
+.icon-mover{
+    color:#bfbfbf !important;
+    float:right;
+    cursor: pointer;
+    padding: 10px 15px 5px 5px;
+}

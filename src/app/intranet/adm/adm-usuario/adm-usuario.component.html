@@ -1,0 +1,40 @@
+<div class="container divUsuario">
+    <div *ngIf="usuarios" class="row">
+        <div class="col-sm-6">
+            <div class="row" style="margin-bottom:25px;">
+                <div class="col-sm-12 text-center">
+                    <input class="btn-adc" type="button" value="Novo Usuário" (click)="novoUsuario()">
+                </div>
+            </div>
+            <div class="table-responsive" *ngIf="usuarios.length">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Ativo</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let u of usuarios">
+                            <td>
+                                {{u.nome}}
+                            </td>
+                            <td>
+                                {{u.ativo ? "Sim" : "Não" }}
+                            </td>
+                            <td>
+                                <a style="cursor:pointer;" (click)="editar(u.id)">
+                                    <i class="fas fa-pen"></i> Editar
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <app-adm-usuario-edit [usuario]="usuario" (atualizar)="atualizar()" [tiposUsuario]="tiposUsuario" [tiposDependente]="tiposDependente" ></app-adm-usuario-edit>
+        </div>
+    </div>
+</div>

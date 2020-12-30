@@ -1,0 +1,7 @@
+.btn-upload-just-images{
+    width: 20px;
+    height: 30px;
+    background: url("/assets/icones/upload.png") no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}

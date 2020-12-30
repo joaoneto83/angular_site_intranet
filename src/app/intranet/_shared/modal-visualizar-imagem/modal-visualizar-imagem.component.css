@@ -1,0 +1,62 @@
+.modal{
+    z-index: 1080;
+}
+
+.modal-lg{
+    max-width: 100%;
+    top:75px;
+}
+
+.modal-content{
+    border-radius: 0;
+}
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #48bcf7;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.fontModalEnviarArquivo{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 16px;
+    color: #222;    
+    margin-bottom: 0;
+}
+
+.modal-header-visualizar-imagem{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border: 0;
+}
+
+.modal-footer{
+    border: 0;
+}
+
+.p-l-50{
+    padding-left: 50px;
+}
+
+.divUpload{
+    padding-left:50px;
+    padding-bottom: 20px;
+}
+
+.icon-share-arquivo .icone-share{
+    color:#bfbfbf !important;
+    cursor: pointer;
+    font-size: 11px;
+    margin: 3px;
+}
+
+.btn-excluir{
+    margin-left: 10px;
+    color: #bfbfbf !important;
+    cursor: pointer;
+}

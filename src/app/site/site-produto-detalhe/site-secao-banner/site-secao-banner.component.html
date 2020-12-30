@@ -1,0 +1,35 @@
+<div class="text-center" *ngIf="secao" [ngClass]="{'container p-b-90':secao.codigoSecao === 'secao3','container':secao.codigoSecao === 'secao15','espacamentoSecao':secao.codigoSecao === 'secao2','semEspacamentoSecao':secao.codigoSecao === 'secao14'}">
+    <div>
+        <animate-box axis="Y" position="80" delay="0">
+            <label *ngIf="secao.texto1" class="tituloBanner labelBanner fontPrincipal fontRegular" [innerHtml]="secao.texto1"> 
+            </label>
+        </animate-box>
+    </div>
+    <div class="espacamentoTitulo" *ngIf="secao.texto2">
+        <animate-box axis="Y" position="80" delay="100">
+            <label class="labelBanner fontPrincipal fontLight" style="font-size:20px" [innerHtml]="secao.texto2">               
+            </label>
+        </animate-box>
+    </div>
+    <div class="espacamentoConteudo" *ngIf="secao.texto3">
+        <animate-box axis="Y" position="80" delay="200">
+            <label class="labelBanner fontPrincipal fontLight" style="font-size:16px" [innerHtml]="secao.texto3">
+            </label>
+        </animate-box>
+    </div>
+    <div class="espacamentoConteudo">
+    <animate-box axis="Y" position="80" delay="300">
+            <div *ngIf="!linqueImagem">
+            <img *ngIf="caminhoImagem"
+            [ngClass]="{'imagem-banner-100':secao.codigoSecao === 'secao2','imagem-banner-100':secao.codigoSecao === 'secao14','imagem-banner-60':secao.codigoSecao === 'secao3','imagem-banner-60':secao.codigoSecao === 'secao15'}"
+                [src]="caminhoImagem" style="width: 100%;" alt>
+            </div>
+            <a *ngIf="linqueImagem" href="{{ linqueImagem }}" target="_blank"><img *ngIf="caminhoImagem"
+            [ngClass]="{'imagem-banner-100':secao.codigoSecao === 'secao2','imagem-banner-100':secao.codigoSecao === 'secao14','imagem-banner-60':secao.codigoSecao === 'secao3','imagem-banner-60':secao.codigoSecao === 'secao15'}"
+                [src]="caminhoImagem" alt></a>
+            <div class="text-center" style="padding-top:10px" *ngIf="descricaoImagem">
+                <label class="labelBanner fontPrincipal fontLight" style="font-size:15px">{{descricaoImagem}}</label>
+            </div>
+    </animate-box>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="text-center" style="padding-bottom:80px;">
+    <label class="tituloLinha fontPrincipal fontRegular" style="font-size: 41px;">LINHA DO TEMPO</label>
+</div>
+<div class="" *ngIf="blocos">
+    <div class="scrolling-wrapper-flexbox">   
+        <div class="col-md-1 col-sm-2"></div>
+        <div *ngFor="let bloco of blocos" class="col-md-3 col-sm-6 px-0">
+            <app-site-bloco-linha-tempo [bloco]="bloco"></app-site-bloco-linha-tempo >
+        </div>
+        <div class="col-md-1 col-sm-2"></div>
+    </div>
+</div>

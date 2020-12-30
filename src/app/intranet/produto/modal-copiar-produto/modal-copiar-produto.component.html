@@ -1,0 +1,37 @@
+<ng-template #contentCopiarProduto let-modal>
+    <div class="modal-header modal-header-copiar container">
+        <div>
+            <label class="tituloModal">Selecione um produto para copiar</label>
+            <button type="button" class="close" aria-label="Close" (click)="close()" style="border:0px;outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <ng-container *ngIf="produtos.length > 0">
+        <div class="modal-body container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10">
+                    <div style="width: 250px;margin: 0 auto 16px;">
+                        <input class="input-busca-produto" [(ngModel)]="txtPesquisa" placeholder="Pesquisar" type='text'>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-10 divOverflow">
+                    <ng-container *ngFor="let produto of produtos | PesquisaProdutoNome: txtPesquisa">
+                        <div class="row justify-content-center" style="padding-top: 8px;">
+                            <div class="col-sm-7 divProdutoCopiar">
+                                <label class="titulo-produto fontPrincipal fontLight">{{produto.nomeProduto}}</label>
+                            </div>
+                            <div class="divBotaoSelecionar">
+                                <div class="fontSelecionar" (click)="selecionarProduto(produto)">
+                                    <label>Selecionar</label>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</ng-template>

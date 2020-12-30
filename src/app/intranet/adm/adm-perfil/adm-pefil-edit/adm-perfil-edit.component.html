@@ -1,0 +1,44 @@
+<ng-container *ngIf="perfil">
+    <div class="row" style="margin-bottom:25px;">
+        <div class="col-sm-12 text-center">
+            <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+        </div>
+    </div>
+    <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Informações do Perfil">
+    </app-titulo-secoes-produto>
+    <div class="row" style="margin-bottom: 30px;">
+        <div class="col-sm-6">
+            <div><label class="fontPrincipal">Nome</label></div>
+            <div><input type="text" class="form-control" [(ngModel)]="perfil.nome" maxlength="50"></div>
+        </div>
+        <div class="col-sm-6">
+            <div><label class="fontPrincipal">Ativo</label></div>
+            <div><input type="checkbox" class="" [(ngModel)]="perfil.ativo"></div>
+        </div>
+    </div>
+    <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Funcionalidades">
+    </app-titulo-secoes-produto>
+    <div *ngIf="perfil.menus" class="row">
+        <div class="col-sm-12">
+            <mat-accordion [multi]="multi" *ngFor="let menu of perfil.menus">
+                <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span class="sidebarFiltro" class="fontSecundaria fontLight">
+                                {{menu.nome}}
+                            </span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ul class="ul">
+                        <li *ngFor="let funcionalidade of menu.funcionalidades" class="">
+                            <input type="checkbox" [(ngModel)]="funcionalidade.selecionado" [name]="funcionalidade.id"
+                                [id]="funcionalidade.id" style="float:right">
+                            <label [for]="funcionalidade.id"
+                                class="fontSecundaria fontLight aSidebar">{{funcionalidade.nome}}</label>
+                        </li>
+                    </ul>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
+    </div>
+</ng-container>

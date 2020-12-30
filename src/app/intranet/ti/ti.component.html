@@ -1,0 +1,24 @@
+<div class="container" style="margin-top:90px;">
+    <div class="row">
+        <div class="col-sm-12 margin-auto">
+            <app-aviso perfilAdmin="TI_EDICAO" icone="" titulo="AVISOS" [itens]="avisos" codigoTipoAviso="aviso" modulo="Intranet-Ti"></app-aviso>
+        </div>
+    </div>
+    <div class="row botoes">
+        <div class="col-sm-6 div-bloco">
+            <app-button-gradient de="#FF7474" ate="#FF2F67" link="/PortaldeApoio/Ti/Sugestao">
+                <a class="font-41">SUGESTÕES</a>
+                <br>
+                <span class="font-17">Quer sugerir alguma melhoria? Clique aqui</span>
+            </app-button-gradient>
+        </div>
+        <div class="col-sm-6 div-bloco">
+            <app-button-gradient de="#C998FA" ate="#1579DE" linkExterno="true" link="https://servicedesk.elgin.com.br">
+                <a class="font-41">SERVICE DESK</a>
+                <br>
+                <span class="font-17">Quer sugerir alguma melhoria? Clique aqui</span>
+            </app-button-gradient>
+        </div>
+    </div>
+    <app-modulo-arquivo-ti></app-modulo-arquivo-ti>
+</div>

@@ -1,0 +1,27 @@
+.btn-adc{
+    color: #48bcf7 !important;
+    border: 1px solid #48bcf7;
+    background-color: #FFF;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: soleil;
+    font-weight:200;
+    padding: 5px 10px;
+    outline: none;
+  }
+
+  .btn-adc:disabled,.btn-adc:hover:disabled{
+    color: rgba(170, 170, 170, 0.7) !important;
+    border: 1px solid rgba(170, 170, 170, 0.7);
+    background-color: #FFF;
+    cursor: not-allowed;
+  }
+  
+  .btn-adc:hover{
+    color: #FFF !important;
+    background-color: #48bcf7;
+  }
+
+  .mat-expansion-panel{
+    border: 1px solid #ddd;
+  }

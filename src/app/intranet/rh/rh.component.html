@@ -1,0 +1,72 @@
+<div class="container" style="margin-top:90px;margin-bottom:100px;">
+    <app-banner codigoBanner="Intranet-RH" perfil="RH_EDICAO" [banners]="model.banners"></app-banner>
+
+    <div class="row">
+        <div class="col-sm-4 div-bloco">
+            <div class="module-border-wrap shadow border-mpdv" [routerLink]="['/PortaldeApoio/RH/ElginNews']">
+                <div class="module btn-treinamento">
+                    <div class="iconElginNewsRh"></div>
+                    <a class="tituloBotao fontPrincipal fontRegular"> Elgin News</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 div-bloco">
+            <div class="module-border-wrap shadow border-trein">
+                <div class="module btn-missao" routerLink="/PortaldeApoio/RH/MissaoVisaoValores">
+                    <div class="iconMissao"></div>
+                    <a class=" tituloBotao fontPrincipal fontRegular"> Missão, Visão e Valores</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 div-bloco">
+            <div class="module-border-wrap shadow border-mdm" [routerLink]="['/PortaldeApoio/RH/LojaFuncionario']">
+                <div class="module btn-manual">
+                    <div class="iconManual"></div>
+                    <a class=" tituloBotao fontPrincipal fontRegular"> Loja do Funcionário</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 margin-auto">
+            <app-aviso perfilAdmin="RH_EDICAO" icone="" titulo="AVISOS" [itens]="avisos" codigoTipoAviso="aviso"
+                modulo="Intranet-RH"></app-aviso>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <app-eventos perfilAdmin="RH_EDICAO" [eventos]="eventos"></app-eventos>
+        </div>
+        <div class="col-sm-4">
+            <app-aniversariantes [aniversariantes]="aniversariantes"></app-aniversariantes>
+        </div>
+        <div class="col-sm-4">
+            <app-responsaveis-setor perfilAdmin="RH_EDICAO" [responsaveis]="responsaveis"></app-responsaveis-setor>
+        </div>
+    </div>
+    <div class="row" style="margin-top:20px;">
+        <div class="col-sm-6">
+            <app-lista-telefonica [contatos]="listaTelefonica"></app-lista-telefonica>
+        </div>
+        <div class="col-sm-6">
+            <app-calendario-rh [mes]="mes" [ano]="ano" (mesEmit)="reloadMes($event)" (anoEmit)="reloadAno($event)" [feriados]="feriados | FiltrarFeriadosPorMes: mes"></app-calendario-rh>
+
+            <div class="div-bloco-solicitacaoes">
+                <div class="module-border-wrap shadow">
+                    <div class="module btn-solicitacoes" routerLink="/PortaldeApoio/RH/Solicitacao">
+                        <div class="titutlo-solicitacoes fontPrincipal fontExtraLight text-center"
+                            style="font-size: 20px;">
+                            SOLICITAÇÕES
+                        </div>
+                        <div class="descricao-solicitacoes fontPrincipal fontLight text-center"
+                            style="font-size: 25px;">
+                            Precisando fazer uma<br />Solicitação ao RH? Clique Aqui!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

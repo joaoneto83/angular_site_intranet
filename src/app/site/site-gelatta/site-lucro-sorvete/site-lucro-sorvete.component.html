@@ -1,0 +1,71 @@
+<div class="row" class="divPrecoDesk" style="margin-top: 30px">
+    <div class="row">
+        <div class="col-sm-12 text-center" style="margin-bottom: 50px;">
+            <h1 class="tituloGelatta fontPrincipal fontLight">Simule quanto você pode ganhar por mês</h1>
+            <label class="subTituloGelatta fontPrincipal fontLight">
+                Saiba o quanto você pode incrementar sua renda
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4 col-lg-3" style="display: flex;">
+            <img class="imgGelatta" src="/assets/img/Site/Gelatta/img-casquinha.svg" alt>
+            <label class="fontPrincipal fontLight lblCasquinha">
+                Quantas Casquinhas Você venderá por <b class="fontBold">dia</b>?
+            </label>
+        </div>
+        <div class="col-sm-8 col-lg-9" style="display: flex;">
+            <ng5-slider (userChange)="calcularValorCasquinha()" [(value)]="qtdCasquinha" [options]="options">
+            </ng5-slider>
+        </div>
+    </div>
+</div>
+<div class="row" class="divPrecoMobile" style="margin-top: 30px">
+    <div class="col-sm-12 text-left" style="margin-bottom: 50px; display: flex;">
+        <img class="imgGelatta" src="/assets/img/Site/Gelatta/img-casquinha.svg" alt>
+        <div style="display: block;">
+            <h1 class="tituloGelatta fontPrincipal fontRegular">Simule quanto você pode ganhar por mês</h1>
+
+            <label class="fontPrincipal fontLight lblCasquinha">
+                Quantas Casquinhas Você venderá por <b class="fontBold">dia</b>?
+            </label>
+        </div>
+    </div>
+    <div class="col-12">
+        <ng5-slider (userChange)="calcularValorCasquinha()" [(value)]="qtdCasquinha" [options]="options">
+        </ng5-slider>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 divPreco">
+        <div class="row">
+            <div class="col-sm-4 col-6 linha">
+                <label class="lblDescricaoPreco fontPrincipal fontLight">Custo por<br> casquinha</label><br>
+                <label class="lblPreco fontPrincipal fontBold"><span
+                        class="lblMoeda">R$</span>{{getValorMoeda(valorPago)}}</label>
+            </div>
+            <div class="col-sm-4 col-6 linha">
+                <label class="lblDescricaoPreco fontPrincipal fontLight">Valor de venda<br> por
+                    casquinha</label><br>
+                <label class="lblPreco fontPrincipal fontBold"><span
+                        class="lblMoeda">R$</span>{{getValorMoeda(valorVenda)}}</label>
+            </div>
+            <div class="col-sm-4 col-12">
+                <label class="lblDescricaoPreco lblLucro fontPrincipal fontLight">Lucro líquido<br class="quebraLinha"> no final do
+                    mês</label><br>
+                <label class="lblPreco lblValorLucro fontPrincipal fontBold"><span
+                        class="lblMoeda">R$</span>{{getValorMoeda(valorLucro)}}</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12 text-center" style="padding: 0;">
+        <label class="lblObsPreco fontPrincipal fontLight">
+            * Custos dos produtos sujeitos a alteração de mercado <br>
+            Valor considerado para o estado de São Paulo.Outros estados podem sofrer alteração no valor.
+        </label>
+    </div>
+</div>

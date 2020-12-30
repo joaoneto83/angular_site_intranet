@@ -1,0 +1,31 @@
+<app-box de="#77FF94" ate="#4DD3A9">
+    <div class="tituloResponsaveis fontPrincipal fontLight">
+        RESPONSÁVEIS PELOS SETORES
+        <a [showIfAdmin]="perfilAdmin" class="btn-add-responsavel" (click)="open()"><i class="fas fa-plus"></i></a>
+        <app-edit-responsaveis-setor #modalResponsavelSetor (reload)="atualiza()"></app-edit-responsaveis-setor>
+    </div>
+    <div class="row justify-content-center caixaResponsaveis">
+        <div class="col-sm-12">
+            <ng-container *ngFor="let responsavel of responsaveis">
+                <div class="divResponsaveis">
+                    <div class="row fontPrincipal fontLight tituloResponsavel">
+                        <div class="col-sm-12" style="padding-right: 0;">
+                            {{responsavel.setor}}
+                            <a [showIfAdmin]="perfilAdmin" class="btn-edit-responsavel" (click)="editResponsavelSetor(responsavel)"><i class="fas fa-pen"></i></a>
+                        </div>
+                    </div>
+                    <div class="row fontPrincipal fontLight descricaoResponsavel">
+                        <div class="col-sm-6">
+                            {{responsavel.nome}}
+                        </div>
+                        <div class="col-sm-6">
+                            <ng-container *ngFor="let tel of responsavel.telefones">
+                                <div style="float: right;">{{tel}}</div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</app-box>

@@ -1,0 +1,19 @@
+.imagem{
+    height: 170px; 
+    background: no-repeat bottom;
+    margin-bottom: 30px;
+}
+
+.fonteTexto{
+    font-size: 17px;
+    color:#3C3C3C;
+}
+
+.fonteTitulo{
+    font-size: 28px;
+    color:#3C3C3C;
+}
+
+.containerProdutos{
+    padding-bottom: 0;
+}

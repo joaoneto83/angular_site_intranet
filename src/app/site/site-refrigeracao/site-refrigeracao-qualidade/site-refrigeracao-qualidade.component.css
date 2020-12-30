@@ -1,0 +1,86 @@
+.banner {
+    margin-bottom: 40px;
+    width: 100%;
+    height: 250px;
+    background-image: url("/assets/img/Site/GrupoElgin/banner_certificacoes.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.titulo {
+    color: #484848;
+    font-size: 37px;
+    padding-bottom: 30px;
+    text-align: right;
+}
+
+.texto {
+    color: #222;
+    font-size: 16px;
+}
+
+.textoEspacamento {
+    padding-top: 10px;
+}
+
+.linha{
+    position: absolute;
+    height: 3px;
+    width: 150px;
+    background-color: #4a4a4a;
+    bottom: 0;
+    right: 15px;
+}
+
+.linhaCentro{
+    position: absolute;
+    height: 1px;
+    width: 150px;
+    background-color: #4a4a4a;
+    right: calc(50% - 75px);
+}
+
+.espacamento-100{
+    padding-top:100px;
+}
+
+.btnDownload{
+    color: #005EB8 !important;
+    width: 380px;
+    height: 40px;
+    border: 1px solid #005EB8;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top:30px;
+    background-color: white;
+    font-family: fontPrincipal;
+    outline:none !important;
+}
+
+@media (max-width: 575px) {
+    .banner{
+        height: 150px;
+    }
+
+    .espacamento-100{
+        padding-top:50px;
+    }
+
+    .textoEspacamento {
+        padding-top: 50px;
+    }
+
+    .btnDownload{
+        margin-bottom: 30px;
+        width: 330px;
+    }
+
+    .titulo {
+        text-align: center;
+    }
+
+    .linha{
+        right: calc(50% - 75px);
+    }
+}

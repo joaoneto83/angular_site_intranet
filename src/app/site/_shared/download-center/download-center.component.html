@@ -1,0 +1,57 @@
+<div class="bannerDownloadCenter">
+    <div class="container">
+        <div class="divTitulo">
+            <img class="imgIcon" src="/assets/img/Site/SuporteTecnico/icons/download_center.png">
+            <label class="fontSecundaria fontLight titulo">Download Center</label>
+        </div>
+        <div class="divCombos">
+            <div class="divLinhaProduto">
+                <select class="fontSecundaria select-preto" (change)="getProdutos($event.target.value)">
+                    <option value="">Linha de Produto</option>
+                    <option *ngFor="let linhaProduto of linhas" [value]="linhaProduto.id">
+                        {{linhaProduto.nomeLinha | titlecase}}
+                    </option>
+                </select>
+            </div>
+            <div class="linhaSeparacao">
+                |
+            </div>
+            <div class="divProduto">
+                <select class="fontSecundaria select-preto" (change)="getProduto($event.target.value)">
+                    <option value="">Produto</option>
+                    <option *ngFor="let produto of produtos | orderBy: 'nomeProduto'" [value]="produto.id">{{produto.nomeProduto | titlecase}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div *ngIf="produto" class="divLista">
+            <ul class="fontPrincipal fontLight text-center" style="font-size:17px">
+                <ng-container
+                    *ngFor="let arquivo of produto.arquivos | FiltraPorTipoArquivo : ['manual','certificado']">
+                    <li>
+                        <div class="row" style="align-items: center;">
+                            <div class="col-md-10 col-10 col-sm-10">
+                                <a class="arquivos" [href]="arquivo.caminho" target="_blank">
+                                    {{arquivo.nomeArquivo}}
+                                </a>
+                            </div>
+                            <div class="col-md-2 col-2 col-sm-12">
+                                <a [href]="arquivo.caminho" target="_blank">
+                                    <img style="max-height:20px" class="imgIcon"
+                                        src="/assets/img/Site/SuporteTecnico/icons/download_center.png">
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <hr>
+                </ng-container>
+            </ul>
+            <ng-container *ngIf="!temArquivo">
+                <div class="text-center">
+                    Nenhum Arquivo Encontrado
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <!-- <img class="imagem" src=""> -->
+</div>

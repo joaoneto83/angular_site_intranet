@@ -1,0 +1,12 @@
+<div class="form-group" [class.has-success]="hasSuccess()" [class.has-danger]="hasError()">
+  <ng-template #tipContent>{{mensagemTooltip}}</ng-template>
+  <label class="control-label" [className]="labelClass" for="inputSuccess">{{label}}</label> 
+  <img *ngIf="questionMark" src="/assets/icones/icone_duvida.jpg"
+    style="margin-left: 10px;" placement="right" [ngbPopover]="tipContent" alt>
+  <span *ngIf="obrigatorio" class="text-muted"> (obrigatório)</span>
+  <ng-content></ng-content>
+
+  <span class="form-control-feedback" *ngIf="hasRequired()"><i class="fa fa-remove"></i> {{errorMessage}}</span>
+  <span class="form-control-feedback" *ngIf="hasEmail()"><i class="fa fa-remove"></i> {{errorEmailMessage}}</span>
+</div>
+ 

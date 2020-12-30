@@ -1,0 +1,11 @@
+<span class="acoesProduto">
+    <ng-container *ngIf="arquivo">
+        <a [href]="arquivo.caminho" download><i class="fas fa-arrow-down"></i></a>
+        <a *ngIf="isImage(arquivo.caminho)" (click)="abreVisualizarArquivo(arquivo.caminho)"><i class="far fa-eye"></i></a>
+        <a *ngIf="isPDF(arquivo.caminho)" [href]="arquivo.caminho" target="_blank" ><i class="far fa-eye"></i></a>
+        <a (click)="abreEnviarArquivo(arquivo.id)"><i class="fas fa-share-alt"></i></a>
+    </ng-container>
+</span>
+
+<app-modal-enviar-arquivo></app-modal-enviar-arquivo>
+<app-modal-visualizar-imagem></app-modal-visualizar-imagem>

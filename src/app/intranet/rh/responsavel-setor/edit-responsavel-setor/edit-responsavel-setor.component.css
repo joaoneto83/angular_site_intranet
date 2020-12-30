@@ -1,0 +1,66 @@
+.modal-content {
+    border-top: 0;
+    border-radius: 0 !important;
+}
+
+.modelBackdrop {
+    z-index: 1060 !important;
+}
+
+.modal-open {
+    padding: 0 !important;
+}
+
+::ng-deep .modalResponsavelSetor {
+    z-index: 1061 !important;
+}
+
+::ng-deep .modalResponsavelSetor .modal-dialog{
+    max-width: 1140px;
+}
+
+.labelResponsavel{
+    font-family: fontPrincipal;
+}
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #6CDC71;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.modal-header-edit-responsavel{
+    display: block;
+    text-align: center;
+    border: 0;
+}
+
+.linhasCampos {
+    padding: 10px;
+}
+
+.btn-add-telefone{
+    float: right;
+    font-size: 18px;
+    color: #6CDC71 !important;
+    cursor: pointer;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+.inputTelefone {
+    display: inline-block;
+    width: 90%;
+}
+
+.btn-excluir{
+    margin-left: 10px;
+    color: #bfbfbf !important;
+    cursor: pointer;
+}

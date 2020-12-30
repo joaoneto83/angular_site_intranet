@@ -1,0 +1,80 @@
+.divTitulo {
+    padding-bottom:60px;
+}
+
+.titulo {
+    font-size: 37px;
+}
+
+.banner{
+    margin-bottom: 40px;
+}
+
+.imagem{
+    width: 100%;
+}
+
+select {
+    background-color: transparent;
+    border: 1px solid #005eb8;
+    border-radius: 20px;
+    color: #005eb8;
+    width: 100%;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 17px;
+    padding: 6px 25px;
+    text-align-last: center;
+    -webkit-appearance: none;
+    outline: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select-azul {
+    background-position: 98% 11px !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #DDDCDC; 
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #DDDCDC; 
+}
+
+.imgBannerContato {
+    height: 250px;
+    background: url("/assets/img/Site/Refrigeracao/banner_contato.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+
+@media (max-width: 575px) {
+    .espacamento-select{
+        margin-top: 10px;
+    }
+
+    .containerIntegradores{
+        padding-bottom: 30px;
+    }
+
+    .imgBannerContato{
+        height: 200px;
+    }
+}

@@ -1,0 +1,24 @@
+#img-secao-6{
+    max-width: 100%;
+}
+
+.conteudo { 
+    position: relative;
+}
+  
+.divCenter {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@media (max-width: 576px){
+    .divCenter{
+        position: relative;
+        top: 0;
+        -webkit-transform: none;
+        transform: none;
+    }
+}

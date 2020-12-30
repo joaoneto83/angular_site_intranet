@@ -1,0 +1,35 @@
+<div *ngIf="secao" class="container p-b-90">
+    <div class="divConteudoImagemDireita">
+        <div class="divLabelImagemDireita">
+            <div class="divTextoImagemDireita text-right">
+                <animate-box axis="X" position="80" delay="0">
+                    <label *ngIf="secao.texto1" class="tituloDireita fontPrincipal fontRegular" [innerHtml]="secao.texto1">
+                    </label>
+                    <label *ngIf="secao.texto2" class="fontPrincipal fontLight" style="font-size:20px" [innerHtml]="secao.texto2">
+                    </label>
+                    <label *ngIf="secao.texto3" class="fontPrincipal fontLight" style="font-size:16px" [innerHtml]="secao.texto3">
+                    </label>
+                </animate-box>
+            </div>
+            <div class="divTextoImagemDireitaMobile">
+                <animate-box axis="X" position="-80" delay="0">
+                    <label *ngIf="secao.texto1" class="tituloDireita fontPrincipal fontRegular" [innerHtml]="secao.texto1">
+                    </label>
+                    <label *ngIf="secao.texto2" class="fontPrincipal fontLight" style="font-size:20px" [innerHtml]="secao.texto2">
+                    </label>
+                    <label *ngIf="secao.texto3" class="fontPrincipal fontLight" style="font-size:16px" [innerHtml]="secao.texto3">
+                    </label>
+                </animate-box>
+            </div>
+        </div>
+        <div class="divImgDireita text-left">
+            <div *ngIf="secao.arquivos && secao.arquivos.length" style="vertical-align: middle">
+                <div *ngIf="!linqueImagem"><img *ngIf="secao.arquivos[0].caminho" id="img-secao-direita" [src]="secao.arquivos[0].caminho" alt></div>
+                <a *ngIf="linqueImagem" href="{{ linqueImagem }}" target="_blank"> <img *ngIf="secao.arquivos[0].caminho" id="img-secao-direita" [src]="secao.arquivos[0].caminho"></a>
+            </div>
+            <div *ngIf="secao.arquivos && secao.arquivos.length" class="text-center" style="padding-top:10px;">
+                <span class="fontSecundaria" style="font-size:15px;">{{secao.arquivos[0].nomeArquivo}}</span>
+            </div>
+        </div>
+    </div>
+</div>

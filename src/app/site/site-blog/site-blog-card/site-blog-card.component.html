@@ -1,0 +1,13 @@
+<a [routerLink]="['Post/' + postagem.id]">
+    <p class="p-0 m-0">
+        <img class="tamanho-image" *ngIf="postagem.embedded['wp:featuredmedia'] !== undefined" [src]="postagem.embedded['wp:featuredmedia'][0]['source_url']"
+            
+        [alt]="postagem.titulo.rendered" >
+
+        <img *ngIf="postagem.embedded['wp:featuredmedia'] == undefined" [src]="postagem.foto"
+            
+            [alt]="postagem.titulo.rendered">
+    </p>
+    <h2 class="size-24 title" [innerHtml]="postagem.titulo.rendered"></h2>
+
+</a>

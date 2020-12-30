@@ -1,0 +1,68 @@
+<app-submenu-treinamento></app-submenu-treinamento>
+
+
+
+<div class="container">
+
+    <app-modal-visualizar-video #modalVideo></app-modal-visualizar-video>
+
+    <div class="row" showIfAdmin="TREINAMENTO_EDICAO">
+        <a class="textoBtn" (click)="open()"><i class="fas fa-plus"></i><span> Novo Documento</span></a>
+        <app-modal-edit-documentos [linhasCadastradas]="linhas" (reload)="recarregarItens()" #modalTreinamento>
+        </app-modal-edit-documentos>
+    </div>
+
+    <div *ngFor="let linha of linhas | orderBy: 'ordem'; let i = index" class="divClassificacao" [class.firstDiv]="i==0">
+        <app-box [de]="linha.cor1" [ate]="linha.cor2">
+            <div style="padding: 30px;">
+                <div class="row divTitulo col-sm-12">
+                    <span class="titulo1 fontPrincipal fontLight"
+                        [style.color]="linha.corTitulo">{{linha.nomeLinha | uppercase}}</span>
+                    <a  showIfAdmin="TREINAMENTO_EDICAO" (click)="editLinha(linha)" class="icon-adc-treinamento"><i class="fas fa-pen"></i></a>
+                    <span class="linhaCompleta fontPrincipal fontLight" style="margin-right:10px;">
+                        <ng-container *ngFor="let arquivoLinha of linha.arquivos">
+                            <a *ngIf="arquivoLinha.nomeArquivo != 'Vídeo'" [href]="arquivoLinha.caminho" target="_blank"
+                                download>{{arquivoLinha.nomeArquivo | uppercase }}</a>
+
+                            <a *ngIf="arquivoLinha.nomeArquivo == 'Vídeo'" style="cursor: pointer;"
+                                (click)="openVideo(arquivoLinha.caminho)">{{arquivoLinha.nomeArquivo | uppercase }}</a>
+
+                            <span class="barra">| </span>
+                        </ng-container>
+                    </span>
+                </div>
+
+                <ngx-masonry [options]="{ transitionDuration: '0s' }">
+                    <div ngxMasonryItem *ngFor="let sublinha of linha.subLinhas" class="divCategoria">
+                        <span class="titulo2 fontPrincipal fontRegular">{{sublinha.nomeSubLinha | uppercase }}</span>
+                        <div class="row" style="padding-top:15px;">
+                            <div *ngFor="let produto of sublinha.produtos" class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <span class="titulo3 fontSecundaria fontLight">
+                                            {{produto.nomeProduto}}
+                                        </span>
+                                        <a  showIfAdmin="TREINAMENTO_EDICAO" (click)="editProduto(produto,linha.id,sublinha.id)" class="icon-adc-treinamento"><i
+                                                class="fas fa-pen"></i></a>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <span class="linhaCompleta fontPrincipal fontLight"
+                                            style="margin-right:10px;line-height: 24px !important;">
+                                            <ng-container *ngFor="let arquivoProduto of produto.arquivos">
+                                                <a *ngIf="arquivoProduto.nomeArquivo != 'Vídeo'" [href]="arquivoProduto.caminho" target="_blank"
+                                                    download>{{arquivoProduto.nomeArquivo | uppercase}}</a>
+                                                <a *ngIf="arquivoProduto.nomeArquivo == 'Vídeo'" style="cursor: pointer;"
+                                                    (click)="openVideo(arquivoProduto.caminho)">{{arquivoProduto.nomeArquivo | uppercase }}</a>
+                                                <span class="barra">| </span>
+                                            </ng-container>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-masonry>
+            </div>
+        </app-box>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+.pergunta{
+    font-size: 17px;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    color: #7e7e7e;
+}
+
+.alternativa{
+    font-size: 17px;
+    color: #7e7e7e;
+}
+
+.alternativa label{
+    padding-left: 10px;
+}
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="checkbox"]:checked + label,
+[type="checkbox"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+[type="checkbox"]:checked + label:before,
+[type="checkbox"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="checkbox"]:checked + label:after,
+[type="checkbox"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #40bEFF;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.checkDisabled:checked + label:after,
+.checkDisabled:not(:checked) + label:after {
+    background: #ddd;
+}
+
+.checkOpen:checked + label:after,
+.checkOpen:not(:checked) + label:after {
+    background: #40bEFF;
+}
+
+[type="checkbox"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.btn-circle {
+    color: #40beff !important;
+    width: 333px;
+    height: 44px;;
+    border: 1px solid #40beff;
+    border-radius: 20px;
+    font-size: 17px;
+    padding: 9px;
+    cursor: pointer;
+}
+
+.btn-circle:hover{
+    color: white !important;
+    background: linear-gradient(156deg, #2B9AF8, #2B9CF8, #1DEEFF);
+    border-color: white;
+}
+
+.botoes{
+    margin-top: 75px;
+}
+
+.voltar{
+    font-family: fontPrincipal;
+    font-size: 15px;
+    font-weight: 200;
+    margin-bottom: 40px;
+    cursor: pointer;
+}

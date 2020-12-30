@@ -1,0 +1,25 @@
+<ng-container *ngIf="grupo">
+    <ng-container *ngIf="grupo.produtos.length">
+
+        <div class="text-center divTitulo">
+            <label class="titulo fontPrincipal fontLight">{{'Produtos' | translate}}</label>
+        </div>
+
+        <div *ngFor="let cols of rows" class="row justify-content-md-center pad-top">
+            <div *ngFor="let produto of cols" class="col-md-4 col-lg-2 col-sm-12 p-t-1" style="text-align: center;">
+                <ng-container *ngIf="produto">
+                    <div class="divImgProduto">
+                        <div style="display: flex; justify-content:center" *ngIf="produto.arquivos.length">
+                            <img class="imgProduto" [src]="produto.arquivos[0].caminho">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <label class="lblNomeProduto fontPrincipal fontLight">
+                            {{produto.nomeProduto}}
+                        </label>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>

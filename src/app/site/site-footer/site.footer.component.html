@@ -1,0 +1,95 @@
+<footer class="footer">
+    <div class="container" style="padding: 0;">
+        <div class="row" style="position: relative;">
+            <div class="col-lg-2 col-md-3 col-sm-3 ">
+                <!-- colSmart-12 -->
+                <div class="tituloFooter imgLogofooter">
+                    <img class="img-logo-footer" src="../../assets/img/Site/Footer/elgin_footer.png" alt>
+                </div>
+                <div class="tituloFooter">
+                    GRUPO ELGIN
+                </div>
+                <div class="itensFooter" routerLink="/SaibaMais/HomeOffice">Home Office</div>
+                <div class="itensFooter" routerLink="/SaibaMais/Automacao">Automação Comercial</div>
+                <div class="itensFooter" routerLink="/SaibaMais/Informatica">Informática</div>
+                <div class="itensFooter" routerLink="/SaibaMais/Refrigeracao">Refrigeração</div>
+                <div class="itensFooter" routerLink="/SaibaMais/Marca">A Marca</div>
+                <div class="itensFooter" routerLink="/SaibaMais/Estrutura">Estrutura</div>
+                <div class="itensFooter" routerLink="/GrupoElgin/To/LinhaTempo">Linha do Tempo</div>
+                <div class="itensFooter" routerLink="/SaibaMais/Exportacoes">Exportações</div>
+                <div class="itensFooter" routerLink="/SaibaMais/Certificacoes">Certificações</div>
+                <div class="itensFooter" routerLink="/SaibaMais/ElginNews">Elgin News</div>
+                <div class="itensFooter" routerLink="/TrabalheConosco">Trabalhe Conosco</div>
+                <div><br>
+                    <div class="itensFooter">Automação</div><br>
+                    <label class="itensFooter">0800 644 2362 (telefonia fixa)</label>
+                    <label class="itensFooter">(11) 3383-5776 (celular e demais localidades)</label>
+                    <label class="itensFooter">Horário de atendimento: 2ª a 6ª das 08h as 18h (exceto feriados)</label>          
+            </div>
+
+            </div>
+            <div class="col-lg-8 col-md-6 col-sm-9">
+                <!-- colSmart-12 -->
+                <ngx-masonry [options]="{ transitionDuration: '0s', percentPosition: true }">
+                    <div ngxMasonryItem *ngFor="let linha of linhasFooter" class="coluna-linha">
+                        <div class="tituloFooter">
+                            {{linha.nomeLinha | uppercase}}
+                        </div>
+                        <div *ngFor="let sublinha of linha.subLinhas" class="itensFooter">
+                            <div style="outline:none"
+                                [routerLink]="['/Produtos/' + linha.codigoLinha + '/' + sublinha.codigoSubLinha ]">
+                                {{sublinha.nomeSubLinha}}
+                            </div>
+                        </div>
+                        
+                    </div>
+                </ngx-masonry>
+               
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-12 "> 
+                <!-- colSmart-12 -->
+                <div class="tituloFooter">
+                    <div class="tituloLinkFooter" routerLink="/SuporteTecnico/To/Contato">ASSISTÊNCIA TÉCNICA</div>
+                    <div class="tituloLinkFooter" routerLink="/PortalDeApoio">PORTAL DE APOIO</div>
+                    <div class="tituloLinkFooter" routerLink="/SuporteTecnico">CHAT ONLINE</div>
+                    <div class="tituloLinkFooter" routerLink="/SuporteTecnico/To/DicasUsoEmail">FALE CONOSCO</div>
+                </div>
+
+                <div class="fontPrincipal fontLight fontLateral" style="color: #818181">
+                    Home Office e Ar Condicionado
+                    <br />SAC 0800 70 35 446
+                    <br />Grande SP 3383-5555
+                    <br />Refrigeração +55 11 3383-5989
+                    <br />Mobili & Design +55 11 3383-5526
+                    <br /><br />
+
+                    <a target="_blank" rel="noopener noreferrer" href="https://pt-br.facebook.com/GrupoElgin/">
+                        <img class="img-icon-footer" src="../../assets/img/Site/Footer/fb_footer.png" alt>
+                    </a><br />
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/grupo_elgin/">
+                        <img class="img-icon-footer" src="../../assets/img/Site/Footer/insta_footer.png" alt>
+                    </a><br />
+                    <a target="_blank" rel="noopener noreferrer"
+                        href="https://www.youtube.com/channel/UC4EEMFjqb3zQcn0vpE0ewAg">
+                        <img class="img-icon-footer" src="../../assets/img/Site/Footer/yt_footer.png" alt>
+                    </a><br />
+                    <a target="_blank" rel="noopener noreferrer"
+                        href="https://br.linkedin.com/company/elgin-s.a.-brazil-">
+                        <img class="img-icon-footer" src="../../assets/img/Site/Footer/Lk_footer.png" alt>
+                    </a><br />
+                    <a target="_blank" rel="noopener noreferrer" href="http://blog.elgin.com.br/blog/">
+                        <img class="img-icon-footer" src="../../assets/img/Site/Footer/blogger_footer.png" alt>
+                    </a><br />
+
+                </div>
+                <div class="itensFooter" routerLink="/politica_de_privacidade" style="font-size: 11px;"><strong>POLÍTICA DE PRIVACIDADE</strong></div>
+                <div class="itensFooter" routerLink="/canal_denuncia" style="font-size: 11px;"><strong>CANAL DE DENÚNCIA</strong></div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center finalFooter " style="font-size: 11px;">
+            © 2018 ELGIN S/A, TODOS OS DIREITOS RESERVADOS<br />
+            Direitos Autorais Política de Privacidade
+        </div>
+    </div>
+</footer>

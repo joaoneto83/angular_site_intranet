@@ -1,0 +1,80 @@
+<div class="bannerEmailDicas">
+    <div class="divEsquerda  centerVertical">
+        <div class="blocoTexto">
+            <div class="tit1 fontPrincipal">
+                {{'SuporteTecnico' | translate}}
+            </div>
+            <div class="tit2 fontPrincipal">
+                {{'SuporteTecnicoTexto' | translate}}
+                <br><br>
+                {{'EntreContatoFormulario' | translate}}
+            </div>
+            <div class="tit2 fontPrincipal divFone">
+                <img class="imgFone" src="/assets/img/Site/Refrigeracao/icones/telefone.svg">
+                <label class="lblFone">
+                    0800 771 1960
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="divDireita  centerVertical">
+        <form [formGroup]="form">
+            <div class="row">
+                <div class="col-md-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Nome" [translate]="true"
+                        [obrigatorio]="true" labelClass="control-label">
+                        <input class="form-control inputEmail" maxlength="250" formControlName="nome" type="text">
+                    </app-site-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" [translate]="true" [obrigatorio]="true"
+                        label="EmpresaAreaAtuacao" labelClass="control-label">
+                        <input class="form-control inputEmail" maxlength="250" formControlName="empresaAreaAtuacao"
+                            type="text">
+                    </app-site-custom-input>
+                </div>
+                <div class="col-md-6">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" [translate]="true" [obrigatorio]="true"
+                        label="Email" labelClass="control-label">
+                        <input class="form-control inputEmail" maxlength="250" formControlName="email" type="text">
+                    </app-site-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Telefone" [translate]="true"
+                        [obrigatorio]="true" labelClass="control-label">
+                        <input class="form-control inputEmail" maxlength="20" formControlName="telefone" type="text">
+                    </app-site-custom-input>
+                </div>
+                <div class="col-md-6">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Assunto" labelClass="control-label"
+                        [translate]="true" [obrigatorio]="true">
+                        <input class="form-control inputEmail" maxlength="250" formControlName="assunto" type="text">
+                    </app-site-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Mensagem" [translate]="true"
+                        [obrigatorio]="true" labelClass="control-label">
+                        <textarea class="form-control inputEmail" maxlength="800" formControlName="mensagem" rows="4"
+                            cols="50" style="resize: none;"></textarea>
+                    </app-site-custom-input>
+                </div>
+            </div>
+            <div class="divFooter">
+                <div class="divObs">
+                    <label class="fontLight my-0">
+                        {{'PreenchaDados' | translate}}
+                    </label>
+                </div>
+                <div class="divBtnEnviar">
+                    <input (click)="enviar();" type="button" class="btnEnviar" value="{{'Enviar' | translate}}">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

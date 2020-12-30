@@ -1,0 +1,125 @@
+<div class="container" style="margin-top:30px;">
+    <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Gerenciar arquivo">
+    </app-titulo-secoes-produto>
+    
+        <div class="row" *ngIf="tipos">
+            <div class="col-sm-6">
+                <label>Protudo</label>
+                <select [(ngModel)]="arquivo.idPai" class="form-control">
+                    <option *ngFor="let produtos of produto" [value]="produtos.id">{{produtos.nomeProduto}}</option>
+                </select>
+            </div>
+            <div class="col-sm-6">
+                <label>Nome Arquivo</label>
+                <input type="text" [(ngModel)]="arquivo.nomeArquivo" class="form-control">
+            </div>
+        </div>
+                    <div class="row " style="padding-bottom: 10px;">
+                        <div class="col-sm-12">
+                            <mat-accordion [multi]="multi" >
+                                <mat-expansion-panel >
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <span class="sidebarFiltro" class="fontSecundaria fontLight">
+                                                Treinamento
+                                            </span>
+                                            <input  class="posisao-box" [(ngModel)]="tipoArquivoTreinamento" type = "checkbox" >
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <ul class="ul">
+                                        <li  class="">
+                                            <label class="fontSecundaria fontLight aSidebar">Ordem</label>
+                                            <input  type="number" [(ngModel)]="ordemTreinamento" class="form-control">
+                                        </li>
+                                    </ul>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+                    </div>
+    
+                    <div class="row " style="padding-bottom: 10px;">
+                        <div class="col-sm-12">
+                            <mat-accordion [multi]="multi" >
+                                <mat-expansion-panel >
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <span class="sidebarFiltro" class="fontSecundaria fontLight">
+                                                Manual
+                                            </span>
+                                            <input  class="posisao-box" [(ngModel)]="tipoArquivoManual" type = "checkbox" >
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <ul class="ul">
+                                        <li  class="">
+                                            <label class="fontSecundaria fontLight aSidebar">Ordem</label>
+                                            <input  type="number" [(ngModel)]="ordemManual" class="form-control">
+                                       
+                                        </li>
+                                    </ul>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+                    </div>
+    
+                    <div class="row " style="padding-bottom: 10px;">
+                        <div class="col-sm-12">
+                            <mat-accordion [multi]="multi" >
+                                <mat-expansion-panel >
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <span class="sidebarFiltro" class="fontSecundaria fontLight">
+                                                Material de apoio
+                                            </span>
+                                            <input  class="posisao-box" [(ngModel)]="tipoArquivoMaterial" type = "checkbox" >
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <ul class="ul">
+                                        <li  class="">
+                                            <label class="fontSecundaria fontLight aSidebar">Ordem</label>
+                                            <input  type="number" [(ngModel)]="ordemMaterial" class="form-control">
+                                       
+                                        </li>
+                                    </ul>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+                    </div>
+    
+                    <div class="row " style="padding-bottom: 10px;">
+                        <div class="col-sm-12">
+                            <mat-accordion [multi]="multi" >
+                                <mat-expansion-panel >
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <span class="sidebarFiltro" class="fontSecundaria fontLight">
+                                                Certificado
+                                            </span>
+                                            <input  class="posisao-box" [(ngModel)]="tipoArquivoCertificado" type = "checkbox" >
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <ul class="ul">
+                                        <li  class="">
+                                            <label class="fontSecundaria fontLight aSidebar">Ordem</label>
+                                            <input  type="number" [(ngModel)]="ordemCertificado" class="form-control">
+                                       
+                                        </li>
+                                    </ul>
+                                </mat-expansion-panel>
+                            </mat-accordion>
+                        </div>
+                    </div>
+    
+    
+    
+        <div class="col-sm-12">
+            <app-upload-file [idPai]="idPai" [caminho]="arquivo.codigoTipoArquivo" (resposta)="getRespostaArquivo($event)">
+            </app-upload-file>
+        </div> 
+        <div class="col-sm-12" >
+        <button class="btn-adc" style="float: right;" (click)="adicionar()" onclick = "">Salvar</button>
+    
+        </div>
+    
+    
+     </div> 
+    

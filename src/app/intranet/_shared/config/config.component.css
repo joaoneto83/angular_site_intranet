@@ -1,0 +1,36 @@
+#divAdmin {
+    right: -90px;
+    position: fixed;
+    top: 25%;
+    z-index: 9999;
+    background-color: #006198;
+    color: #fff;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-border-top-left-radius: 25px;
+    -webkit-border-bottom-left-radius: 25px;
+    -moz-border-radius-topleft: 25px;
+    -moz-border-radius-bottomleft: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    cursor: pointer;
+
+    -webkit-box-shadow: -5px 0px 8px -5px rgba(0,0,0,0.75);
+    -moz-box-shadow: -5px 0px 8px -5px rgba(0,0,0,0.75);
+    box-shadow: -5px 0px 8px -5px rgba(0,0,0,0.75);
+}
+
+#icoGear{
+    position: absolute;
+    left: 7px;
+    top: 30px;
+}
+
+#divAdmin:hover{
+    right: 0px;
+}
+
+#divAdmin:hover  #icoGear{
+    display: none;
+}

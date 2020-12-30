@@ -1,0 +1,29 @@
+.card-body{
+    padding: 10px;
+}
+
+h5{
+    color:#222222 !important;
+}
+
+.tags{
+    border: 1px solid #9F9F9F;
+    margin: 5px 5px 5px 0;
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: #747474 !important;
+}
+
+.row{
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 15px;
+}
+
+#titulo , #tags{
+    border-left: 2px solid #222222;
+}
+
+.indexDiv{
+    z-index: -999999;
+}

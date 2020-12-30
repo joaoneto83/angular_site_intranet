@@ -1,0 +1,61 @@
+<nav id="navbar2" class="navbar navbar-expand-lg navbar-light navGelatta">
+    <div class="collapse navbar-collapse w-100" id="navbarSubMenu">
+        <ul class="navbar-nav w-100 alignLinksMenu">
+            <li class="nav-item">
+                <a>
+                    <img class="imgGelatta" src="/assets/img/Site/Gelatta/icon-gelatta.svg" [routerLink]="['/Gelatta/Home']">
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()">
+                    {{"Produtos" | uppercase}}
+                </a>
+
+                <ul class="sub-menu">
+                    <li *ngFor="let sublinha of sublinhas | orderBy: ['ordem']" class="nav-item active"
+                        style="text-align:center" (click)="adicionaClasse($event.target)">
+                        <a class="link-sub-menu"
+                            [routerLink]="['/Produtos/MaquinaSorvete/' + sublinha.codigoSubLinha ]">
+                            <img class="img-menu" style=" padding-left: 2px;" [src]="sublinha.caminhoImagem"
+                                onError="this.src='./assets/img/noimage.jpg';" alt> 
+                            <label class="span-menu fontPrincipal">{{sublinha.nomeSubLinha | uppercase}}</label>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()">
+                    {{"Peças de Reposição" | uppercase}}
+                </a>
+
+                <ul class="sub-menu">
+                    <li *ngFor="let produto of produtos | orderBy: ['nomeProduto']" class="nav-item active"
+                        style="text-align:center;" (click)="adicionaClasse($event.target)">
+                        <a class="link-sub-menu" [routerLink]="['/Gelatta/PecasReposicao/' + produto.codigoProduto ]">
+                             <img class="img-menu " [src]="produto.arquivos[0]?.caminho"
+                                onError="this.src='./assets/img/noimage.jpg';" alt> 
+                            <label class="span-menu fontPrincipal">{{produto.nomeProduto | uppercase}}</label>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    [routerLink]="['/Gelatta/Home/To/PerguntasFrequentes/']">
+                    {{"Perguntas Frequentes" | uppercase}}
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    [routerLink]="['/Gelatta/Carrinho']">
+                    {{"Carrinho de Compra" | uppercase}}
+                </a>
+            </li>
+            <li class="nav-item contato active">
+                <a class="nav-link fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()">
+                    <b class="fontExtraBold">0800 771 1960</b> &nbsp; | &nbsp; gelatta@elgin.com.br
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

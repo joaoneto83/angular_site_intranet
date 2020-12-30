@@ -1,0 +1,5 @@
+<div *ngIf="style" class="module-border-wrap shadow" [ngStyle]="customStyle" [style.background]="style">
+    <div class="module"  [style.height.px]="height"[style.max.height.px]="height">
+        <ng-content></ng-content>
+    </div>
+</div>

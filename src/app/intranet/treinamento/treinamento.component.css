@@ -1,0 +1,85 @@
+.divClassificacao{
+    margin-top: 90px;
+}
+.divCategoria {
+    margin-bottom: 20px;
+}
+.divTitulo{
+    line-height: 35px;
+    padding-bottom: 40px;
+}
+.titulo1{
+    font-size: 21px;
+    line-height: 35px;
+    margin-right: 15px;
+    
+}
+.titulo2{
+    font-size: 16px;
+    padding-bottom: 25px;
+}
+.titulo3{
+    font-size: 15px;
+    word-break: keep-all;
+    line-height: 15px;
+    display: inline-table;
+    margin-right: 15px;
+}
+.linhaCompleta a{
+    color: #AAA; 
+    font-size: 15px;
+    /* line-height: 35px; */
+    text-decoration: none;
+}
+
+.linhaCompleta .barra:last-of-type{
+    display: none;
+}
+
+.barra{
+    color: #AAA; 
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.firstDiv{
+    margin-top: 10px !important; 
+}
+
+.divCategoria{
+    width: 33%;
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+.textoBtn{
+    font-family: fontPrincipal;
+    font-weight: 500;
+    font-size: 17px;
+    padding-left: 25px;
+    cursor: pointer;
+}
+.textoBtn:hover{
+    text-decoration: none;
+}
+
+.textoBtn i, .textoBtn span{
+    color: #40beff;
+}
+
+.modalProva {
+    z-index: 1061 !important;
+}
+
+.icon-adc-treinamento{
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .divCategoria{
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

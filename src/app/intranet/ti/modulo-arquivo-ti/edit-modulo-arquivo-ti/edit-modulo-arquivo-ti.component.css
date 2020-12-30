@@ -1,0 +1,49 @@
+.modal-content {
+    border-top: 0;
+    border-radius: 0 !important;
+}
+
+.modelBackdrop {
+    z-index: 1060 !important;
+}
+
+.modal-open {
+    padding: 0 !important;
+}
+
+::ng-deep .modalModulo {
+    z-index: 1061 !important;
+}
+
+::ng-deep .modalModulo .modal-dialog{
+    max-width: 1140px;
+}
+
+.labelModulo{
+    font-family: fontPrincipal;
+}
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #222;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.modal-header-edit-modulo{
+    display: block;
+    text-align: center;
+    border: 0;
+}
+
+.linhasCampos {
+    padding: 10px;
+}
+
+.btn-excluir{
+    margin-left: 10px;
+    color: #bfbfbf !important;
+    cursor: pointer;
+}

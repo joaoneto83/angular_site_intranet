@@ -1,0 +1,256 @@
+<ng-container *ngIf="usuario">
+    <div class="row" style="margin-bottom:25px;">
+        <div class="col-sm-12 text-center">
+            <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+        </div>
+    </div>
+    <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Informações do Usuário">
+    </app-titulo-secoes-produto>
+    <form [formGroup]="usuarioForm" class="form" autocomplete="off">
+        <div class="row">
+            <div class="col-sm-12">
+                <app-custom-input [form]="usuarioForm" id="nome" label="Nome" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <input type="text" class="form-control" formControlName="nome" maxlength="100">
+                </app-custom-input>
+            </div>
+
+        </div>
+        <div class="row">
+            <div *ngIf="tiposUsuario && !meusDados" class="col-sm-12">
+                <app-custom-input id="idTipoUsuario" [form]="usuarioForm" label="Tipo de Usuário" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <select class="form-control" formControlName="idTipoUsuario"
+                        (change)="tipoUsuarioSelecionado($event.target.value)">
+                        <option value="">- Selecione -</option>
+                        <option *ngFor="let t of tiposUsuario" [value]="t.id">{{t.nomeTipoUsuario}}</option>
+                    </select>
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div *ngIf="setores && !meusDados" class="col-sm-6">
+                <app-custom-input id="idSetor" [form]="usuarioForm" label="Setor" [obrigatorio]="false"
+                    errorMessage="Campo Obrigatório">
+                    <select class="form-control" formControlName="idSetor">
+                        <option value="">- Selecione -</option>
+                        <option *ngFor="let s of setores" [value]="s.id">{{s.nomeSetor}}</option>
+                    </select>
+                </app-custom-input>
+            </div>
+            <div *ngIf="perfis && !meusDados" class="col-sm-6">
+                <app-custom-input id="idPerfil" [form]="usuarioForm" label="Perfil" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <select class="form-control" formControlName="idPerfil">
+                        <option value="">- Selecione -</option>
+                        <option *ngFor="let p of perfis" [value]="p.id">{{p.nome}}</option>
+                    </select>
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" *ngIf="!isRepresentante">
+                <app-custom-input id="comoSerChamado" [form]="usuarioForm" label="Como quer ser chamado"
+                    [obrigatorio]="true" errorMessage="Campo Obrigatório">
+                    <input type="text" class="form-control" formControlName="comoSerChamado" maxlength="250">
+                </app-custom-input>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <app-custom-input id="login" [form]="usuarioForm" label="CPF" [obrigatorio]="true"
+                    errorMessage="Campo Obrigatório">
+                    <input type="text" class="form-control" formControlName="login" maxlength="11" minlength="11">
+                </app-custom-input>
+            </div>
+            <div class="col-sm-6">
+                <app-custom-input id="email" [form]="usuarioForm" label="Email" errorEmailMessage="Email inválido."
+                    [obrigatorio]="true" errorMessage="Campo Obrigatório">
+                    <input type="text" class="form-control" formControlName="email" maxlength="250">
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <app-custom-input id="dataNascimento" [form]="usuarioForm" label="Data de Nascimento"
+                    [obrigatorio]="true" errorMessage="Campo Obrigatório">
+                    <input type="Date" class="form-control" formControlName="dataNascimento">
+                </app-custom-input>
+            </div>
+            <div class="col-sm-6">
+                <app-custom-input id="telefone" [form]="usuarioForm" label="Telefone" [obrigatorio]="false"
+                    errorMessage="Campo Obrigatório">
+                    <input type="text" [textMask]="mask()" class="form-control" formControlName="telefone">
+                </app-custom-input>
+            </div>
+        </div>
+        <ng-container *ngIf="!isRepresentante">
+            <div class="row">
+                <div class="col-sm-6">
+                    <app-custom-input id="celular" [form]="usuarioForm" label="Celular" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" [textMask]="mask()" class="form-control" formControlName="celular">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-6">
+                    <app-custom-input id="contatoEmergencia" [form]="usuarioForm" label="Contato de Emergência"
+                        [obrigatorio]="false" errorMessage="Campo Obrigatório">
+                        <input type="text" [textMask]="mask()" class="form-control" formControlName="contatoEmergencia">
+                    </app-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-custom-input id="nomeContatoEmergencia" [form]="usuarioForm" label="Nome do Contato de Emergência" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="nomeContatoEmergencia" maxlength="255">
+                    </app-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <app-custom-input id="endereco" [form]="usuarioForm" label="Endereço" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="endereco" maxlength="255">
+                    </app-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <app-custom-input id="bairro" [form]="usuarioForm" label="Bairro" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="bairro" maxlength="50">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-6">
+                    <app-custom-input id="cidade" [form]="usuarioForm" label="Cidade" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="cidade" maxlength="50">
+                    </app-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <app-custom-input id="escolaridade" [form]="usuarioForm" label="Escolaridade" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="escolaridade" maxlength="250">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-6">
+                    <app-custom-input id="estadoCivil" [form]="usuarioForm" label="Estado Civil" [obrigatorio]="false"
+                        errorMessage="Campo Obrigatório">
+                        <input type="text" class="form-control" formControlName="estadoCivil" maxlength="250">
+                    </app-custom-input>
+                </div>
+            </div>
+        </ng-container>
+        <div class="row">
+            <div class="col-sm-6">
+                <app-custom-input [form]="usuarioForm" id="registro" label="Prontuário" [obrigatorio]="false">
+                    <input [readonly]="meusDados" type="text" class="form-control" formControlName="registro"
+                        maxlength="50">
+                </app-custom-input>
+            </div>
+            <div class="col-sm-6">
+                <div><label class="login-label">Foto</label></div>
+                <div *ngIf="!usuario.caminhoFoto">
+                    <app-upload-file #upload [uploadManual]="false" caminho="imgUsuario"
+                        (respostaArquivo)="retornaArquivo($event)">
+                    </app-upload-file>
+                    {{upload.file?.name}}
+                </div>
+                <div class="foto" *ngIf="usuario.caminhoFoto"
+                    [style.backgroundImage]="'url('+ usuario.caminhoFoto +')'">
+
+                </div>
+                <div *ngIf="usuario.caminhoFoto">
+                    <a style="cursor:pointer;" (click)="removerFoto(usuario.caminhoFoto)">
+                        <i class="fas fa-trash"></i> remover
+                    </a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-sm-2 divCheckbox" *ngIf="!meusDados">
+            <input class="checkBox" type="checkbox" [(ngModel)]="usuario.ativo">
+            <label class="login-label">Ativo</label>
+        </div>
+        <ng-container *ngIf="!isRepresentante">
+            <div class="col-sm-10 divCheckbox">
+                <input class="checkBox" type="checkbox" [(ngModel)]="usuario.emailAniversariante">
+                <label class="login-label">Deseja aparecer no e-mail dos aniversariantes do dia?</label>
+            </div>
+        </ng-container>
+    </div>
+    <div class="row" *ngIf="!isRepresentante">
+        <div class="col-sm-12" style="margin-top: 16px;">
+            <div><label class="login-label">Currículo</label></div>
+            <div>
+                <app-upload-accept-file acceptFile=".doc, .docx, .pdf" caminho="curriculo" idPai="dataHora"
+                    (resposta)="getRespostaArquivo($event)">
+                </app-upload-accept-file>
+
+                <ng-container *ngIf="usuario.arquivo && usuario.arquivo.nomeArquivo">
+                    <div>
+                        <label class="fontArquivo">Arquivo Adicionado:</label>
+                    </div>
+                    <div class="col-sm-12">
+                        <a [href]="usuario.arquivo.caminho" class="fontArquivo"
+                            style="font-weight:bold;color:#48bcf7">{{usuario.arquivo.nomeArquivo}}</a>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <ng-container *ngIf="!isRepresentante">
+        <div style="margin-top:25px">
+            <app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Dependentes">
+            </app-titulo-secoes-produto>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <input style="margin-bottom: 25px;" type="button" class="btn-adc" value="Adicionar Dependente"
+                    (click)="adicionarDependente()">
+            </div>
+        </div>
+        <ng-container *ngFor="let depend of usuario.dependentes; let i = index">
+            <div class="row">
+                <span class="excluirDepend" (click)="removeDependente(i)">
+                    Remover <i class="fas fa-trash-alt"></i>
+                </span>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label class="login-label">Nome</label><span class="text-muted"> (obrigatório)</span>
+                    <input type="text" class="form-control depend" [(ngModel)]="depend.nomeDependente" maxlength="100">
+                </div>
+                <div class="col-sm-6">
+                    <label class="login-label">Tipo de Dependente</label><span class="text-muted"> (obrigatório)</span>
+                    <select class="form-control depend" [(ngModel)]="depend.idTipoDependente">
+                        <option value="">- Selecione -</option>
+                        <option *ngFor="let d of tiposDependente" [value]="d.id">{{d.nomeTipoDependente}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <label class="login-label">Data de Nascimento</label>
+                    <input type="Date" class="form-control depend" [(ngModel)]="depend.dataNascimento">
+                </div>
+                <div class="col-sm-6">
+                    <label class="login-label">Celular</label>
+                    <input type="text" [textMask]="mask()" class="form-control depend" [(ngModel)]="depend.celular">
+                </div>
+            </div>
+            <hr>
+        </ng-container>
+        <!-- <div class="row" style="margin-bottom:25px; position: sticky; background-color: white; bottom:0px; padding-bottom: 20px;z-index: 1000;" >
+        <div class="col-sm-12 text-center">
+            <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+        </div>
+    </div> -->
+    </ng-container>
+
+</ng-container>

@@ -1,0 +1,127 @@
+.bannerDownloadCenter {
+    position: relative;
+    background: url('/assets/img/Site/SuporteTecnico/download_center_bg.jpg') center/cover no-repeat;
+    /* height: 550px; */
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.imagem {
+    width: 100%;
+}
+
+.divConteudo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 40px 20px 20px;
+    color: #222;
+    text-align: center;
+}
+
+.divConteudo h1 {
+    font-size: 49px;
+    color: #222 !important;
+}
+
+.divTitulo {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.divCombos {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.divLista {
+    justify-content: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 50%;
+}
+
+select {
+    background-color: transparent;
+    border: 0;
+    color: #222;
+    font-weight: 100;
+    font-size: 15px;
+    margin-top: 30px;
+    outline: none;
+    margin: 5px;
+    width: 100% !important;
+}
+
+.divTitulo .imgIcon {
+    max-height: 57px;
+    padding-right: 15px;
+}
+
+.divLinhaProduto, .divProduto {
+    width: 300px;
+}
+
+.divLinhaProduto, .divProduto, .divModelo {
+    padding: 0 15px;
+}
+
+.divProduto{
+    padding-left: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+    background: #c4c4c4;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background: #746f6f;
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+    background: #746f6f;
+}
+
+.arquivos{
+    color: #222;
+    text-decoration: none;
+}
+
+@media (max-width: 767px) {
+    .divLinhaProduto, .divProduto {
+        width: 100%;
+    }
+    select{
+        width: 100% !important;
+    }
+    .divCombos{
+        display: block;
+    }
+    .divLista{
+        width: 100%;
+    }
+    .divLista ul{
+        padding: 0;
+    }
+}

@@ -1,0 +1,77 @@
+#btnEnviar{
+    color: #9c9c9c !important;
+    border: 1px solid #9c9c9c;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 5px 25px;
+}
+
+#btnEnviar:hover{
+    background-color: #00D5FC;
+    border: 1px solid #00D5FC;
+    color: #FFF !important;
+}
+
+input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #9C9C9C;
+    width: 100%;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 15px;
+    outline: none;
+}
+
+h1{
+    font-size: 29px;
+    color: #484848 !important;
+}
+
+.divEnviar{
+    padding-left: 40px;
+}
+
+@media (max-width: 768px){
+
+    .divEnviar{
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 575px){
+    .tituloEmail{
+        padding: 0;
+    }
+    .tituloEmail h1{
+        font-size: 25px;
+    }
+
+    #btnEnviar{
+        font-size: 14px;
+    }
+    #emailForm{
+        display: block !important;
+    }
+
+    .col-input{
+        padding: 10px;
+    }
+
+    .divEnviar{
+        padding: 10px !important;
+    }
+    .row-input{
+        padding: 20px 0 0 !important;
+        text-align: center;
+    }
+}
+
+@media (max-width: 320px){
+    h1 {
+        font-size: 30px !important;
+    }
+}

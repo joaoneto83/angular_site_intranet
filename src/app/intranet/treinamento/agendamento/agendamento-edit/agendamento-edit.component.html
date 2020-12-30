@@ -1,0 +1,134 @@
+<app-submenu-treinamento></app-submenu-treinamento>
+<div class="container" style="padding-bottom:60px">
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Treinamentos/Agendamentos']">&#60; Voltar</span>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="agendamento.provaStartada">
+        <div class="col-sm-12">
+            <label class="control-label fontSecundaria" style="color: red !important">
+                Atenção, algum usuário iniciou a prova, não é possível fazer alterações.
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <form [formGroup]="formAgendamento" class="col-sm-12" style="margin-top:20px;">
+            <div class="row">
+                <div class="col-sm-6">
+                    <app-custom-input [form]="formAgendamento" errorMessage="Campo Obrigatório" label="Descricao"
+                        labelClass="control-label fontSecundaria" id="descricao">
+                        <input [readonly]="agendamento.provaStartada" class="form-control" formControlName="descricao"
+                            type="text" maxlength="100">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-5">
+                    <app-custom-input [form]="formAgendamento" label="Prova" errorMessage="Campo Obrigatório"
+                        labelClass="control-label fontSecundaria" id="idProva">
+                        <select (change)="validarQtdQuestoes()" class="form-control" formControlName="idProva">
+                            <option value="">- Selecione -</option>
+                            <option *ngFor="let p of provas" [value]="p.id">{{p.nome}}</option>
+                        </select>
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-1">
+                    <div class="form-group">
+                        <label class="control-label fontSecundaria">Ativo</label><br />
+                        <input type="checkbox" formControlName="ativo">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <app-custom-input [form]="formAgendamento" errorMessage="Campo Obrigatório" label="Data De"
+                        labelClass="control-label fontSecundaria" id="dataDe">
+                        <input [readonly]="agendamento.provaStartada" (focusout)="validarDatas()" class="form-control"
+                            formControlName="dataDe" type="Date">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-6">
+                    <app-custom-input [form]="formAgendamento" errorMessage="Campo Obrigatório" label="Data Até"
+                        labelClass="control-label fontSecundaria" id="dataAte">
+                        <input [readonly]="agendamento.provaStartada" (focusout)="validarDatas()" class="form-control"
+                            formControlName="dataAte" type="Date">
+                    </app-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <app-custom-input [form]="formAgendamento" errorMessage="Campo Obrigatório"
+                        label="Tempo de duração da Prova (em minutos)" labelClass="control-label fontSecundaria"
+                        id="duracao">
+                        <input [readonly]="agendamento.provaStartada" class="form-control" formControlName="duracao"
+                            type="number">
+                    </app-custom-input>
+                </div>
+                <div class="col-sm-6">
+                    <app-custom-input [form]="formAgendamento" errorMessage="Campo Obrigatório"
+                        label="Quantidade de Questões" labelClass="control-label fontSecundaria" id="qtdQuestoes">
+                        <span *ngIf="qtdMaxQuestoes" class="control-label fontSecundaria"
+                            style="font-size:12px; float: right;">
+                            * Quantidade máxima de Questões: {{qtdMaxQuestoes}}
+                        </span>
+                        <input [readonly]="agendamento.provaStartada" (focusout)="validarCampoQtdQuestoes($event)"
+                            class="form-control" formControlName="qtdQuestoes" type="number">
+                    </app-custom-input>
+                </div>
+            </div>
+        </form>
+    </div>
+    <ng-container *ngIf="!agendamento.provaStartada">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="control-label fontSecundaria">Selecionar para prova:</label>
+                <div class="row">
+                    <div class="col-md-2">
+                        <input (change)="verificarCampo($event)" class="check-especial" type="checkbox" id="rbGrupo"
+                            [(ngModel)]="isGrupo" />
+                        <label class="control-label fontSecundaria" for="rbGrupo">Grupo</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input (change)="verificarCampo($event)" class="check-especial" type="checkbox" id="rbPessoa"
+                            [(ngModel)]="isPessoa" />
+                        <label class="control-label fontSecundaria" for="rbPessoa">Pessoa</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <ng-container *ngIf="isPessoa">
+                    <label class="control-label fontSecundaria">Usuário</label><br />
+                    <button *ngIf="!agendamento.idPessoa" class="btn-adc" (click)="open(contentPessoa)">Selecionar
+                        Usuário</button>
+                    <i *ngIf="agendamento.idPessoa" class="far fa-times-circle" style="color:red;cursor: pointer;"
+                        (click)="removerUsuario()"></i> <label>&nbsp;{{agendamento.nomeUsuario}}</label>
+                </ng-container>
+
+                <ng-container *ngIf="isGrupo">
+                    <label class="control-label fontSecundaria">Grupo</label><br />
+                    <button *ngIf="!agendamento.idGrupo" class="btn-adc" (click)="open(contentGrupo)">Selecionar
+                        Grupo</button>
+                    <i *ngIf="agendamento.idGrupo" class="far fa-times-circle" style="color:red;cursor: pointer;"
+                        (click)="removerGrupo()"></i> <label>&nbsp;{{agendamento.nomeGrupo}}</label>
+                </ng-container>
+            </div>
+        </div>
+        <ng-template #contentPessoa let-modal>
+            <app-bloco-pessoas (usuario)="retornaPessoa($event)" [idUsuario]="agendamento.idPessoa">
+            </app-bloco-pessoas>
+        </ng-template>
+        <ng-template #contentGrupo let-modal>
+            <app-bloco-grupo (grupo)="retornaGrupo($event)" [idGrupo]="agendamento.idGrupo"></app-bloco-grupo>
+        </ng-template>
+    </ng-container>
+
+    <div class="col-md-12 text-center" style="margin-top: 40px;" *ngIf="!agendamento.provaStartada">
+        <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Treinamentos/Agendamentos']">&#60; Voltar</span>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<label class="fontPrincipal fontTitulo fontLight">{{'DownloadCenter' | translate | uppercase}}</label>
+<hr class="marginTitulo">
+<div *ngFor="let arquivo of arquivos |filter:'manual'" class="">
+    <div>
+        <a [href]="arquivo.caminho" class="btnDownload" [title]="arquivo.nomeArquivo">
+            <input type="button" class="btnDownloadTxt" [value]="arquivo.nomeArquivo">
+        </a>
+    </div>
+</div>

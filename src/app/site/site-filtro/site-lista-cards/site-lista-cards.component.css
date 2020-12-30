@@ -1,0 +1,22 @@
+.divCardProduto {
+  padding-right: 0;
+  /*padding-bottom: 55px;*/
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 1380px) {
+  .divCardProduto {
+    max-width: 285px;
+    /* margin-left: 70px; */
+    margin-right: 3%;
+  }
+}
+
+@media (max-width: 480px) {
+  .divCardProduto {
+    padding-left: 0;
+  }
+}
+.row .divCardProduto:first-child {
+  margin-left: 0;
+}

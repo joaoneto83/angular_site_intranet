@@ -1,0 +1,106 @@
+.p-t-1{
+    padding-top: 20px;
+    padding-right: 0px;
+}
+
+label{
+    width: 100%;
+    font-size: 17px;
+    font-family: fontPrincipal;
+    font-weight: 300;
+    color: #9C9C9C !important;
+}
+
+h5{
+    font-size: 56px;
+    color: #9C9C9C !important;
+}
+
+h1{
+    color: #484848 !important;
+    font-size: 29px;
+}
+
+.module-border-wrap {
+    padding-top: 3px;
+    margin: 15px auto 30px !important;
+}
+
+#barraVerde{
+    background: linear-gradient(to right, #44DE9D , #067E4B)
+}
+
+#barraAzul{
+    background: linear-gradient(to right, #5CD5EB , #0E5DC9)
+}
+
+#barraRosa{
+    background: linear-gradient(to right, #F0A2D8 , #FF0080)
+}
+
+#barraAmarela{
+    background: linear-gradient(to right, #FCE28E , #F8AC00)
+}
+
+#barraAzulClaro{
+    background: linear-gradient(to right, #C2B4FF , #8124FF)
+}
+
+.divTituloKit{
+    width: 300px;
+    padding-top: 50px;
+}
+
+@media (max-width: 768px){
+    #condicaoSolar{
+        font-size: 30px !important;
+        padding: 0 !important;
+    }
+
+    .lblResultado{
+        font-size: 13px;
+    }
+
+    .tituloResultado{
+        font-size: 28px;
+    }
+
+    #imgKit{
+        max-width: 300px;
+        padding-top: 30px;
+    }
+}
+
+@media (max-width: 575px){
+    .divKit{
+        display:none;
+    }
+
+    .p-t-1{
+        padding-right: 15px;
+    }
+}
+
+@media (max-width: 320px){
+    h1 {
+        font-size: 30px !important;
+    }
+}
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) 
+and (orientation : landscape) { 
+    .lblResultado{
+        font-size: 13px;
+    }
+
+    .tituloResultado{
+        font-size: 28px;
+    }
+
+    #condicaoSolar
+    {
+        padding: 0!important;
+    }
+}

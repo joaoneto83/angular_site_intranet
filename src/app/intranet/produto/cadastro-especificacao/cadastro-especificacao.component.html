@@ -1,0 +1,9 @@
+<app-titulo-secoes-produto cor="#008EB8" de="#3FEFFC" ate="#1579DE" titulo="Especificações Técnicas"></app-titulo-secoes-produto>
+<div *ngIf="rows && rows.length">
+    <div *ngFor="let cols of rows" class="row">
+        <div *ngFor="let especificacao of cols" class="col-md-4">
+                <div><label class="fontPrincipal">{{especificacao.nomeEspecificacao}}</label></div>
+                <div><input class="form-control" [(ngModel)]="especificacao.valor" maxlength="100"></div>
+        </div>
+    </div>
+</div>

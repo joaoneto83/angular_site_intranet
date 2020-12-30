@@ -1,0 +1,36 @@
+.scrolling-wrapper-flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    
+}
+
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: transparent;
+
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: #d4e9ff;
+  border-radius: 15px;
+  /* border-left: 50px solid white; */
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+  
+@media (max-width: 576px){
+    .tituloLinha{
+        font-size: 35px !important;
+    }
+
+}

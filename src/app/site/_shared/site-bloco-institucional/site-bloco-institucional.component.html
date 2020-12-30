@@ -1,0 +1,29 @@
+<div class="row espacamento-100">
+    <div *ngFor="let bloco of blocos" class="col-sm-12 col-md-4 pad-bloco">
+        <div class="divBloco img" [style.background-image]="'url(' + bloco.imagemUrl + ')'">
+            <div class="divDegrade"></div>
+            <div class="divTextos">
+                <ng-container *ngIf="tela=='refrigeracao'; else blocoAutomacao">
+                    <div class="divTitulo">
+                        <label class="fontPrincipal fontExtraLight tituloBloco">
+                            {{bloco.titulo | translate | uppercase}}
+                        </label>
+                    </div>
+                    <label class="fontPrincipal fontLight subtituloBloco">
+                        {{bloco.texto | translate}}
+                    </label>
+                </ng-container>
+                <ng-template #blocoAutomacao>
+                    <div class="divTitulo">
+                        <label class="fontPrincipal fontExtraLight tituloBloco">
+                            {{bloco.titulo | uppercase}}
+                        </label>
+                    </div>
+                    <label class="fontPrincipal fontLight subtituloBloco">
+                        {{bloco.texto}}
+                    </label>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+</div>

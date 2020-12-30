@@ -1,0 +1,20 @@
+<div *ngIf="secao" class="container p-b-90">
+    <div class="divSuperiorIcone justify-content-center">
+        <div *ngFor="let icone of secao.icones | orderBy: 'ordem'; let i = index;" class="divIcone text-center">
+            <animate-box axis="Y" position="80" [delay]="170 * i">
+                <div style="padding-bottom: 15px;" *ngIf="!linqueImagem">
+                   <img [src]="icone.urlIcone" style="width: 100px; opacity: 70%;" alt>
+                </div>
+                <div style="padding-bottom: 15px;" *ngIf="linqueImagem">
+                    <a href="{{ linqueImagem }}" target="_blank"><img [src]="icone.urlIcone" style="width: 100px; opacity: 70%;" alt></a>
+                </div>
+                <div>
+                    <label class="fontPrincipal fontLight align-top">{{icone.descricaoIcone}}</label>
+                </div>
+                <div>
+                    <label class="fontPrincipal fontLight align-top">{{icone.subdescricaoIcone}}</label>
+                </div>
+            </animate-box>
+        </div>
+    </div>
+</div>

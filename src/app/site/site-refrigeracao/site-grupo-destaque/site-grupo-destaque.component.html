@@ -1,0 +1,16 @@
+<div class="row espacamento">
+    <div class="col-sm-12 justify-content-center display-flex-bloco px-0">
+        <div class="row divNomeGrupos">
+            <ng-container *ngFor="let grupo of gruposDestaque">
+                <div class="divGrupos col-sm-3 col-6 px-0">
+                    <label (click)="selecionarGrupo(grupo.id, grupo.produtos)" class="titulo fontPrincipal fontThin"
+                        [ngClass]="{'ativo': grupoSelecionado == grupo.id}">
+                        {{grupo.codigoGrupoDestaque | translate | uppercase}}
+                    </label>
+                    <div *ngIf="grupoSelecionado == grupo.id" class="linha"></div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+<app-site-carrossel-grupo-destaque #carrosselProdutos></app-site-carrossel-grupo-destaque>

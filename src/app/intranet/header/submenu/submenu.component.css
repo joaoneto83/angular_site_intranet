@@ -1,0 +1,72 @@
+#divFixaTopo {
+    /* overflow: hidden; */
+    background-image: url(~/assets/img/header.jpg);
+    background-position: bottom;
+    z-index: 1060;
+}
+
+#divFixaTopo a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+}
+
+#divFixaTopo .nav-link {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+}
+
+.logoHeaderMini2 {
+    width: 70px;
+    display: none;
+}
+
+.navbar-brand {
+    width: 105px;
+}
+
+.menuAtivo a {
+    font-weight: 400;
+    color: #56E4FD !important;
+}
+
+.content {
+    padding: 16px;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    width: 100%;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+.itemFilho{
+    color: #222 !important;
+    padding: 14px !important;
+    font-family: fontPrincipal !important;
+    text-align: left !important;
+}
+
+@media(max-width: 1300px){
+    #divFixaTopo .nav-link {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+    
+}
+
+@media (max-width: 767px) {
+    #divFixaTopo {
+        background-size: cover;
+    }
+}

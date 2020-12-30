@@ -1,0 +1,73 @@
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #DDDCDC; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #DDDCDC; 
+  }
+
+.tituloListaTel{
+  color: #48bcf7;
+  padding-bottom: 0px;
+  text-align: center;
+  font-size: 17px;
+}
+  
+.sigla {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 0.5px solid;
+  cursor: pointer;
+  background-color: white;
+  font-family: fontPrincipal;
+  font-weight: 200;
+  line-height: 34px;
+  padding-top: 12px;
+  font-size: 25px;
+}
+
+.foto {
+  height: 60px;
+  width: 60px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.letra{
+  font-size: 14px;
+  padding: 0 3px;
+  color: #7c7c7c;
+  cursor: pointer;
+}
+
+.letra-selecionada{
+  color: #6196FF;
+  font-weight: 500;
+}
+
+.siglaListaTelefonica{
+  cursor: default;
+}
+
+@media (max-width: 768px){
+  .letra{
+    font-size: 12px;
+    padding: 0px 2px;
+  }
+}

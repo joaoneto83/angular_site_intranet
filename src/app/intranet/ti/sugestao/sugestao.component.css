@@ -1,0 +1,52 @@
+.container{
+    margin-top: 5%;
+}
+
+div p{
+    text-align: justify;
+    font-size: 18px;
+    color:#7E7E7E;
+    margin-bottom: 20px;
+}
+
+.titulo{
+    margin: 0;
+    color: #26AAEA !important;
+    text-align: center;
+    font-size: 41px;
+ }
+
+.module-border-wrap {
+    background: linear-gradient(to right, #3FEFFC, #1579DE);
+    padding-top: 1.5px;
+    margin-bottom: 20px;
+}
+
+textarea{
+    height: 180px !important;
+    resize: none;
+}
+
+.btn-circle {
+    color: #40BEFF !important;
+    height: 35px;
+    width: 110px;
+    border: 1px solid #40BEFF;
+    border-radius: 20px;
+    font-size: 17px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn-circle:hover{
+    color: white !important;
+    background: linear-gradient(156deg, #2B9AF8, #2B9CF8, #1DEEFF);
+    border-color: white;
+}
+
+.control-label{
+    font-size: 13px;
+    font-weight: 200;
+    color: #222;
+    padding-top:20px; 
+}

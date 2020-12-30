@@ -1,0 +1,18 @@
+<div class="container containerProdutos">
+    <div class="text-center" style="padding-bottom: 70px;">
+        <label class="fontSecundaria fontLight fonteTitulo">PRODUTOS</label>
+    </div>
+    <div *ngIf="rows && rows.length">
+        <div *ngFor="let cols of rows" class="row justify-content-center">
+            <div *ngFor="let produto of cols" class="col-md-4 col-sm-6 text-center">
+                <a [href]="produto.link" target="_blank">
+                    <div [style.backgroundImage]="'url(' + produto.imagemUrl + ')'" class="imagem">
+                    </div>
+                    <div>
+                        <label class="fontPrincipal fontThin fonteTexto">{{produto.descricao | uppercase}}</label>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

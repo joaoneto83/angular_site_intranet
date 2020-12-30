@@ -1,0 +1,238 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-site-aparelho-ideal container">
+        <div>
+            <label class="tituloAparelhoIdeal">Encontre o Aparelho Ideal</label>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')"
+                style="border:0px;outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        
+        <div>
+            <label class="subTituloAparelhoIdeal fontSecundaria">Cálculo de Carga Térmica</label>
+        </div>
+    </div>
+    <ng-container *ngIf="passo == 1">
+        <div class="modal-body container">
+            <div class="row">
+                <div class="col-md-2 offset-md-2">
+                    <app-site-box-aparelho-ideal titulo="AMBIENTE" icone="/assets/img/Site/AparelhoIdeal/ambiente.png">
+                        <input [(ngModel)]="aparelhoIdeal.comprimento" class="inputBox" type="number" min="0"
+                            placeholder="Comprim. (m)">
+                        <input [(ngModel)]="aparelhoIdeal.largura" class="inputBox" type="number" min="0"
+                            placeholder="Largura (m)">
+                    </app-site-box-aparelho-ideal>
+                </div>
+                <div class="col-md-2">
+                    <app-site-box-aparelho-ideal titulo="CORTINA" icone="/assets/img/Site/AparelhoIdeal/janelas.png">
+                        <div class="divCombo1">
+                            <input type="radio" [(ngModel)]="aparelhoIdeal.cortina" name="cortina" value="1"
+                                id="checkCortina1" style="float:right">
+                            <label for="checkCortina1" class="fontPrincipal fontLight aRadioCortina">Com
+                                Cortina</label>
+                        </div>
+                        <div class="divCombo2">
+                            <input type="radio" [(ngModel)]="aparelhoIdeal.cortina" name="cortina" value="0"
+                                id="checkCortina0" style="float:right">
+                            <label for="checkCortina0" class="fontPrincipal fontLight aRadioCortina">Sem
+                                Cortina</label>
+                        </div>
+                    </app-site-box-aparelho-ideal>
+                </div>
+                <div class="col-md-2">
+                    <app-site-box-aparelho-ideal titulo="TETO" icone="/assets/img/Site/AparelhoIdeal/teto.png">
+                        <select [(ngModel)]="aparelhoIdeal.teto" class="inputBox">
+                            <option value="0">Tipo de Teto</option>
+                            <option value="1">Laje</option>
+                            <option value="2">Entre andares</option>
+                            <option value="3">Telhado (sem isolação)</option>
+                        </select>
+                    </app-site-box-aparelho-ideal>
+                </div>
+                <div class="col-md-2">
+                    <app-site-box-aparelho-ideal titulo="REGIÃO" icone="/assets/img/Site/AparelhoIdeal/regiao.png">
+                        <select [(ngModel)]="aparelhoIdeal.estado" class="inputBox">
+                            <option value="0">Estado</option>
+                            <option value="1.05">Acre</option>
+                            <option value="1.00">Alagoas</option>
+                            <option value="1.05">Amapá</option>
+                            <option value="1.05">Amazonas</option>
+                            <option value="0.95">Bahia</option>
+                            <option value="1.00">Brasília</option>
+                            <option value="0.95">Ceará</option>
+                            <option value="1.00">Espírito Santo</option>
+                            <option value="1.00">Goiás</option>
+                            <option value="1.05">Maranhão</option>
+                            <option value="1.00">Mato Grosso</option>
+                            <option value="1.00">Mato Grosso do Sul</option>
+                            <option value="0.85">Minas Gerais</option>
+                            <option value="1.05">Pará</option>
+                            <option value="1.00">Paraíba</option>
+                            <option value="0.90">Paraná</option>
+                            <option value="1.00">Pernambuco</option>
+                            <option value="1.00">Piauí</option>
+                            <option value="1.00">Rio de Janeiro</option>
+                            <option value="0.95">Rio Grande do Norte</option>
+                            <option value="0.90">Rio Grande do Sul</option>
+                            <option value="1.05">Rondônia</option>
+                            <option value="1.05">Roraima</option>
+                            <option value="0.90">Santa Catarina</option>
+                            <option value="0.85">São Paulo</option>
+                            <option value="1.00">Sergipe</option>
+                            <option value="1.00">Tocantins</option>
+                        </select>
+                    </app-site-box-aparelho-ideal>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 passos">
+                    <img src="/assets/img/Site/AparelhoIdeal/passo1.png" alt>
+                    <img src="/assets/img/Site/AparelhoIdeal/passo2_off.png" alt>
+                    <img src="/assets/img/Site/AparelhoIdeal/passo3_off.png" alt>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 botoes">
+                    <input type="button" class="botaoOff" value="< Voltar" (click)="modal.close('voltarPasso1')">
+                    <input type="button" value="Avançar >" (click)="avancarPasso();">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="passo == 2">
+        <div class="modal-body container">
+            <div class="row">
+                <div class="col-md-2 offset-md-2">
+                    <app-site-box-aparelho-ideal titulo="PESSOAS" icone="/assets/img/Site/AparelhoIdeal/pessoas.png">
+                        <input [(ngModel)]="aparelhoIdeal.pessoas" class="inputBox" type="number" min="0"
+                            placeholder="Quantidade">
+                    </app-site-box-aparelho-ideal>
+                </div>
+                <div class="col-md-2">
+                    <app-site-box-aparelho-ideal titulo="ABERTURAS<br/>OU VÃOS"
+                        icone="/assets/img/Site/AparelhoIdeal/portas.png">
+                        <input [(ngModel)]="aparelhoIdeal.aberturas" class="inputBox" type="number" min="0"
+                            placeholder="Área (m2)">
+                    </app-site-box-aparelho-ideal>
+                </div>
+                <div class="col-md-2">
+                    <app-site-box-aparelho-ideal titulo="APARELHOS ELÉTRICOS"
+                        icone="/assets/img/Site/AparelhoIdeal/aparelhos.png">
+                        <input [(ngModel)]="aparelhoIdeal.aparelhos" class="inputBox" type="number" min="0"
+                            placeholder="Quantidade">
+                    </app-site-box-aparelho-ideal>
+                </div>
+                <div class="col-md-2">
+                    <app-site-box-aparelho-ideal titulo="ILUMINAÇÃO"
+                        icone="/assets/img/Site/AparelhoIdeal/iluminacao.png">
+                        <input [(ngModel)]="aparelhoIdeal.incandescente" class="inputBox" type="number" min="0"
+                            placeholder="Incandescente">
+                        <input [(ngModel)]="aparelhoIdeal.fluorescente" class="inputBox" type="number" min="0"
+                            placeholder="LED / Fluorescente">
+                    </app-site-box-aparelho-ideal>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 passos">
+                    <img src="/assets/img/Site/AparelhoIdeal/passo1.png" alt>
+                    <img src="/assets/img/Site/AparelhoIdeal/passo2.png" alt>
+                    <img src="/assets/img/Site/AparelhoIdeal/passo3_off.png" alt>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 botoes">
+                    <input type="button" class="botaoOff" value="< Voltar" (click)="voltarPasso();">
+                    <input type="button" value="Avançar >" (click)="avancarPasso();">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="passo == 3">
+        <div class="modal-body container">
+            <div class="row">
+                <div class="col-md-2 offset-md-2">
+                    <app-site-box-aparelho-ideal titulo="MANHÃ" icone="/assets/img/Site/AparelhoIdeal/manha.png">
+                        <input [(ngModel)]="aparelhoIdeal.manhaComSol" class="inputBox" type="number" min="0"
+                            placeholder="Janelas com Sol">
+                    </app-site-box-aparelho-ideal>
+                </div>
+                <div class="col-md-2">
+                    <app-site-box-aparelho-ideal titulo="TARDE" icone="/assets/img/Site/AparelhoIdeal/tarde.png">
+                        <input [(ngModel)]="aparelhoIdeal.tardeComSol" class="inputBox" type="number" min="0"
+                            placeholder="Janelas com Sol">
+                    </app-site-box-aparelho-ideal>
+                </div>
+                <div class="col-md-2">
+                    <app-site-box-aparelho-ideal titulo="DIA TODO" icone="/assets/img/Site/AparelhoIdeal/dia_todo.png">
+                        <input [(ngModel)]="aparelhoIdeal.diaComSol" class="inputBox" type="number" min="0"
+                            placeholder="Janelas com Sol">
+                    </app-site-box-aparelho-ideal>
+                </div>
+                <div class="col-md-2">
+                    <app-site-box-aparelho-ideal titulo="SEM SOL" icone="/assets/img/Site/AparelhoIdeal/sem_sol.png">
+                        <input [(ngModel)]="aparelhoIdeal.semSol" class="inputBox" type="number" min="0"
+                            placeholder="Janelas sem Sol">
+                    </app-site-box-aparelho-ideal>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 passos">
+                    <img src="/assets/img/Site/AparelhoIdeal/passo1.png" alt>
+                    <img src="/assets/img/Site/AparelhoIdeal/passo2.png" alt>
+                    <img src="/assets/img/Site/AparelhoIdeal/passo3.png" alt>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 botoes">
+                    <input type="button" class="botaoOff" value="< Voltar" (click)="voltarPasso();">
+                    <input type="button" value="Avançar >" (click)="avancarPasso();">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="passo == 4">
+        <div class="container">
+            <!-- <div class="row" *ngIf="resultado.length > 0"> -->
+                <div class="row" >
+                <div class="col-sm-12 tituloResultado">
+                    Veja abaixo quais os aparelhos ideias para seu ambiente
+                </div>
+            </div>
+            <!-- <div class="row" *ngIf="resultado.length == 0">
+                <div class="col-sm-12 tituloResultado">
+                    Não foi encontrado um aparelho que atenda estes requisitos.
+                </div>
+            </div> -->
+            
+            <!-- <div *ngIf="resultado" class="row"> -->
+                <div  class="row">
+         
+                <div class="row divCaracteristicas" *ngFor="let produto of produtos">
+                    <a href="Produtos/{{codigoLinha}}/{{codigoSubLinha}}/{{produto.codigoProduto}}" >
+                        <div  class="text-left supInfoCaracteristicas spaceb">
+                            <img class="img-icone"  [src]="produto.arquivos[0].caminho" onError="this.src='/assets/img/noimage.jpg';" alt>
+                            <label class="caracteristicas fontPrincipal fontLight">{{produto.arquivos[0].nomeArquivo}}</label>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12 passos">
+                    <img src="/assets/img/Site/AparelhoIdeal/passo1.png" alt> 
+                    <img src="/assets/img/Site/AparelhoIdeal/passo2.png" alt>
+                    <img src="/assets/img/Site/AparelhoIdeal/passo3.png" alt>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 botoes spaceb">
+                    <input type="button" class="botaoOff" value="< Voltar" (click)="voltarPasso();">
+                    <input type="button" value="Fechar" (click)="modal.close('fechar')">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+    <div *ngIf="preencherCampos" class="fontPrincipal text-center" style="padding:5px;">
+        Preencha todos os campos!
+    </div>
+</ng-template>

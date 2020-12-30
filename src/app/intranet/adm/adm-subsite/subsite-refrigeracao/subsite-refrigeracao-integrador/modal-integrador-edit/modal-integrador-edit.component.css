@@ -1,0 +1,40 @@
+.modal-content {
+    border-top: 0;
+}
+
+.modelBackdrop {
+    z-index: 1060 !important;
+}
+
+.modal-open {
+    padding: 0 !important;
+}
+
+::ng-deep .modalEditarIntegrador{
+    z-index: 1061 !important;
+}
+
+::ng-deep .modalEditarIntegrador .modal-dialog{
+    max-width: 1140px;
+}
+
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #48bcf7;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.modal-header-integrador{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border: 0;
+}
+
+.modal-footer{
+    border: 0;
+}

@@ -1,0 +1,10 @@
+<div *ngIf="rows && rows.length">
+    <div *ngFor="let cols of rows" class="row" style="margin:0px auto">
+        <div *ngFor="let categorias of cols" class="col-sm-12 col-md-4 paddingboxImg">
+            <div class="bloco" [routerLink]="categorias.rota">
+                <img *ngIf="categorias.imagemUrl" [src]="categorias.imagemUrl" class="imagem" alt="Category" alt>
+                <label class="fontPrincipal fontThin textCentered text-position" >{{categorias.texto | uppercase}}</label>
+            </div>
+        </div>
+    </div>
+</div>

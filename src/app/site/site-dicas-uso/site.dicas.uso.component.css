@@ -1,0 +1,118 @@
+.banner {
+    background-image: url('/assets/img/Site/SuporteTecnico/banner_suporte.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 420px;
+}
+
+.imagem {
+    width: 100%;
+    padding: 0;
+}
+
+.icones {
+    color: white;
+}
+
+.busca {
+    height: 100%;
+    /* position: absolute;
+    display: block;
+    top: 0px;
+    text-align: center;
+
+    margin: auto;
+     width: 100%;
+     height: 100%;   */
+}
+
+.busca .titulo {
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 40px;
+    color: white;
+}
+
+.icones {
+    margin-top: 85px;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.textoIcone {
+    font-family: fontPrincipal;
+    font-size: 14px;
+    font-weight: 100;
+    margin-top: 20px;
+}
+
+.center-div {
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.btnCarregarMais {
+    font-size: 16px;
+    color: #005EB8 !important;
+    cursor: pointer;
+    margin-bottom: 100px;
+}
+
+.btnCarregarMais i {
+    padding-left: 5px;
+}
+
+.bannerDicasProduto {
+    /* background-image: url('/assets/img/Prototipo/Produto/ecoinverter_3.png'); */
+    display: flex;
+    justify-content: center
+}
+
+.tituloProduto {
+    font-family: fontPrincipal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 40px;
+    /* color: #222; */
+}
+
+.imagemProduto {
+    max-height: 300px
+}
+
+.infoProduto {
+    padding: 50px 20px;
+}
+
+#tituloDicasUso {
+    font-size: 54px;
+}
+
+.btn-detalhe {
+    color: #818181 !important;
+    border: 1px solid #818181;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 10px;
+    padding: 1px 20px;
+    margin-left: 20px;
+}
+
+.btn-detalhe:hover {
+    color: #005EB8 !important;
+    border-color: #005EB8;
+}
+
+@media (max-width: 767px) {
+    .banner {
+        height: 200px;
+    }
+    .icones {
+        display: none;
+    }
+}

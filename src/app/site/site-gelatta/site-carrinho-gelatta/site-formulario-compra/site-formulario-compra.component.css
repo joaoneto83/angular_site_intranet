@@ -1,0 +1,48 @@
+.subTituloCarrinho{
+    font-size: 16px;
+    color: #222222;
+    margin-bottom: 20px;
+}
+
+.btnTipoPagamento{
+    cursor: pointer;
+    padding: 15px 45px;
+    border-radius: 17px;
+    box-shadow: 0px 3px 6px #00000029;
+    width: 160px;
+    text-align: center;
+}
+
+.btnTipoPagamento *{
+    cursor: pointer;
+}
+
+.lblBtnTipoPgto{
+    font-size: 12px;
+    color: #222222;
+    font-weight: 400;
+    margin: 0;
+}
+
+.btnTipoPagamento.ativo{
+    background: #006198;
+}
+
+.btnTipoPagamento.ativo .lblBtnTipoPgto{
+    color: #FFF;
+}
+
+@media(max-width: 768px){
+    .lblTotal{
+        font-size: 19px;
+    }
+}
+
+@media (max-width: 575px) {
+
+
+    .btnTipoPagamento{
+        width: 130px;
+        padding: 15px 25px;
+    }
+}

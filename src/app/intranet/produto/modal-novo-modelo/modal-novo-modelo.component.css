@@ -1,0 +1,58 @@
+.btn-adc{
+    color: #48bcf7 !important;
+    border: 1px solid #48bcf7;
+    background-color: #FFF;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: soleil;
+    font-weight:200;
+    padding: 5px 10px;
+    outline: none;
+}
+  
+.btn-adc:hover{
+    color: #FFF !important;
+    background-color: #48bcf7;
+}
+
+::ng-deep .modal{
+    z-index: 10000;
+}
+
+::ng-deep .modal-lg{
+    max-width: 100%;
+    top:75px;
+}
+
+::ng-deep .modal-content{
+    border-radius: 0;
+}
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #48bcf7;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.fontModal{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 16px;
+    color: #222;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.modal-header-novo-produto{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border: 0;
+}
+
+::ng-deep .modal-footer{
+    border: 0;
+}

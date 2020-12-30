@@ -1,0 +1,81 @@
+<div class="bannerEmailDicas">
+    <div class="divEsquerda  centerVertical">
+        <div class="blocoTexto">
+            <div class="tit1 fontPrincipal">
+                Suporte Técnico
+            </div>
+            <div class="tit2 fontPrincipal">
+                A Elgin possui a Central de Suporte Técnico, serviço dedicado a esclarecer dúvidas técnicas sobre
+                produtos e aplicações de forma rápida e eficaz.
+                <br><br>
+                Horário de atendimento: 2ª a 6ª das 08h as 18h <br>(exceto feriados)<br>
+0800 644 2362 (telefonia fixa)<br>
+(11) 3383-5776 (celular e demais localidades)<br>
+
+            </div>
+            <div class="tit2 fontPrincipal divFone">
+                <img class="imgFone" src="/assets/img/Site/Refrigeracao/icones/telefone.svg">
+                <div class="divBtnEnviar">
+                    <input (click)="abrirChamado();" type="button" class="btnAbrirChamado" value="Abrir Chamado">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divDireita  centerVertical">
+        <form [formGroup]="form">
+            <div class="row">
+                <div class="col-md-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Nome*" labelClass="control-label">
+                        <input class="form-control inputEmail" maxlength="250" formControlName="nome" type="text">
+                    </app-site-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Empresa / Área de atuação*"
+                        labelClass="control-label">
+                        <input class="form-control inputEmail" maxlength="250" formControlName="empresaAreaAtuacao"
+                            type="text">
+                    </app-site-custom-input>
+                </div>
+                <div class="col-md-6">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="E-mail*" labelClass="control-label">
+                        <input class="form-control inputEmail" maxlength="250" formControlName="email" type="text">
+                    </app-site-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Telefone*"
+                        labelClass="control-label">
+                        <input class="form-control inputEmail" maxlength="20" formControlName="telefone" type="text">
+                    </app-site-custom-input>
+                </div>
+                <div class="col-md-6">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Assunto*" labelClass="control-label">
+                        <input class="form-control inputEmail" maxlength="250" formControlName="assunto" type="text">
+                    </app-site-custom-input>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <app-site-custom-input errorMessage="Campo Obrigatório" label="Mensagem*"
+                        labelClass="control-label">
+                        <textarea class="form-control inputEmail" maxlength="800" formControlName="mensagem" rows="4"
+                            cols="50" style="resize: none;"></textarea>
+                    </app-site-custom-input>
+                </div>
+            </div>
+            <div class="divFooter">
+                <div class="divObs">
+                    <label class="fontLight my-0">
+                        Preencha os dados acima. Os campos marcados com * são de preenchimento obrigatório.
+                    </label>
+                </div>
+                <div class="divBtnEnviar">
+                    <input (click)="enviar();" type="button" class="btnEnviar" value="Enviar">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

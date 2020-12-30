@@ -1,0 +1,31 @@
+<div class="container2 d-none d-md-block">
+    <div #divFixaTopo [class.sticky2]="sticky" id="divFixaTopo" class="row justify-content-center divParallax">
+        <div class="col-sm-2">
+            <label [ngx-scroll-to-offset]="-90" [ngx-scroll-to]="'#divEspecificacoes'" class="fontPrincipal fontExtraLight">
+                Especificações Técnicas
+            </label>
+        </div>
+        <div class="col-sm-2">
+            <label [ngx-scroll-to-offset]="-90" [ngx-scroll-to]="'#divCompararProduto'"
+                class="fontPrincipal fontExtraLight">
+                Comparar Produto
+            </label>
+        </div>
+        <div *ngIf="secao.aparelhoIdeal" class="col-sm-3">
+            <label (click)="abreAparelhoIdeal()" class="fontPrincipal fontExtraLight">
+                Encontre a Pôtencia Ideal
+            </label>
+            <app-site-aparelho-ideal></app-site-aparelho-ideal>
+        </div>
+        <div class="col-sm-2">
+            <label [ngx-scroll-to-offset]="-90" [ngx-scroll-to]="'#divDownloadCenter'" class="fontPrincipal fontExtraLight">
+                Download Center
+            </label>
+        </div>
+        <div class="col-sm-2">
+            <label [ngx-scroll-to-offset]="-90" [ngx-scroll-to]="'#divAssistenciaTecnica'"
+                class="fontPrincipal fontExtraLight">
+                Assistência Técnica
+            </label>
+        </div>
+    </div>

@@ -1,0 +1,46 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-edit-aviso">
+        <div class="row">
+            <div class="col-sm-12">
+                <label class="tituloModal">Aviso</label>
+                <button type="button" class="close" aria-label="Close" (click)="close()"
+                    style="border:0px;outline: 0px;float:right">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body" style="padding: 30px">
+        <div class="row" style="padding: 10px">
+            <div class="col-sm-12">
+                <label class="labelAviso">Título</label>
+                <input class="form-control" type="text" [(ngModel)]="model.titulo">
+            </div>
+        </div>
+        <div class="row" style="padding: 10px">
+            <div class="col-sm-12">
+                <label class="labelAviso">Descrição</label>
+                <ckeditor [(ngModel)]="model.descricao"
+                    [config]="{extraPlugins: 'divarea',toolbarGroups: toolbarGroup,autoParagraph: false}"
+                    [readonly]="false" debounce="500">
+                </ckeditor>
+            </div>
+        </div>
+        <div class="row" style="padding: 10px">
+            <div class="col-sm-6">
+                <label class="labelAviso">Data</label>
+                <input class="form-control" type="Date" [(ngModel)]="model.dataAviso">
+            </div>
+            <div class="col-sm-6">
+                <label class="labelAviso">Ativo</label>
+                <br>
+                <input type="checkbox" [(ngModel)]="model.ativo">
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-sm-12 botoes text-center">
+                <input class="btn-adc" type="button" value="Salvar" (click)="salvar();">
+            </div>
+        </div>
+    </div>
+</ng-template>

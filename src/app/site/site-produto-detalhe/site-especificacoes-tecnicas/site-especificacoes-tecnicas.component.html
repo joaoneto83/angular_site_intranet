@@ -1,0 +1,16 @@
+<label class="fontPrincipal fontTitulo fontLight">{{'EspecificacoesTecnicas' | translate | uppercase}}</label>
+<hr class="marginTitulo">
+<div class="row justify-content-center mx-0 mb-2">
+    <!-- <div *ngFor="let modelo of modelos" class="col-sm-4 col-4" style="padding: 0 2px 0 0">
+        <label class="fontPrincipal fontLight btn-modelo">{{modelo.nomeModelo | uppercase}}</label>
+    </div> -->
+</div>
+<div *ngFor="let especificacao of especificacoesTecnicas">
+    <div>
+        <label class="fontPrincipal fontEspecificacao fontRegular m-0">{{especificacao.nomeEspecificacao}}</label>
+    </div>    
+    <div class="marginEspecificacao">
+        <label class="fontPrincipal fontEspecificacao fontLight m-0">{{especificacao.valor}}</label>
+    </div>   
+</div>
+<input type="button" class="btnTabelaTecnica" value="{{'VerTabelaTecnica' | translate}}">

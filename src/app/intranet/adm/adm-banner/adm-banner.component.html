@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row justify-content-center" style="margin-top:50px">
+        <div class="col-sm-7">
+            <div><label class="control-label fontSecundaria">Escolha o Banner</label></div>
+            <div>
+                <select class="form-control" [(ngModel)]="tipoBannerSelecionado"
+                    (change)="selecionarBanner($event.target.value)">
+                    <option value="">- Selecione -</option>
+                    <option *ngFor="let t of tiposBanner" [value]="t.codigoBanner">{{t.nomeExibido}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <h2 *ngIf="tipoBannerSelecionado" class="text-center fontPrincipal fontLight"
+        style="font-size: 21px; color:#008eb8; margin-top: 50px">
+        Pré-Visualização e Edição do {{getNomeExibicao(tipoBannerSelecionado)}}
+        <div class="col-sm-12" style="margin-top: 10px;" *ngIf="traduz">
+            <input class="btn-adc" type="button" value="Traduzir" (click)="abreTraducao()" style="margin-left: 10px;">
+        </div>
+    </h2>
+    
+</div>
+<ng-container *ngIf="banners && banners2">
+    <app-banner-home [podeEditar]="true" [codigoBanner]="tipoBannerSelecionado" perfil="BANNERHOME_EDICAO"
+        [banners]="banners" [banners2]="banners2"></app-banner-home>
+</ng-container>
+
+<app-modal-traducao></app-modal-traducao>
+
+<!-- <div class="container">
+    <h2 class="text-center fontPrincipal fontLight" style="font-size: 21px; color:#008eb8; margin-top: 50px">
+        Pré-Visualização e Edição do Banner Gelatta
+    </h2>
+</div>
+<app-banner-home [podeEditar]="true" codigoBanner="Site-Gelatta" perfil="BANNERHOME_EDICAO" [banners]="bannersGelatta"
+    [banners2]="bannersGelatta2"></app-banner-home>
+
+<div class="container">
+    <h2 class="text-center fontPrincipal fontLight" style="font-size: 21px; color:#008eb8; margin-top: 50px">
+        Pré-Visualização e Edição do Banner para o Subsite de Refrigeração
+    </h2>
+</div>
+
+<app-banner-home [podeEditar]="true" codigoBanner="Site-Refrigeracao" perfil="BANNERHOME_EDICAO"
+    [banners]="bannersRefrigeracao" [banners2]="bannersRefrigeracao2"></app-banner-home> -->

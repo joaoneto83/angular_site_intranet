@@ -1,0 +1,124 @@
+<div *ngIf="!produto" class="banner">
+    <div class="busca s-centerVertical text-center container">
+        <div class="row w-100 m-0">
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <label class="titulo">
+                            Como podemos te ajudar?
+                        </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <app-site-dicas-uso-pesquisa (divAberta)="retornaEstadoPesquisa($event)"
+                            (pesquisarOutput)="realizaPesquisa($event);" [isProduto]="false">
+                        </app-site-dicas-uso-pesquisa>
+                    </div>
+                </div>
+                <div class="row icones">
+                    <div class="col-sm-2 offset-sm-1">
+                        <a href="SuporteTecnico#Contato" >  <img src="/assets/img/Site/SuporteTecnico/icons/icon_assistencia.png" ></a>
+                        <div class="textoIcone">
+                            ASSISTÊNCIA TÉCNICA
+                           
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="SuporteTecnico#DownloadCenter" >  <img src="/assets/img/Site/SuporteTecnico/icons/icon_download.png" ></a>
+                        <div class="textoIcone">
+                            DOWNLOAD CENTER
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="SuporteTecnico#DicasUso" >   <img src="/assets/img/Site/SuporteTecnico/icons/icon_dicas.png"></a>
+                        <div class="textoIcone">
+                            DICAS DE USO
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <a (click)="chat()" style="cursor:pointer ">  <img src="/assets/img/Site/SuporteTecnico/icons/icon_chat.png" ></a>
+                        <div class="textoIcone">
+                            CHAT ONLINE  
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="SuporteTecnico#DicasUsoEmail" > <img src="/assets/img/Site/SuporteTecnico/icons/icon_email.png" ></a>
+                        <div class="textoIcone">
+                            EMAIL
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-container *ngIf="produto">
+    <div class="container">
+        <div class="bannerDicasProduto row w-100 m-0">
+            <div class="col-md-6">
+                <img style="width: 100%; height: auto;" class="imagemProduto" [src]="produto.imagemUrl" alt>
+            </div>
+            <div class="col-md-6 infoProduto">
+                <label class="tituloProduto">
+                    {{produto.nomeProduto}}
+                </label>
+                <div class="row">
+                    <a class="btn btn-detalhe fontPrincipal fontExtraLight"
+                        [routerLink]="['/Produtos/' + codigoLinha + '/' + codigoSubLinha + '/' + produto.codigoProduto]">+
+                        Detalhes</a>
+                </div>
+                <!-- <div class="">
+                <span class="fontSecundaria fontLight" style="font-size:21px; color: #222">
+                    Código do Produto
+                </span>
+            </div> -->
+            </div>
+        </div>
+    </div>
+</ng-container>
+<div id="DicasUso"></div>
+<div class="container" style="margin-top:60px;">
+    <div class="row justify-content-center" style="margin-bottom: 50px;">
+        <h1 id="tituloDicasUso" class="fontPrincipal fontLight" style="color: #222">Dicas de Uso</h1>
+    </div>
+    <div *ngIf="idProduto" class="text-center" style="margin-bottom:80px">
+        <app-site-dicas-uso-pesquisa (divAberta)="retornaEstadoPesquisa($event)"
+            (pesquisarOutput)="realizaPesquisa($event);" [isProduto]="true"></app-site-dicas-uso-pesquisa>
+    </div>
+    <div class="row">
+        <div class="col-md-3 d-none d-md-block">
+            <app-site-detalhe-categorias></app-site-detalhe-categorias>
+        </div>
+        <div class="col-md-9">
+            <div class="" *ngIf="rows && rows.length">
+                <div *ngFor="let cols of rows" class="row" style="margin-bottom: 30px;">
+                    <div *ngFor="let postagem of cols" class="col-lg-4 col-md-12" style="padding:15px">
+                        <app-site-card-postagem [divPesquisaAberta]="pesquisaOn" [item]="postagem">
+                        </app-site-card-postagem>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" *ngIf="rows && rows.length == 0">
+                Nenhum item encontrado
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="linkCarregarMais" class="row justify-content-center" (click)="carregarMais();">
+        <a class="btnCarregarMais fontSecundaria fontLight">Carregar mais
+            <i class="fas fa-caret-down"></i>
+        </a>
+    </div>
+</div>
+
+<ng-container *ngIf="!idProduto">
+    <div #target  id="DownloadCenter"></div>
+    <app-site-download-center [linhas]="linhas"></app-site-download-center>
+    <div id="DicasUsoEmail"></div>
+    <app-site-dicas-uso-email [linhas]="linhas"></app-site-dicas-uso-email>
+</ng-container>
+<div id="Contato" style="height: 60px;"></div>
+<div class="container">
+    <app-site-entre-contato [linhas]="linhas"></app-site-entre-contato>
+</div>

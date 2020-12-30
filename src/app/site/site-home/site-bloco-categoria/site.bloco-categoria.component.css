@@ -1,0 +1,54 @@
+img {
+  width: 100%;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.bloco {
+  position: relative;
+  text-align: center !important;
+  color: white;
+  padding: 0 2.5px;
+  outline: none;
+}
+
+.text-position{
+  bottom: -5px; 
+  font-size:24px;
+}
+
+.textCentered {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+label {
+  position: absolute;
+  bottom: -5px;
+  right: auto;
+  left: auto;
+  color: white;
+  font-size: 25px;
+}
+.paddingboxImg {
+  padding: 5px 0 0 0;
+}
+.imagem:hover {
+  filter: brightness(75%);
+}
+@media (max-width: 990px) {
+  .text-position{
+    bottom:-15px; 
+    font-size:18px;
+  }
+}
+
+@media (max-width: 575px) {
+  .bloco {
+    padding: 0;
+  }
+  .paddingboxImg {
+    padding: 2px 0 0 0;
+  }
+}

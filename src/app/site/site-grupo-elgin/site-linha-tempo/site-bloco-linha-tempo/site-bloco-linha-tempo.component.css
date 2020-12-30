@@ -1,0 +1,13 @@
+.card {
+    flex: 0 0 auto;
+    border: 0;
+}
+
+
+.bolinha{
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    top: -43px;
+    position: relative;
+}

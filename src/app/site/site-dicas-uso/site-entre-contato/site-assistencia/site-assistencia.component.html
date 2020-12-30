@@ -1,0 +1,42 @@
+<div class="divLista" *ngIf="assistencias && assistencias.length">
+    <div *ngFor="let assistencia of assistencias | orderBy: 'ativo'" class="espacamentoAssistencia">
+        <ng-container *ngIf="assistencia">
+            <div>
+                <label class="fontPrincipal fontRegular">{{assistencia.nome}}</label>
+            </div>
+            <div>
+                <label class="fontPrincipal fontThin">{{assistencia.rua}},
+                    {{assistencia.numero}}
+                    {{" - " + assistencia.bairro}} 
+                    <!-- {{" - " + assistencia.cidade}} -->
+                    {{" - " + assistencia.idEstado}}
+                    {{" - " + assistencia.cep}}</label>
+            </div>
+            <div>
+                <label class="fontPrincipal fontThin">{{assistencia.email}}</label>
+            </div>
+
+            <div *ngIf="!assistencia.telefone == ''  ||  !assistencia.telefone == null ">
+                <label class="fontPrincipal fontThin">{{assistencia.telefone}}</label>
+            </div>
+            <div *ngIf="!assistencia.telefone_2 == ''  ||  !assistencia.telefone_2 == null ">
+                <label class="fontPrincipal fontThin">{{assistencia.telefone_2}}</label>
+            </div>
+            <div *ngIf="!assistencia.telefone_3 == ''  ||  !assistencia.telefone_3 == null ">
+                <label class="fontPrincipal fontThin">{{assistencia.telefone_3}}</label>
+            </div>
+            <div *ngIf="!assistencia.telefone_4 == ''  ||  !assistencia.telefone_4 == null ">
+                <label class="fontPrincipal fontThin">{{assistencia.telefone_4}}</label>
+            </div>
+            
+        </ng-container>        
+  
+    </div>
+</div>
+<div class="divLista" *ngIf="assistencias == 0 && assistencias.length == 0">
+    <ng-container >
+        <div>
+            <label class="fontPrincipal fontThin">Não temos assistência autorizada nessa cidade. Consulte uma cidade próxima ou entre em contato com o SAC pelo telefone 0800 70 35 446</label>
+        </div>
+    </ng-container>
+</div>

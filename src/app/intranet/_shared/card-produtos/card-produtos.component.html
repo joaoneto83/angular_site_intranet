@@ -1,0 +1,37 @@
+<div class="card shadow">
+    <a class="card-img-tiles">
+        <div class="inner">
+            <div class="main-img">
+                <img *ngIf="itens.imagemUrl" [src]="itens.imagemUrl" class="imagem" alt="Category">
+            </div>
+        </div>
+    </a>
+    <div class="card-body text-center">
+        <h5 class="card-title titulo-produto fontPrincipal fontExtraLight">{{itens.nome | uppercase}}</h5>
+        <div class="row">
+            <ng-container *ngFor="let arquivo of itens.arquivos">
+                <div [ngClass]="tamanhoItens" style="padding: 0px 1px;">
+                        <a *ngIf="arquivo.tipoArquivo == 'PDF'" [href]="arquivo.link">
+                            <div class="iconPDF"></div>
+                        </a>
+                        <a *ngIf="arquivo.tipoArquivo == 'Video'" [href]="arquivo.link">
+                                <div class="iconVideo"></div>
+                        </a>
+                        <a *ngIf="arquivo.tipoArquivo == 'PPT'" [href]="arquivo.link">
+                                <div class="iconPPT"></div>
+                        </a>
+                        <a *ngIf="arquivo.tipoArquivo == 'Arquivo'" [href]="arquivo.link">
+                                <div class="iconArquivo"></div>
+                        </a>
+                        <a *ngIf="arquivo.tipoArquivo == 'XLS'" [href]="arquivo.link">
+                                <div class="iconXLS"></div>
+                        </a>
+                        <ng-container *ngIf="arquivo.descricao != ''">
+                            <br/>
+                            <label class="descricao fontSecundaria fontLight">{{arquivo.descricao}}</label>
+                        </ng-container>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

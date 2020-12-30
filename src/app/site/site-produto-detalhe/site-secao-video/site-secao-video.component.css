@@ -1,0 +1,13 @@
+.espacamentoSecao{
+    padding-bottom:90px;
+}
+
+.divVideo{
+    height:400px;
+}
+
+@media (max-width: 576px) {
+    .divVideo{
+        height:200px;
+    }
+}

@@ -1,0 +1,153 @@
+.nav-link:hover {
+  color: #22899a !important;
+}
+
+.fontSubMenu {
+  font-size: 13px;
+}
+.mouse {
+  cursor: pointer !important;;
+}
+@media (min-width: 992px) and (max-width: 1200px)  {
+  .fontSubMenu {
+    font-size: 11px;
+  }
+}
+#navbar2 {
+  /*padding-top: 83px; comentar caso fixar a barra do header */
+  background: #fff;
+  padding: 83px 0 0 0;
+  position: static;
+}
+@media (max-width: 992px) {
+  #navbar2 {
+    padding-top: 70px;
+  }
+}
+.alignLinksMenu {
+  justify-content: space-between;
+}
+/* @media (min-width: 992px) {
+  #navbarSubMenu {
+    width: 1170px!important;
+    flex-grow: 0;
+    margin: 0 auto;
+    justify-content: space-between!important;
+
+  }
+   #navbarSubMenu ul li a:first-child {
+    padding-left: 0;
+  } 
+  
+} */
+/* @media (min-width: 1380px) {
+  #navbarSubMenu {
+    width: 1340px!important;
+    flex-grow: 0;
+    margin: 0 auto;
+  }
+  .navbar-expand-lg .navbar-nav {
+    justify-content: space-between!important;
+  }
+} */
+
+#navbar2 .nav-link {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+li {
+  display: block;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+ul li ul.sub-menu {
+  position: absolute;
+  left: 0;
+  /* top: 130px; */
+  text-align: center;
+  background: #fff;
+  width: 100% !important;
+  display: none;
+  box-shadow: none !important;
+  z-index: 9999999;
+  padding: 20px 0 10px;
+}
+
+ul li:hover ul.sub-menu {
+  /* visibility: visible; */
+  opacity: 1;
+  flex-wrap: wrap;
+  justify-content: center !important;
+  display: flex !important;
+}
+
+.active-link {
+  pointer-events: none !important;
+}
+
+ul.sub-menu:hover {
+  visibility: visible;
+}
+
+ul li ul.sub-menu li {
+  display: inline-block;
+  float: none;
+  width: 100%;
+  max-width: 120px;
+}
+
+.img-menu {
+  width: 100px;
+  height: 100px;
+  display: block;
+  /* padding-bottom: 10px; */
+  margin: 0 auto !important;
+}
+
+.span-menu {
+  font-size: 10px;
+  line-height: 15px;
+  font-weight: 300;
+  vertical-align: text-top;
+}
+
+.link-sub-menu:hover .span-menu {
+  color: #22899a !important;
+}
+
+@media (max-width: 1199px) {
+  #navbar2 .nav-link {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+  #navbar2 .nav-link:first-child {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  ul li:hover ul.sub-menu {
+    display: none !important;
+  }
+  #navbar2 .nav-link {
+    padding-left: 28px;
+  }
+}
+
+.container {
+  padding: 0;
+  text-align: center;
+}
+
+
+@media(max-width: 575px){
+  #navbar2{
+      padding-top: 70px;
+  }
+}

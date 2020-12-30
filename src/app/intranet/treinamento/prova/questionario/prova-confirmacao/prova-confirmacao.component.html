@@ -1,0 +1,20 @@
+<app-submenu-treinamento></app-submenu-treinamento>
+<div class="container" style="padding-top:90px;">
+
+    <div class="text-center">
+        <img src="/assets/icones/prova_ok.png">
+        <div class="linha"></div>
+        <div class="texto fontPrincipal fontLight">
+            Obrigado por realizar o teste!
+            <br />Você acertou <strong>{{aproveitamento.qtdAcertos}}</strong> de <strong>{{aproveitamento.qtdQuestoes}}</strong> questões.
+            <br />O seu aproveitamento foi de <strong>{{aproveitamento.nota}}%</strong>.
+        </div>
+    </div>
+
+    <div class="row fontPrincipal fontLight botoes">
+        <div class="col-sm-12 text-center" style="margin: 0 0 0 auto;">
+            <a class="btn btn-circle" [routerLink]="['/PortaldeApoio/Treinamentos/MinhasProvas']">Voltar</a>
+        </div>
+    </div>
+
+</div>

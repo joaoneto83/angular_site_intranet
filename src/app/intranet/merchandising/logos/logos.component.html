@@ -1,0 +1,30 @@
+<app-descricao-caminho menu="Merchandising" pagina="Logotipos | Ícones" corPagina="#00008b"></app-descricao-caminho>
+
+<nav id="navbar2" class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+        <ul class="navbar-nav w-100 justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link fontPrincipal" [ngClass]="{'active fontRegular': abaSelecionada == 'logo'}"
+                (click)="alterarAbaSelecionada('logo')"
+                [routerLink]="['/PortaldeApoio/Merchandising/LogosIcones/logo']">Logotipos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fontPrincipal" [ngClass]="{'active fontRegular': abaSelecionada == 'icone'}"
+                (click)="alterarAbaSelecionada('icone')"
+                [routerLink]="['/PortaldeApoio/Merchandising/LogosIcones/icone']">Ícones</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div>
+    <div class="container" *ngIf="rows && rows.length">
+        <div class="">
+            <app-titulo-categoria  cor="#3FEFFC" de="#3FEFFC" ate="#1579DE" [titulo]="tituloPagina"></app-titulo-categoria>
+            <div *ngFor="let cols of rows" class="row">
+                <div *ngFor="let imagens of cols" class="col-md-3 col-sm-6 p-t-1">
+                    <app-card-produtos [itens]="imagens"></app-card-produtos>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

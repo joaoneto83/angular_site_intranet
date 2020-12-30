@@ -1,0 +1,31 @@
+<div class="card">
+    <a class="card-img-tiles">
+        <div class="inner">
+            <div class="main-img">
+                <app-site-carrossel-produtos [link]="'/Produtos/' + codigoLinha + '/' + codigoSubLinha + '/' + produto.codigoProduto" [imagens]="produto.arquivos"></app-site-carrossel-produtos>
+            </div>
+        </div>
+    </a>
+    <div class="card-body text-center">
+        <h5 class="card-title titulo-produto fontPrincipal fontLight">{{produto.nomeProduto}}</h5>
+        <div class="row divCaracteristicas">
+            <ng-container *ngFor="let caracteristica of produto.caracteristicas">
+                <div [ngClass]="{'altura-65': !caracteristica.urlIcone}" class="text-left supInfoCaracteristicas">
+                    <img *ngIf="caracteristica.urlIcone" class="img-icone" [src]="caracteristica.urlIcone" alt>
+                    <label [ngClass]="{'largura-100': !caracteristica.urlIcone}"
+                        class="caracteristicas fontPrincipal fontLight">{{caracteristica.descricaoCaracteristica}}</label>
+                </div>
+            </ng-container>
+        </div>
+        <div class="row justify-content-center">
+            <a class="btn btn-detalhe fontPrincipal fontExtraLight"
+                [routerLink]="['/Produtos/' + codigoLinha + '/' + codigoSubLinha + '/' + produto.codigoProduto]">+
+                {{'Detalhes'| translate}}</a>
+        </div>
+        <div class="row justify-content-center" style="margin-top:20px">
+            <input [(ngModel)]="chkCompare" [id]="'chkCompare_' + produto.id" [disabled]="!habilitaComparar()"
+                (change)="atualizaComparar($event.target)" type="checkbox" class="ckb">
+            <label [for]="'chkCompare_' + produto.id" class="fontPrincipal fontExtraLight comparar">{{'Comparar' | translate}}</label>
+        </div>
+    </div>
+</div>

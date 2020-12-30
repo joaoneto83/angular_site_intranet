@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="fontPrincipal fontLight text-center">
+        <label class="titulo">PEDIDO DE PRODUTOS</label>
+        <p class="text-center">
+            Preencha os campos para realizar o seu pedido
+            <br>
+            Pedidos sujeitos à disponibilidade de estoque e aprovação da diretoria.
+        </p>
+    </div>
+    <form [formGroup]="form" class="form ">
+        <div class="row">
+            <div class="col-sm-12">
+                <app-custom-input [form]="form" id="produto" errorMessage="Campo Obrigatório" label="Produto" labelClass="control-label fontSecundaria fontLight">
+                    <input formControlName="produto" class="form-control" type="text" maxlength="255">
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <app-custom-input [form]="form" id="modeloProduto" errorMessage="Campo Obrigatório" label="Modelo do Produto" labelClass="control-label fontSecundaria fontLight">
+                    <input formControlName="modeloProduto" class="form-control" type="text" maxlength="255">
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <app-custom-input [form]="form" id="codigoCatalogo" errorMessage="Campo Obrigatório" 
+                label="Código do Catálogo (SKU)" labelClass="control-label fontSecundaria fontLight" 
+                questionMark="true" mensagemTooltip="Para saber o código, consulte o atual catálogo Elgin disponível em nosso site.">
+                    <input formControlName="codigoCatalogo" class="form-control" type="text" maxlength="100">
+                </app-custom-input>
+            </div>
+            <div class="col-sm-6">
+                <app-custom-input [form]="form" id="quantidade" errorMessage="Campo Obrigatório" label="Quantidade" labelClass="control-label fontSecundaria fontLight">
+                    <input formControlName="quantidade" class="form-control" type="number" >
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <app-custom-input [form]="form" id="observacoes" errorMessage="Campo Obrigatório" label="Observações" labelClass="control-label fontSecundaria fontLight">
+                    <textarea formControlName="observacoes" class="form-control" ></textarea>
+                </app-custom-input>
+            </div>
+        </div>
+        <div class="fontPrincipal fontLight botoes">
+            <div class="text-right" style="margin: 0 0 0 auto;">
+                <a class="btn btn-circle" routerLink="/PortaldeApoio/RH">Cancelar</a>
+                <a class="btn btn-circle" (click)="confirmarPedido()">Confirmar</a>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,7 @@
+<div *ngIf="rows && rows.length" >
+    <div *ngFor="let cols of rows" class="row justify-content-space-around no-mg">
+        <div *ngFor="let links of cols" class="col col-md-2 col-sm-4 p-0">
+            <app-card-link [itens]="links"></app-card-link>
+        </div>
+    </div>
+</div>

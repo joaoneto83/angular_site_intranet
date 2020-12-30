@@ -1,0 +1,78 @@
+.adc-arquivo{
+    cursor: pointer;
+    text-decoration: none;
+    color: #77dffe !important;
+}
+
+.modal{
+    z-index: 10000;
+}
+
+.modal-lg{
+    max-width: 100%;
+    top:75px;
+}
+
+.modal-content{
+    border-radius: 0;
+}
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #48bcf7;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.fontModalArquivo{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 16px;
+    color: #222;    
+    margin-bottom: 0;
+}
+
+.p-l-50{
+    padding-left: 50px;
+}
+
+.modal-header-arquivo{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border: 0;
+}
+
+.modal-footer{
+    border: 0;
+}
+
+.inputBox{
+    border: 0;
+    border-bottom: 1px solid #AAA;
+    width: 100%;
+    text-align: left;
+    height: 40px;
+    margin-bottom: 20px;
+    color: #222;
+    text-indent: 5px;
+}
+
+.inputBox::placeholder{
+    color: #9F9F9F;
+}
+
+.divUpload{
+    padding-left:50px;
+    padding-bottom: 20px;
+}
+
+.iconeAdcArquivo{
+    margin: 3px; 
+    font-size: 11px;
+    cursor: pointer;
+    top: -5px;
+    position: relative;
+}

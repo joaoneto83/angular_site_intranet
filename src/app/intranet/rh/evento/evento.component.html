@@ -1,0 +1,30 @@
+<app-box de="#FF7CE1" ate="#FF277A">
+    <div class="tituloProxEventos fontPrincipal fontLight">
+        PRÓXIMOS EVENTOS
+        <a [showIfAdmin]="perfilAdmin" class="btn-add-evento" (click)="open()"><i class="fas fa-plus"></i></a>
+        <app-edit-evento #modalEvento (reload)="atualiza()"></app-edit-evento>
+    </div>
+    
+    <div class="row justify-content-center caixaEventos">
+        <div class="col-sm-11">
+            <ng-container *ngFor="let evento of eventos">
+                <div class="divEvento">
+                    <div class="fontPrincipal detalheEvento">
+                        <div class="tituloEvento">
+                            <div class="fontLight">
+                                {{evento.titulo}}
+                                <a [showIfAdmin]="perfilAdmin" class="btn-edit-evento" (click)="editEvento(evento)"><i class="fas fa-pen"></i></a>
+                            </div>
+                            <div class="fontThin">
+                                {{evento.periodo}}
+                            </div>
+                        </div>
+                        <div class="fontThin descricaoEvento">
+                            {{evento.descricao}}
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</app-box>

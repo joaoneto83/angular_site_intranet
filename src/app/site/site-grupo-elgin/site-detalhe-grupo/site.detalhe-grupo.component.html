@@ -1,0 +1,46 @@
+<div class="banner-detalhe">
+    <img class="imagem-banner-detalhe" [src]="banner">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <app-site-detalhe-menu></app-site-detalhe-menu>
+        </div>
+        <div class="col-md-9">
+            <ng-container *ngIf="!isElginNews">
+                <div *ngFor="let item of detalhes" style="padding: 10px 50px; margin-bottom: 50px;">
+                    <h1 style="font-size:41px;padding-bottom: 90px;" class="fontPrincipal fontRegular">
+                        {{item.titulo}}
+                    </h1>
+                    <p *ngIf="item.texto; else subTopicos" style="font-size:16px" class="fontSecundaria fontLight"
+                        [innerHTML]="item.texto"></p>
+
+                    <ng-container #subTopicos *ngFor="let teste of item.subTopicos">
+                        <h5 style="font-size:16px" class="p-b-40 fontSecundaria fontMedium">{{teste.titulo}}</h5>
+                        <p style="font-size:16px" class=" p-b-40 fontSecundaria fontLight" [innerHTML]="teste.texto"></p>
+                    </ng-container>
+                    <img *ngIf="item.imagemUrl" class="img-conteudo-detalhe" [src]="item.imagemUrl" alt>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="isElginNews">
+                <div class="row" style="padding: 10px 50px; margin-bottom: 50px;">
+                    <div class="col-sm-12">
+                        <h1 style="font-size:41px;padding-bottom: 50px;" class="fontPrincipal fontRegular">
+                            Elgin News
+                        </h1>
+                    </div>
+                    <div *ngFor="let news of elginNews" class="col-md-4 text-center">
+                        <div>
+                            <a [href]="news.arquivo" [download]="'ElginNews.' + news.ano + '.' + news.numero + '.pdf'" >
+                                <img [src]="news.imagem" style="height: 165px;" alt>
+                            </a>
+                        </div>
+                        <div class="fontSecundaria fontLight" style="color: #222222; font-size:17px; margin-bottom:80px; margin-top:10px;">
+                            Edição {{news.numero}} | Ano {{news.ano}}
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

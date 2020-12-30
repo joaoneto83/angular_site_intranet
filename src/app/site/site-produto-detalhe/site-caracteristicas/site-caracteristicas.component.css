@@ -1,0 +1,42 @@
+.fontTitulo{
+    font-size: 20px;
+    color: #777;
+}
+
+.fontCaracteristica{
+    font-size: 16px;
+    color: #777;
+}
+
+.imagemIcone{
+    width: 100px;
+}
+
+.marginTitulo{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.m-b-20{
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px){
+    .imagemIcone{
+        width: 80px;
+    }
+
+    .fontCaracteristica{
+        font-size: 14px;
+    }
+    
+    .fontTitulo{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .fontTitulo{
+        font-size: 20px;
+    }
+}

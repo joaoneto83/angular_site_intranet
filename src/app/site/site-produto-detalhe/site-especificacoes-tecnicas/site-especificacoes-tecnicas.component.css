@@ -1,0 +1,81 @@
+.fontTitulo{
+    font-size: 20px;
+    color: #777;
+}
+
+.fontEspecificacao{
+    font-size: 14px;
+    color: #777;
+}
+
+.marginTitulo{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.marginEspecificacao{
+    margin-top: 0px;
+    margin-bottom: 12px;
+}
+
+.fontModelo{
+    font-size: 12px;
+    color: #666;
+    border: 1px solid #777;
+    border-radius: 9px;
+    background-color: white;
+    padding: 5px;
+    width: 100%;
+}
+
+.btnTabelaTecnica{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 15px;
+    color: #777;
+    border: 1px solid #777;
+    border-radius: 9px;
+    background-color: white;
+    padding: 5px;
+    margin: 10px 0;
+    width: 200px;
+}
+.btn-modelo{
+    color: #48bcf7 !important;
+    border: 1px solid #48bcf7;
+    background-color: #FFF;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: soleil;
+    font-weight:200;
+    padding: 5px 10px;
+    outline: none;
+}
+  
+.btn-modelo:hover{
+    color: #FFF !important;
+    background-color: #48bcf7;
+}
+
+@media (max-width: 768px){
+    .btn-modelo {
+        font-size: 14px;
+        border-radius: 10px;
+        padding: 2px 5px;
+        text-align: center;
+    }
+
+    .fontTitulo{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .fontTitulo{
+        font-size: 20px;
+    }
+    .btn-modelo {
+        padding: 5px 10px;
+        border-radius: 20px;
+    }
+}

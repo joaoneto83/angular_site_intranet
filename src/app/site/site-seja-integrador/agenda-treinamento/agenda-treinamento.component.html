@@ -1,0 +1,24 @@
+<div class="row" style="margin-top:65px">
+    <div class="col-sm-12 text-center">
+        <h1 class="fontPrincipal fontRegular" style="font-size: 41px; margin-bottom: 20px">
+            Agenda de Treinamentos
+        </h1>
+        <span class="fontSecundaria fontLight" style="font-size: 16px; color: #222222">
+            Para maiores informações, ligue para (11) 3383-5940
+            <br>
+            ou entre em contato pelo email victor.aragao@elgin.com.br
+        </span>
+    </div>
+</div>
+<div class="row text-center " style="margin-top:20px">
+    <ng-container *ngFor="let agenda of agendaTreinamentos; let i = index">
+        <div class="col-md-4" >
+            <label [ngClass]="{'bordaAgenda': i % 3 != 0}" class="fontPrincipal fontLight" style="width: 100%;font-size: 16px; margin: 20px 0">
+                {{agenda.dataDe}} até {{agenda.dataAte}}
+                <br>
+                {{agenda.empresa}} - {{agenda.cidade}} - {{agenda.estado}}
+            </label>
+
+        </div>
+    </ng-container>
+</div>

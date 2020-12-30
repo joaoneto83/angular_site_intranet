@@ -1,0 +1,87 @@
+<div class="container" >
+    <div *ngFor="let catalogo of catalogos " class="divClassificacao">
+        <app-box [de]="catalogo.cor1" [ate]="catalogo.cor2">
+            <div style="padding: 30px; ">
+                <div class="row divTitulo col-sm-12">
+                    <span class="titulo1 fontPrincipal fontLight"
+                        [style.color]="catalogo.corTitulo">{{catalogo.nomeLinha | uppercase}}</span>
+                    <span class="barra">|</span>
+                    <span class="linhaCompleta fontPrincipal fontLight" style="margin-right:10px;">
+                        Linha Completa
+                    </span>
+
+                    <app-modal-arquivo-catalogo showIfAdmin="CATALOGO_EDICAO" codigoTipoArquivo="catalogoLinhaCompleta"
+                        [idPai]="catalogo.idLinha" [isLinha]="true" [idArquivo]='catalogo.idArquivoLinha'
+                        [nomeArquivo]='catalogo.nomeArquivoLinha' (recarregar)="retornaCarregamento($event)">
+                    </app-modal-arquivo-catalogo>
+
+                    <app-acoes-catalogo [isLinha]="true" [idArquivo]='catalogo.idArquivoLinha'
+                        [nomeArquivo]='catalogo.nomeArquivoLinha' [caminho]='catalogo.urlCatalogoLinha'>
+                    </app-acoes-catalogo>
+                </div>
+                <ngx-masonry [options]="{ transitionDuration: '0s' }">
+                    <div ngxMasonryItem *ngFor="let sublinha of catalogo.subLinhas" class="divCategoria">
+                        <span class="titulo2 fontPrincipal fontRegular">{{sublinha.nomeSubLinha | uppercase }}</span>
+                        <div class="row" style="padding-top:15px;">
+                            <div *ngFor="let produto of catalogo.produtos | FiltraProdutoSublinha: sublinha.id"
+                                class="col-sm-12">
+                                <div *ngIf="!usuario">
+                                <div class="row" style="line-height: 30px;"  *ngIf="catalogo.arquivos | FiltraArquivoProduto: produto.id; else novoArquivo">
+                                    <div class="col-sm-8" >
+                                        <span class="titulo3 fontSecundaria fontLight" >
+                                            {{produto.nomeProduto}}
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-4 text-right"
+                                        *ngIf="catalogo.arquivos | FiltraArquivoProduto: produto.id; else novoArquivo">
+                                        <app-modal-arquivo-catalogo showIfAdmin="CATALOGO_EDICAO"
+                                            codigoTipoArquivo="catalogoProduto" [idPai]="produto.id"
+                                            [arquivo]="catalogo.arquivos | FiltraArquivoProduto: produto.id"
+                                            (recarregar)="retornaCarregamento($event)">
+                                        </app-modal-arquivo-catalogo>
+                                        <app-acoes-catalogo [arquivo]="catalogo.arquivos | FiltraArquivoProduto: produto.id"></app-acoes-catalogo>
+                                    </div>
+                                    <ng-template #novoArquivo>
+                                        <div class="col-sm-4 text-right">
+                                            <app-modal-arquivo-catalogo showIfAdmin="CATALOGO_EDICAO"
+                                                codigoTipoArquivo="catalogoProduto" [idPai]="produto.id"
+                                                (recarregar)="retornaCarregamento($event)">
+                                            </app-modal-arquivo-catalogo>
+                                        </div>
+                                    </ng-template>
+                                </div>
+                                </div>
+                                <div *ngIf="usuario">
+                                <div class="row" style="line-height: 30px;"  >
+                                    <div class="col-sm-8" >
+                                        <span class="titulo3 fontSecundaria fontLight" >
+                                            {{produto.nomeProduto}}
+                                        </span>
+                                    </div>
+                                    <div class="col-sm-4 text-right"
+                                        *ngIf="catalogo.arquivos | FiltraArquivoProduto: produto.id; else novoArquivo">
+                                        <app-modal-arquivo-catalogo showIfAdmin="CATALOGO_EDICAO"
+                                            codigoTipoArquivo="catalogoProduto" [idPai]="produto.id"
+                                            [arquivo]="catalogo.arquivos | FiltraArquivoProduto: produto.id"
+                                            (recarregar)="retornaCarregamento($event)">
+                                        </app-modal-arquivo-catalogo>
+                                        <app-acoes-catalogo [arquivo]="catalogo.arquivos | FiltraArquivoProduto: produto.id"></app-acoes-catalogo>
+                                    </div>
+                                    <ng-template #novoArquivo>
+                                        <div class="col-sm-4 text-right">
+                                            <app-modal-arquivo-catalogo showIfAdmin="CATALOGO_EDICAO"
+                                                codigoTipoArquivo="catalogoProduto" [idPai]="produto.id"
+                                                (recarregar)="retornaCarregamento($event)">
+                                            </app-modal-arquivo-catalogo>
+                                        </div>
+                                    </ng-template>
+                                </div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                </ngx-masonry>
+            </div>
+        </app-box>
+    </div>
+</div>

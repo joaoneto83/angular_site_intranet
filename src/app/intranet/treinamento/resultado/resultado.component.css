@@ -1,0 +1,63 @@
+
+
+label .select-preto{
+    color: #7E7E7E;
+    border-bottom: #707070 1px solid;
+}
+
+.resultado3 text tspan{
+    fill: #127FFF !important;
+}
+
+.subTitulo2{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 17px;
+    text-align: center;
+}
+
+select {
+    border: 0;
+    color: #7e7e7e;
+    border-bottom: 1px solid #7e7e7e;
+    width: 100%;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 15px;
+    /* margin-top: 30px; */
+    border-radius: 0;
+    outline: none;
+}
+
+.label-preto{
+    color: #7E7E7E;
+    border-bottom: #707070 1px solid;
+}
+
+
+input {
+    background-color: transparent;
+    border: 0;
+    color: #7e7e7e;
+    border-bottom: 1px solid #7e7e7e;
+    width: 100%;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 15px;
+    border-radius: 0;
+    outline: none;
+}
+
+.btn-adc-grafico{
+    font-size: 30px;
+    border: 5px solid #c7c7c7;
+    color: #c7c7c7 !important;
+    padding: 5px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.btn-adc-grafico:hover{
+    color: white !important;
+    background: #c7c7c7;
+}

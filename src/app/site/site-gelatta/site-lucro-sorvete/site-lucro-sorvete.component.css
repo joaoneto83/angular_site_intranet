@@ -1,0 +1,194 @@
+::ng-deep.ng5-slider .ng5-slider-pointer{
+    width: 26px !important;
+    height: 26px !important;
+    top: -8px !important;
+    background: #006198 !important;
+    outline: none;
+    border: 1px solid #FFF;
+}
+
+::ng-deep.ng5-slider .ng5-slider-pointer::after{
+    background: #006198 !important;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #fff;
+    top: 7px !important;
+    right: 1px !important;
+    left: unset !important;
+    border-radius: 0 !important;
+}
+
+::ng-deep.ng5-slider .ng5-slider-pointer::before{
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 1px;
+    width: 8px; 
+    height: 8px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right:5px solid #fff;
+    border-radius: 0 !important;
+}
+
+::ng-deep.ng5-slider .ng5-slider-bar{
+    height: 10px !important;
+    background: #FFF !important;
+    border-radius: 8px !important;
+    border: 1px solid #D3D3D3 !important;
+}
+
+::ng-deep.ng5-slider-span.ng5-slider-bar.ng5-slider-selection{
+    background-image: linear-gradient(to right, rgb(0, 126, 252) 0%, rgb(0, 97, 152) 100%) !important;
+}
+
+::ng-deep.ng5-slider span{
+    font-family: fontPrincipal;
+}
+
+::ng-deep.ng5-slider .ng5-slider-tick.ng5-slider-selected{
+    background: transparent !important;
+}
+
+::ng-deep.ng5-slider .ng5-slider-tick{
+    background: transparent !important;
+}
+
+::ng-deep.ng5-slider .ng5-slider-bubble{
+    color:#006198 !important;
+}
+
+.ng5-slider{
+    margin: auto 0 auto;
+}
+
+.lblCasquinha{
+    margin: 0;
+    margin-left: 10px;
+    font-size: 19px;
+    text-transform: uppercase;
+    max-width: 145px;
+}
+
+.subTituloGelatta{
+    font-size: 20px;
+}
+
+.divPreco{
+    margin-top: 50px;
+    text-align: center;
+    border: 1px solid #C1C1C1;
+    border-radius: 31px;
+    padding: 30px 20px;
+
+}
+
+.lblDescricaoPreco{
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.lblPreco{
+    margin: 0;
+    font-size: 35px;
+    color: #005EB8;
+    /* bold */
+}
+
+.lblMoeda{
+    font-size: 21px;
+}
+
+
+.linha{
+    border-right: 1px solid #747474;
+}
+
+.lblObsPreco{
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.divPrecoMobile{
+    display: none;
+}
+
+
+
+@media (max-width: 768px){
+    .lblDescricaoPreco{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 575px) {
+    .divPrecoMobile{
+        display: block;
+    }
+
+    .divPrecoDesk{
+        display: none;
+    }
+
+    .lblCasquinha{
+        max-width: 100%;
+        width: 100%;
+        font-size: 17px;
+    }
+
+    .imgGelatta{
+        min-height: 100px;
+    }
+
+    .divPreco{
+        border: none;
+    }
+
+    .linha:nth-child(2){
+        border-right: none;
+    }
+
+    .divPreco .col-12{
+        margin-top: 25px;
+    }
+
+    .lblDescricaoPreco{
+        font-size: 14px;
+    }
+
+    .lblPreco{
+        font-size: 29px;
+    }
+
+    .lblMoeda{
+        font-size: 18px;
+    }
+
+    .lblLucro{
+        font-size: 17px !important;
+        font-weight: 400 !important;
+    }
+
+    .quebraLinha{
+        display: none;
+    }
+
+    .lblValorLucro{
+        font-size: 36px;
+    }
+
+    .lblValorLucro span{
+        font-size: 23px;
+    }
+
+    .lblObsPreco{
+        font-size: 8px;
+        padding: 0 15px;
+    }
+
+    .tituloGelatta{
+        width: 100%;
+        margin-left: 10px;
+    }
+
+}

@@ -1,0 +1,79 @@
+<nav id="navbar2" class="navbar navbar-expand-lg navbar-light navRefrigeracao">
+    <div class="collapse navbar-collapse w-100" id="navbarSubMenu">
+        <ul class="navbar-nav w-100 alignLinksMenu">
+            <li class="nav-item active">
+                <a class="nav-link fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    [routerLink]="['/refrigeracao/Home/To/Segmentos/']" style="padding-left: 0;">
+                    {{'Mercados' | translate | uppercase}}
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()">
+                    {{'Produtos' | translate | uppercase}}
+                </a>
+
+                <ul class="sub-menu">
+                    <li *ngFor="let sublinha of sublinhas | orderBy: ['ordem']" class="nav-item active"
+                        style="text-align:center" (click)="adicionaClasse($event.target)">
+                        <a class="link-sub-menu" [routerLink]="['/Produtos/refrigeracao/' + sublinha.codigoSubLinha ]">
+                            <img class="img-menu" [src]="sublinha.caminhoImagem"
+                                onError="this.src='./assets/img/noimage.jpg';" />
+                            <label class="span-menu fontPrincipal">{{sublinha.nomeSubLinha | uppercase}}</label>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    [routerLink]="['/refrigeracao/Treinamentos']">
+                    {{'Treinamentos' | translate | uppercase}}
+                </a>
+            </li> 
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    href="http://www.realworks.com.br/elgin/cargatermica_v2/index2.php?lang=BR">
+                    {{'Aplicativo' | translate | uppercase}}
+                </a>
+            </li> 
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    [routerLink]="['/refrigeracao/Cases']">
+                    {{'Cases' | translate | uppercase}}
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    [routerLink]="['/refrigeracao/Home/To/DownloadCenter/']">
+                    {{'Download Center' | translate | uppercase}}
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    [routerLink]="['/refrigeracao/Contato']">
+                    {{'Contato' | translate | uppercase}}
+                </a>
+            </li>
+            <li class="nav-item idioma active">
+                <!-- <a class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()"
+                    [routerLink]="['/Refrigeracao/Contato']">
+                    {{"Português" | uppercase}}
+                </a> -->
+                <div class="bandeira" [ngClass]="idioma == 'pt' ? 'br' : (idioma == 'en' ? 'eng' : 'esp')"></div>
+                <div>
+                    <select class="select-preto" [(ngModel)]="idioma" (change)="changeLanguage()">
+                        <option value="pt">
+                            {{'Portugues' | translate}}
+                            <img src="/assets/img/Site/Automacao/clickP.jpg">
+                        </option>
+                        <option value="en">
+                            {{'Ingles' | translate}}
+                        </option>
+                        <option value="es">
+                            {{'Espanhol' | translate}}
+                        </option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>

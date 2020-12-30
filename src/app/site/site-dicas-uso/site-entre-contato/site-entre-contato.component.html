@@ -1,0 +1,153 @@
+<div class="text-center" style="margin-bottom: 90px">
+    <label class="fontSecundaria fontLight" style="font-size: 37px;">ENTRE EM CONTATO</label>
+</div>
+<div class="row fontPrincipal">
+    <div class="col-md-4 bordaDireita text-center">
+        <div style="display: inline-block; text-align: left;">
+            <div class="espacamentoTitulo">
+                <img src="/assets/img/Site/SuporteTecnico/icons/icon_redesocial.png" alt>&nbsp;
+                <label class="fontLight titulo my-0">Redes Sociais</label>
+            </div>
+            <div>
+                <a target="_blank" rel="noopener noreferrer" href="https://pt-br.facebook.com/GrupoElgin/">
+                    <label class="fontLight texto">Facebook</label></a>
+            </div>
+            <div>
+                <a target="_blank" rel="noopener noreferrer" href="http://blog.elgin.com.br/blog/">
+                    <label class="fontLight texto">Blog</label></a>
+            </div>
+            <div>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/grupo_elgin/">
+                    <label class="fontLight texto">Instagram</label></a>
+            </div>
+            <div>
+                <a target="_blank" rel="noopener noreferrer"
+                    href="https://www.youtube.com/channel/UC4EEMFjqb3zQcn0vpE0ewAg">
+                    <label class="fontLight texto">Youtube</label></a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 bordaDireita text-center">
+        <div style="display: inline-block; text-align: left;">
+            <div class="espacamentoTitulo">
+                <img src="/assets/img/Site/SuporteTecnico/icons/icon_telefone.png" alt>&nbsp;
+                <label class="fontLight titulo my-0">Telefones</label>
+            </div>
+            <div>
+                <label class="fontRegular subtitulo">Home & Office</label>
+            </div>
+            <div>
+                <label class="fontLight fonteTelefone">SAC 0800 70 35 446<br>Grande SP 11 3383-5555<br>Whatsapp 11 98386-0054</label>
+            </div>
+            <div class="espacamentoItens">
+                <label class="fontRegular subtitulo">Mobili & Design</label>
+            </div>
+            <div>
+                <label class="fontLight fonteTelefone">11 3383-5526</label>
+            </div>
+            <div class="espacamentoItens">
+                <label class="fontRegular subtitulo">Refrigeração</label>
+            </div>
+            <div>
+                <label class="fontLight fonteTelefone">0800 771 1960</label>
+            </div>
+            <div class="espacamentoItens">
+                <label class="fontRegular subtitulo">Automação</label>
+            </div>
+            <div>
+                <a class="btn btn-detalhe fontPrincipal fontExtraLight" href="https://elginbematech.com.br/chamado">
+                    <input  class="saibaMais" type="button" value="Abrir chamado" >
+            </a>
+            </div>
+            <div>
+                    
+                <label class="fontLight texto">0800 644 2362 (telefonia fixa)</label>
+                <label class="fontLight texto">(11) 3383-5776 (celular e demais localidades)</label>
+                <label class="fontLight texto">Horário de atendimento: 2ª a 6ª das 08h as 18h (exceto feriados)</label>
+
+                <!-- automacao@elgin.com.br -->
+                <!-- <br>11 3383-5989 -->
+            
+        </div>
+
+        </div>
+    </div>
+    <div class="col-md-4 text-center" style="padding-left: 30px;">
+        <div style="display: inline-block; text-align: left;width: 85%">
+            <div class="espacamentoTitulo">
+                <img src="/assets/img/Site/SuporteTecnico/icons/icon_assistencia_tecnica.png" alt>&nbsp;
+                <label class="fontLight titulo my-0">Assistência Técnica</label>
+            </div>
+            <div>
+                <label class="fontLight texto">Encontre a autorizada<br>mais próxima de você.</label>
+            </div>
+            <div class="espacamentoItens" style="margin-left: 10px">
+              
+               <!-- <select (change)="carregarSublinhas($event.target.value);buscaAssistencias()" -->
+              <select  [(ngModel)]="idlinha"  (change)="carregarLinha($event.target.value)" 
+                    class="fontPrincipal fontLight texto select-preto">
+                    <option value="">Linha de Produtos</option>
+                    <option *ngFor="let linha of linhas" [value]="linha.id">
+                        {{linha.nomeLinha | titlecase}}
+                    </option>
+                </select>
+            </div>
+            <!-- <div style="margin-left: 10px">
+                <select [(ngModel)]="idSublinha" (change)="buscaAssistencias()"
+                class="fontPrincipal fontLight texto select-preto" >
+                    <option value="">Sub Linha</option>
+                    <option *ngFor="let sublinha of sublinhas" [value]="sublinha.id">
+                        {{sublinha.nomeSubLinha | titlecase}}
+                    </option>
+                </select>
+            </div> -->
+            <div style="margin-left: 10px">
+                <select [(ngModel)]="uf" class="fontPrincipal fontLight texto select-preto"
+                    (change)="carregarCidades($event.target.value); carregarEstado($event.target.value)">
+                    <option value="">Estado</option> 
+                    <option value="1">Acre</option>
+                    <option value="2">Alagoas</option>
+                    <option value="4">Amapá</option>
+                    <option value="3">Amazonas</option>
+                    <option value="5">Bahia</option>
+                    <option value="6">Ceará</option>
+                    <option value="7">Distrito Federal</option>
+                    <option value="8">Espírito Santo</option>
+                    <option value="9">Goiás</option>
+                    <option value="10">Maranhão</option>
+                    <option value="11">Mato Grosso</option>
+                    <option value="12">Mato Grosso Do Sul</option>
+                    <option value="13">Minas Gerais</option>
+                    <option value="14">Pará</option>
+                    <option value="15">Paraíba</option>
+                    <option value="18">Paraná</option>
+                    <option value="16">Pernambuco</option>
+                    <option value="17">Piauí</option>
+                    <option value="19">Rio De Janeiro</option>
+                    <option value="20">Rio Grande Do Norte</option>
+                    <option value="23">Rio Grande do Sul</option>
+                    <option value="21">Rondônia</option>                 
+                    <option value="22">Roraima</option>
+                    <option value="24">Santa Catarina</option>
+                    <option value="26">São Paulo</option>
+                    <option value="25">Sergipe</option>
+                    <option value="27">Tocantins</option>
+                   
+                    <!-- <option *ngFor="let estado of estados" [value]="estado.Cod">{{estado.Nome | titlecase}}
+                    </option> -->
+                </select>
+            </div>
+            <div style="margin-left: 10px">
+                <select [(ngModel)]="cidade" class="fontPrincipal fontLight texto select-preto"
+                (change)="carregarCidade($event.target.value);postBuscaAssistenciasSuccess()">
+                    <option value="">Cidade</option>
+                    <option *ngFor="let cidade of cidades" [value]="cidade.id">{{cidade.descricao | titlecase}}</option>
+                </select>
+            </div>
+            <div class="espacamentoItens">
+                <app-site-assistencia [assistencias]="listaAssistentes"></app-site-assistencia>
+            </div>
+
+        </div>
+    </div>
+</div>

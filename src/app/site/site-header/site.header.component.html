@@ -1,0 +1,181 @@
+
+<nav id="navbarSite" class="navbar navbar-expand-lg navbar-light sticky">
+  <div class="container containerDeskFull">
+    <a class="" [routerLink]="['/']">
+      <img class="logoHeaderMini" src="../../assets/img/Elgin_logo_branco.png">
+    </a>
+    <div id="navbarSupportedContent">
+      <a  class="nav-link fontPrincipal fontThin fontMenu" href="https://www.elgin.com.br/"  (click)="escondeChat()">
+        Home
+      </a>
+      <ul class="navbar-nav">
+        <li *ngFor="let menu of menus" class="nav-item" [ngClass]="{'menuAtivo': menuAtivo == menu.id}">
+           <!-- <a  class="nav-link fontPrincipal fontThin fontMenu" [routerLink]="[menu?.rota]" (click)="escondeChat()">
+            {{menu?.nome | translate}}
+          </a>
+          <a *ngIf="menu?.nome == 'Blog'" class="nav-link fontPrincipal fontThin fontMenu"  href="http://blog.elgin.com.br/blog/" (click)="escondeChat()">
+            {{menu?.nome | translate}}
+          </a>   -->
+          <a *ngIf="menu?.nome != 'Blog' && menu?.nome" class="nav-link fontPrincipal fontThin fontMenu" [routerLink]="[menu?.rota]" (click)="escondeChat()">
+            {{menu?.nome}}
+          </a>
+          <a *ngIf="menu?.nome == 'Blog'" class="nav-link fontPrincipal fontThin fontMenu"  href="http://blog.elgin.com.br" (click)="escondeChat()">
+            {{menu?.nome}}
+          </a>
+        <!-- <a class="nav-link fontPrincipal fontThin fontMenu" [routerLink]="[menu.rota]">
+            {{menu?nome | translate}}
+          </a> -->
+        </li>
+        <li *ngIf="showSearch" style="padding: 0 14px">
+          <animate-box axis="X" position="80" delay="10">
+            <input (keyup.enter)="pesquisarProduto()" class="input-desktop" [(ngModel)]="txtPesquisa" placeholder="Pesquisar" type='text'>
+          </animate-box>
+        </li>
+        <li>
+          <img (click)="showSearch = true; pesquisarProduto()" src="/assets/img/Site/Home/icons/busca.png"
+            style="padding-top:13px; cursor: pointer;" alt>
+        </li>
+      </ul>
+    </div>
+
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()">
+      <span class="fa fa-bars" style="color: white;"></span>
+    </button>
+
+  </div>
+</nav>
+<!-- <ng-container *ngIf="!headerGelatta; else menuGelatta">
+  <div class="collapse navbar-collapse menuMobile" [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" *ngIf="linhasCompletas">
+        <a class="nav-link" (click)="toggleLinha()">Linhas <i class="fas fa-chevron-down" style="color:white;"></i></a>
+        <div class="" *ngIf="linhaOpen">
+          <div *ngFor="let linha of linhasCompletas" class="nav-link2">
+            <ng-container *ngIf="linha.codigoLinha != 'MaquinaSorvete'; else linhaSorvete">
+              <a class="nav-link" (click)="linha.showMobile = !linha.showMobile">{{linha.nomeLinha}} <i
+                  class="fas fa-chevron-down" style="color:white;"></i></a>
+              <div class="" *ngIf="linha.showMobile">
+                <div *ngFor="let sublinha of linha.subLinhas" class="nav-link3">
+                  <a class="nav-link" (click)="toggleNavbar()"
+                    [routerLink]="['/Produtos/' + linha.codigoLinha + '/' + sublinha.codigoSubLinha ]">{{sublinha.nomeSubLinha}}</a>
+                </div>
+              </div>
+            </ng-container>
+            <ng-template #linhaSorvete>
+              <a class="nav-link" (click)="toggleNavbar()" [routerLink]="['/Gelatta']">{{linha.nomeLinha}}</a>
+            </ng-template>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item" *ngFor="let menu of menus">
+        <a class="nav-link" [routerLink]="[menu.rota]"> {{menu.nome}}</a>
+      </li>
+      <li>
+        <input (keyup.enter)="pesquisarProduto()" [(ngModel)]="txtPesquisa" class="input-mobile" placeholder="Pesquisar"
+          type='text'>
+        <img (click)="pesquisarProduto()" src="/assets/img/Site/Home/icons/busca.png" style="padding-left:14px" alt>
+      </li>
+    </ul>
+  </div>
+</ng-container>
+<ng-template #menuGelatta>
+  <div class="collapse navbar-collapse menuMobile menuGelatta" [ngClass]="{ 'show': navbarOpen }">
+    <ul class="navbar-nav" style="width: 100%;">
+      <li class="nav-item tituloSecaoGelatta">
+        <a (click)="toggleNavbar()">
+          <img class="imgGelatta" src="/assets/img/Site/Gelatta/icon-gelatta.svg" [routerLink]="['/Gelatta']" alt>
+        </a>
+      </li>
+      <li class="nav-item" *ngIf="linhasCompletas">
+        <a class="nav-link" (click)="toggleProdutos()">
+          Produtos <i class="fas fa-chevron-down" style="columns: #222222;;"></i>
+        </a>
+        <ng-container *ngFor="let linha of linhasCompletas">
+          <ng-container *ngIf="linha.codigoLinha == 'MaquinaSorvete';">
+            <div class="" *ngIf="produtosOpen">
+              <div *ngFor="let sublinha of linha.subLinhas" class="nav-link2">
+                <a class="nav-link" (click)="toggleNavbar()"
+                  [routerLink]="['/Produtos/' + linha.codigoLinha + '/' + sublinha.codigoSubLinha ]">{{sublinha.nomeSubLinha}}</a>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="togglePecas()">
+          Peças de Reposição <i class="fas fa-chevron-down" style="columns: #222222;;"></i>
+        </a>
+        <ng-container *ngFor="let produto of produtos | orderBy: ['nomeProduto']">
+          <div class="" *ngIf="pecasOpen">
+            <div class="nav-link2">
+              <a class="nav-link" (click)="toggleNavbar()"
+                [routerLink]="['/Gelatta/PecasReposicao/' + produto.codigoProduto ]">{{produto.nomeProduto}}</a>
+            </div>
+          </div>
+        </ng-container>
+      </li>
+      <li class="nav-item">
+        <a (click)="toggleNavbar()" class="nav-link" [routerLink]="['/Gelatta/To/PerguntasFrequentes/']">
+          Perguntas Frequentes
+        </a>
+      </li>
+      <li class="nav-item" style="margin-bottom: 50px;">
+        <a (click)="toggleNavbar()" class="nav-link" [routerLink]="['/Gelatta/Carrinho']">
+          Carrinho
+        </a>
+      </li>
+      <li class="nav-item tituloSecaoGelatta">Elgin</li>
+      <li class="nav-item" *ngIf="linhasCompletas">
+        <a class="nav-link" (click)="toggleLinha()">Linhas <i class="fas fa-chevron-down" style="columns: #222222;;"></i></a>
+        <div class="" *ngIf="linhaOpen">
+          <div *ngFor="let linha of linhasCompletas" class="nav-link2">
+            <ng-container *ngIf="linha.codigoLinha != 'MaquinaSorvete'">
+              <a class="nav-link" (click)="linha.showMobile = !linha.showMobile">{{linha.nomeLinha}} <i
+                  class="fas fa-chevron-down" style="columns: #222222;;"></i></a>
+              <div class="" *ngIf="linha.showMobile">
+                <div *ngFor="let sublinha of linha.subLinhas" class="nav-link3">
+                  <a class="nav-link" (click)="toggleNavbar()"
+                    [routerLink]="['/Produtos/' + linha.codigoLinha + '/' + sublinha.codigoSubLinha ]">{{sublinha.nomeSubLinha}}</a>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item" *ngFor="let menu of menus">
+        <a class="nav-link" [routerLink]="[menu.rota]"> {{menu.nome}}</a>
+      </li>
+      <li>
+        <input (keyup.enter)="pesquisarProduto()" [(ngModel)]="txtPesquisa" class="input-mobile" placeholder="Pesquisar"
+          type='text'>
+        <img (click)="pesquisarProduto()" src="/assets/icones/search.png" style="padding-left:14px" alt>
+      </li>
+    </ul>
+  </div> -->
+
+<ng-container *ngIf="!headerGelatta && !headerRefrigeracao && !headerAutomacao; else menuAlternativo">
+  <app-site-submenu-mobile [menus]="menus" [linhasCompletas]="linhasCompletas" [navbarOpen]="navbarOpen" (navbarUpdated)="navbarOpen=$event"></app-site-submenu-mobile>
+</ng-container>
+<ng-template #menuAlternativo>
+  <app-site-submenu-gelatta-mobile *ngIf="headerGelatta" [menus]="menus" [linhasCompletas]="linhasCompletas" [linha]="linhasCompletas | FiltraPorCodigoLinha: 'MaquinaSorvete'" [produtos]="produtos" [navbarOpen]="navbarOpen" (navbarUpdated)="navbarOpen=$event"></app-site-submenu-gelatta-mobile>
+  <app-site-submenu-refrigeracao-mobile *ngIf="headerRefrigeracao" [menus]="menus" [linhasCompletas]="linhasCompletas" [navbarOpen]="navbarOpen" (navbarUpdated)="navbarOpen=$event"></app-site-submenu-refrigeracao-mobile>
+  <app-site-submenu-automacao-mobile *ngIf="headerAutomacao" [menus]="menus" [linhasCompletas]="linhasCompletas" [linha]="linhasCompletas | FiltraPorCodigoLinha: 'Automacao'" [navbarOpen]="navbarOpen" (navbarUpdated)="navbarOpen=$event"></app-site-submenu-automacao-mobile>
+</ng-template> 
+
+<div class="container containerDeskFull">
+  <app-site-submenu style="width: 100%" *ngIf="!headerAutomacao && !headerGelatta && !headerRefrigeracao" link="Site" [linhas]="linhas">
+  </app-site-submenu>
+
+  <ng-container *ngIf="headerAutomacao">
+    <app-site-submenu-automacao style="width: 100%" link="Site"></app-site-submenu-automacao>
+  </ng-container>
+
+  <ng-container *ngIf="headerGelatta">
+    <app-site-submenu-gelatta style="width: 100%" link="Site"></app-site-submenu-gelatta>
+  </ng-container>
+
+  <ng-container *ngIf="headerRefrigeracao">
+    <app-site-submenu-refrigeracao style="width: 100%" link="Site"></app-site-submenu-refrigeracao>
+  </ng-container>
+
+</div>

@@ -1,0 +1,68 @@
+.bloco {
+    position: relative;
+    text-align: center !important;
+    height: 350px;
+}
+
+.degrade{
+    background-image: linear-gradient(#07080B00, #07080B);
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+}
+
+.img {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+}
+
+.divTextos{
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+    width: 100%;
+}
+
+.paddingBox {
+    padding: 5px 5px 0 0;
+}
+  
+label { 
+    color: white;
+}
+
+.btn-saiba-mais{
+    color: white !important;
+    border: 1px solid #b7b7b7;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    outline:none !important;
+    padding: 0.175rem 1.2rem;
+    font-weight: 200;
+}
+
+.btn-saiba-mais:hover{
+    color: #6E6E6E !important;
+    background-color: white;
+}
+
+.espacamento-100{
+    margin-top: 100px;
+}
+  
+@media (max-width: 575px) {
+    .bloco {
+        padding: 0;
+    }
+    
+    .paddingboxImg {
+        padding: 2px 0 0 0;
+    }
+
+    .espacamento-100{
+        margin-top: 80px;
+    }
+}
+  

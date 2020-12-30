@@ -1,0 +1,107 @@
+<ng-template #contentEditarEvento let-modal>
+    <div class="modal-header modal-header-copiar container">
+        <div>
+            <label class="tituloModal">Evento</label>
+            <button type="button" class="close" aria-label="Close" (click)="close()" style="border:0px;outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <ng-container>
+        <div class="modal-body container">
+            <div class="row">
+                <ng-container *ngIf="formEvento">
+                    <form [formGroup]="formEvento" class="col-sm-12" style="margin-top:50px; padding: 0 30px;">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <app-custom-input [form]="formEvento" errorMessage="Campo Obrigatório" label="Título"
+                                    labelClass="control-label fontSecundaria" id="titulo">
+                                    <input class="form-control" formControlName="titulo" type="text" maxlength="150">
+                                </app-custom-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <app-custom-input [form]="formEvento" errorMessage="Campo Obrigatório" label="Local"
+                                    labelClass="control-label fontSecundaria" id="local">
+                                    <input class="form-control" formControlName="local" type="text" maxlength="500">
+                                </app-custom-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <app-custom-input [form]="formEvento" errorMessage="Campo Obrigatório"
+                                    label="Tipo do evento" labelClass="control-label fontSecundaria"
+                                    id="idTipoEventoRefrigeracao">
+                                    <select class="form-control" formControlName="idTipoEventoRefrigeracao">
+                                        <option value="">- Selecione -</option>
+                                        <option *ngFor="let tipo of tipos" [value]="tipo.id">
+                                            {{tipo.nome | titlecase}}
+                                        </option>
+                                    </select>
+                                </app-custom-input>
+                            </div>
+                            <div class="col-sm-6">
+                                <app-custom-input [form]="formEvento" errorMessage="Campo Obrigatório" label="Link"
+                                    labelClass="control-label fontSecundaria" id="link">
+                                    <input class="form-control" formControlName="link" type="text" maxlength="150">
+                                </app-custom-input>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 form-group">
+                                <input type="checkbox" [(ngModel)]="isUmDia" [ngModelOptions]="{standalone: true}">
+                                <label class="control-label fontSecundaria" style="padding-left: 10px;">Evento será de
+                                    apenas um dia?</label>
+                            </div>
+                        </div>
+                        <div class="row" *ngIf="!isUmDia; else umDia">
+                            <div class="col-sm-6">
+                                <app-custom-input [form]="formEvento" errorMessage="Campo Obrigatório" label="Data De"
+                                    labelClass="control-label fontSecundaria" id="dataDe">
+                                    <input (focusout)="validarDatas()" class="form-control" formControlName="dataDe"
+                                        type="Date">
+                                </app-custom-input>
+                            </div>
+                            <div class="col-sm-6">
+                                <app-custom-input [form]="formEvento" errorMessage="Campo Obrigatório" label="Data Até"
+                                    labelClass="control-label fontSecundaria" id="dataAte">
+                                    <input (focusout)="validarDatas()" class="form-control" formControlName="dataAte"
+                                        type="Date">
+                                </app-custom-input>
+                            </div>
+                        </div>
+                        <ng-template #umDia>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <app-custom-input [form]="formEvento" errorMessage="Campo Obrigatório" label="Data"
+                                        labelClass="control-label fontSecundaria" id="dataDe">
+                                        <input class="form-control" formControlName="dataDe" type="Date">
+                                    </app-custom-input>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </form>
+                </ng-container>
+            </div>
+            <div class="row">
+                <div class="col-sm-12" style="padding: 0 30px;">
+                    <label class="control-label fontSecundaria">Imagem</label><br />
+                    <app-upload-file #upImg [justImages]="true" [idPai]="'imgRefrigeracaoEvento'"
+                        caminho="imgRefrigeracaoEvento" (resposta)="getRespostaArquivo($event)">
+                    </app-upload-file><br />
+                    <ng-container *ngIf="caminhoImagem">
+                        <a class="fontSecundaria btnDownload" target="_blank" [href]="caminhoImagem">
+                            Baixar Imagem
+                        </a>
+                    </ng-container>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-sm-12 text-center">
+                    <input class="btn-adc" type="button" value="Salvar" (click)="salvar();">
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</ng-template>

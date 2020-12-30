@@ -1,0 +1,46 @@
+.fontTituloBusca{
+    font-family: fontPrincipal;
+    color: #006198;
+    font-size: 28px;
+}
+
+.img-busca-produto{
+    max-width: 100%;
+    margin: auto;
+}
+
+.link-produto-pesquisa{
+    margin: auto 0;
+    font-family: fontPrincipal;
+    font-size: 20px;
+    text-decoration: none;
+    color: #222;
+}
+
+.linha{
+    border-bottom: solid 1px #0000001a;
+}
+
+.input-busca-produto{
+    background-color: transparent;
+    border: 1px solid #9A9A9A;
+    width: 100%;
+    padding: 5px 20px;
+    color: #9A9A9A;
+    background-image: url('/assets/icones/search.png');
+    background-repeat: no-repeat;
+    background-position: center right calc(.375em + .1875rem);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+    border-radius: 3px;
+    outline: none;
+}
+.input-busca-produto::placeholder{
+    color: #9A9A9A;
+    padding: 0px;
+}
+
+@media (max-width: 576px) {
+    .rowTitulo{
+        text-align: center;
+    }
+}

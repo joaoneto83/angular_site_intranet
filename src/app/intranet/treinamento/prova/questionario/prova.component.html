@@ -1,0 +1,75 @@
+<app-submenu-treinamento></app-submenu-treinamento>
+
+<ng-container *ngIf="mostraCapa">
+    <app-prova-capa [agendamentoUsuario]="agendamentoUsuario" (abrirProva)="abrirProva()"></app-prova-capa>
+</ng-container>
+<ng-container *ngIf="!mostraCapa && prova">
+    <div class="container" style="padding-top:50px;">
+        <div class="row">
+            <div class="col-sm-12 voltar">
+                <span [routerLink]="['/PortaldeApoio/Treinamentos/MinhasProvas']">&#60; Voltar</span>
+            </div>
+        </div>
+        <div *ngIf="tempoRestante" class="text-right">
+            <label>Tempo restante: {{tempoRestante}} minuto(s)</label><br>
+        </div>
+        <app-titulo-categoria cor="#008EB8" de="#3FEFFC" ate="#1579DE" [titulo]="prova.tipoProva + ' | ' + prova.nome">
+        </app-titulo-categoria>
+
+        <ng-container *ngFor="let questao of prova.questoes; let i = index">
+            <app-box [customStyle]="style1">
+                <div class="pergunta fontPrincipal fontRegular">
+                    {{i + 1}} | {{questao.descricao}}
+                </div>
+
+                <div class="alternativa fontPrincipal fontLight" *ngFor="let alternativa of questao.alternativas">
+                    <input [disabled]="prova.provaRealizada"
+                        [ngClass]="prova.provaRealizada?'checkDisabled':'checkOpen'"
+                        (change)="selecionar(alternativa.id, questao.id)" [(ngModel)]="alternativa.selecionada"
+                        type="checkbox" [name]="questao.id" [id]="alternativa.id" />
+
+                    <ng-container *ngIf="prova.provaRealizada; else habilitado">
+                        <label *ngIf="alternativa.correta && alternativa.selecionada; else errada"
+                            style="color: #4ED4A8">{{alternativa.descricao}}
+                            <i class="fas fa-check"></i></label>
+
+                        <ng-template #errada>
+                            <label *ngIf="!alternativa.correta && alternativa.selecionada; else correta"
+                                style="color: red">{{alternativa.descricao}}
+                                <i class="fas fa-times"></i></label>
+                        </ng-template>
+
+                        <ng-template #correta>
+                            <label *ngIf="alternativa.correta && !alternativa.selecionada; else selecionada"
+                                style="color: #4ED4A8">{{alternativa.descricao}}
+                                <i class="fas fa-check"></i></label>
+                        </ng-template>
+
+                        <ng-template #selecionada>
+                            <label *ngIf="!alternativa.selecionada">{{alternativa.descricao}}</label>
+                        </ng-template>
+                    </ng-container>
+
+                    <ng-template #habilitado>
+                        <label [for]="alternativa.id">{{alternativa.descricao}}</label>
+                    </ng-template>
+                </div>
+
+            </app-box>
+        </ng-container>
+
+
+        <div class="row fontPrincipal fontLight botoes" *ngIf="!prova.provaRealizada">
+            <div class="col-sm-12 text-center" style="margin: 0 0 0 auto;">
+                <a class="btn btn-circle" (click)="finalizarProva()">Enviar Respostas</a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 voltar">
+                <span [routerLink]="['/PortaldeApoio/Treinamentos/MinhasProvas']">&#60; Voltar</span>
+            </div>
+        </div>
+
+    </div>
+</ng-container>

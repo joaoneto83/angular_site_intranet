@@ -1,0 +1,91 @@
+<div class="divCalcule">
+    <div class="row headerCalcule" style="margin:0;">
+        <div class="col-sm-12 tituloCalcule">
+            <div class="container" style="padding-left: 30px;">
+                CALCULE SUA <span class="corAzul">ECONOMIA</span>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="calculoForm">
+        <div class="container">
+            <div class="row conteudoCalcule" style="margin:0;">
+                <div class="col-sm-6">
+                    <div class="qualCidade">
+                        Qual a cidade de instalação?
+                    </div>
+                    <div>
+                        <select formControlName="estado" class="select-branco" (change)="carregarCidades($event.target.value)">
+                            <option value="">Selecione o estado</option>
+                            <option *ngFor="let estado of estados" [value]="estado.sigla">
+                                {{estado.descricao | titlecase}}
+                            </option>
+                        </select>
+                    </div>
+                    <div>
+                        <select formControlName="idCidade" class="select-branco"  (change)="changeCidade($event.target.value)">
+                            <option value="">Selecione a cidade</option>
+                            <option *ngFor="let cidade of cidades" [value]="cidade.id">{{cidade.descricao | titlecase}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="onde">
+                        <label>
+                            <input type="radio" value="C" formControlName="onde" checked>
+                            <div class="img">
+                                Casa
+                                <img style="position: relative;" src="/assets/img/Site/Solar/icones/icon_Casa.png" alt>
+                            </div>
+                        </label>
+
+                        <label>
+                            <input type="radio" value="E" formControlName="onde" checked>
+                            <div class="img">
+                                Empresa
+                                <img style="position: relative;" src="/assets/img/Site/Solar/icones/icon_Empresa.png" alt>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="onde">
+                        <label>
+                                R$
+                        </label>
+                        <input formControlName="faturaMensal" class="inputFaturaMensal" type="number"
+                            style="width:120px;margin-left:15px;margin-right:15px;" placeholder="Valor da Conta">
+                        <label>
+                                kWh
+                        </label>
+                        <input formControlName="mediaMensal" class="inputFaturaMensal" type="number"
+                            style="width:120px;margin-left:15px;" placeholder="Média Mensal">
+                        <img src="/assets/img/Site/Solar/icones/icon_duvida.png"
+                        style="margin-left: 10px;"
+                        placement="right"
+                        ngbPopover="Preencha a média mensal consumida em kWh para obter um resultado mais preciso."
+                        alt>
+                    </div>
+                    <div class="text-center">
+                        <input (click)="limpar();" style="margin-right: 30px;" type="button" class="btnCalcular" value="Limpar">
+                        <input (click)="salvar();" type="button" class="btnCalcular" value="Calcular">
+                    </div>
+                </div>
+
+                <div class="col-sm-6 imgCalcule" style="text-align: center;top: -45px;">
+                    <img src="/assets/img/Site/Solar/img_calcule.png" alt>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="divResultado" *ngIf="resultado">
+    <div class="row justify-content-center">
+        <div class="col-sm-10">
+            <app-solar-resultado [calculo]="calculo" [resultado]="resultado"></app-solar-resultado>
+        </div>
+    </div>
+</div>
+<div class="container" *ngIf="resultado">
+    <div class="row">
+        <div class="col-sm-12">
+            <app-email-solar [resultado]="resultado"></app-email-solar>
+        </div>
+    </div>
+</div>

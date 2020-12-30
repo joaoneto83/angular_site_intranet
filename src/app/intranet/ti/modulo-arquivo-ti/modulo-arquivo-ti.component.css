@@ -1,0 +1,43 @@
+*{
+    text-decoration: none;
+    list-style: none;
+}
+.p-t-1{
+    padding-top: 20px;
+    padding-right: 0px;
+}
+
+.titulo-categoria{
+    color: #008EB8;
+    text-transform: uppercase;
+    font-size:17px;
+    margin-bottom: 35px; 
+}
+
+.container{
+    padding: 0;
+}
+
+.row{
+    margin-right: 0 !important;
+}
+
+.m-t-40{
+    margin-top: 40px;
+}
+
+.m-b-40{
+    margin-bottom: 40px;
+}
+
+.btn-add-modulo{
+    margin-bottom: 15px;
+    border: 1px solid;
+    background-color: #FFF;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: soleil;
+    font-weight:200;
+    padding: 5px 10px;
+    outline: none;
+}

@@ -1,0 +1,35 @@
+<div class="banner imgBannerContato">
+    <!-- <img class="imagem" src="/assets/img/Site/Refrigeracao/banner_contato.png"> -->
+</div>
+
+<div class="text-center divTitulo">
+    <label class="titulo fontPrincipal fontLight">{{'Contato' | translate | uppercase}}</label>
+</div>
+
+<div class="container containerIntegradores">
+    <div class="row">
+        <div class="col-sm-4">
+            <select #paisIntegrador class="select-azul" (change)="carregarEstados(paisIntegrador.value)">
+                <option value="">{{'Pais' | translate}}</option>
+                <option *ngFor="let p of paises" [value]="p.id">{{p.nome | titlecase }}</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select #estadoIntegrador class="select-azul espacamento-select" [value]="uf"
+                (change)="carregarIntegradores(paisIntegrador.value, estadoIntegrador.value, segmentoIntegrador.value)">
+                <option value="">{{'Estado' | translate}}</option>
+                <option *ngFor="let e of estados" [value]="e.sigla">{{e.descricao}}</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select #segmentoIntegrador class="select-azul espacamento-select"
+                (change)="carregarIntegradores(paisIntegrador.value, estadoIntegrador.value, segmentoIntegrador.value)">
+                <option value="">{{'Segmento' | translate}}</option>
+                <option *ngFor="let s of segmentos" [value]="s.codigo">{{(s.codigo | translate) | titlecase }}</option>
+            </select>
+        </div>
+    </div>
+
+    <app-site-lista-integradores [temIntegradores]="temIntegradores" [integradores]="integradores">
+    </app-site-lista-integradores>
+</div>

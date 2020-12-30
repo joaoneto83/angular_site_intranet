@@ -1,0 +1,92 @@
+<div class="banner">
+    <img class="imagem imagemBanner" src="/assets/img/Site/SejaAssistenciaTecnica/banner_seja_assistencia.jpg" alt>
+        <label class="fontPrincipal textCentered fontExtraLight m-0">Por que ser uma assistência<br/> técnica autorizada Elgin?</label>
+</div>
+<div class="container">
+    <label class="fontSecundaria fontLight">
+        Todos os postos credenciados são parceiros da Elgin e desfrutam de vantagens na aquisição de peças diretamente da fábrica em condições especiais, bem como a prestação de serviços como a instalação e reparo de produtos. Além disso, os técnicos das autorizadas participam de constantes treinamentos e workshops ministrados pela Elgin, Brasil a fora.
+    </label>
+    <label class="fontSecundaria fontLight">
+        Atualmente, a Elgin conta com uma rede com mais de 1300 Assistências Técnicas Autorizadas espalhadas por todo o Brasil, e para estar cada vez mais próxima do público consumidor, pretendemos ampliar ainda mais essa cobertura. 
+    </label>
+    <label class="fontSecundaria fontLight">
+        Faça parte de um time diferenciado na qualidade dos serviços e na atenção com os consumidores. Seja Elgin. 
+    </label>
+    <label class="fontSecundaria fontLight">
+        Preencha os dados para solicitar a análise do seu pedido para se tornar uma Assistência Técnica Elgin.
+    </label>
+
+    <form [formGroup]="form" style="padding-top: 60px;">
+        <div class="row">
+            <div class="col-md-8">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Razão Social" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="razaoSocial" type="text">
+                </app-site-custom-input>
+            </div>
+            <div class="col-md-4">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="E-mail" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="email" type="text">
+                </app-site-custom-input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Telefone" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="telefone" type="text">
+                </app-site-custom-input>
+            </div>
+            <div class="col-md-3">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Cidade" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="cidade" type="text">
+                </app-site-custom-input>
+            </div>
+            <div class="col-md-3">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="bairro" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="bairro" type="text">
+                </app-site-custom-input>
+            </div>
+            <div class="col-md-2">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Estado" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="estado" type="text">
+                </app-site-custom-input>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-12">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Tem interesse em se tornar uma Assistência Técnica Elgin de qual(is)
+                    produto(s)?" labelClass="control-label fontSecundaria fontLight">
+                    <input class="form-control" formControlName="produtos" type="text">
+                </app-site-custom-input>
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-12">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Selecione a linha de produtos que deseja atuar" labelClass="control-label fontSecundaria fontLight">
+                <!-- [(ngModel)]="uf" -->
+        <select  class="form-control" formControlName="produtos"
+                    (change)="carregarEstado($event.target.value)">
+                    <option value=""></option> 
+                    <option value="Climatizacao">Climatização</option> 
+                    <option value="Costura">Costura</option>
+                    <option value="EnergiaSolar">Energia Solar</option>
+                    <option value="Automacao">Automação</option>
+                    <!-- <option value="Refrigeracao">Refrigeração</option> -->
+                    <option value="Gelatta">Gelatta</option>                   
+                </select>
+            </app-site-custom-input>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <app-site-custom-input errorMessage="Campo Obrigatório" label="Comentários" labelClass="control-label fontSecundaria fontLight">
+                    <textarea class="form-control" formControlName="comentarios" rows="4" cols="50"
+                        style="resize: none;"></textarea>
+                </app-site-custom-input>
+            </div>
+        </div>
+        <div class="text-center">
+            <input (click)="salvar();" type="button" class="btnEnviar" value="Enviar Solicitação">
+        </div>
+    </form>
+</div>

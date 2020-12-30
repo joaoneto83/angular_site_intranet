@@ -1,0 +1,108 @@
+.modal-content {
+    border-top: 0;
+}
+
+.modelBackdrop {
+    z-index: 1060 !important;
+}
+
+.modal-open {
+    padding: 0 !important;
+}
+
+::ng-deep .modalEditarEvento{
+    z-index: 1061 !important;
+}
+
+::ng-deep .modalEditarEvento .modal-dialog{
+    max-width: 1140px;
+}
+
+.tituloModal{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 28px;
+    color: #48bcf7;    
+    margin-bottom: 0;
+    padding-left: 50px;
+}
+
+.modal-header-copiar{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    border: 0;
+}
+
+.modal-footer{
+    border: 0;
+}
+
+.titulo-produto {
+    /* position: relative;
+    color: black;
+    padding-bottom: 10px; */
+    margin: 0;
+    /* border-bottom: 1px solid #ccc; */
+}
+
+.fontSelecionar{
+    font-family: fontPrincipal;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.fontSelecionar label{
+    color: #40beff;
+    cursor: pointer;
+}
+
+.divBotaoSelecionar{
+    padding: 0 15px;
+}
+
+.divOverflow{
+    max-height: 400px;
+    overflow: auto;
+}
+
+.divOverflow::-webkit-scrollbar {
+    width: 5px;
+}
+
+.divOverflow::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+.divOverflow::-webkit-scrollbar-thumb {
+    background: #DDDCDC; 
+}
+
+.divOverflow::-webkit-scrollbar-thumb:hover {
+    background: #DDDCDC; 
+}
+
+.input-busca-produto{
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #9A9A9A;
+    border-radius: 0;
+    width: 100%;
+    padding: 5px 30px 5px 20px;
+    color: #9A9A9A;
+    background-image: url('/assets/icones/search.png');
+    background-repeat: no-repeat;
+    background-position: center right calc(.375em + .1875rem);
+    background-size: calc(.75em + .375rem) calc(.75em + .375rem);
+    outline: none;
+}
+.input-busca-produto::placeholder{
+    color: #9A9A9A;
+    padding: 0px;
+}
+
+.btnDownload{
+    color: #40beff;
+    cursor: pointer;
+    text-decoration: none;
+}

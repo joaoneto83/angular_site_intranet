@@ -1,0 +1,23 @@
+<div class="text-center divTitulo">
+    <label class="titulo fontPrincipal fontLight">{{'Contato' |translate}}</label>
+</div>
+
+<div class="container containerIntegradores">
+    <div class="row justify-content-md-center">
+        <div class="col-sm-4">
+            <select #paisIntegrador class="select-azul" (change)="carregarEstados(paisIntegrador.value)">
+                <option value="">{{'Pais' | translate}}</option>
+                <option *ngFor="let p of paises" [value]="p.id">{{p.nome | titlecase }}</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+            <select #estadoIntegrador id="estado" class="select-azul" [value]="uf" (change)="carregarIntegradores(paisIntegrador.value, estadoIntegrador.value)">
+                <option value="">{{'Estado' | translate}}</option>
+                <option *ngFor="let e of estados" [value]="e.sigla">{{e.descricao}}</option>
+            </select>
+        </div>
+    </div>
+
+    <app-site-lista-integradores [temIntegradores]="temIntegradores" [integradores]="integradores">
+    </app-site-lista-integradores>
+</div>

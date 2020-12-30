@@ -1,0 +1,76 @@
+<div class="divFaq">
+    <div class="conteudoFaq">
+        <div class="text-right">
+            <h1 class="fontPrincipal fontRegular" style="font-size:35px">
+                Está com dúvidas?
+            </h1>
+            <label class="fontPrincipal fontLight w-100" style="font-size:22px">
+                Consulte nossa FAQ
+            </label>
+            <div>
+                <a class="btnFaq" [class.selected]="this.ultimaAba == 'residencial'"
+                    (click)="filtrarLista('residencial')" style="margin-right:5px;">Consumidores</a>
+                <a class="btnFaq" [class.selected]="this.ultimaAba == 'comercial'"
+                    (click)="filtrarLista('comercial')">Integradores</a>
+            </div>
+        </div>
+        <div class="imgFaq d-none d-md-block" style="margin-left:20px;">
+            <img src="/assets/img/Site/Solar/icones/icon_faq.png" alt>
+        </div>
+    </div>
+</div>
+
+<div id="duvida" class="container" style="margin-top:50px; display: none">
+    <ng-container *ngFor="let info of infos">
+        <ul class="col-md-10" style="margin: 10px auto;">
+            <li>
+                <a class="divPergunta" data-toggle="collapse" aria-expanded="false" [href]="['#' + info.id]"
+                    (click)="alterarIcone(info.id)">
+                    <label class="fontPrincipal fontRegular" [innerHtml]="info.pergunta">
+                    </label>
+
+                    <i [id]="['btn' + info.id]" class="btnToggle fa fa-chevron-down"></i>
+                </a>
+
+                <ul class="collapse" [id]="info.id" style="padding-left:0;">
+                    <li>
+                        <p class="fontPrincipal fontLight" [innerHtml]="info.resposta">
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <hr>
+        </ul>
+    </ng-container>
+</div>
+
+<div class="divSaiba">
+    <div class="conteudoSaiba">
+        <div>
+            <img src="/assets/img/Site/Solar/video.png" alt>
+        </div>
+        <div style="    padding-top: 15px;">
+            <h1 class="fontPrincipal fontRegular" style="font-size:35px">
+                Mais Energia Solar
+            </h1>
+            <label class="fontPrincipal fontLight w-100" style="font-size:22px;top: -13px;position: relative;">
+                Vídeos exclusivos para você
+            </label>
+            <div style="position: relative;top: -10px;">
+                <a class="btnSaibaMais" style="margin-right:5px;"
+                    href="https://www.youtube.com/playlist?list=PL-Wx4U81qUnQk4yzsZhOwhyybw4ByQol5"
+                    target="_blank">Saiba Mais</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divAindaDuvidas">
+    <div class="conteudoAindaDuvidas">
+            <h1 class="fontPrincipal fontRegular" style="font-size:35px;margin-bottom: 0;">
+                Ainda com Dúvidas?
+            </h1>
+            <label class="fontPrincipal fontLight w-100" style="font-size:22px;">
+                Ligue para (11) 3383-5940 e Fale Conosco.
+            </label>
+    </div>
+</div>

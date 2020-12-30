@@ -1,0 +1,40 @@
+<div class="4NivelSelect h-100">
+       <!-- <select (clickOutside)="teste($event)" *ngIf="mostraCombo" (change)="alterarProduto()" [(ngModel)]="idSelecionado">
+            <option class="text-center" value="">Selecione um modelo</option>
+            <option *ngFor="let prod of produtos" [value]="prod.id">{{prod.nomeProduto}}</option>
+        </select> -->
+    <ng-container *ngIf="mostraCombo">
+        <div class="display-flex h-100" *ngIf="!idSelecionado && !produto.nomeProduto">
+            <div class="text-center margin-auto">
+                <a [id]="'btnOpenCombo_' + posicao" (click)="isOpened = !isOpened">
+                    <img class="btnAdd" [id]="'btnOpenCombo_' + posicao" src="/assets/icones/button_add.png" alt>
+                </a>
+                <br>
+                <label class="tituloProdutoComparativo" style="margin-top: 10px;">{{'AdicionarProduto' | translate}}</label>
+            </div>
+        </div>
+        <div (clickOutside)="fecharCardProdutos($event)" class="cardSelectProdutos" [ngClass]="{'showCard': isOpened}">
+            <div *ngFor="let prod of produtos; let i = index">
+                <div class="divSelecionaProduto" (click)="selecionarProduto(prod.id)">
+                    <div class="divImagemProduto">
+                        <img *ngIf="prod.arquivos[0] && prod.arquivos[0].caminho" [src]="prod.arquivos[0].caminho">
+                    </div>
+                    <div class="display-flex">
+                        <label style="margin: auto 0;"
+                            class="fontPrincipal fontLight">{{prod.nomeProduto | titlecase}}</label>
+                    </div>
+                </div>
+                <hr *ngIf="i != produtos.length - 1">
+            </div>
+        </div>
+    </ng-container>
+
+    <div *ngIf="produto" class="text-center">
+        <button *ngIf="produto.nomeProduto && mostraCombo" type="button" class="close" aria-label="Close"
+            (click)="removerProduto()" style="border:0px;outline: 0px;float:right">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <img *ngIf="getImagem()" [src]="getImagem()" class="imagem" alt>
+        <label class="tituloProdutoComparativo">{{produto.nomeProduto}}</label>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-enviar-arquivo container">
+        <div>
+            <label class="tituloModal">Compartilhar Arquivo por Email</label>
+            <button type="button" class="close" aria-label="Close" (click)="close()" style="border:0px;outline: 0px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+    <ng-container>
+
+       
+
+        <div class="modal-body container">
+            <div class="col-sm-8" style="margin: 0 auto">
+                <form [formGroup]="formEmail" class="col-sm-12" style="margin-top:50px;">
+                    <div class="row">
+                        <div class="col-sm-12" style="padding-left:0">
+                            <app-custom-input [form]="formEmail" errorMessage="Campo Obrigatório"
+                                errorEmailMessage="Email inválido" label="Endereço de Email do Destinatário"
+                                labelClass="fontModalEnviarArquivo" id="emailPara">
+                                <input class="form-control" formControlName="emailPara" type="text">
+                            </app-custom-input>
+                        </div>
+                    </div>
+                </form>
+                <div class="row pt-3">
+                    <div class="col-sm-12 text-center">
+                        <input class="btn-adc" type="button" value="Enviar" (click)="enviar();">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</ng-template>

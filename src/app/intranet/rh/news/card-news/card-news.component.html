@@ -1,0 +1,21 @@
+<div class="card shadow">
+    <app-modal-editar-elginnews [elginNews]="itens" showIfAdmin="RH_EDICAO" (recarregar)="retornaCarregamento()"></app-modal-editar-elginnews>
+    <a class="card-img-tiles">
+        <div class="inner">
+            <div class="main-img">
+                <img *ngIf="itens.imagem" [src]="itens.imagem" class="imagem" alt="Category">
+            </div>
+        </div>
+    </a>
+    <div class="card-body text-center">
+        <h5 class="card-title titulo-produto fontPrincipal fontExtraLight">Edição {{itens.numero}} | Ano {{itens.ano}}
+        </h5>
+        <div class="row" style="margin-bottom: 25px;">
+            <div class="col-sm-12" style="padding: 0px 1px;">
+                <a [href]="itens.arquivo" [download]="'ElginNews.' + itens.ano + '.' + itens.numero + '.pdf'">
+                    <div class="iconPDF"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

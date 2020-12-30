@@ -1,0 +1,235 @@
+
+
+.banner {
+    background-image: url('/assets/img/Site/Solar/img_top.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+}
+
+.imagemEnergiaSolar {
+    margin: 0 auto;
+    top: 150px;
+    position: relative;
+    display: block;
+    max-width: 100%;
+    cursor: pointer;
+}
+
+.divEnergia{
+    background: url("/assets/img/Site/Solar/img_economize.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 317px;
+    margin-top: 90px;
+}
+
+.divPais{
+    /* background: url("/assets/img/Site/Solar/img_brasil.png");
+    background-repeat: no-repeat; */
+    width: 100%;
+    /* height: 317px; */
+    margin: 90px 0 0;
+    /* display: flex; */
+    justify-content: center
+}
+
+.divEconomia{
+    /* background: url("/assets/img/Site/Solar/img_brasil.png");
+    background-repeat: no-repeat; */
+    width: 100%;
+    /* height: 317px; */
+    margin: 90px 0 0;
+    /* display: flex; */
+    justify-content: center
+}
+
+.divSistemas{
+    /* background: url("/assets/img/Site/Solar/img_ongrid.png");
+    background-repeat: no-repeat;
+    background-position: right; */
+    width: 100%;
+    /* height: 317px; */
+    margin: 90px 0 0;
+    /* display: flex; */
+    justify-content: center;
+}
+
+.conteudo{
+    width: 365px;
+    margin: 0 20px;
+}
+
+.conteudo h1{
+    color: #484848;
+}
+
+.btnSaibaMais{
+    color: #818181 !important;
+    width: 180px;
+    height: 30px;;
+    border: 1px solid #818181;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+.btnSaibaMais:hover{
+    color: #FFF !important;
+    background:  #818181;
+}
+
+.divImgPais, .divImgEconomia{
+    display: none;
+}
+
+.centerVertical {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container-video{
+    padding-bottom: 15px;
+}
+
+.btnSejaIntegrador {
+    color: white !important;
+    font-size: 13px !important;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width: 130px;
+    height: 30px;
+    background-color: #00D5FC;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.divSejaIntegrador {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px;
+    z-index: 9999;
+}
+
+@media (max-width: 1024px){
+    .divEnergia .conteudo{
+        margin-left: auto;
+    }
+
+    .divEconomia , .divPais, .divSistemas {
+        height: auto;
+    }
+
+    #imgPais , #imgSistema, #imgEconomia{
+        max-width: 280px;
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 768px){
+    .imgCalcule{
+        top: 60px !important;
+    }
+    .imgCalcule img{
+        max-width: 300px;
+    }
+
+    .conteudoCalcule{
+        padding-bottom: 20px;
+    }
+
+    .divEnergia{
+        background-position-x: 40%;
+    }    
+    .embed-responsive{
+        height: 300px !important;
+    }
+
+    .divEnergia{
+        height: 100%;
+    }
+
+    .imgPlanta{
+        height: 220px;
+    }
+}
+
+@media (max-width: 576px){
+    .imgCalcule{
+        margin-left: 120px;
+    }
+
+    .conteudoCalcule {
+        padding-bottom: 80px;
+    }
+
+    .divEconomia , .divPais {
+        height: auto;
+    }
+
+    .divEconomia, .divPais, .divSistemas{
+        margin: 20px 0;
+    }
+
+    .divEnergia{
+        height: 317px;
+    }
+
+    .imgPlanta{
+        display: none;
+    }
+
+    .divEnergia .conteudo{
+        width: 200px;
+        padding:50px 0 0!important;
+    }
+    .divEnergia .conteudo h1{
+        font-size: 26px !important;
+    }
+
+    #imgSistema{
+        margin-top: 0px;
+    }
+
+    .containerTexto{
+        padding-bottom: 0px !important;
+    }
+
+    .divVantagens{
+        margin: 20px !important;
+    }
+    .divProdutos{
+        margin: 0 !important;
+    }
+
+    .embed-responsive{
+        height: 190px !important;
+    }
+
+    /*Display de imagem e texto*/
+    #imgPais, #imgEconomia{
+        display: none;
+    }
+
+    .divImgPais, .divImgEconomia{
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .imgEconomia , #imgSistema , .imgPais{
+        padding-top: 50px;  
+    }
+
+    .divImgPais .imgPais ,
+    .divImgEconomia .imgEconomia , 
+    #imgSistema {
+        max-width: 275px;
+    }
+
+}
+

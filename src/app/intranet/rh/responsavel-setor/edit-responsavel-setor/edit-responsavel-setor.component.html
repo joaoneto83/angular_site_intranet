@@ -1,0 +1,53 @@
+<ng-template #content let-modal>
+    <div class="modal-header modal-header-edit-responsavel">
+        <div class="row">
+            <div class="col-sm-12">
+                <label class="tituloModal">Responsável pelo Setor</label>
+                <button type="button" class="close" aria-label="Close" (click)="close()"
+                    style="border:0px;outline: 0px;float:right">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="modal-body" style="padding: 30px">
+        <div class="row linhasCampos">
+            <div class="col-sm-6">
+                <label class="labelResponsavel">Setor</label>
+                <input class="form-control" type="text" [(ngModel)]="model.setor" maxlength="150">
+            </div>
+            <div class="col-sm-6">
+                <label class="labelResponsavel">Nome</label>
+                <input class="form-control" type="text" [(ngModel)]="model.nome" maxlength="150">
+            </div>
+        </div>
+        <div class="row linhasCampos">
+            <div class="col-sm-3">
+                <label class="labelResponsavel">Telefone</label>
+                <div class="input-group">
+                <input class="form-control" type="text" [(ngModel)]="novoTelefone" maxlength="15">
+                <button class="btn-add-telefone" (click)="adicionarTelefone()"><i class="fas fa-plus"></i></button>
+            </div>
+            </div>
+            <div class="col-sm-3">
+                <label class="labelResponsavel">Lista de Telefones</label>
+                <div *ngFor="let telefone of model.telefones; let i = index">
+                    <label class="labelResponsavel">{{telefone}}</label>
+                    <a class="btn-excluir" title="Excluir Telefone" (click)="excluirTelefone(i)">
+                        <i class="fas fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <label class="labelResponsavel">Ativo</label>
+                <br>
+                <input type="checkbox" [(ngModel)]="model.ativo">
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-sm-12 botoes text-center">
+                <input class="btn-adc" type="button" value="Salvar" (click)="salvar();">
+            </div>
+        </div>
+    </div>
+</ng-template>

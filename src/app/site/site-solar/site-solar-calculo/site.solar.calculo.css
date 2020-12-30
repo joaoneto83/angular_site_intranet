@@ -1,0 +1,180 @@
+.onde {
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 15px;
+    color: #FFF;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.divEmail {
+    margin: 50px 0;
+}
+
+.divResultado {
+    margin: 55px 20px 0;
+}
+
+.divCalcule {
+    margin-top: 150px;
+    background-image: url('/assets/img/Site/Solar/bg_1.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+}
+
+.headerCalcule {
+    height: 90px;
+    width: 100%;
+    font-size: 35px;
+    background-color: rgb(0, 0, 0, 0.10);
+    font-family: fontPrincipal;
+    font-weight: 200;
+    color: white;
+    line-height: 94px;
+}
+
+.corAzul {
+    color: #00D5FC;
+}
+
+.qualCidade {
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 22px;
+    color: white;
+    padding-top: 50px;
+}
+
+select {
+    border: 0;
+    color: #FFF;
+    border-bottom: 1px solid #FFF;
+    width: 100%;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 15px;
+    margin-top: 30px;
+    border-radius: 0;
+}
+
+input {
+    background-color: transparent;
+    border: 0;
+    color: #FFF;
+    border-bottom: 1px solid #FFF;
+    width: 100%;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 15px;
+    border-radius: 0;
+}
+
+option {
+    color: black;
+    /* background-color: #1E8CDD; */
+}
+
+.imgCalcule {
+    width: 150px;
+}
+
+/* HIDE RADIO */
+
+[type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* IMAGE STYLES */
+
+[type=radio]+.img {
+    cursor: pointer;
+    height: 25px;
+    width: 120px;
+    font-family: fontPrincipal;
+    font-weight: 100;
+    font-size: 15px;
+    margin-left: 30px;
+}
+
+/* CHECKED STYLES */
+
+[type=radio]:checked+.img {
+    border: 1px solid #fff;
+    font-weight: 500;
+    border-radius: 30px;
+}
+
+.inputFaturaMensal::placeholder {
+    color: white;
+    opacity: 1;
+    text-align: center;
+    font-size: 13px;
+}
+
+.btnCalcular {
+    color: white !important;
+    width: 180px;
+    height: 30px;
+    ;
+    border: 1px solid white;
+    border-radius: 20px;
+    font-size: 17px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.centerVertical {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .imgCalcule {
+        top: 60px !important;
+    }
+    .imgCalcule img {
+        max-width: 300px;
+    }
+    .conteudoCalcule {
+        padding-bottom: 20px;
+    }
+    [type=radio]+.img {
+        width: 105px;
+        margin-left: 10px;
+    }
+    .inputFaturaMensal {
+        width: 105px !important;
+        margin-left: 10px !important;
+    }
+}
+
+@media (max-width: 575px) {
+    .imgCalcule {
+        display: none;
+    }
+    .conteudoCalcule {
+        padding-bottom: 80px;
+    }
+    .tituloCalcule {
+        font-size: 23px;
+    }
+    .btnCalcular{
+        width: 130px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 320px) {}
+
+@media (max-width: 380px) {}

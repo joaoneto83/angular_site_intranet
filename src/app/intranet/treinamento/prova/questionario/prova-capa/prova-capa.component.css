@@ -1,0 +1,64 @@
+::ng-deep .modalProva {
+    z-index: 1061 !important;
+}
+
+.modal-content {
+    border-top: 0;
+    border-radius: 0 !important;
+}
+
+.modelBackdrop {
+    z-index: 1060 !important;
+}
+
+.modal-open {
+    padding: 0 !important;
+}
+
+.capa {
+    font-family: fontPrincipal;
+    padding: 25px;
+}
+
+.titulo {
+    background-color: #006198;
+    color: white;
+    font-weight: 200;
+    font-size: 17px;
+    height: 50px;
+    font-family: fontPrincipal;
+    line-height: 50px;
+}
+
+.linha {
+    width: 250px;
+    margin: auto;
+    border-bottom: #C7C7C7 1px solid;
+}
+
+.desejaIniciar {
+    font-family: fontPrincipal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #222222;
+    padding: 0;
+    margin-top: 25px;
+    margin-bottom: 13px;
+}
+
+.texto {
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 15px;
+    color: #535353;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.botoes-capa-prova {
+    margin-bottom: 30px;
+}
+
+.btn-adc-capa-prova{
+    width: 100px;
+}

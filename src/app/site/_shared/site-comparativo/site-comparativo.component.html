@@ -1,0 +1,114 @@
+<div class="titulo terceiroNivel">
+   <h2>{{'Comparativo' | translate}}</h2>
+</div>
+<div class="row 4Nivel" style="margin-top:70px;">
+   <div class="col-sm-3"></div>
+   <div class="col-sm-3">
+      <app-site-comparativo-header [mostraCombo]="mostraCombo" posicao="1" [produto]="getProduto(1)"
+         [produtos]="produtos">
+      </app-site-comparativo-header>
+   </div>
+   <div class="col-sm-3">
+      <app-site-comparativo-header [mostraCombo]="mostraCombo" posicao="2" [produto]="getProduto(2)"
+         [produtos]="produtos">
+      </app-site-comparativo-header>
+   </div>
+   <div class="col-sm-3">
+      <app-site-comparativo-header [mostraCombo]="mostraCombo" posicao="3" [produto]="getProduto(3)"
+         [produtos]="produtos">
+      </app-site-comparativo-header>
+   </div>
+</div>
+<div class="row linhaComparativo" *ngIf = "subLinha?.mostraPreco">
+   <div class="col-sm-3 tituloItemComparativo">
+      Preço
+   </div>
+   <div class="col-sm-3">
+      <app-site-comparativo-preco  posicao="1" [produto]="getProduto(1)"
+         [produtos]="produtos">
+      </app-site-comparativo-preco>
+   </div>
+   <div class="col-sm-3">
+     <app-site-comparativo-preco  posicao="1" [produto]="getProduto(2)"
+      [produtos]="produtos">
+   </app-site-comparativo-preco>
+   </div>
+   <div class="col-sm-3">
+      <app-site-comparativo-preco  posicao="1" [produto]="getProduto(3)"
+      [produtos]="produtos">
+   </app-site-comparativo-preco>
+   </div>
+</div>
+<ng-container *ngIf="classificacoes && especificacoes">
+   <ng-container *ngFor="let classificacaoN1 of classificacoes">
+      <ng-container *ngFor="let classificacaoN2 of classificacaoN1.filhos">
+         <div class="row linhaComparativo">
+            <div class="col-sm-3 tituloItemComparativo">
+               {{classificacaoN2.nomeClassificacao}}
+            </div>
+            <div class="col-sm-3">
+               <app-site-comparativo-detalhe posicao="1" [produto]="getProduto(1)" [classificacao]="classificacaoN2">
+               </app-site-comparativo-detalhe>
+            </div>
+            <div class="col-sm-3">
+               <app-site-comparativo-detalhe posicao="2" [produto]="getProduto(2)" [classificacao]="classificacaoN2">
+               </app-site-comparativo-detalhe>
+            </div>
+            <div class="col-sm-3">
+               <app-site-comparativo-detalhe posicao="3" [produto]="getProduto(3)" [classificacao]="classificacaoN2">
+               </app-site-comparativo-detalhe>
+            </div>
+         </div>
+      </ng-container>
+   </ng-container>
+
+  <ng-container *ngFor="let especificacao of c">
+      <div class="row linhaComparativo">
+         <div class="col-sm-3 tituloItemComparativo">
+            {{especificacao.nomeEspecificacao}}
+         </div>
+         <div class="col-sm-3">
+            <app-site-comparativo-detalhe posicao="1" [produto]="getProduto(1)" [especificacao]="especificacao">
+            </app-site-comparativo-detalhe>
+         </div>
+         <div class="col-sm-3">
+            <app-site-comparativo-detalhe posicao="2" [produto]="getProduto(2)" [especificacao]="especificacao">
+            </app-site-comparativo-detalhe>
+         </div>
+         <div class="col-sm-3">
+            <app-site-comparativo-detalhe posicao="3" [produto]="getProduto(3)" [especificacao]="especificacao">
+            </app-site-comparativo-detalhe>
+         </div> 
+      </div>
+   </ng-container>
+
+</ng-container>
+<!-- 
+<div class="row text-center 5Nivel" *ngFor="let classificacao of classificacoes">
+   <div class="col-sm-4">
+      <app-site-comparativo-detalhe posicao="1" [produto]="getProduto(1)" [classificacao]="classificacao">
+      </app-site-comparativo-detalhe>
+   </div>
+   <div class="col-sm-4">
+      <app-site-comparativo-detalhe posicao="2" [produto]="getProduto(2)" [classificacao]="classificacao">
+      </app-site-comparativo-detalhe>
+   </div>
+   <div class="col-sm-4">
+      <app-site-comparativo-detalhe posicao="3" [produto]="getProduto(3)" [classificacao]="classificacao">
+      </app-site-comparativo-detalhe>
+   </div>
+</div>
+<div class="row text-center" *ngFor="let especificacao of especificacoes">
+   <div class="col-sm-4">
+      <app-site-comparativo-detalhe posicao="1" [produto]="getProduto(1)" [especificacao]="especificacao">
+      </app-site-comparativo-detalhe>
+   </div>
+   <div class="col-sm-4">
+      <app-site-comparativo-detalhe posicao="2" [produto]="getProduto(2)" [especificacao]="especificacao">
+      </app-site-comparativo-detalhe>
+   </div>
+   <div class="col-sm-4">
+      <app-site-comparativo-detalhe posicao="3" [produto]="getProduto(3)" [especificacao]="especificacao">
+      </app-site-comparativo-detalhe>
+   </div>
+</div> -->

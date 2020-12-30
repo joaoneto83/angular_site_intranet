@@ -1,0 +1,45 @@
+.titulo{
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+.titulo h2{
+    font-family: fontPrincipal;
+    font-weight:300 !important;
+    font-size: 25px;
+    padding-bottom: 30pxgit;
+}
+
+.card-body h4{
+    font-family: fontPrincipal;
+    font-weight:200 !important;
+    font-size: 20px;
+}
+
+.imagem{
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.tituloItemComparativo
+{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 15px;
+    margin: auto;
+    max-height: 50px;
+}
+
+.linhaComparativo{
+    height: 50px;
+    border-bottom: 1px solid #DBDBDB;
+}
+.valorProdutoComparativo{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 24px;
+}
+.unidadeProdutoComparativo{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 12px;
+}

@@ -1,0 +1,13 @@
+<div *ngIf="postagem" class="postagem">
+    <div class="postContainer">
+        <h1 style="font-size:41px;" class="text-center fontPrincipal fontRegular postTitle"
+            [innerHtml]="postagem.titulo.rendered">
+        </h1>
+        <div *ngIf="postagem.content;" id="conteudoHtml" class="fontPrincipal fontLight" [innerHTML]="postagem.content.rendered">
+        </div>
+        <div class="voltar text-right">
+            <span [routerLink]="['/' + codigoBlog + '/Cases']">&#60; Voltar</span>
+        </div>
+        <app-site-blog-relacionados [codigoBlog]="codigoBlog" [relacionados]="relacionados"></app-site-blog-relacionados>
+    </div>
+</div>

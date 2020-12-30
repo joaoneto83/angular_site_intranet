@@ -1,0 +1,110 @@
+a { 
+    color: inherit;
+} 
+
+a label {
+    cursor:pointer !important;
+}
+.saibaMais {
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 15px;
+    color: #9F9F9F;
+    border: 1px solid #9F9F9F;
+    border-radius: 18px;
+   
+    background-color: white;
+    margin-top:15px;
+    padding: 5px 40px;
+    
+}
+
+.titulo {
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.subtitulo {
+    font-size: 19px;
+}
+
+.texto {
+    font-size: 15px;
+}
+
+.fonteTelefone {
+    font-size: 16px;
+}
+
+.espacamentoTitulo {
+    padding-bottom: 15px;
+}
+
+.bordaSeparacao{
+    border-right: 1px solid #707070;
+}
+
+.borderCima{
+    margin-top: 30px;
+    border-top: 1px solid #707070;
+}
+
+.espacamentoItens {
+    padding-top: 30px;
+}
+
+select {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #FFF;
+    width: 100%;
+    margin-left:-10px;
+}
+
+.row:first-of-type{
+    margin-top: 100px;
+}
+
+.divImg{
+    min-height: 70px;
+}
+
+.divTituloBloco{
+    display: inline-block; 
+    text-align: center;
+    width: 100%;
+}
+
+.espacamentoBloco{
+    margin-bottom: 60px;
+}
+
+.lblMargin{
+    margin: 0;
+}
+
+.divAssistencia{
+    max-width: 260px;
+    margin: auto;
+}
+
+@media (max-width: 576px){
+    .bordaSeparacao{
+        border-right: none;
+        border-bottom: 1px solid #707070;
+    }
+
+    .bloco{
+        margin: 0 15px 30px;
+        padding: 0 0 22px;
+    }
+
+    .bloco:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .row:first-of-type{
+        margin-top: 80px;
+    }
+}

@@ -1,0 +1,85 @@
+<app-submenu-treinamento></app-submenu-treinamento>
+<div class="container" style="padding-bottom:60px">
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Treinamentos/Grupos']">&#60; Voltar</span>
+        </div>
+    </div>
+    <div class="row">
+        <form [formGroup]="formGrupo" class="col-sm-12 p-0">
+            <div class="row">
+                <div class="col-md-7" style="margin:0px auto 20px; display: flex">
+                    <div class="col-sm-11">
+                        <app-custom-input [form]="formGrupo" errorMessage="Campo Obrigatório" label="Nome"
+                            labelClass="control-label fontSecundaria" id="nomeGrupo">
+                            <input class="form-control" formControlName="nomeGrupo" type="text" maxlength="100">
+                        </app-custom-input>
+                    </div>
+                    <div class="col-sm-1">
+                        <div class="form-group">
+                            <label class="control-label fontSecundaria">Ativo</label><br />
+                            <input type="checkbox" formControlName="ativo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <ng-template #content let-modal>
+        <app-bloco-usuarios (usuarioRemovido)="removeUsuario($event)" (usuarioSelecionado)="retornaUsuario($event)"
+            [usuariosGrupo]="grupo.pessoas">
+        </app-bloco-usuarios>
+    </ng-template>
+
+    <div class="row">
+        <div class="col-sm-7" style="margin: 0px auto">
+            <button class="btn-adc" (click)="open(content)">Incluir Usuários</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-7" style="margin: 20px auto">
+            <label>Usuários Selecionados</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-7" style="margin: 0px auto">
+            <ul class="boxGrupoPessoas"
+                style="padding-left: 0;list-style-type: none;min-height: 170px; overflow-y: auto; overflow-x: hidden; max-height: 200px"
+                *ngIf="grupo.pessoas">
+                <ng-container *ngFor="let usuario of grupo.pessoas; let i = index">
+                    <div class="row" style="height: 50px">
+                        <div class="col-md-1">
+                            <a style="width: 50px; float: left;">
+                                <div class="foto" *ngIf="usuario.caminhoFoto"
+                                    [style.backgroundImage]="'url('+ usuario.caminhoFoto +')'">
+                                </div>
+                                <label class="sigla" *ngIf="!usuario.caminhoFoto">{{usuario.sigla}}</label>
+                            </a>
+                        </div>
+                        <li class="boxItens fontSecundaria fontThin col-sm-9">
+                            <label style="padding: 10px 0">{{usuario.nome}}</label>
+                        </li>
+                        <div style="padding: 10px 15px" class="col-sm-2 text-center">
+                            <i class="far fa-times-circle" style="color:red;cursor: pointer;"
+                                (click)="removerUsuario(i)"></i>
+                        </div>
+                    </div>
+                    <hr style="margin-top:0">
+                </ng-container>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-12 text-center" style="margin-top: 40px;">
+        <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Treinamentos/Grupos']">&#60; Voltar</span>
+        </div>
+    </div>
+</div>

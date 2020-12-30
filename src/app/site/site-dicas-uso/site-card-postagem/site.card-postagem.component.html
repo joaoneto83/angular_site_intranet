@@ -1,0 +1,15 @@
+<div class="card" style="border:none;" [ngClass]="{'indexDiv': divPesquisaAberta}">
+    <div class="card-body">
+        <div class="row" id="titulo" style="cursor:pointer;" [routerLink]="['/DicasUso/' + item.id]">
+            <h5 style="font-size:22px" class="fontSecundaria fontLight" [innerHtml]="item.titulo"></h5>
+        </div>
+        <div class="row" id="tags">
+            <ng-container *ngFor="let tag of item.tags">
+                <span *ngIf="tag" class="tags fontPrincipal fontLight" style="font-size:11px">{{tag}}</span>
+            </ng-container>
+        </div>
+        <div class="row">
+            <label class="fontSecundaria fontLight" style="font-size:14px; padding-top:20px; color:#9F9F9F; " [innerHtml]="item.descricao"></label>
+        </div>
+    </div>
+</div>

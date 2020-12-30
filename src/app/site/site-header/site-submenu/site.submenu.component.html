@@ -1,0 +1,62 @@
+<nav id="navbar2" class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse w-100" id="navbarSubMenu">
+        <ul class="navbar-nav w-100 alignLinksMenu">
+            <li *ngFor="let linha of linhas" class="nav-item active">
+                 <!-- <a *ngIf="linha.codigoLinha != 'Automacao' && linha.codigoLinha != 'EnergiaSolar' && linha.codigoLinha != 'ElginPay' && linha.codigoLinha != 'MaquinaSorvete' && linha.codigoLinha != 'Refrigeracao'; else linkAlternativo" -->
+                <a *ngIf="linha.codigoLinha != 'Automacao' && linha.codigoLinha != 'EnergiaSolar'   && linha.codigoLinha  != 'MaquinaSorvete' && linha.codigoLinha  != 'Blogs' && linha.codigoLinha != 'Refrigeracao'; else linkAlternativo "
+
+               
+                    class="nav-link  fontPrincipal fontRegular fontSubMenu" (mouseenter)="removeClasse()">
+                    {{linha.nomeLinha | uppercase }}
+                </a>
+                <ng-template #linkAlternativo>
+                    <a *ngIf="linha.codigoLinha == 'Automacao'" class="nav-link  fontPrincipal fontRegular fontSubMenu"
+                        (mouseenter)="removeClasse()" [routerLink]="['/Automacao/Home']" (click)="escondeChat()">
+                        {{linha.nomeLinha | uppercase}} 
+                    </a>
+                    <!-- <a *ngIf="linha.codigoLinha == 'ElginPay'" class="nav-link  fontPrincipal fontRegular fontSubMenu"
+                    (mouseenter)="removeClasse()"  href="https://www.elginpay.com.br" (click)="escondeChat()">
+                    {{linha.nomeLinha | uppercase }} 
+                     
+                    </a> -->
+                    <a *ngIf="linha.codigoLinha == 'EnergiaSolar'" class="nav-link  fontPrincipal fontRegular fontSubMenu"
+                        (mouseenter)="removeClasse()" [routerLink]="['/Solar']" (click)="chat()">
+                        {{linha.nomeLinha | uppercase }}
+                    </a>
+                    <a *ngIf="linha.codigoLinha == 'MaquinaSorvete'" class="nav-link  fontPrincipal fontRegular fontSubMenu"
+                        (mouseenter)="removeClasse()" [routerLink]="['/Gelatta/Home']"(click)="escondeChat()">
+                     
+                        {{linha.nomeLinha | uppercase }}
+                    </a>
+
+                    <a *ngIf="linha.codigoLinha == 'Refrigeracao' || linha.codigoLinha == 'refrigeracao' " class="nav-link  fontPrincipal fontRegular fontSubMenu"
+                        (mouseenter)="removeClasse()" [routerLink]="['/refrigeracao']" (click)="escondeChat()">
+                        {{linha.nomeLinha | uppercase }}
+                    </a>
+                </ng-template>
+                <ul class="sub-menu" *ngIf="linha.subLinhas.length">
+                    <li *ngFor="let sublinha of linha.subLinhas  | orderBy: ['ordem']"
+                        class="nav-item active" style="text-align:center" (click)="adicionaClasse($event.target)">
+                         <a  *ngIf="sublinha.codigoSubLinha != 'EliginPay' && linha.codigoLinha != 'Refrigeracao' && linha.codigoLinha; else linkAlternativo  "class="link-sub-menu" [routerLink]="['/Produtos/' + linha.codigoLinha + '/' + sublinha.codigoSubLinha ]" (click)="chat()">
+                            <img class="img-menu" [src]="sublinha.caminhoImagem"
+                                onError="this.src='./assets/img/noimage.jpg';" alt>
+                            <label class="span-menu fontPrincipal mouse">{{sublinha.nomeSubLinha | uppercase}}</label>
+                        </a>
+
+                       <a  *ngIf="linha.codigoLinha == 'Refrigeracao' || linha.codigoLinha == 'refrigeracao' "class="link-sub-menu" [routerLink]="['/Produtos/' + linha.codigoLinha + '/' + sublinha.codigoSubLinha ]" (click)="escondeChat()">
+                            <img class="img-menu" [src]="sublinha.caminhoImagem"
+                                onError="this.src='./assets/img/noimage.jpg';" alt>
+                            <label class="span-menu fontPrincipal mouse">{{sublinha.nomeSubLinha | uppercase}}</label>
+                        </a> 
+
+                        <a  *ngIf="sublinha.codigoSubLinha == 'EliginPay' " class="link-sub-menu" href="https://www.elginpay.com.br"  (click)="chat()">
+                            <img class="img-menu" [src]="sublinha.caminhoImagem"
+                                onError="this.src='./assets/img/noimage.jpg';" alt>
+                            <label class="span-menu fontPrincipal mouse">{{sublinha.nomeSubLinha }}</label>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,60 @@
+.banner-detalhe{
+    position: relative;
+    text-align: right !important;
+    color: white;
+    padding-bottom: 90px;
+}
+
+.imagem-banner-detalhe{
+    width: 100%;
+}
+
+.img-conteudo-detalhe{
+    max-width: 100%;
+    margin-top: 60px;
+}
+
+.p-b-40{
+    padding-bottom: 40px;
+}
+
+.tags-detalhe{
+    border: 1px solid #9F9F9F;
+    margin: 5px 5px 5px 0;
+    padding: 2px 8px;
+    border-radius: 5px;
+    color: #747474 !important;
+    font-size:11px
+}
+
+#tag-detalhe{
+    justify-content: center;   
+    width: 40%;
+    margin: 0 auto;
+}
+
+::ng-deep #conteudoHtml img,div{
+    max-width: 100%;
+    height: auto;
+}
+
+::ng-deep #conteudoHtml img{
+    padding: 15px 0px 30px;
+    margin: 0px 0px 30px;
+}
+
+::ng-deep #conteudoHtml table tbody>tr:nth-child(odd)>td {
+    background: #f9f9f9;
+}
+
+::ng-deep #conteudoHtml td {
+    border-bottom: 1px solid #ddd;
+}
+
+::ng-deep #conteudoHtml figure{
+    margin: 0 0 0 !important;
+}
+
+::ng-deep #conteudoHtml p {
+    margin: 0px 0px 30px;
+}

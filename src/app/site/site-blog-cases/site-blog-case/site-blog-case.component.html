@@ -1,0 +1,24 @@
+<div class="col-sm-12 text-center">
+    <label class="fontPrincipal fontLight tituloCase">
+        Cases
+    </label>
+</div>
+
+<div *ngIf="rows && rows.length">
+    <div *ngFor="let cols of rows" class="row" style="margin:0px auto">
+        <ng-container *ngFor="let post of cols">
+            <div [ngClass]="(codigoBlog=='Refrigeracao')?'col-sm-12 col-md-4 col-lg-4 col-12':'col-sm-12 col-md-6 col-lg-6 col-12'"
+                class="paddingboxImg">
+                <div class="bloco" [routerLink]="['/' + codigoBlog + '/Cases/Post/' + post.id]">
+                    <img *ngIf="post.embedded['wp:featuredmedia'] !== undefined" [src]="post.embedded['wp:featuredmedia'][0]['source_url']" class="img" [alt]="post.titulo.rendered">
+                    <img *ngIf="post.embedded['wp:featuredmedia'] == undefined" [src]="post.foto"
+                    [alt]="post.titulo.rendered">
+                    <div class="fontPrincipal fontLight textCentered ">
+                        <label class="titulo">{{post.titulo.rendered | uppercase}}</label>
+                        <div style="color:#fff;"><p class="descricao" [innerHTML]="post.descricao.rendered"></p></div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,141 @@
+.footer{
+    height: 265px;
+    background-color: #006198;
+    margin-top: 30px;
+}
+
+.container{
+    height: 100%;
+}
+
+.direitosAutorais{
+    font-family: fontPrincipal;
+    font-weight: 200;
+    font-size: 11px;
+    color: white;
+    margin-top: 30px;
+}
+
+.menus{
+    font-family: fontPrincipal;
+    font-weight: 300;
+    font-size: 15px;
+    display: flex;
+    color: white;
+    position: absolute;
+    right: 0;
+}
+
+.menu{
+    display: flex;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.icones{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.icon{
+    height: 28px;
+    padding: 0 22px;
+}
+
+.linha{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    background-color: white;
+    height: 1px;
+    width: 62%;
+}
+
+.divFooterBlogMob {
+    display: none;
+    margin: 0 auto;
+}
+
+/* .divFooterBlogMob .menu, .divFooterBlogMob .linha, .divFooterBlogMob .icones{
+    display: block;
+    position: relative;
+} */
+
+.divFooterBlogMob .menu{
+    padding: 0 10px;
+}
+
+.divFooterBlogMob .menus{
+    position: relative;
+}
+
+.divFooterBlogMob .icones{
+    position: relative;
+}
+
+.divFooterBlogMob .icon{
+    padding: 0 15px;
+}
+
+.divFooterBlogMob .linha{
+    position: relative;
+    top: 0;
+    margin: 30px auto;
+    right: 0;
+}
+
+.divFooterBlogMob .logoHeaderMini{
+    padding: 0 10px;
+}
+
+.divFooterBlogMob .direitosAutorais{
+    padding: 30px 25px 15px;
+    margin: 0;
+}
+
+.divLogoMob{
+    display: flex;
+}
+
+@media (max-width: 768px){
+    .menu{
+        font-size: 13px;
+        padding: 0px 15px;
+    }
+
+    .icon{
+        padding: 0px 20px;
+    }
+
+    .linha{
+        top: 45px;
+    }
+
+    .direitosAutorais{
+        margin: 15px 0px 0px;
+        padding: 0px 15px;
+    }
+}
+
+@media (max-width: 575px) {
+    .divFooterBlogMob{
+        display: block;
+    }
+
+    .divFooterBlogDesk{
+        display: none;
+    }
+
+    .s-centerVertical {
+        display: block;
+    }
+
+    .navbar-brand{
+        margin: 45px auto;
+    }
+
+    .footer{
+        height: auto;
+    }
+}

@@ -1,0 +1,229 @@
+<div class="container" style="margin-top:50px;margin-bottom: 50px;">
+    <div class="text-center">
+        <label class="tituloCarrinho fontPrincipal fontLight">Carrinho de compras</label>
+    </div>
+    <ng-container *ngIf="passo == 1">
+        <div class="text-center">
+            <label class="subTituloCarrinho fontSecundaria fontLight">Escolha seu modelo</label>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4" *ngFor="let produto of getProduto()">
+                        <div class="cardProduto">
+                            <div class="headerCardProduto">
+                                <div style="display: flex;">
+                                    <img class="imgCardProduto" [src]="produto.arquivos[0].caminho" alt>
+                                </div>
+                                <div class="divDescProduto">
+                                    <div class="lblDescProduto">
+                                        <label class="lblNomeProduto fontPrincipal fontExtraLight">
+                                            {{produto.nomeProduto}}
+                                        </label><br>
+                                        <label class="lblPrecoProduto fontPrincipal fontRegular">
+                                            {{getValorMoeda(produto.preco)}}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="contentCardProduto">
+                                <label class="lblQtd fontPrincipal fontLight">Quantidade</label>
+                                <div class="divQuantidade">
+                                    <a class="btnMenos" (click)="removerProduto(produto.id)">-</a>
+                                    <div class="inputQtd">{{getQtdProduto(produto.id)}}</div>
+                                    <a class="btnMais" (click)="adicionarProduto(produto.id)">+</a>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="footerCardProduto">
+                                <label class="lblQtd fontPrincipal fontLight">Subtotal</label><br>
+                                <label
+                                    class="lblTotal fontPrincipal fontExtraLight">{{getTotal(produto.id, produto.preco)}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-sm-12 text-center divTotalPedido">
+                <label class="lblTotalPedido fontPrincipal fontLight">Total do pedido</label><br>
+                <label class="lblValorTotal fontPrincipal fontExtraLight">{{getValorTotal()}}</label>
+            </div>
+            <hr>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-10 text-center">
+                <hr>
+                <label class="lblFormaPagamento fontPrincipal fontLight">Escolha a forma de pagamento</label>
+                <div style="display: flex;">
+                    <div class="divBtnTipoPagamento" style="display: flex; margin: auto">
+                        <div [ngClass]="{'ativo': codigoPagamento == 'Cartao'}" class="btnTipoPagamento"
+                            style="margin-right: 30px;" (click)="selecionaTipoPagamento('Cartao')">
+
+                            <img [src]="caminhoCartao" alt>
+                            <label class="lblBtnTipoPgto">Cartão</label>
+                        </div>
+
+                        <div [ngClass]="{'ativo': codigoPagamento == 'Transferencia'}" class="btnTipoPagamento"
+                            (click)="selecionaTipoPagamento('Transferencia')">
+
+                            <img style="height: 43px;" [src]="caminhoTransferencia" alt>
+                            <label class="lblBtnTipoPgto">Transferência</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 passos">
+                <img src="/assets/img/Site/Gelatta/passo1.png" alt>
+                <img src="/assets/img/Site/Gelatta/passo2_off.png" alt>
+                <img src="/assets/img/Site/Gelatta/passo3_off.png" alt>
+                <img src="/assets/img/Site/Gelatta/passo4_off.png" alt>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 botoes">
+                <input type="button" class="botaoOff" value="< Voltar" (click)="voltarPasso()">
+                <input type="button" value="Avançar >" (click)="avancarPasso()">
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="passo == 2">
+        <app-site-formulario-compra #formularioCompra></app-site-formulario-compra>
+        <div class="row">
+            <div class="col-sm-12 passos">
+                <img src="/assets/img/Site/Gelatta/check.svg" alt>
+                <img src="/assets/img/Site/Gelatta/passo2.png" alt>
+                <img src="/assets/img/Site/Gelatta/passo3_off.png" alt>
+                <img src="/assets/img/Site/Gelatta/passo4_off.png" alt>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 botoes">
+                <input type="button" class="botaoOff" value="< Voltar" (click)="voltarPasso();">
+                <input type="button" value="Avançar >" (click)="avancarPasso();">
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="passo == 3">
+        <div class="text-center">
+            <label class="subTituloCarrinho fontSecundaria fontLight">Informações Importantes</label>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" style="margin-top: 30px;">
+                <p class="paragrafoTermo fontPrincipal fontLight">
+                    1) Somente a equipe de serviços autorizados da Elgin deve realizar os serviços de reparos no
+                    equipamento
+                    durante o período de garantia. O não cumprimento deste item acarreta na perda imediata da garantia.
+                    <br><br>2) Modificações no produto ou instalação fora dos padrões de fábrica acarretam na perda
+                    imediata da garantia.
+                    <br><br>3) Siga somente as orientações da Elgin ou da sua rede de serviços autorizados.
+                    <br><br>4) Não use itens inflamáveis nas imediações do equipamento, isso pode causar incêndio devido
+                    ao calor emitido pela máquina.
+                    <br><br>5) Esta unidade deve ser operada em ambientes internos, livres de raios solares e com boa
+                    ventilação; condições de temperatura entre 5 a 38° C.
+                    <br><br>6) A máquina deve ser posicionada a 01 (um) metro de distância de paredes e objetos
+                    próximos.
+                    <br><br>7) A máquina deve ser colocada sobre superfície plana para evitar o risco de tombamento.
+                    <br><br>8) Ao transportar a máquina não incline mais que 30°.
+                    <br><br>9) Ao retirar a unidade da embalagem inspecione-a e verifique se o equipamento possui algum
+                    dano. Notifique quaisquer danos a Elgin ou a Assistência Técnica autorizada.
+                    <br><br>10) A máquina opera em 220 V x 60 Hz, solicitamos o uso do disjuntor DR de 20A (corrente de
+                    atuação de 30 mA).
+                    <br><br>11) Não opere a máquina com proteção elétrica (DISJUNTOR) maior do que o especificado na
+                    etiqueta de dados.
+                    <br><br>12) Este equipamento deve ser devidamente aterrado, a inobservância dessa instrução pode
+                    resultar em lesão corporal grave causada por choque
+                    elétrico. Para execução do aterramento, siga as normas da ABNT-NBR 5410 - seção “Aterramento”.
+                    <br><br>13) Verifique no voltímetro constante no painel de controle se a voltagem da sua rede
+                    elétrica opera dentro da faixa recomendada de 198 V a 242 V.
+                    <br><br>14) Evite transportes constantes em vias danificadas pois isso pode ocasionar problemas
+                    estruturais e desempenho da máquina;
+                    <br><br>15) Sempre utilize caldas industrializadas ou receitas balanceadas que contenham as
+                    quantidades ideais de gordura, açúcar, emulsificante e liga neutra, testadas e aprovadas para serem
+                    usadas em máquinas de sorvete soft.
+                    <br><br>16) Termo de garantia: A ELGIN assegura a garantia pelo período de 12 (doze) meses,
+                    incluindo o prazo legal de garantia de 90 (noventa) dias contados à partir da data de emissão da
+                    nota fiscal exclusivamente ao comprador original.
+                </p>
+            </div>
+            <div class="col-sm-12 text-center" style="margin-top: 50px;">
+                <input id="termo" class="checkboxFiltro" type="checkbox" [(ngModel)]="aceitouTermos">
+                <label for="termo" class="lblLeuTermo fontPrincipal fontLight">Li e concordo com as informações
+                    acima</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 passos">
+                <img src="/assets/img/Site/Gelatta/check.svg" alt>
+                <img src="/assets/img/Site/Gelatta/check.svg" alt>
+                <img src="/assets/img/Site/Gelatta/passo3.png" alt>
+                <img src="/assets/img/Site/Gelatta/passo4_off.png" alt>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 botoes">
+                <input type="button" class="botaoOff" value="< Voltar" (click)="voltarPasso();">
+                <input type="button" id="venda-gelatta" value="Finalizar" (click)="finalizar();">
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="passo == 4">
+        <div class="text-center">
+            <label class="subTituloCarrinho fontSecundaria fontLight">Seu pedido foi finalizado</label>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <div>
+                    <label class="tituloFinalCompra fontPrincipal fontLight">
+                        Seu pedido foi recebido com sucesso!
+                    </label>
+                </div>
+                <div>
+                    <label class="lblTextoCompraFinalizada fontPrincipal fontLight">
+                        Recebemos as informações do seu pedido.
+                        <br>
+                        Em breve nossa equipe entrará em contato para validar as informações.
+                        <br>
+                        Uma mensagem foi enviada para seu e-mail contendo todos os dados do seu pedido.
+                    </label>
+                </div>
+                <div class="espcamentoNumeroPedido">
+                    <label class="fontPrincipal fontLight">O número do seu pedido é</label>
+                    <div>
+                        <label class="divNumeroPedido fontPrincipal fontLight">
+                            {{numeroPedido}}
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <label class="fontPrincipal fontLight">Serviço de atendimento ao cliente</label>
+                </div>
+                <div class="divImgIconContato">
+                    <div style="margin-right: 30px;">
+                        <img class="imgIconeTelefone" src="/assets/img/Site/Gelatta/icon-telefone.svg"
+                            style="margin-top: -3px;" alt>
+                        <label class="lblInfoAssistencia fontPrincipal fontBold">
+                            0800 771 1960
+                        </label>
+                    </div>
+                    <div class="divContatoEmail">
+                        <img class="imgIconeEmail" src="/assets/img/Site/Gelatta/icon-email.svg"
+                            style="margin-right: 10px;" alt>
+                        <label class="lblInfoAssistencia fontPrincipal fontBold">
+                            gelatta@elgin.com.br
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 botoes" style="padding-top: 60px;">
+                <input type="button" value="Concluir" (click)="concluir()">
+            </div>
+        </div>
+    </ng-container>
+</div>

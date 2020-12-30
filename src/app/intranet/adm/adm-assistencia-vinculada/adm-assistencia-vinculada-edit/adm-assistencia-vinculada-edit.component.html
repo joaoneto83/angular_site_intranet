@@ -1,0 +1,82 @@
+<div class="container" style="padding:50px 0">
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Adm/Assistencia']">&#60; Voltar</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div><label class="fontPrincipal">Estado</label></div>
+                    <div>
+                        <select [disabled]="modoEdicao" class="form-control" [(ngModel)]="estadoSelecionado" 
+                        (change)="carregarCidades($event.target.value);carregarAssistencias()">
+                                <option value="">- Selecione -</option>
+                                <option *ngFor="let e of estados" [value]="e.Cod">{{e.Nome | titlecase}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div><label class="fontPrincipal">Cidade</label></div>
+                    <div>
+                        <select [disabled]="modoEdicao" class="form-control" [(ngModel)]="cidadeSelecionada"
+                        (change)="carregarAssistencias()">
+                            <option value="">- Selecione -</option>
+                            <option *ngFor="let c of cidades" [value]="c.Cod">{{c.Nome | titlecase}}</option>
+                        </select>
+                    </div>
+                </div>    
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div><label class="fontPrincipal">Assistência</label></div>
+                    <div>
+                        <select [disabled]="modoEdicao" class="form-control" [(ngModel)]="assistenciaSelecionada"
+                        (change)="flagarSubLinhasJaCadastradas()">
+                            <option value="">- Selecione -</option>
+                            <option *ngFor="let a of assistencias" [value]="a.NumeroDocumento">{{a.Nome | titlecase}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <ng-container *ngIf="assistenciaSelecionada != ''">
+            <div style="padding-left:24px">
+                <label class="fontSecundaria fontLight">Selecione as SubLinhas:</label>
+            </div>
+            <mat-accordion>
+                <mat-expansion-panel *ngFor="let linha of linhas">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <span class="sidebarFiltro" class="fontPrincipal fontLight">
+                                {{linha.nomeLinha}}
+                            </span>
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <ul class="ulSubFiltro">
+                        <li *ngFor="let subLinha of linha.subLinhas" class="filtro">
+                            <input type="checkbox" #checkboxes [name]="subLinha.id" [value]="subLinha.id" [id]="subLinha.id">
+                            <label [for]="subLinha.id" class="fontPrincipal fontLight aSidebar">{{subLinha.nomeSubLinha}}</label>
+                        </li>
+                    </ul>
+                </mat-expansion-panel>
+            </mat-accordion>
+            </ng-container>
+        </div>
+    </div>
+
+    <div class="col-md-12 text-center" style="margin-top: 40px;">
+        <input class="btn-adc" type="button" value="Salvar" (click)="salvar()">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 voltar">
+            <span [routerLink]="['/PortaldeApoio/Adm/Assistencia']">&#60; Voltar</span>
+        </div>
+    </div>
+</div>
